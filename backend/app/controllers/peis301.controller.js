@@ -4,9 +4,9 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all Peis301s from the database.
 exports.findAll = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-
+    const lname = req.query.sValue;
+    var condition = lname ? { EMLNAM: { [Op.like]: `%${lname}%` } } : null;
+console.log(req)
     Peis301.findAll({ where: condition })
         .then(data => {
             res.send(data);
