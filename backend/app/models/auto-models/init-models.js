@@ -134,6 +134,7 @@ var _PSTU301D = require("./PSTU301D");
 var _PSTU320D = require("./PSTU320D");
 var _PSTU350D = require("./PSTU350D");
 var _PSTU360D = require("./PSTU360D");
+var _logins = require("./logins");
 var _peis301s = require("./peis301s");
 var _tutorials = require("./tutorials");
 
@@ -273,6 +274,7 @@ function initModels(sequelize) {
   var PSTU320D = _PSTU320D(sequelize, DataTypes);
   var PSTU350D = _PSTU350D(sequelize, DataTypes);
   var PSTU360D = _PSTU360D(sequelize, DataTypes);
+  var logins = _logins(sequelize, DataTypes);
   var peis301s = _peis301s(sequelize, DataTypes);
   var tutorials = _tutorials(sequelize, DataTypes);
 
@@ -413,6 +415,7 @@ function initModels(sequelize) {
     PSTU320D,
     PSTU350D,
     PSTU360D,
+    logins,
     peis301s,
     tutorials,
   };

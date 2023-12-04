@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
     res.json({ message: "Welcome to dfischer application." });
 });
 
-require("./app/routes/peis301.routes")(app);
+require("./app/routes/app.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
