@@ -9,6 +9,14 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(255),
       allowNull: false,
       primaryKey: true
+    },
+    createdAt: {
+      type: Sequelize.DATE,
+      allowNull: true
+    },
+    updatedAt: {
+      type: Sequelize.DATE,
+      allowNull: true
     }
   });
   
