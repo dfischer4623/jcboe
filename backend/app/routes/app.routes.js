@@ -4,13 +4,13 @@ module.exports = app => {
 
     var router = require("express").Router();
 
-    // Retrieve login
+    // Retrieve from Login
     router.get("/login", logins.findAll);
 
-    // Retrieve all Peis301s
+    // Retrieve "all or search" from Peis301s
     router.get("/", peis301s.findAll);
 
-    // Retrieve a single Peis301 with id
+    // Retrieve an employee from Peis301 using id
     router.get("/:id", peis301s.findOne);
 
     app.use('/api/logins', router);
