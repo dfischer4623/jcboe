@@ -19,7 +19,7 @@ const db = require("./app/models");
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to dfischer application." });
+    res.json({ message: "Welcome to the JCBoE application." });
 });
 
 require("./app/routes/app.routes")(app);
