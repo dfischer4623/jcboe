@@ -1,5 +1,8 @@
 # jcboe
 
+cd auth-server
+node app.js
+
 cd backend
 node server.js
 

@@ -6,12 +6,13 @@ var low = require("lowdb");
 var FileSync = require("lowdb/adapters/FileSync");
 var adapter = new FileSync("./database.json");
 var db = low(adapter);
+require('dotenv').config()
 
 // Initialize Express app
 const app = express()
 
 // Define a JWT secret key. This should be isolated by using env variables for security
-const jwtSecretKey = "dsfdsfsdfdsvcsvdfgefg"
+const jwtSecretKey = process.env.JWTSECRETKEY
 
 // Set up CORS and JSON middlewares
 app.use(cors())
