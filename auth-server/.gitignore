@@ -3,3 +3,5 @@ db.config.js
 node_modules/
 
 .env
+
+database.json
