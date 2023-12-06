@@ -104,3 +104,5 @@ app.post('/check-account', (req, res) => {
 })
 
 app.listen(3080)
+
+console.log(`Server is running on port 3080.`);
