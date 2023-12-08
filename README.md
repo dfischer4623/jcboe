@@ -11,7 +11,7 @@
     Server is running on "IP Address":8080
 
 (3) cd frontend
-    npx start
+    npm start
 
     website URL:   http://"IP Address":3000
 
