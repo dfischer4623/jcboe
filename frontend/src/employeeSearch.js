@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
     
+    const { loggedIn } = props
     const employeeNumber =""
     
     const navigate = useNavigate();
@@ -11,8 +12,16 @@ const EmployeeSearch = (props) => {
         navigate("/main")
     }
 
-    const homeButtonClick = () => {
-        navigate("/")
+    const mainButtonClick = () => {
+        navigate("/main")
+    }
+
+    const logoutButtonClick = () => {
+        if (!loggedIn) {
+            localStorage.removeItem("user")
+            props.setLoggedIn(false)
+            navigate("/")
+        }
     }
     
     return <div className={"mainContainer"}>
@@ -38,8 +47,15 @@ const EmployeeSearch = (props) => {
             <input
                 className={"inputButton"}
                 type="button"
-                onClick={homeButtonClick}
-                value={"Home"} />
+                onClick={mainButtonClick}
+                value={"Main"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={logoutButtonClick}
+                value={"Log out"} />
         </div>
     </div>
 }

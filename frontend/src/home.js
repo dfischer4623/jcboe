@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Home = (props) => {
     const { loggedIn, email } = props
     const navigate = useNavigate();
-    
+
     const onButtonClick = () => {
         if (loggedIn) {
             localStorage.removeItem("user")
@@ -20,7 +20,7 @@ const Home = (props) => {
             <div>Welcome!</div>
         </div>
         <div>
-            Please Log in.
+            Please {loggedIn ? "Log out" : "Log in"}
         </div>
         <div className={"buttonContainer"}>
             <input
@@ -30,7 +30,7 @@ const Home = (props) => {
                 value={loggedIn ? "Log out" : "Log in"} />
             {(loggedIn ? <div>
                 Your email address is {email}
-            </div> : <div/>)}
+            </div> : <div />)}
         </div>
 
 
