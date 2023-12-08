@@ -21,7 +21,7 @@ const Login = (props) => {
             return
         }
 
-        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             setEmailError("Please enter a valid email")
             return
         }
@@ -81,7 +81,7 @@ const Login = (props) => {
                 localStorage.setItem("user", JSON.stringify({email, token: r.token}))
                 props.setLoggedIn(true)
                 props.setEmail(email)
-                navigate("/")
+                navigate("/main")
             } else {
                 window.alert("Wrong email or password")
             }
