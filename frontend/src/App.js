@@ -40,8 +40,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          <Route path="/main" element={<Main setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          <Route path="/employeeSearch" element={<EmployeeSearch setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/main" element={<Main loggedIn={loggedIn} email={email} setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/employeeSearch" element={<EmployeeSearch loggedIn={loggedIn} email={email} setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
         </Routes>
       </BrowserRouter>
     </div>

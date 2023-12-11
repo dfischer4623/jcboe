@@ -2,9 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Main = (props) => {
-    
-    const { loggedIn } = props
-    
+
+    const { loggedIn, email } = props
+
     const navigate = useNavigate();
 
     const employeeSearchButtonClick = () => {
@@ -12,7 +12,7 @@ const Main = (props) => {
     }
 
     const logoutButtonClick = () => {
-        if (!loggedIn) {
+        if (loggedIn) {
             localStorage.removeItem("user")
             props.setLoggedIn(false)
             navigate("/")
@@ -38,6 +38,8 @@ const Main = (props) => {
                 onClick={logoutButtonClick}
                 value={"Log out"} />
         </div>
+        <br />
+        <div>Your email is {email}</div>
     </div>
 }
 

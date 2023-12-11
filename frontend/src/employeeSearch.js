@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
     
-    const { loggedIn } = props
+    const { loggedIn, email } = props
     const employeeNumber =""
     
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ const EmployeeSearch = (props) => {
     }
 
     const logoutButtonClick = () => {
-        if (!loggedIn) {
+        if (loggedIn) {
             localStorage.removeItem("user")
             props.setLoggedIn(false)
             navigate("/")
@@ -57,6 +57,8 @@ const EmployeeSearch = (props) => {
                 onClick={logoutButtonClick}
                 value={"Log out"} />
         </div>
+        <br />
+        <div>Your email is {email}</div>
     </div>
 }
 
