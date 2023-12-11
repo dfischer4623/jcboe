@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { loggedIn, email, employeeNumber } = props
+    const { email, employeeNumber } = props
 
     const navigate = useNavigate();
 
@@ -20,6 +20,17 @@ const ShowEmployee = (props) => {
         props.setLoggedIn(false)
         navigate("/")
     }
+
+    const [employee, setEmployee] = useState("")
+
+    const fetchData = async () => {
+        const response = await fetch(`http://localhost:8080/api/peis301s/${employeeNumber}`)
+        const resData = await response.json()
+        setEmployee(resData)
+    }
+    fetchData()
+
+    console.log(employee)
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
