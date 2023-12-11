@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Main = (props) => {
+const ShowEmployee = (props) => {
 
     const { loggedIn, email, employeeNumber } = props
 
@@ -24,8 +24,12 @@ const Main = (props) => {
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>
-            <div>{employeeNumber}</div>
         </div>
+        {/*------------------------------------------------*/}
+        <div>{employeeNumber}</div>
+        {/*  show data here*/}
+
+        {/*------------------------------------------------*/}
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}
@@ -52,4 +56,4 @@ const Main = (props) => {
     </div>
 }
 
-export default Main
+export default ShowEmployee
