@@ -12,11 +12,9 @@ const Main = (props) => {
     }
 
     const logoutButtonClick = () => {
-        if (loggedIn) {
-            localStorage.removeItem("user")
-            props.setLoggedIn(false)
-            navigate("/")
-        }
+        localStorage.removeItem("user")
+        props.setLoggedIn(false)
+        navigate("/")
     }
 
     return <div className={"mainContainer"}>

@@ -10,17 +10,15 @@ const Main = (props) => {
     const employeeSearchButtonClick = () => {
         navigate("/employeeSearch")
     }
-    
+
     const mainButtonClick = () => {
         navigate("/main")
     }
 
     const logoutButtonClick = () => {
-        if (loggedIn) {
-            localStorage.removeItem("user")
-            props.setLoggedIn(false)
-            navigate("/")
-        }
+        localStorage.removeItem("user")
+        props.setLoggedIn(false)
+        navigate("/")
     }
 
     return <div className={"mainContainer"}>
