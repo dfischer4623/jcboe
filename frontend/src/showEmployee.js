@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const EmployeeSearch = (props) => {
+const Main = (props) => {
 
     const { loggedIn, email } = props
-    const [employeeNumber, setEmployeeNumber] = useState("")
 
     const navigate = useNavigate();
-
-    const onENButtonClick = () => {
-        navigate("/showEmployee")
-    }
 
     const mainButtonClick = () => {
         navigate("/main")
@@ -26,21 +21,9 @@ const EmployeeSearch = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Employee Search</div>
+            <div>Show Employee</div>
         </div>
-        <br />
-        <div className={"inputButtonContainer"}>
-            <input
-                value={employeeNumber}
-                placeholder="Enter Employee Number"
-                onChange={ev => setEmployeeNumber(ev.target.value)}
-                className={"inputBox"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={onENButtonClick}
-                value={"Get Employee Information"} />
-        </div>
+
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}
@@ -60,4 +43,4 @@ const EmployeeSearch = (props) => {
     </div>
 }
 
-export default EmployeeSearch
+export default Main
