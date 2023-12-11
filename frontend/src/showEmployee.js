@@ -3,10 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 const Main = (props) => {
 
-    const { loggedIn, email } = props
+    const { loggedIn, email, employeeNumber } = props
 
     const navigate = useNavigate();
 
+    const employeeSearchButtonClick = () => {
+        navigate("/employeeSearch")
+    }
+    
     const mainButtonClick = () => {
         navigate("/main")
     }
@@ -22,8 +26,15 @@ const Main = (props) => {
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>
+            <div>{employeeNumber}</div>
         </div>
-
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={employeeSearchButtonClick}
+                value={"Employee Search"} />
+        </div>
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}

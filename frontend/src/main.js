@@ -23,7 +23,6 @@ const Main = (props) => {
         <div className={"titleContainer"}>
             <div>Main Menu</div>
         </div>
-
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}

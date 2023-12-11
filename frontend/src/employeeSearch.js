@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
 
-    const { loggedIn, email } = props
-    const [employeeNumber, setEmployeeNumber] = useState("")
+    const { loggedIn, email, employeeNumber, setEmployeeNumber } = props
 
     const navigate = useNavigate();
 
