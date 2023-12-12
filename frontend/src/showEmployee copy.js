@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
@@ -21,39 +21,19 @@ const ShowEmployee = (props) => {
         navigate("/")
     }
 
-    const [ed, setEmployeeData] = useState(null)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/api/peis301s/${employeeNumber}`)
-            const resData = await response.json()
-            setEmployeeData(resData)
-        }
-        fetchData()
-    }, [employeeNumber])
-
-    console.log(ed)
-
-    if (ed === null) {
-        return <h1>Loading</h1>
+    const fetchData = async () => {
+        const response = await fetch(`http://localhost:8080/api/peis301s/${employeeNumber}`)
+        const resData = await response.json()
     }
+    fetchData()
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>
         </div>
         <br />
-        <div className={"empTableContainer"}>
-            <tr>
-                <td>Number {employeeNumber}</td>
-                <td>Second Column</td>
-                <td>Third Column</td>
-            </tr>
-            <tr>
-                <td>Name {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
-                <td>Second Column</td>
-                <td>Third Column</td>
-            </tr>
+        <div>
+            Number: {employeeNumber}
         </div>
         <div className={"inputContainer"}>
             <input
@@ -79,6 +59,8 @@ const ShowEmployee = (props) => {
         <br />
         <div>Your email is {email}</div>
     </div>
+
+
 }
 
 export default ShowEmployee

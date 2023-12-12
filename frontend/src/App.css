@@ -67,3 +67,11 @@
   border: 1px solid grey;
   padding-left: 8px;
 }
+
+.empTableContainer {
+  width: 95%;
+}
+
+td {
+  width: 10%
+}
