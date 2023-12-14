@@ -38,6 +38,30 @@ const ShowEmployee = (props) => {
         return <h1>Loading</h1>
     }
 
+    function normalize(phone) {
+        //normalize string and remove all unnecessary characters
+        phone = phone.replace(/[^\d]/g, "");
+
+        //check if number length equals to 10
+        if (phone.length === 7) {
+            //reformat and return phone number
+            return phone.replace(/(\d{3})(\d{4})/, "$1-$2");
+        }
+
+        return null;
+    }
+
+    var phone = ed.EMOTL2.toString();
+    var ophone = normalize(phone);
+
+    phone = ed.EMHTL2.toString();
+    var hphone = normalize(phone);
+
+    var zipCode = ed.EMZIP1.toString();
+    if (zipCode.length !== 5) {
+        zipCode = '0' + zipCode;
+    }
+
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>
@@ -45,14 +69,39 @@ const ShowEmployee = (props) => {
         <br />
         <div className={"empTableContainer"}>
             <tr>
-                <td>Number {employeeNumber}</td>
-                <td>Second Column</td>
-                <td>Third Column</td>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
             <tr>
-                <td>Name {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
-                <td>Second Column</td>
-                <td>Third Column</td>
+                <td>Number: {employeeNumber}</td>
+                <td>Active: {ed.EMSTAT}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Name: {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
+                <td>Office Phone: ({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
+                <td>Home Phone: ({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
+            </tr>
+            <tr>
+                <td>Preferred: {ed.EMPNAM}</td>
+                <td>Name Prefix: {ed.EMNPRE}</td>
+                <td>Name Suffix: {ed.EMNSUF}</td>
+            </tr>
+            <tr>
+                <td>Birth Date: {ed.DOB}</td>
+                <td>Gender: {ed.EMSEX}</td>
+                <td>Ethnic Code: {ed.EMETH}</td>
+            </tr>
+            <tr>
+                <td>Address: {ed.EMADD1}</td>
+                <td>{ed.EMADD2}</td>
+                <td>Address Security: {ed.EMADSC}</td>
+            </tr>
+            <tr>
+                <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
+                <td></td>
+                <td>Permanent Address: {ed.EM}</td>
             </tr>
         </div>
         <div className={"inputContainer"}>

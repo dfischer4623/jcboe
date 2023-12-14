@@ -69,9 +69,15 @@
 }
 
 .empTableContainer {
-  width: 95%;
+  width: 100%;
+}
+
+th {
+  width:33%
 }
 
 td {
-  width: 10%
+  font-size: 20px;
+  font-weight: 500;
+  border: .5px solid rgb(217, 211, 211)
 }
