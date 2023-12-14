@@ -69,7 +69,7 @@
 }
 
 .empTableContainer {
-  width: 100%;
+  width: 90%;
 }
 
 th {
@@ -77,7 +77,7 @@ th {
 }
 
 td {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   border: .5px solid rgb(217, 211, 211)
 }

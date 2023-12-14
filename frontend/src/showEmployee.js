@@ -100,8 +100,28 @@ const ShowEmployee = (props) => {
             </tr>
             <tr>
                 <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
+                <td>Country: {ed.EMCTRY}</td>
+                <td>Permanent Address: Y</td>
+            </tr>
+            <tr>
+                <td>Location: {ed.EMLOC}</td>
                 <td></td>
-                <td>Permanent Address: {ed.EM}</td>
+                <td>District: {ed.EMHDT}</td>
+            </tr>
+            <tr>
+                <td>Sublocation: {ed.EMLOC2}</td>
+                <td></td>
+                <td>School: {ed.EMHSC}</td>
+            </tr>
+            <tr>
+                <td>Pay Location: {ed.EMLOCP}</td>
+                <td></td>
+                <td>Department: {ed.EMDEPT}</td>
+            </tr>
+            <tr>
+                <td>Assignment: {ed.EMPASN}</td>
+                <td></td>
+                <td>Room: {ed.EMROOM}</td>
             </tr>
         </div>
         <div className={"inputContainer"}>
