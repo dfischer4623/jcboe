@@ -19,5 +19,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.peis301s = require("./peis301.model.js")(sequelize, Sequelize);
+db.peis205s = require("./peis205.model.js")(sequelize, Sequelize);
 
 module.exports = db;
