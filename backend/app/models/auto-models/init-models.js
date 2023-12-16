@@ -26,7 +26,7 @@ var _PEIS151 = require("./PEIS151");
 var _PEIS175 = require("./PEIS175");
 var _PEIS202 = require("./PEIS202");
 var _PEIS204 = require("./PEIS204");
-var _PEIS205 = require("./PEIS205");
+var _PEIS205_ORIG = require("./PEIS205_ORIG");
 var _PEIS301N = require("./PEIS301N");
 var _PEIS301_ORIG = require("./PEIS301_ORIG");
 var _PEIS303 = require("./PEIS303");
@@ -134,9 +134,8 @@ var _PSTU301D = require("./PSTU301D");
 var _PSTU320D = require("./PSTU320D");
 var _PSTU350D = require("./PSTU350D");
 var _PSTU360D = require("./PSTU360D");
-var _logins = require("./logins");
+var _peis205s = require("./peis205s");
 var _peis301s = require("./peis301s");
-var _tutorials = require("./tutorials");
 
 function initModels(sequelize) {
   var PACP210 = _PACP210(sequelize, DataTypes);
@@ -166,7 +165,7 @@ function initModels(sequelize) {
   var PEIS175 = _PEIS175(sequelize, DataTypes);
   var PEIS202 = _PEIS202(sequelize, DataTypes);
   var PEIS204 = _PEIS204(sequelize, DataTypes);
-  var PEIS205 = _PEIS205(sequelize, DataTypes);
+  var PEIS205_ORIG = _PEIS205_ORIG(sequelize, DataTypes);
   var PEIS301N = _PEIS301N(sequelize, DataTypes);
   var PEIS301_ORIG = _PEIS301_ORIG(sequelize, DataTypes);
   var PEIS303 = _PEIS303(sequelize, DataTypes);
@@ -274,9 +273,8 @@ function initModels(sequelize) {
   var PSTU320D = _PSTU320D(sequelize, DataTypes);
   var PSTU350D = _PSTU350D(sequelize, DataTypes);
   var PSTU360D = _PSTU360D(sequelize, DataTypes);
-  var logins = _logins(sequelize, DataTypes);
+  var peis205s = _peis205s(sequelize, DataTypes);
   var peis301s = _peis301s(sequelize, DataTypes);
-  var tutorials = _tutorials(sequelize, DataTypes);
 
 
   return {
@@ -307,7 +305,7 @@ function initModels(sequelize) {
     PEIS175,
     PEIS202,
     PEIS204,
-    PEIS205,
+    PEIS205_ORIG,
     PEIS301N,
     PEIS301_ORIG,
     PEIS303,
@@ -415,9 +413,8 @@ function initModels(sequelize) {
     PSTU320D,
     PSTU350D,
     PSTU360D,
-    logins,
+    peis205s,
     peis301s,
-    tutorials,
   };
 }
 module.exports = initModels;
