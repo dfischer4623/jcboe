@@ -27,13 +27,12 @@ const ShowEmployee = (props) => {
             const response = await fetch(`http://localhost:8080/api/peis301s/${employeeNumber}`)
             const resData = await response.json()
             setEmployeeData(resData)
-            console.log(ed)
         }
         fetchData()
     }, [employeeNumber])
 
     console.log(ed)
-    let et = {desc:"nothing"};
+    let et = { desc: "nothing" };
     console.log(et)
 
     //const [et, setEthnicCode] = useState(null)
@@ -84,61 +83,63 @@ const ShowEmployee = (props) => {
         </div>
         <br />
         <div className={"empTableContainer"}>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>Number: {employeeNumber}</td>
-                <td>Active: {ed.EMSTAT}</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Name: {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
-                <td>Office Phone: ({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
-                <td>Home Phone: ({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
-            </tr>
-            <tr>
-                <td>Preferred: {ed.EMPNAM}</td>
-                <td>Name Prefix: {ed.EMNPRE}</td>
-                <td>Name Suffix: {ed.EMNSUF}</td>
-            </tr>
-            <tr>
-                <td>Birth Date: {ed.DOB}</td>
-                <td>Gender: {ed.EMSEX}</td>
-                <td>Ethnic Code: {ed.EMETH} {et.desc}</td>
-            </tr>
-            <tr>
-                <td>Address: {ed.EMADD1}</td>
-                <td>{ed.EMADD2}</td>
-                <td>Address Security: {ed.EMADSC}</td>
-            </tr>
-            <tr>
-                <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
-                <td>Country: {ed.EMCTRY}</td>
-                <td>Permanent Address: Y</td>
-            </tr>
-            <tr>
-                <td>Location: {ed.EMLOC}</td>
-                <td></td>
-                <td>District: {ed.EMHDT}</td>
-            </tr>
-            <tr>
-                <td>Sublocation: {ed.EMLOC2}</td>
-                <td></td>
-                <td>School: {ed.EMHSC}</td>
-            </tr>
-            <tr>
-                <td>Pay Location: {ed.EMLOCP}</td>
-                <td></td>
-                <td>Department: {ed.EMDEPT}</td>
-            </tr>
-            <tr>
-                <td>Assignment: {ed.EMPASN}</td>
-                <td></td>
-                <td>Room: {ed.EMROOM}</td>
-            </tr>
+            <table>
+                <tr>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <td>Number: {employeeNumber}</td>
+                    <td>Active: {ed.EMSTAT}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Name: {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
+                    <td>Office Phone: ({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
+                    <td>Home Phone: ({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
+                </tr>
+                <tr>
+                    <td>Preferred: {ed.EMPNAM}</td>
+                    <td>Name Prefix: {ed.EMNPRE}</td>
+                    <td>Name Suffix: {ed.EMNSUF}</td>
+                </tr>
+                <tr>
+                    <td>Birth Date: {ed.DOB}</td>
+                    <td>Gender: {ed.EMSEX}</td>
+                    <td>Ethnic Code: {ed.EMETH} {et.desc}</td>
+                </tr>
+                <tr>
+                    <td>Address: {ed.EMADD1}</td>
+                    <td>{ed.EMADD2}</td>
+                    <td>Address Security: {ed.EMADSC}</td>
+                </tr>
+                <tr>
+                    <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
+                    <td>Country: {ed.EMCTRY}</td>
+                    <td>Permanent Address: Y</td>
+                </tr>
+                <tr>
+                    <td>Location: {ed.EMLOC}</td>
+                    <td></td>
+                    <td>District: {ed.EMHDT}</td>
+                </tr>
+                <tr>
+                    <td>Sublocation: {ed.EMLOC2}</td>
+                    <td></td>
+                    <td>School: {ed.EMHSC}</td>
+                </tr>
+                <tr>
+                    <td>Pay Location: {ed.EMLOCP}</td>
+                    <td></td>
+                    <td>Department: {ed.EMDEPT}</td>
+                </tr>
+                <tr>
+                    <td>Assignment: {ed.EMPASN}</td>
+                    <td></td>
+                    <td>Room: {ed.EMROOM}</td>
+                </tr>
+            </table>
         </div>
         <div className={"inputContainer"}>
             <input
