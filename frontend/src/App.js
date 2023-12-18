@@ -11,6 +11,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [email, setEmail] = useState("")
   const [employeeNumber, setEmployeeNumber] = useState("")
+  const [ed, setEmployeeData] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -44,7 +45,7 @@ function App() {
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/main" element={<Main loggedIn={loggedIn} email={email} setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/employeeSearch" element={<EmployeeSearch loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber}/>} />
-          <Route path="/showEmployee" element={<ShowEmployee loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber}/>} />
+          <Route path="/showEmployee" element={<ShowEmployee loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ed={ed} setEmployeeData={setEmployeeData} />} />
         </Routes>
       </BrowserRouter>
     </div>

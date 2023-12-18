@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
   const Employee = sequelize.define("employee", {
     EMSSAN: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: false,
+      primaryKey: true
     },
     DOB: {
       type: Sequelize.STRING(50),
@@ -97,7 +98,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMZIP1: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMZIP2: {
@@ -141,11 +142,11 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMPZP1: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMPZP2: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMPGPC: {
@@ -157,11 +158,11 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMHTL0: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMHTL2: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMHTLS: {
@@ -169,11 +170,11 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMOTL0: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMOTL2: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMEXTN: {
@@ -185,11 +186,11 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMLOC: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMLOC2: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMLOCP: {
@@ -213,7 +214,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMPASN: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMSTAT: {
@@ -229,15 +230,15 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMPREV: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMSDST: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.FLOAT,
       allowNull: true
     },
     EMSST: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.FLOAT,
       allowNull: true
     },
     EMSTOT: {
@@ -293,15 +294,15 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMDTDC: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMDTDT: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMDFDC: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     EMDFDT: {
@@ -409,15 +410,15 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     EMBUSY: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     createdAt: {
-      type: Sequelize.DATEONLY,
+      type: Sequelize.DATE,
       allowNull: true
     },
     updatedAt: {
-      type: Sequelize.DATEONLY,
+      type: Sequelize.DATE,
       allowNull: true
     },
     LPNAME: {

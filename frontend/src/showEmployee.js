@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { email, employeeNumber } = props
+    const { email, employeeNumber, setEmployeeData, ed } = props
 
     const navigate = useNavigate();
 
@@ -21,7 +21,6 @@ const ShowEmployee = (props) => {
         navigate("/")
     }
 
-    const [ed, setEmployeeData] = useState(null)
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`)
@@ -29,7 +28,10 @@ const ShowEmployee = (props) => {
             setEmployeeData(resData)
         }
         fetchData()
-    }, [employeeNumber])
+    })
+    //}, [employeeNumber])
+
+    console.log(ed)
 
     if (ed === null) {
         return <h1>Loading</h1>
@@ -47,7 +49,7 @@ const ShowEmployee = (props) => {
 
         return null;
     }
-
+  
     var phone = ed.EMOTL2.toString();
     var ophone = normalize(phone);
 
@@ -102,22 +104,22 @@ const ShowEmployee = (props) => {
                     <td>Permanent Address: Y</td>
                 </tr>
                 <tr>
-                    <td>Location: {ed.EMLOC}</td>
+                    <td>Location: {ed.EMLOC} {ed.LCNAME}</td>
                     <td></td>
                     <td>District: {ed.EMHDT}</td>
                 </tr>
                 <tr>
-                    <td>Sublocation: {ed.EMLOC2}</td>
+                    <td>Sublocation: {ed.EMLOC2} {ed.CLNAME}</td>
                     <td></td>
                     <td>School: {ed.EMHSC}</td>
                 </tr>
                 <tr>
-                    <td>Pay Location: {ed.EMLOCP}</td>
+                    <td>Pay Location: {ed.EMLOCP} {ed.LPNAME}</td>
                     <td></td>
                     <td>Department: {ed.EMDEPT}</td>
                 </tr>
                 <tr>
-                    <td>Assignment: {ed.EMPASN}</td>
+                    <td>Assignment: {ed.EMPASN} {ed.JDTITL}</td>
                     <td></td>
                     <td>Room: {ed.EMROOM}</td>
                 </tr>

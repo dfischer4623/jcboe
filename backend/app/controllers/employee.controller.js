@@ -1,5 +1,5 @@
 const db = require("../models");
-const Employee = dbo.employees;
+const Employee = db.employees;
 const Op = db.Sequelize.Op;
 
 // Retrieve all Peis301s from the database.
