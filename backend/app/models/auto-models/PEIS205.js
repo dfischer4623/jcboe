@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('PEIS205', {
     ETCODE: {
-      type: DataTypes.TINYINT,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: true
     },
     ETDESC: {
       type: DataTypes.STRING(50),

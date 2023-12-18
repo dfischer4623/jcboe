@@ -3,8 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('peis301s', {
     EMSSAN: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      allowNull: true
     },
     DOB: {
       type: DataTypes.STRING(50),
@@ -99,7 +98,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMZIP1: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMZIP2: {
@@ -143,11 +142,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMPZP1: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMPZP2: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMPGPC: {
@@ -159,11 +158,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMHTL0: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMHTL2: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMHTLS: {
@@ -171,11 +170,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMOTL0: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMOTL2: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMEXTN: {
@@ -187,11 +186,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMLOC: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMLOC2: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMLOCP: {
@@ -215,7 +214,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMPASN: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMSTAT: {
@@ -231,15 +230,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMPREV: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMSDST: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMSST: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMSTOT: {
@@ -295,15 +294,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMDTDC: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMDTDT: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMDFDC: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     EMDFDT: {
@@ -411,7 +410,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     EMBUSY: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     createdAt: {
@@ -427,15 +426,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'peis301s',
     schema: 'dbo',
     timestamps: false,
-    underscored: true,
-    indexes: [
-      {
-        name: "PK_peis301s_EMSSAN",
-        unique: true,
-        fields: [
-          { name: "EMSSAN" },
-        ]
-      },
-    ]
+    underscored: true
   });
 };
