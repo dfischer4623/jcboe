@@ -24,30 +24,12 @@ const ShowEmployee = (props) => {
     const [ed, setEmployeeData] = useState(null)
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/api/peis301s/${employeeNumber}`)
+            const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`)
             const resData = await response.json()
             setEmployeeData(resData)
         }
         fetchData()
     }, [employeeNumber])
-
-    console.log(ed)
-    let et = { desc: "nothing" };
-    console.log(et)
-
-    //const [et, setEthnicCode] = useState(null)
-    //const ethnicCode = 2
-
-    //useEffect(() => {
-    //    const fetchECData = async () => {
-    //       const response = await fetch(`http://localhost:8080/api/peis205s/${ethnicCode}`)
-    //        const resData = await response.json()
-    //        setEthnicCode(resData)
-    //        console.log(resData)
-    //    }
-    //    fetchECData()
-    //}, [ethnicCode])
-
 
     if (ed === null) {
         return <h1>Loading</h1>
@@ -107,7 +89,7 @@ const ShowEmployee = (props) => {
                 <tr>
                     <td>Birth Date: {ed.DOB}</td>
                     <td>Gender: {ed.EMSEX}</td>
-                    <td>Ethnic Code: {ed.EMETH} {et.desc}</td>
+                    <td>Ethnic Code: {ed.EMETH} {ed.ETDESC}</td>
                 </tr>
                 <tr>
                     <td>Address: {ed.EMADD1}</td>

@@ -1,5 +1,5 @@
 const db = require("../models");
-const Peis301 = db.peis301s;
+const Employee = dbo.employees;
 const Op = db.Sequelize.Op;
 
 // Retrieve all Peis301s from the database.
@@ -7,7 +7,7 @@ exports.findAll = (req, res) => {
     const lname = req.query.sValue;
     var condition = lname ? { EMLNAM: { [Op.like]: `%${lname}%` } } : null;
     console.log(req.query)
-    Peis301.findAll({ where: condition })
+    Employee.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })
@@ -23,7 +23,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
     console.log(req.params)
-    Peis301.findByPk(id)
+    Employee.findByPk(id)
         .then(data => {
             res.send(data);
         })

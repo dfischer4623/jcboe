@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Peis301 = sequelize.define("peis301", {
+  const Employee = sequelize.define("employee", {
     EMSSAN: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -420,8 +420,12 @@ module.exports = (sequelize, Sequelize) => {
     updatedAt: {
       type: Sequelize.DATE,
       allowNull: true
+    },
+    ETDESC: {
+      type: Sequelize.STRING(50),
+      allowNull: false
     }
   });
 
-  return Peis301;
+  return Employee;
 };
