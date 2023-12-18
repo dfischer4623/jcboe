@@ -424,10 +424,6 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(50),
       allowNull: false
     },
-    ETDESC: {
-      type: Sequelize.STRING(50),
-      allowNull: false
-    },
     LCNAME: {
       type: Sequelize.STRING(50),
       allowNull: false
@@ -437,6 +433,10 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false
     },
     JDTITL: {
+      type: Sequelize.STRING(50),
+      allowNull: false
+    },
+    ETDESC: {
       type: Sequelize.STRING(50),
       allowNull: false
     }
