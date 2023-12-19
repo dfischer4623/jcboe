@@ -28,11 +28,11 @@ const ShowEmployee = (props) => {
             setEmployeeData(resData)
         }
         fetchData()
-    },[employeeNumber])
+    }, [employeeNumber])
 
-    //console.log(ed)
+     //console.log(ed)
 
-    if (ed === null) {
+     if (ed === null) {
         return <h1>Loading</h1>
     }
 
