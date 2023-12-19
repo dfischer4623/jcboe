@@ -2,7 +2,7 @@ const db = require("../models");
 const Employee = db.employees;
 const Op = db.Sequelize.Op;
 
-// Retrieve all Peis301s from the database.
+// Retrieve all employees from the database.
 exports.findAll = (req, res) => {
     const lname = req.query.sValue;
     var condition = lname ? { EMLNAM: { [Op.like]: `%${lname}%` } } : null;
@@ -14,12 +14,12 @@ exports.findAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving Peis301s."
+                    err.message || "Some error occurred while retrieving dbo.employees."
             });
         });
 };;
 
-// Find a single Peis301 with an id
+// Find a single dbo.employees with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
     console.log(req.params)
@@ -29,7 +29,7 @@ exports.findOne = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Peis301 with id=" + id
+                message: "Error retrieving dbo.employees with id=" + id
             });
         });
 };

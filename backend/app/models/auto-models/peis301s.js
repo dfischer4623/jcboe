@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('peis301s', {
     EMSSAN: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false,
+      primaryKey: true
     },
     DOB: {
       type: DataTypes.STRING(50),
@@ -426,6 +427,15 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'peis301s',
     schema: 'dbo',
     timestamps: false,
-    underscored: true
+    underscored: true,
+    indexes: [
+      {
+        name: "PK__peis301s__88BFA497358B0F35",
+        unique: true,
+        fields: [
+          { name: "EMSSAN" },
+        ]
+      },
+    ]
   });
 };

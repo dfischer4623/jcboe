@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
   const Employee = sequelize.define("employee", {
     EMSSAN: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: false,
+      primaryKey: true
     },
     DOB: {
       type: Sequelize.STRING(50),
@@ -422,23 +423,23 @@ module.exports = (sequelize, Sequelize) => {
     },
     LPNAME: {
       type: Sequelize.STRING(50),
-      allowNull: false
+      allowNull: true
     },
     LCNAME: {
       type: Sequelize.STRING(50),
-      allowNull: false
+      allowNull: true
     },
     CLNAME: {
       type: Sequelize.STRING(50),
-      allowNull: false
-    },
-    JDTITL: {
-      type: Sequelize.STRING(50),
-      allowNull: false
+      allowNull: true
     },
     ETDESC: {
       type: Sequelize.STRING(50),
-      allowNull: false
+      allowNull: true
+    },
+    JDTITL: {
+      type: Sequelize.STRING(50),
+      allowNull: true
     }
   });
  

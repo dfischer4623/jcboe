@@ -74,6 +74,7 @@ var _PPAY122I = require("./PPAY122I");
 var _PPAY122L = require("./PPAY122L");
 var _PPAY124 = require("./PPAY124");
 var _PPAY1241 = require("./PPAY1241");
+var _PPAY124s = require("./PPAY124s");
 var _PPAY125H = require("./PPAY125H");
 var _PPAY125L = require("./PPAY125L");
 var _PPAY127 = require("./PPAY127");
@@ -211,6 +212,7 @@ function initModels(sequelize) {
   var PPAY122L = _PPAY122L(sequelize, DataTypes);
   var PPAY124 = _PPAY124(sequelize, DataTypes);
   var PPAY1241 = _PPAY1241(sequelize, DataTypes);
+  var PPAY124s = _PPAY124s(sequelize, DataTypes);
   var PPAY125H = _PPAY125H(sequelize, DataTypes);
   var PPAY125L = _PPAY125L(sequelize, DataTypes);
   var PPAY127 = _PPAY127(sequelize, DataTypes);
@@ -349,6 +351,7 @@ function initModels(sequelize) {
     PPAY122L,
     PPAY124,
     PPAY1241,
+    PPAY124s,
     PPAY125H,
     PPAY125L,
     PPAY127,

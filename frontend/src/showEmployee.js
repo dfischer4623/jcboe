@@ -28,8 +28,7 @@ const ShowEmployee = (props) => {
             setEmployeeData(resData)
         }
         fetchData()
-    })
-    //}, [employeeNumber])
+    },[employeeNumber])
 
     console.log(ed)
 
@@ -49,7 +48,7 @@ const ShowEmployee = (props) => {
 
         return null;
     }
-  
+
     var phone = ed.EMOTL2.toString();
     var ophone = normalize(phone);
 
