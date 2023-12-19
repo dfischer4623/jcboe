@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
@@ -21,16 +21,20 @@ const ShowEmployee = (props) => {
         navigate("/")
     }
 
+    const [emResp, setEmResp] = useState(null)
+
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`)
             const resData = await response.json()
             setEmployeeData(resData)
+            setEmResp(response)
         }
         fetchData()
     }, [employeeNumber])
 
     //console.log(ed)
+    //console.log(emResp.status)
 
     if (ed === null) {
         return <h1>Loading</h1>
