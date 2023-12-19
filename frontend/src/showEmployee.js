@@ -30,7 +30,7 @@ const ShowEmployee = (props) => {
         fetchData()
     },[employeeNumber])
 
-    console.log(ed)
+    //console.log(ed)
 
     if (ed === null) {
         return <h1>Loading</h1>
