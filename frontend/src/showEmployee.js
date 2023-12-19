@@ -30,9 +30,9 @@ const ShowEmployee = (props) => {
         fetchData()
     }, [employeeNumber])
 
-     //console.log(ed)
+    //console.log(ed)
 
-     if (ed === null) {
+    if (ed === null) {
         return <h1>Loading</h1>
     }
 
@@ -67,61 +67,65 @@ const ShowEmployee = (props) => {
         <br />
         <div className={"empTableContainer"}>
             <table>
-                <tr>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                </tr>
-                <tr>
-                    <td>Number: {employeeNumber}</td>
-                    <td>Active: {ed.EMSTAT}</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Name: {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
-                    <td>Office Phone: ({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
-                    <td>Home Phone: ({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
-                </tr>
-                <tr>
-                    <td>Preferred: {ed.EMPNAM}</td>
-                    <td>Name Prefix: {ed.EMNPRE}</td>
-                    <td>Name Suffix: {ed.EMNSUF}</td>
-                </tr>
-                <tr>
-                    <td>Birth Date: {ed.DOB}</td>
-                    <td>Gender: {ed.EMSEX}</td>
-                    <td>Ethnic Code: {ed.EMETH} {ed.ETDESC}</td>
-                </tr>
-                <tr>
-                    <td>Address: {ed.EMADD1}</td>
-                    <td>{ed.EMADD2}</td>
-                    <td>Address Security: {ed.EMADSC}</td>
-                </tr>
-                <tr>
-                    <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
-                    <td>Country: {ed.EMCTRY}</td>
-                    <td>Permanent Address: Y</td>
-                </tr>
-                <tr>
-                    <td>Location: {ed.EMLOC} {ed.LCNAME}</td>
-                    <td></td>
-                    <td>District: {ed.EMHDT}</td>
-                </tr>
-                <tr>
-                    <td>Sublocation: {ed.EMLOC2} {ed.CLNAME}</td>
-                    <td></td>
-                    <td>School: {ed.EMHSC}</td>
-                </tr>
-                <tr>
-                    <td>Pay Location: {ed.EMLOCP} {ed.LPNAME}</td>
-                    <td></td>
-                    <td>Department: {ed.EMDEPT}</td>
-                </tr>
-                <tr>
-                    <td>Assignment: {ed.EMPASN} {ed.JDTITL}</td>
-                    <td></td>
-                    <td>Room: {ed.EMROOM}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Number: {employeeNumber}</td>
+                        <td>Active: {ed.EMSTAT}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Name: {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
+                        <td>Office Phone: ({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
+                        <td>Home Phone: ({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
+                    </tr>
+                    <tr>
+                        <td>Preferred: {ed.EMPNAM}</td>
+                        <td>Name Prefix: {ed.EMNPRE}</td>
+                        <td>Name Suffix: {ed.EMNSUF}</td>
+                    </tr>
+                    <tr>
+                        <td>Birth Date: {ed.DOB}</td>
+                        <td>Gender: {ed.EMSEX}</td>
+                        <td>Ethnic Code: {ed.EMETH} {ed.ETDESC}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: {ed.EMADD1}</td>
+                        <td>{ed.EMADD2}</td>
+                        <td>Address Security: {ed.EMADSC}</td>
+                    </tr>
+                    <tr>
+                        <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
+                        <td>Country: {ed.EMCTRY}</td>
+                        <td>Permanent Address: Y</td>
+                    </tr>
+                    <tr>
+                        <td>Location: {ed.EMLOC} {ed.LCNAME}</td>
+                        <td></td>
+                        <td>District: {ed.EMHDT}</td>
+                    </tr>
+                    <tr>
+                        <td>Sublocation: {ed.EMLOC2} {ed.CLNAME}</td>
+                        <td></td>
+                        <td>School: {ed.EMHSC}</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Location: {ed.EMLOCP} {ed.LPNAME}</td>
+                        <td></td>
+                        <td>Department: {ed.EMDEPT}</td>
+                    </tr>
+                    <tr>
+                        <td>Assignment: {ed.EMPASN} {ed.JDTITL}</td>
+                        <td></td>
+                        <td>Room: {ed.EMROOM}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <div className={"inputContainer"}>
