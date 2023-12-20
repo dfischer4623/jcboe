@@ -1,9 +1,9 @@
-import { useEffect, useState} from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { email, employeeNumber, setEmployeeData, ed } = props
+    const { email, employeeNumber, ed, setEmployeeData } = props
 
     const navigate = useNavigate();
 
@@ -21,20 +21,20 @@ const ShowEmployee = (props) => {
         navigate("/")
     }
 
-    const [emResp, setEmResp] = useState(null)
-
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`)
-            const resData = await response.json()
-            setEmployeeData(resData)
-            setEmResp(response)
+            try {
+                const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
+                const resData = await response.json()   
+                setEmployeeData(resData)       
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/employeeSearch")
+            }
         }
         fetchData()
-    }, [employeeNumber])
-
-    //console.log(ed)
-    //console.log(emResp.status)
+    },[employeeNumber])
 
     if (ed === null) {
         return <h1>Loading</h1>
