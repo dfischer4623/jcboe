@@ -22,8 +22,8 @@ const EmployeeSearch = (props) => {
                 window.alert(`Wrong Employee Number ` + employeeNumber)
                 setEmployeeData("error")
             }
-            console.log(ed)
             console.log(employeeNumber)
+            console.log(ed)
 
             if (ed === "error") {
                 navigate("/employeeSearch")
