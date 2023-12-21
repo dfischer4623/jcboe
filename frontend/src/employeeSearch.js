@@ -24,15 +24,14 @@ const EmployeeSearch = (props) => {
             }
             console.log(ed)
             console.log(employeeNumber)
+
+            if (ed === "error") {
+                navigate("/employeeSearch")
+            } else {
+                navigate("/showEmployee")
+            }
         }
         fetchData()
-
-        if (ed === "error") {
-            navigate("/employeeSearch")
-        } else {
-            navigate("/showEmployee")
-        }
-
     }
 
     const mainButtonClick = () => {
