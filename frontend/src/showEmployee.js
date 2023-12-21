@@ -25,8 +25,8 @@ const ShowEmployee = (props) => {
         const fetchData = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
-                const resData = await response.json()   
-                setEmployeeData(resData)       
+                const resData = await response.json()
+                setEmployeeData(resData)
             }
             catch (error) {
                 console.log("error", error);
@@ -34,10 +34,10 @@ const ShowEmployee = (props) => {
             }
         }
         fetchData()
-    },[employeeNumber])
+    }, [employeeNumber])
 
     if (ed === null) {
-        return <h1>Loading</h1>
+        return <h1>Loading...</h1>
     }
 
     function normalize(phone) {
@@ -80,7 +80,7 @@ const ShowEmployee = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Number: {employeeNumber}</td>
+                        <td>Number: {ed.EMSSAN}</td>
                         <td>Active: {ed.EMSTAT}</td>
                         <td></td>
                     </tr>
