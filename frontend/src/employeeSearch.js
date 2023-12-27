@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
@@ -7,31 +7,19 @@ const EmployeeSearch = (props) => {
 
     const navigate = useNavigate();
 
-    const [ed, setEmployeeData] = useState(null)
+    const onENButtonClick = async () => {
 
-    const onENButtonClick = () => {
-
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
-                const resData = await response.json()
-                setEmployeeData(resData)
-            }
-            catch (error) {
-                console.log("error", error);
-                window.alert(`Wrong Employee Number ` + employeeNumber)
-                setEmployeeData("error")
-            }
+        try {
+            const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
+            const resData = await response.json()
             console.log(employeeNumber)
-            console.log(ed)
-
-            if (ed === "error") {
-                navigate("/employeeSearch")
-            } else {
-                navigate("/showEmployee")
-            }
+            console.log(resData)
+            navigate("/showEmployee")
         }
-        fetchData()
+        catch (e) {
+            console.log(e);
+            window.alert(`Wrong Employee Number ` + employeeNumber)
+        }
     }
 
     const mainButtonClick = () => {
@@ -42,10 +30,6 @@ const EmployeeSearch = (props) => {
         localStorage.removeItem("user")
         props.setLoggedIn(false)
         navigate("/")
-    }
-
-    if (ed === null) {
-        //return <h1>Loading...</h1>
     }
 
     return <div className={"mainContainer"}>
