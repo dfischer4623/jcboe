@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
 
-    const { email, employeeNumber, setEmployeeNumber } = props
+    const { loggedIn, email, employeeNumber, setEmployeeNumber } = props
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!loggedIn) {
+            localStorage.removeItem("user")
+            props.setLoggedIn(false)
+            navigate("/")
+        }
+    })
 
     const onENButtonClick = async () => {
         let resData = null

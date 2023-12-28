@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Main = (props) => {
@@ -6,6 +6,14 @@ const Main = (props) => {
     const { loggedIn, email } = props
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!loggedIn) {
+            localStorage.removeItem("user")
+            props.setLoggedIn(false)
+            navigate("/")
+        }
+    })
 
     const employeeSearchButtonClick = () => {
         navigate("/employeeSearch")
@@ -19,7 +27,7 @@ const Main = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Main Menu</div>
+            <div>Main</div>
         </div>
         <div className={"inputContainer"}>
             <input

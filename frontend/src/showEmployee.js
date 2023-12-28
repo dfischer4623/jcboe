@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { email, employeeNumber, ed, setEmployeeData } = props
+    const { loggedIn, email, employeeNumber, ed, setEmployeeData } = props
 
     const navigate = useNavigate();
 
@@ -22,6 +22,11 @@ const ShowEmployee = (props) => {
     }
 
     useEffect(() => {
+        if (!loggedIn) {
+            localStorage.removeItem("user")
+            props.setLoggedIn(false)
+            navigate("/")
+        }
         const fetchData = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
@@ -34,7 +39,7 @@ const ShowEmployee = (props) => {
             }
         }
         fetchData()
-    }, [employeeNumber])
+    }, [])
 
     if (ed === null) {
         return <h1>Loading...</h1>
