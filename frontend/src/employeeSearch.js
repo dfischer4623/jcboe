@@ -8,16 +8,20 @@ const EmployeeSearch = (props) => {
     const navigate = useNavigate();
 
     const onENButtonClick = async () => {
-
+        let resData = null
         try {
             const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
-            const resData = await response.json()
-            console.log(employeeNumber)
-            console.log(resData)
-            navigate("/showEmployee")
+            resData = await response.json()
+            //console.log(resData.EMSSAN)
+            //console.log(employeeNumber)
+            if (resData.EMSSAN == employeeNumber) {
+                navigate("/showEmployee")
+            } else {
+                window.alert(`Wrong Employee Number ` + employeeNumber)
+            }
         }
-        catch (e) {
-            console.log(e);
+        catch (error) {
+            //console.log(error);
             window.alert(`Wrong Employee Number ` + employeeNumber)
         }
     }
@@ -47,7 +51,7 @@ const EmployeeSearch = (props) => {
                 className={"inputButton"}
                 type="button"
                 onClick={onENButtonClick}
-                value={"Show Employee Information"} />
+                value={"Show Employee"} />
         </div>
         <div className={"inputContainer"}>
             <input
