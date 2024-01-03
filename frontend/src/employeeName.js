@@ -7,8 +7,6 @@ const EmployeeName = (props) => {
 
     const navigate = useNavigate();
 
-    console.log(employeeName)
-
     useEffect(() => {
         if (!loggedIn) {
             localStorage.removeItem("user")
@@ -16,10 +14,12 @@ const EmployeeName = (props) => {
             navigate("/")
         }
         const fetchData = async () => {
+            let resData = null
             try {
-                const response = await fetch(`http://localhost:8080/api/employees/name?employeeName=${employeeName}`);
-                const resData = await response.json()
-                //setEmployeeData(resData)
+                const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
+                resData = await response.json()
+                const ed = resData
+                console.log(ed)
             }
             catch (error) {
                 console.log("error", error);
@@ -27,7 +27,7 @@ const EmployeeName = (props) => {
             }
         }
         fetchData()
-    })
+    }, [])
 
     const employeeSearchButtonClick = () => {
         navigate("/employeeSearch")

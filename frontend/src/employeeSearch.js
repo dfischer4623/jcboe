@@ -20,8 +20,6 @@ const EmployeeSearch = (props) => {
         try {
             const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
             resData = await response.json()
-            //console.log(resData.EMSSAN)
-            //console.log(employeeNumber)
             if (resData.EMSSAN == employeeNumber) {
                 navigate("/showEmployee")
             } else {
