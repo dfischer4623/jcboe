@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
 
-    const { loggedIn, email, employeeNumber, setEmployeeNumber } = props
+    const { loggedIn, email, employeeNumber, employeeName, setEmployeeNumber, setEmployeeName } = props
 
     const navigate = useNavigate();
 
@@ -34,6 +34,10 @@ const EmployeeSearch = (props) => {
         }
     }
 
+    const onENameButtonClick = () => {
+        navigate("/employeeName")
+    }
+
     const mainButtonClick = () => {
         navigate("/main")
     }
@@ -51,8 +55,20 @@ const EmployeeSearch = (props) => {
         <br />
         <div className={"inputButtonContainer"}>
             <input
+                value={employeeName}
+                placeholder="Employee Last Name"
+                onChange={ev => setEmployeeName(ev.target.value)}
+                className={"inputBox"} />
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={onENameButtonClick}
+                value={"Employee Name Search"} />
+        </div>
+        <div className={"inputButtonContainer"}>
+            <input
                 value={employeeNumber}
-                placeholder="Enter Employee Number"
+                placeholder="Employee Number"
                 onChange={ev => setEmployeeNumber(ev.target.value)}
                 className={"inputBox"} />
             <input
