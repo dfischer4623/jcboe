@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeName = (props) => {
 
-    const { loggedIn, email } = props
+    const { loggedIn, email, employeeName } = props
 
     const navigate = useNavigate();
+
+    console.log(employeeName)
 
     useEffect(() => {
         if (!loggedIn) {
@@ -13,6 +15,18 @@ const EmployeeName = (props) => {
             props.setLoggedIn(false)
             navigate("/")
         }
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`http://localhost:8080/api/employees/name?employeeName=${employeeName}`);
+                const resData = await response.json()
+                //setEmployeeData(resData)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/employeeSearch")
+            }
+        }
+        fetchData()
     })
 
     const employeeSearchButtonClick = () => {
@@ -27,7 +41,7 @@ const EmployeeName = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Main</div>
+            <div>Employee Name Search</div>
         </div>
         <div className={"inputContainer"}>
             <input
