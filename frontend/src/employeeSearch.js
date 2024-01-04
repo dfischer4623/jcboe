@@ -27,13 +27,28 @@ const EmployeeSearch = (props) => {
             }
         }
         catch (error) {
-            //console.log(error);
+            console.log(error);
             window.alert(`Wrong Employee Number ` + employeeNumber)
         }
     }
 
-    const onENameButtonClick = () => {
-        navigate("/employeeName")
+    const onENameButtonClick = async () => {
+        let resData = null
+        try {
+            const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
+            resData = await response.json()
+            console.log(resData)
+            if (resData.length > 0) {
+                navigate("/employeeName")
+            } else {
+                window.alert(`No employees found with name ` + employeeName)
+            }
+        }
+        catch (error) {
+            console.log("error", error);
+            navigate("/employeeSearch")
+        }
+        
     }
 
     const mainButtonClick = () => {

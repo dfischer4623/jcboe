@@ -3,11 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeName = (props) => {
 
-    let ed=[]
-
-    const { loggedIn, email, employeeName } = props
+    const { loggedIn, email, employeeName, es, setEmployeeNames } = props
 
     const navigate = useNavigate();
+
+    const employeeSearchButtonClick = () => {
+        navigate("/employeeSearch")
+    }
+
+    const logoutButtonClick = () => {
+        localStorage.removeItem("user")
+        props.setLoggedIn(false)
+        navigate("/")
+    }
 
     useEffect(() => {
         if (!loggedIn) {
@@ -19,9 +27,9 @@ const EmployeeName = (props) => {
             try {
                 const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
                 const resData = await response.json()
-                ed=resData
+                setEmployeeNames(resData)
                 console.log(resData)
-                console.log(ed)
+                console.log(es)
             }
             catch (error) {
                 console.log("error", error);
@@ -29,17 +37,7 @@ const EmployeeName = (props) => {
             }
         }
         fetchData()
-    }, [])
-
-    const employeeSearchButtonClick = () => {
-        navigate("/employeeSearch")
-    }
-
-    const logoutButtonClick = () => {
-        localStorage.removeItem("user")
-        props.setLoggedIn(false)
-        navigate("/")
-    }
+    },[])
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
