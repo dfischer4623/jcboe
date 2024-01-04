@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeName = (props) => {
 
+    let ed=[]
+
     const { loggedIn, email, employeeName } = props
 
     const navigate = useNavigate();
@@ -14,11 +16,11 @@ const EmployeeName = (props) => {
             navigate("/")
         }
         const fetchData = async () => {
-            let resData = null
             try {
                 const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
-                resData = await response.json()
-                const ed = resData
+                const resData = await response.json()
+                ed=resData
+                console.log(resData)
                 console.log(ed)
             }
             catch (error) {
@@ -43,6 +45,23 @@ const EmployeeName = (props) => {
         <div className={"titleContainer"}>
             <div>Employee Name Search</div>
         </div>
+
+        <br />
+        <div className={"empTableContainer"}>
+            <table>
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}
