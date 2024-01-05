@@ -49,7 +49,7 @@ const EmployeeName = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th> </th>
+                        <th>{es[0].EMSSAN} </th>
                         <th> </th>
                         <th> </th>
                     </tr>
