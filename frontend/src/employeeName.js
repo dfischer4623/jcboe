@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeName = (props) => {
 
-    const { loggedIn, email, employeeName, es, setEmployeeNames } = props
+    const { loggedIn, email, setEmployeeNumber, employeeName, es, setEmployeeNames } = props
 
     const navigate = useNavigate();
 
@@ -37,29 +37,34 @@ const EmployeeName = (props) => {
             }
         }
         fetchData()
-    },[])
+    }, [])
+
+    const employeeSelected = (key) => {
+        setEmployeeNumber(key)
+        navigate("/showEmployee")
+    }
+
+    let employeesFormatted = es.map((ess) => {
+        return (
+            <div key={ess.EMSSAN}>
+                <a href="#" onClick={() => employeeSelected(ess.EMSSAN)}>
+                    {ess.EMSSAN}
+                </a>
+                {ess.EMLNAM}
+                {ess.EMFNAM}
+            </div >
+        )
+    })
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Employee Name Search</div>
         </div>
-
         <br />
-        <div className={"empTableContainer"}>
-            <table>
-                <thead>
-                    <tr>
-                        <th>{es[0].EMSSAN} </th>
-                        <th> </th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
+        <div>
+            {employeesFormatted}
         </div>
-
+        <br />
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}
