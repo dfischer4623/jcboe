@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
 
-    const { loggedIn, email, employeeNumber, employeeName, setEmployeeNumber, setEmployeeName } = props
+    const { loggedIn, email, employeeNumber, employeeName, setEmployeeNumber, setEmployeeName, setEmployeeNames } = props
 
     const navigate = useNavigate();
 
@@ -37,6 +37,7 @@ const EmployeeSearch = (props) => {
         try {
             const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
             resData = await response.json()
+            setEmployeeNames(resData)
             console.log(resData)
             if (resData.length > 0) {
                 navigate("/employeeName")
