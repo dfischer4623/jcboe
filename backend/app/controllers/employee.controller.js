@@ -4,10 +4,15 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all employees from the database.
 exports.findAll = (req, res) => {
-    const employeeName = req.query.name;
+    var employeeName = req.query.name
     var condition = employeeName ? { EMLNAM: { [Op.like]: `%${employeeName}%` } } : null;
-    console.log(req.query)
-    Employee.findAll({ where: condition })
+    var sortOrder = [
+        ['EMLNAM', 'ASC'],
+        ['EMFNAM', 'ASC'],
+    ]
+    //console.log(condition + ' ' + sortOrder)
+    //console.log(req.query)
+    Employee.findAll({ where: condition, order: sortOrder })
         .then(data => {
             res.send(data);
         })

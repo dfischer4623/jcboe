@@ -29,7 +29,6 @@ const EmployeeName = (props) => {
                 const resData = await response.json()
                 setEmployeeNames(resData)
                 console.log(resData)
-                console.log(es)
             }
             catch (error) {
                 console.log("error", error);
