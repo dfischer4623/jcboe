@@ -45,13 +45,14 @@ const EmployeeName = (props) => {
 
     let employeesFormatted = es.map((ess) => {
         return (
-            <div key={ess.EMSSAN}>
-                <a href="#" onClick={() => employeeSelected(ess.EMSSAN)}>
+            <tr>
+                <td><a href="#" onClick={() => employeeSelected(ess.EMSSAN)}>
                     {ess.EMSSAN}
-                </a>
-                {ess.EMLNAM}
-                {ess.EMFNAM}
-            </div >
+                </a></td>
+                <td>{ess.EMLNAM}</td>
+                <td>{ess.EMFNAM}</td>
+            </tr>
+
         )
     })
 
@@ -61,7 +62,18 @@ const EmployeeName = (props) => {
         </div>
         <br />
         <div>
-            {employeesFormatted}
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="3">The table header</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {employeesFormatted}
+                    </tbody>
+                </table>
+            </div >
         </div>
         <br />
         <div className={"inputContainer"}>
@@ -80,7 +92,7 @@ const EmployeeName = (props) => {
         </div>
         <br />
         <div>Your email is {email}</div>
-    </div>
+    </div >
 }
 
 export default EmployeeName

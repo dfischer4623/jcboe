@@ -81,3 +81,8 @@ td {
   font-weight: 500;
   border: .5px solid rgb(217, 211, 211)
 }
+
+table,
+td {
+  border: 1px solid #333;
+}
