@@ -69,6 +69,16 @@ const ShowEmployee = (props) => {
         zipCode = '0' + zipCode;
     }
 
+    var zipCodeP = ed.EMPZP1.toString();
+    if (zipCodeP.length !== 5) {
+        zipCodeP = '0' + zipCodeP;
+    }
+
+    var EMVETC = null
+    if (ed.EMVETC == 'DSTSTM') { 
+        EMVETC = 'DESERT STORM' 
+    } 
+
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>
@@ -133,6 +143,31 @@ const ShowEmployee = (props) => {
                         <td>Assignment: {ed.EMPASN} {ed.JDTITL}</td>
                         <td></td>
                         <td>Room: {ed.EMROOM}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: {ed.EMPAD1}</td>
+                        <td>{ed.EMPAD2}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>City/State/Zip: {ed.EMPCTY}, {ed.EMPST} {zipCodeP}</td>
+                        <td>Country: {ed.EMPCTR}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Class: {ed.EMCLS} </td>
+                        <td>Veteran: {ed.EMVETC}</td>
+                        <td>Veteran Code: {EMVETC} </td>
+                    </tr>
+                    <tr>
+                        <td>Drug Test?: {ed.EMDRUG} </td>
+                        <td>Date Administered: {ed.EMDTDT}</td>
+                        <td>Date Failed: {ed.EMDFDT}</td>
+                    </tr>
+                    <tr>
+                        <td>Spouse: {ed.EMSPSE} {ed.EMMNSP} {ed.EMLNSP}</td>
+                        <td>Social Security #: {ed.EMSPS}</td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
