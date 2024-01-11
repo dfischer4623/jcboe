@@ -39,7 +39,7 @@ const EmployeeSearch = (props) => {
             resData = await response.json()
             setEmployeeNames(resData)
             console.log(resData)
-            if (resData.length > 0) {
+            if (resData.length > 0 && employeeName !== '') {
                 navigate("/employeeName")
             } else {
                 window.alert(`No employees found with name ` + employeeName)
