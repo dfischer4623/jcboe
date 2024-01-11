@@ -75,9 +75,47 @@ const ShowEmployee = (props) => {
     }
 
     var EMVETC = null
-    if (ed.EMVETC == 'DSTSTM') { 
-        EMVETC = 'DESERT STORM' 
-    } 
+    if (ed.EMVETC == 'DSTSTM') {
+        EMVETC = 'DESERT STORM'
+    }
+
+    if (ed.TRD == '00/00/1900' || ed.TRD == '00/00/2000') {
+        ed.TRD = ''
+    }
+
+    if (ed.SCD == '00/00/0000' || ed.SCD == '00/00/1900' || ed.SCD == '00/00/2000') {
+        ed.SCD = ''
+    }
+
+    if (ed.EMADAT !== 0) {
+        var dateString = ed.EMADAT.toString();
+        var year = dateString.substring(0, 2);
+        if (year > '30') {
+            year = '19'+year
+        } else {
+            year = '20'+year
+        }
+        var month = dateString.substring(2, 4);
+        var day = dateString.substring(4, 6);
+        var EMADAT = month+'/'+day+'/'+year
+    } else {
+        EMADAT = ''
+    }
+
+    if (ed.EMSRDT !== 0) {
+        var dateString = ed.EMSRDT.toString();
+        var year = dateString.substring(0, 2);
+        if (year > '30') {
+            year = '19'+year
+        } else {
+            year = '20'+year
+        }
+        var month = dateString.substring(2, 4);
+        var day = dateString.substring(4, 6);
+        var EMSRDT = month+'/'+day+'/'+year
+    } else {
+        EMSRDT = ''
+    }
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
@@ -175,14 +213,14 @@ const ShowEmployee = (props) => {
                         <td>State: {ed.EMSST}</td>
                     </tr>
                     <tr>
-                        <td>Application Date: {ed.EMADAT}</td>
+                        <td>Application Date: {EMADAT}</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Full Time Hire Date: {ed.HID}</td>
                         <td></td>
-                        <td>Seniority Date: {ed.EMSRDT}</td>
+                        <td>Seniority Date: {EMSRDT}</td>
                     </tr>
                     <tr>
                         <td>Original Hire Date: {ed.OHD}</td>
