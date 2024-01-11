@@ -169,6 +169,56 @@ const ShowEmployee = (props) => {
                         <td>Social Security #: {ed.EMSPS}</td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td>Previous Service Credit: {ed.EMPREV}</td>
+                        <td>District: {ed.EMSDST}</td>
+                        <td>State: {ed.EMSST}</td>
+                    </tr>
+                    <tr>
+                        <td>Application Date: {ed.EMADAT}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Full Time Hire Date: {ed.HID}</td>
+                        <td></td>
+                        <td>Seniority Date: {ed.EMSRDT}</td>
+                    </tr>
+                    <tr>
+                        <td>Original Hire Date: {ed.OHD}</td>
+                        <td></td>
+                        <td>Seniority Number: {ed.EMSR}</td>
+                    </tr>
+                    <tr>
+                        <td>Termination Date: {ed.TRD}</td>
+                        <td></td>
+                        <td>Salary Change Date: {ed.SCD}</td>
+                    </tr>
+                    <tr>
+                        <td>Title Change Date: {ed.HID}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Permanent Civil Service Date:</td>
+                        <td></td>
+                        <td>Leave without Pay: N</td>
+                    </tr>
+                    <tr>
+                        <td>Last Update for Longevity: {ed.EMMSC1}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Next Update for Longevity: {ed.EMMSC2}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total Year of Longevity: {ed.EMMSC3}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
