@@ -440,6 +440,66 @@ module.exports = (sequelize, Sequelize) => {
     JDTITL: {
       type: Sequelize.STRING(50),
       allowNull: true
+    },
+    EXNUM: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    EXPENS: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    EX1012: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    EXFRPC: {
+      type: Sequelize.FLOAT,
+      allowNull: true
+    },
+    EXTYPE: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    EXJOB: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    EXSALO: {
+      type: Sequelize.FLOAT,
+      allowNull: true
+    },
+    EXPAYP: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    EXCNTB: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    EXSEXP: {
+      type: Sequelize.FLOAT,
+      allowNull: true
+    },
+    EXDEXP: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    EXOEXP: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    MEMBER: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    USG: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    BUSY: {
+      type: Sequelize.INTEGER,
+      allowNull: true
     }
   });
  

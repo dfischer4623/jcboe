@@ -44,6 +44,7 @@ var _PFRS123 = require("./PFRS123");
 var _PFRS251 = require("./PFRS251");
 var _PFRS860 = require("./PFRS860");
 var _PGRD450 = require("./PGRD450");
+var _PNJF301 = require("./PNJF301");
 var _PPAI122 = require("./PPAI122");
 var _PPAI251 = require("./PPAI251");
 var _PPAI251A = require("./PPAI251A");
@@ -182,6 +183,7 @@ function initModels(sequelize) {
   var PFRS251 = _PFRS251(sequelize, DataTypes);
   var PFRS860 = _PFRS860(sequelize, DataTypes);
   var PGRD450 = _PGRD450(sequelize, DataTypes);
+  var PNJF301 = _PNJF301(sequelize, DataTypes);
   var PPAI122 = _PPAI122(sequelize, DataTypes);
   var PPAI251 = _PPAI251(sequelize, DataTypes);
   var PPAI251A = _PPAI251A(sequelize, DataTypes);
@@ -321,6 +323,7 @@ function initModels(sequelize) {
     PFRS251,
     PFRS860,
     PGRD450,
+    PNJF301,
     PPAI122,
     PPAI251,
     PPAI251A,
