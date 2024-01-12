@@ -257,6 +257,31 @@ const ShowEmployee = (props) => {
                         <td></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td>Pension Number: {ed.EXPENS}</td>
+                        <td>10/12 Column Value: {ed.EX1012}</td>
+                        <td>Pension Full Rate %: {ed.EXFRPC}</td>
+                    </tr>
+                    <tr>
+                        <td>TPAF,PERS, CNTY or NOPP: {ed.EXTYPE}</td>
+                        <td>Job Code for GTL Addenda: {ed.EXJOB}</td>
+                        <td>GTL Salary Override: {ed.EXSALO}</td>
+                    </tr>
+                    <tr>
+                        <td>Number of GTL Distributions: {ed.EXPAYP}</td>
+                        <td>Does Employee Contribute to Cost of Life Insurance?: {ed.EXCNTB}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Years of Experience:</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>State: {ed.EXSEXP}</td>
+                        <td>District: {ed.EXDEXP}</td>
+                        <td>Out-of-State: {ed.EXOEXP}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
