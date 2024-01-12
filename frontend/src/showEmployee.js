@@ -74,6 +74,14 @@ const ShowEmployee = (props) => {
         zipCodeP = '0' + zipCodeP;
     }
 
+    if (ed.EMSEX == 'F') {
+        var GENDER = 'FEMALE'
+    } else if (ed.EMSEX == 'M') {
+        GENDER = 'MALE'
+    } else {
+        GENDER = 'OTHER'
+    }
+
     var EMVETC = null
     if (ed.EMVETC == 'DSTSTM') {
         EMVETC = 'DESERT STORM'
@@ -149,7 +157,7 @@ const ShowEmployee = (props) => {
                     </tr>
                     <tr>
                         <td>Birth Date: {ed.DOB}</td>
-                        <td>Gender: {ed.EMSEX}</td>
+                        <td>Gender: {ed.EMSEX} {GENDER}</td>
                         <td>Ethnic Code: {ed.EMETH} {ed.ETDESC}</td>
                     </tr>
                     <tr>

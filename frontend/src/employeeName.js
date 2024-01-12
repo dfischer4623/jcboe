@@ -51,6 +51,8 @@ const EmployeeName = (props) => {
                 </a></td>
                 <td>{ess.EMLNAM}</td>
                 <td>{ess.EMFNAM}</td>
+                <td>{ess.LCNAME}</td>
+                <td>{ess.EMSTAT}</td>
             </tr>
 
         )
@@ -62,18 +64,23 @@ const EmployeeName = (props) => {
         </div>
         <br />
         <div>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="3">Search Name: {employeeName}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {employeesFormatted}
-                    </tbody>
-                </table>
-            </div >
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="5">Search Name: {employeeName}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Emp #</td>
+                        <td>Last Name</td>
+                        <td>First Name</td>
+                        <td>Location</td>
+                        <td>Active</td>
+                    </tr>
+                    {employeesFormatted}
+                </tbody>
+            </table>
         </div>
         <br />
         <div className={"inputContainer"}>
