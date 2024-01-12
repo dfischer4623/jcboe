@@ -103,15 +103,15 @@ const ShowEmployee = (props) => {
     }
 
     if (ed.EMSRDT !== 0) {
-        var dateString = ed.EMSRDT.toString();
-        var year = dateString.substring(0, 2);
+        dateString = ed.EMSRDT.toString();
+        year = dateString.substring(0, 2);
         if (year > '30') {
             year = '19'+year
         } else {
             year = '20'+year
         }
-        var month = dateString.substring(2, 4);
-        var day = dateString.substring(4, 6);
+        month = dateString.substring(2, 4);
+        day = dateString.substring(4, 6);
         var EMSRDT = month+'/'+day+'/'+year
     } else {
         EMSRDT = ''
