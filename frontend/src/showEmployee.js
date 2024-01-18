@@ -99,13 +99,13 @@ const ShowEmployee = (props) => {
         var dateString = ed.EMADAT.toString();
         var year = dateString.substring(0, 2);
         if (year > '30') {
-            year = '19'+year
+            year = '19' + year
         } else {
-            year = '20'+year
+            year = '20' + year
         }
         var month = dateString.substring(2, 4);
         var day = dateString.substring(4, 6);
-        var EMADAT = month+'/'+day+'/'+year
+        var EMADAT = month + '/' + day + '/' + year
     } else {
         EMADAT = ''
     }
@@ -114,13 +114,13 @@ const ShowEmployee = (props) => {
         dateString = ed.EMSRDT.toString();
         year = dateString.substring(0, 2);
         if (year > '30') {
-            year = '19'+year
+            year = '19' + year
         } else {
-            year = '20'+year
+            year = '20' + year
         }
         month = dateString.substring(2, 4);
         day = dateString.substring(4, 6);
-        var EMSRDT = month+'/'+day+'/'+year
+        var EMSRDT = month + '/' + day + '/' + year
     } else {
         EMSRDT = ''
     }
@@ -136,159 +136,222 @@ const ShowEmployee = (props) => {
                     <tr>
                         <th> </th>
                         <th> </th>
-                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Number: {ed.EMSSAN}</td>
-                        <td>Active: {ed.EMSTAT}</td>
-                        <td></td>
+                        <td>Employee Number: </td>
+                        <td>{ed.EMSSAN}</td>
                     </tr>
                     <tr>
-                        <td>Name: {ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
-                        <td>Office Phone: ({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
-                        <td>Home Phone: ({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
+                        <td>Active: </td>
+                        <td>{ed.EMSTAT}</td>
                     </tr>
                     <tr>
-                        <td>Preferred: {ed.EMPNAM}</td>
-                        <td>Name Prefix: {ed.EMNPRE}</td>
-                        <td>Name Suffix: {ed.EMNSUF}</td>
+                        <td>Name: </td>
+                        <td>{ed.EMLNAM}, {ed.EMFNAM} {ed.EMMNAM}</td>
                     </tr>
                     <tr>
-                        <td>Birth Date: {ed.DOB}</td>
-                        <td>Gender: {ed.EMSEX} {GENDER}</td>
-                        <td>Ethnic Code: {ed.EMETH} {ed.ETDESC}</td>
+                        <td>Office Phone: </td>
+                        <td>({ed.EMOTL0}) {ophone} ext. {ed.EMEXTN} {ed.EMOTLS}</td>
                     </tr>
                     <tr>
-                        <td>Address: {ed.EMADD1}</td>
+                        <td>Home Phone: </td>
+                        <td>({ed.EMHTL0}) {hphone} {ed.EMHTLS}</td>
+                    </tr>
+                    <tr>
+                        <td>Birth Date: </td>
+                        <td>{ed.DOB}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender: </td>
+                        <td>{ed.EMSEX} {GENDER}</td>
+                    </tr>
+                    <tr>
+                        <td>Ethnic Code: </td>
+                        <td>{ed.EMETH} {ed.ETDESC}</td>
+                    </tr>
+                    <tr>
+                        <td>Address Security: </td>
+                        <td>{ed.EMADSC}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td>{ed.EMADD1}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
                         <td>{ed.EMADD2}</td>
-                        <td>Address Security: {ed.EMADSC}</td>
+                    </tr>
+
+                    <tr>
+                        <td>City/State/Zip: </td>
+                        <td>{ed.EMCITY}, {ed.EMST} {zipCode}</td>
+
                     </tr>
                     <tr>
-                        <td>City/State/Zip: {ed.EMCITY}, {ed.EMST} {zipCode}</td>
-                        <td>Country: {ed.EMCTRY}</td>
-                        <td>Permanent Address: Y</td>
+                        <td>Country: </td>
+                        <td>{ed.EMCTRY}</td>
                     </tr>
                     <tr>
-                        <td>Location: {ed.EMLOC} {ed.LCNAME}</td>
-                        <td></td>
-                        <td>District: {ed.EMHDT}</td>
+                        <td>Permanent Address: </td>
+                        <td>Y</td>
                     </tr>
                     <tr>
-                        <td>Sublocation: {ed.EMLOC2} {ed.CLNAME}</td>
-                        <td></td>
-                        <td>School: {ed.EMHSC}</td>
+                        <td>Location: </td>
+                        <td>{ed.EMLOC} {ed.LCNAME}</td>
+
                     </tr>
                     <tr>
-                        <td>Pay Location: {ed.EMLOCP} {ed.LPNAME}</td>
-                        <td></td>
-                        <td>Department: {ed.EMDEPT}</td>
+                        <td>District: </td>
+                        <td>{ed.EMHDT}</td>
                     </tr>
                     <tr>
-                        <td>Assignment: {ed.EMPASN} {ed.JDTITL}</td>
-                        <td></td>
-                        <td>Room: {ed.EMROOM}</td>
+                        <td>Sublocation: </td>
+                        <td>{ed.EMLOC2} {ed.CLNAME}</td>
+
                     </tr>
                     <tr>
-                        <td>Address: {ed.EMPAD1}</td>
+                        <td>School: </td>
+                        <td>{ed.EMHSC}</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Location: </td>
+                        <td>{ed.EMLOCP} {ed.LPNAME}</td>
+                    </tr>
+                    <tr>
+                        <td>Department: </td>
+                        <td>{ed.EMDEPT}</td>
+                    </tr>
+                    <tr>
+                        <td>Assignment: </td>
+                        <td>{ed.EMPASN} {ed.JDTITL}</td>
+
+                    </tr>
+                    <tr>
+                        <td>Room: </td>
+                        <td>{ed.EMROOM}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td>{ed.EMPAD1}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
                         <td>{ed.EMPAD2}</td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td>City/State/Zip: {ed.EMPCTY}, {ed.EMPST} {zipCodeP}</td>
-                        <td>Country: {ed.EMPCTR}</td>
-                        <td></td>
+                        <td>City/State/Zip: </td>
+                        <td>{ed.EMPCTY}, {ed.EMPST} {zipCodeP}</td>
                     </tr>
                     <tr>
-                        <td>Class: {ed.EMCLS} </td>
-                        <td>Veteran: {ed.EMVETC}</td>
-                        <td>Veteran Code: {EMVETC} </td>
+                        <td>Country: </td>
+                        <td>{ed.EMPCTR}</td>
                     </tr>
                     <tr>
-                        <td>Drug Test?: {ed.EMDRUG} </td>
-                        <td>Date Administered: {ed.EMDTDT}</td>
-                        <td>Date Failed: {ed.EMDFDT}</td>
+                        <td>Previous Service Credit: </td>
+                        <td>{ed.EMPREV}</td>
                     </tr>
                     <tr>
-                        <td>Spouse: {ed.EMSPSE} {ed.EMMNSP} {ed.EMLNSP}</td>
-                        <td>Social Security #: {ed.EMSPS}</td>
-                        <td></td>
+                        <td>District: </td>
+                        <td>{ed.EMSDST}</td>
                     </tr>
                     <tr>
-                        <td>Previous Service Credit: {ed.EMPREV}</td>
-                        <td>District: {ed.EMSDST}</td>
-                        <td>State: {ed.EMSST}</td>
+                        <td>State: </td>
+                        <td>{ed.EMSST}</td>
                     </tr>
                     <tr>
-                        <td>Application Date: {EMADAT}</td>
-                        <td></td>
-                        <td></td>
+                        <td>Application Date: </td>
+                        <td>{EMADAT}</td>
                     </tr>
                     <tr>
-                        <td>Full Time Hire Date: {ed.HID}</td>
-                        <td></td>
-                        <td>Seniority Date: {EMSRDT}</td>
+                        <td>Full Time Hire Date: </td>
+                        <td>{ed.HID}</td>
                     </tr>
                     <tr>
-                        <td>Original Hire Date: {ed.OHD}</td>
-                        <td></td>
-                        <td>Seniority Number: {ed.EMSR}</td>
+                        <td>Seniority Date: </td>
+                        <td>{EMSRDT}</td>
                     </tr>
                     <tr>
-                        <td>Termination Date: {ed.TRD}</td>
-                        <td></td>
-                        <td>Salary Change Date: {ed.SCD}</td>
+                        <td>Original Hire Date: </td>
+                        <td>{ed.OHD}</td>
+
                     </tr>
                     <tr>
-                        <td>Title Change Date: {ed.HID}</td>
-                        <td></td>
-                        <td></td>
+                        <td>Seniority Number: </td>
+                        <td>{ed.EMSR}</td>
                     </tr>
                     <tr>
-                        <td>Permanent Civil Service Date:</td>
-                        <td></td>
-                        <td>Leave without Pay: N</td>
+                        <td>Termination Date: </td>
+                        <td>{ed.TRD}</td>
                     </tr>
                     <tr>
-                        <td>Last Update for Longevity: {ed.EMMSC1}</td>
-                        <td></td>
-                        <td></td>
+                        <td>Salary Change Date: </td>
+                        <td>{ed.SCD}</td>
                     </tr>
                     <tr>
-                        <td>Next Update for Longevity: {ed.EMMSC2}</td>
-                        <td></td>
-                        <td></td>
+                        <td>Title Change Date: </td>
+                        <td>{ed.HID}</td>
                     </tr>
                     <tr>
-                        <td>Total Year of Longevity: {ed.EMMSC3}</td>
-                        <td></td>
-                        <td></td>
+                        <td>Last Update for Longevity: </td>
+                        <td>{ed.EMMSC1}</td>
                     </tr>
                     <tr>
-                        <td>Pension Number: {ed.EXPENS}</td>
-                        <td>10/12 Column Value: {ed.EX1012}</td>
-                        <td>Pension Full Rate %: {ed.EXFRPC}</td>
+                        <td>Next Update for Longevity: </td>
+                        <td>{ed.EMMSC2}</td>
                     </tr>
                     <tr>
-                        <td>TPAF,PERS, CNTY or NOPP: {ed.EXTYPE}</td>
-                        <td>Job Code for GTL Addenda: {ed.EXJOB}</td>
-                        <td>GTL Salary Override: {ed.EXSALO}</td>
+                        <td>Total Year of Longevity: </td>
+                        <td>{ed.EMMSC3}</td>
                     </tr>
                     <tr>
-                        <td>Number of GTL Distributions: {ed.EXPAYP}</td>
-                        <td>Does Employee Contribute to Cost of Life Insurance?: {ed.EXCNTB}</td>
-                        <td></td>
+                        <td>Pension Number: </td>
+                        <td>{ed.EXPENS}</td>
+                    </tr>
+                    <tr>
+                        <td>10/12 Column Value: </td>
+                        <td>{ed.EX1012}</td>
+                    </tr>
+                    <tr>
+                        <td>Pension Full Rate %: </td>
+                        <td>{ed.EXFRPC}</td>
+                    </tr>
+                    <tr>
+                        <td>TPAF,PERS, CNTY or NOPP: </td>
+                        <td>{ed.EXTYPE}</td>
+                    </tr>
+                    <tr>
+                        <td>Job Code for GTL Addenda: </td>
+                        <td>{ed.EXJOB}</td>
+                    </tr>
+                    <tr>
+                        <td>GTL Salary Override: </td>
+                        <td>{ed.EXSALO}</td>
+                    </tr>
+                    <tr>
+                        <td>Number of GTL Distributions: </td>
+                        <td>{ed.EXPAYP}</td>
+                    </tr>
+                    <tr>
+                        <td>Does Employee Contribute to Cost of Life Insurance?: </td>
+                        <td>{ed.EXCNTB}</td>
                     </tr>
                     <tr>
                         <td>Years of Experience:</td>
                         <td></td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td>State: {ed.EXSEXP}</td>
-                        <td>District: {ed.EXDEXP}</td>
-                        <td>Out-of-State: {ed.EXOEXP}</td>
+                        <td>State: </td>
+                        <td>{ed.EXSEXP}</td>
+                    </tr>
+                    <tr>
+                        <td>District: </td>
+                        <td>{ed.EXDEXP}</td>
+                    </tr>
+                    <tr>
+                        <td>Out-of-State: </td>
+                        <td>{ed.EXOEXP}</td>
                     </tr>
                 </tbody>
             </table>
