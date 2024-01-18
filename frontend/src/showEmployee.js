@@ -334,7 +334,7 @@ const ShowEmployee = (props) => {
                         <td>{ed.EXPAYP}</td>
                     </tr>
                     <tr>
-                        <td>Does Employee Contribute to Cost of Life Insurance?: </td>
+                        <td>Employee Contribute to Cost of Life Insurance?: </td>
                         <td>{ed.EXCNTB}</td>
                     </tr>
                     <tr>
