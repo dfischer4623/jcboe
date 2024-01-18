@@ -118,7 +118,6 @@ var _PPAY765L = require("./PPAY765L");
 var _PPAY775 = require("./PPAY775");
 var _PPAY776 = require("./PPAY776");
 var _PPAY801 = require("./PPAY801");
-var _PPAY802 = require("./PPAY802");
 var _PPAY845 = require("./PPAY845");
 var _PPAY995 = require("./PPAY995");
 var _PPUR301 = require("./PPUR301");
@@ -136,6 +135,7 @@ var _PSTU320D = require("./PSTU320D");
 var _PSTU350D = require("./PSTU350D");
 var _PSTU360D = require("./PSTU360D");
 var _peis301s = require("./peis301s");
+var _ppay802s = require("./ppay802s");
 
 function initModels(sequelize) {
   var PACP210 = _PACP210(sequelize, DataTypes);
@@ -257,7 +257,6 @@ function initModels(sequelize) {
   var PPAY775 = _PPAY775(sequelize, DataTypes);
   var PPAY776 = _PPAY776(sequelize, DataTypes);
   var PPAY801 = _PPAY801(sequelize, DataTypes);
-  var PPAY802 = _PPAY802(sequelize, DataTypes);
   var PPAY845 = _PPAY845(sequelize, DataTypes);
   var PPAY995 = _PPAY995(sequelize, DataTypes);
   var PPUR301 = _PPUR301(sequelize, DataTypes);
@@ -275,6 +274,7 @@ function initModels(sequelize) {
   var PSTU350D = _PSTU350D(sequelize, DataTypes);
   var PSTU360D = _PSTU360D(sequelize, DataTypes);
   var peis301s = _peis301s(sequelize, DataTypes);
+  var ppay802s = _ppay802s(sequelize, DataTypes);
 
 
   return {
@@ -397,7 +397,6 @@ function initModels(sequelize) {
     PPAY775,
     PPAY776,
     PPAY801,
-    PPAY802,
     PPAY845,
     PPAY995,
     PPUR301,
@@ -415,6 +414,7 @@ function initModels(sequelize) {
     PSTU350D,
     PSTU360D,
     peis301s,
+    ppay802s,
   };
 }
 module.exports = initModels;

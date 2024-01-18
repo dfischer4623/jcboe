@@ -19,5 +19,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.employees = require("./employee.model.js")(sequelize, Sequelize);
+db.ppay802s = require("./ppay802s.model.js")(sequelize, Sequelize);
 
 module.exports = db;

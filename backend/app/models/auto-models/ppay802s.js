@@ -1,17 +1,20 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAY802', {
+  return sequelize.define('ppay802s', {
     'HA#': {
       type: DataTypes.SMALLINT,
-      allowNull: true
+      allowNull: false,
+      primaryKey: true
     },
     HAJOB: {
-      type: DataTypes.INTEGER,
-      allowNull: true
+      type: DataTypes.STRING(32),
+      allowNull: false,
+      primaryKey: true
     },
     HAABS: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false,
+      primaryKey: true
     },
     'HARUN#': {
       type: DataTypes.SMALLINT,
@@ -119,9 +122,20 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'PPAY802',
+    tableName: 'ppay802s',
     schema: 'dbo',
     timestamps: false,
-    underscored: true
+    underscored: true,
+    indexes: [
+      {
+        name: "PK__ppay802s__117ADD441FB3D587",
+        unique: true,
+        fields: [
+          { name: "HA#" },
+          { name: "HAJOB" },
+          { name: "HAABS" },
+        ]
+      },
+    ]
   });
 };

@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { loggedIn, email, employeeNumber, ed, setEmployeeData } = props
+    const { loggedIn, email, employeeNumber, ed, setEmployeeData, setEmpName } = props
 
     const navigate = useNavigate();
+
+    const showAttendanceButtonClick = () => {
+        navigate("/showAttendance")
+    }
 
     const employeeSearchButtonClick = () => {
         navigate("/employeeSearch")
@@ -124,6 +128,8 @@ const ShowEmployee = (props) => {
     } else {
         EMSRDT = ''
     }
+
+    setEmpName(ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM)
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
@@ -355,6 +361,13 @@ const ShowEmployee = (props) => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showAttendanceButtonClick}
+                value={"Show Attendance"} />
         </div>
         <div className={"inputContainer"}>
             <input

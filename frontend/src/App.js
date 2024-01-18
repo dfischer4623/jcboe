@@ -5,6 +5,7 @@ import Main from './main';
 import EmployeeSearch from './employeeSearch';
 import EmployeeName from './employeeName';
 import ShowEmployee from './showEmployee';
+import ShowAttendance from './showAttendance';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -15,6 +16,8 @@ function App() {
   const [employeeName, setEmployeeName] = useState("")
   const [ed, setEmployeeData] = useState(null)
   const [es, setEmployeeNames] = useState(null)
+  const [ad, setAttendanceData] = useState(null)
+  const [empName, setEmpName] = useState("")
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -49,7 +52,8 @@ function App() {
           <Route path="/main" element={<Main loggedIn={loggedIn} email={email} setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/employeeSearch" element={<EmployeeSearch loggedIn={loggedIn} email={email} employeeName={employeeName} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} ed={ed} setEmployeeNumber={setEmployeeNumber} setEmployeeName={setEmployeeName} setEmployeeData={setEmployeeData} setEmployeeNames={setEmployeeNames}/>} />
           <Route path="/employeeName" element={<EmployeeName loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} employeeName={employeeName} setLoggedIn={setLoggedIn} setEmail={setEmail} es={es} setEmployeeNames={setEmployeeNames} setEmployeeNumber={setEmployeeNumber} />} />
-          <Route path="/showEmployee" element={<ShowEmployee loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ed={ed} setEmployeeData={setEmployeeData} />} />
+          <Route path="/showEmployee" element={<ShowEmployee loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ed={ed} setEmployeeData={setEmployeeData} setEmpName = {setEmpName}/>} />
+          <Route path="/showAttendance" element={<ShowAttendance loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName = {empName}/>} />
         </Routes>
       </BrowserRouter>
     </div>

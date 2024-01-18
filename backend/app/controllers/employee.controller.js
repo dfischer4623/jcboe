@@ -1,5 +1,6 @@
 const db = require("../models");
 const Employee = db.employees;
+const Ppay802s = db.ppay802s;
 const Op = db.Sequelize.Op;
 
 // Retrieve all employees from the database.
@@ -38,3 +39,25 @@ exports.findOne = (req, res) => {
             });
         });
 };
+
+// Retrieve all ppay802s from the database.
+exports.findAll = (req, res) => {
+    var empNum = req.query.number
+    var condition = employeeName ? { HANUM: { [Op.like]: `${empNum}` } } : null;
+    var sortOrder = [
+        ['HAJOB', 'ASC'],
+        ['HAABS', 'ASC'],
+    ]
+    //console.log(condition + ' ' + sortOrder)
+    //console.log(req.query)
+    Ppay802s.findAll({ where: condition, order: sortOrder })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving dbo.employees."
+            });
+        });
+};;
