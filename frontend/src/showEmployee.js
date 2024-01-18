@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { loggedIn, email, employeeNumber, ed, setEmployeeData, setEmpName } = props
+    const { loggedIn, email, employeeNumber, ed, setEmployeeData } = props
 
     const navigate = useNavigate();
 
@@ -128,9 +128,7 @@ const ShowEmployee = (props) => {
     } else {
         EMSRDT = ''
     }
-
-    setEmpName(ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM)
-
+    
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>

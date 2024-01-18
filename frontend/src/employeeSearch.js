@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const EmployeeSearch = (props) => {
 
-    const { loggedIn, email, employeeNumber, employeeName, setEmployeeNumber, setEmployeeName, setEmployeeNames } = props
+    const { loggedIn, email, employeeNumber, employeeName, setEmployeeNumber, setEmployeeName, setEmployeeNames, setEmpName } = props
 
     const navigate = useNavigate();
 
@@ -30,6 +30,7 @@ const EmployeeSearch = (props) => {
             console.log(error);
             window.alert(`Wrong Employee Number ` + employeeNumber)
         }
+        setEmpName(resData.EMFNAM)
     }
 
     const onENameButtonClick = async () => {
@@ -49,7 +50,6 @@ const EmployeeSearch = (props) => {
             console.log("error", error);
             navigate("/employeeSearch")
         }
-        
     }
 
     const mainButtonClick = () => {
