@@ -33,9 +33,10 @@ const ShowAttendance = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/api/ppay802s/${employeeNumber}`);
+                const response = await fetch(`http://localhost:8080/api/employees/attendance/${employeeNumber}`);
                 const resData = await response.json()
                 setAttendanceData(resData)
+                console.log(resData)
             }
             catch (error) {
                 console.log("error", error);

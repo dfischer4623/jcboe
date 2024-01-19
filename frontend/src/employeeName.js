@@ -69,7 +69,6 @@ const EmployeeName = (props) => {
                     <tr>
                         <th colspan="5">Search Name: {employeeName}</th>
                     </tr>
-                    <br></br>
                 </thead>
                 <tbody>
                     <tr>

@@ -8,12 +8,10 @@ module.exports = (sequelize, Sequelize) => {
     HAJOB: {
       type: Sequelize.STRING(32),
       allowNull: false,
-      primaryKey: true
     },
     HAABS: {
       type: Sequelize.STRING(50),
       allowNull: false,
-      primaryKey: true
     },
     'HARUN#': {
       type: Sequelize.SMALLINT,
@@ -117,6 +115,14 @@ module.exports = (sequelize, Sequelize) => {
     },
     MEMBER: {
       type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    createdAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: Sequelize.DATEONLY,
       allowNull: true
     }
   });
