@@ -50,28 +50,61 @@ const ShowAttendance = (props) => {
         return <h1>Loading...</h1>
     }
 
+    const attendanceSelected = (HANUM, HAJOB, HAABS) => {
+        console.log(HANUM + ' ' + HAJOB + ' ' + HAABS)
+        //setEmployeeNumber(key)
+        //navigate("/showEmployee")
+    }
+
+    let attendanceFormatted = ad.map((add, i) => {
+        return (
+            <tr key={i}>
+                <td>
+                    <a href="#" onClick={() => attendanceSelected(add.HANUM, add.HAJOB, add.HAABS)}>View</a>
+                </td>
+                <td>{add.HAJOB}</td>
+                <td>{add.HAABS}</td>
+                <td>{add.HABAL}</td>
+                <td>{add.HACBBL}</td>
+                <td>{add.HACERN}</td>
+            </tr>
+
+        )
+    })
+
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Attendance</div>
         </div>
         <br />
-        <div className={"empTableContainer"}>
+        <div className={"attTableContainer"}>
             <table>
-                <thead>
+                <thead className={"thatt"}>
                     <tr>
-                        <th> </th>
-                        <th> </th>
+                        <th colSpan="6">Employee Number: {employeeNumber}</th>
+                    </tr>
+                    <tr>
+                        <th colSpan="6">Employee Name: {empName}</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Job</th>
+                        <th>Absence</th>
+                        <th>Balance</th>
+                        <th>Begin</th>
+                        <th>Calendar</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Code </th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th>Balance</th>
+                        <th>Earned</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Employee Number: </td>
-                        <td>{employeeNumber}</td>
-                    </tr>
-                    <tr>
-                        <td>Employee Name: </td>
-                        <td>{empName}</td>
-                    </tr>
+                    {attendanceFormatted}
                 </tbody>
             </table>
         </div>

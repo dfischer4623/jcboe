@@ -11,7 +11,7 @@ const ShowEmployee = (props) => {
         if (ed.EMMNAM == null) {
             ed.EMMNAM = " "
         }
-        var empNameX = ed.EMLNAM + ',' + ed.EMFNAM + ' ' + ed.EMMNAM
+        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
         setEmpName(empNameX)
         navigate("/showAttendance")
     }

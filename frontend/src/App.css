@@ -89,3 +89,12 @@ td {
   font-weight: 500;
   border: 1px solid #333;
 }
+
+.attTableContainer {
+  width: 90%;
+}
+
+.thatt {
+  font-size: 20px;
+  font-weight: 500;
+}
