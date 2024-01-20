@@ -30,7 +30,6 @@ const EmployeeSearch = (props) => {
             console.log(error);
             window.alert(`Wrong Employee Number ` + employeeNumber)
         }
-        setEmpName(resData.EMFNAM)
     }
 
     const onENameButtonClick = async () => {
@@ -39,7 +38,7 @@ const EmployeeSearch = (props) => {
             const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
             resData = await response.json()
             setEmployeeNames(resData)
-            console.log(resData)
+            //console.log(resData)
             if (resData.length > 0 && employeeName !== '') {
                 navigate("/employeeName")
             } else {

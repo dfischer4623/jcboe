@@ -3,11 +3,16 @@ import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { loggedIn, email, employeeNumber, ed, setEmployeeData } = props
+    const { loggedIn, email, employeeNumber, ed, setEmployeeData, setEmpName } = props
 
     const navigate = useNavigate();
 
     const showAttendanceButtonClick = () => {
+        if (ed.EMMNAM == null) {
+            ed.EMMNAM = " "
+        }
+        var empNameX = ed.EMLNAM + ',' + ed.EMFNAM + ' ' + ed.EMMNAM
+        setEmpName(empNameX)
         navigate("/showAttendance")
     }
 
@@ -128,7 +133,7 @@ const ShowEmployee = (props) => {
     } else {
         EMSRDT = ''
     }
-    
+
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>

@@ -28,7 +28,7 @@ const EmployeeName = (props) => {
                 const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
                 const resData = await response.json()
                 setEmployeeNames(resData)
-                console.log(resData)
+                //console.log(resData)
             }
             catch (error) {
                 console.log("error", error);
@@ -45,7 +45,7 @@ const EmployeeName = (props) => {
 
     let employeesFormatted = es.map((ess) => {
         return (
-            <tr>
+            <tr key={ess.EMSSAN}>
                 <td><a href="#" onClick={() => employeeSelected(ess.EMSSAN)}>
                     {ess.EMSSAN}
                 </a></td>
@@ -67,7 +67,7 @@ const EmployeeName = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th colspan="5">Search Name: {employeeName}</th>
+                        <th colSpan="5">Search Name: {employeeName}</th>
                     </tr>
                 </thead>
                 <tbody>
