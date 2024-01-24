@@ -61,44 +61,18 @@ const ShowAttendance = (props) => {
         
             if (adll.TMLPED !== '') {
                 var dateString = adll.TMLPED;
-                var lenS = dateString.length
-                if (lenS===3) {
-                    dateString = '000' + dateString
-                }  else if (lenS===4) {
-                    dateString = '00' + dateString
-                }   else if (lenS===5) {
-                    dateString = '0' + dateString
-                }
-                var year = dateString.substring(0, 2);
-                if (year > '30') {
-                    year = '19' + year
-                } else {
-                    year = '20' + year
-                }
-                var month = dateString.substring(2, 4);
-                var day = dateString.substring(4, 6);
+                var year = dateString.substring(0, 4);
+                var month = dateString.substring(4, 6);
+                var day = dateString.substring(6, 8);
                 adll.TMLPED = month + '/' + day + '/' + year
             } else {
                 adll.TMLPED = ''
             }
             if (adll.TMLDAT !== '') {
                 var dateString = adll.TMLDAT;
-                var lenS = dateString.length
-                if (lenS===3) {
-                    dateString = '000' + dateString
-                }  else if (lenS===4) {
-                    dateString = '00' + dateString
-                }   else if (lenS===5) {
-                    dateString = '0' + dateString
-                }
-                var year = dateString.substring(0, 2);
-                if (year > '30') {
-                    year = '19' + year
-                } else {
-                    year = '20' + year
-                }
-                var month = dateString.substring(2, 4);
-                var day = dateString.substring(4, 6);
+                var year = dateString.substring(0, 4);
+                var month = dateString.substring(4, 6);
+                var day = dateString.substring(6, 8);
                 adll.TMLDAT = month + '/' + day + '/' + year
             } else {
                 adll.TMLDAT = ''

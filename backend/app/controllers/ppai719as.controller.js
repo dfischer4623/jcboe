@@ -11,6 +11,7 @@ exports.findAll = (req, res) => {
     var condition = { TMLSSN: TMLSSN, TMLJOB: TMLJOB, TMLABS: TMLABS } ;
     var sortOrder = [
         ['TMLPED', 'ASC'],
+        ['TMLDAT', 'ASC'], 
     ]
     console.log('-------------------')
     console.log(condition)
