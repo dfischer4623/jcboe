@@ -153,6 +153,10 @@ const ShowEmployee = (props) => {
                         <td>{ed.EMSSAN}</td>
                     </tr>
                     <tr>
+                        <td>Employee SSN: </td>
+                        <td>{ed.EMPSSN}</td>
+                    </tr>
+                    <tr>
                         <td>Active: </td>
                         <td>{ed.EMSTAT}</td>
                     </tr>

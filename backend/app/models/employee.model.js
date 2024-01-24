@@ -500,6 +500,10 @@ module.exports = (sequelize, Sequelize) => {
     BUSY: {
       type: Sequelize.INTEGER,
       allowNull: true
+    },
+    EMPSSN: {
+      type: Sequelize.INTEGER,
+      allowNull: true
     }
   });
  

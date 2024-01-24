@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ShowAttendance = (props) => {
 
-    const { loggedIn, email, employeeNumber, ad, setAttendanceData, empName } = props
+    const { loggedIn, email, employeeNumber, ad, setAttendanceData, empName, adid, setAttendanceDataID } = props
 
     const navigate = useNavigate();
 
@@ -36,7 +36,6 @@ const ShowAttendance = (props) => {
                 const response = await fetch(`http://localhost:8080/api/employees/attendance/${employeeNumber}`);
                 const resData = await response.json()
                 setAttendanceData(resData)
-                console.log(resData)
             }
             catch (error) {
                 console.log("error", error);
@@ -51,9 +50,13 @@ const ShowAttendance = (props) => {
     }
 
     const attendanceSelected = (HANUM, HAJOB, HAABS) => {
-        console.log(HANUM + ' ' + HAJOB + ' ' + HAABS)
-        //setEmployeeNumber(key)
-        //navigate("/showEmployee")
+        const adido = {
+            TMLSSN: HANUM,
+            TMLJOB: HAJOB,
+            TMLABS: HAABS
+        }
+        setAttendanceDataID(adido)
+        navigate("/showAttendanceDetail")
     }
 
     let attendanceFormatted = ad.map((add, i) => {
@@ -86,24 +89,16 @@ const ShowAttendance = (props) => {
                     <tr>
                         <th colSpan="6">Employee Name: {empName}</th>
                     </tr>
-                    <tr>
-                        <th></th>
-                        <th>Job</th>
-                        <th>Absence</th>
-                        <th>Balance</th>
-                        <th>Begin</th>
-                        <th>Calendar</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th>Code </th>
-                        <th>Code</th>
-                        <th>Available</th>
-                        <th>Balance</th>
-                        <th>Earned</th>
-                    </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td></td>
+                        <td>Job Code</td>
+                        <td>Absence Code</td>
+                        <td>Balance Available</td>
+                        <td>Begin Balance</td>
+                        <td>Calendar Earned</td>
+                    </tr>
                     {attendanceFormatted}
                 </tbody>
             </table>

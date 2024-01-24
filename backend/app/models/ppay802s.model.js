@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(50),
       allowNull: false,
     },
-    'HARUN#': {
+    HARUN: {
       type: Sequelize.SMALLINT,
       allowNull: true
     },
