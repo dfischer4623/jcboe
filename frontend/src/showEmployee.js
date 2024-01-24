@@ -7,6 +7,15 @@ const ShowEmployee = (props) => {
 
     const navigate = useNavigate();
 
+    const miscDataButtonClick = () => {
+        if (ed.EMMNAM == null) {
+            ed.EMMNAM = " "
+        }
+        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+        setEmpName(empNameX)
+        navigate("/miscData")
+    }
+
     const showAttendanceButtonClick = () => {
         if (ed.EMMNAM == null) {
             ed.EMMNAM = " "
@@ -368,6 +377,13 @@ const ShowEmployee = (props) => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={miscDataButtonClick}
+                value={"Show Misc Data"} />
         </div>
         <div className={"inputContainer"}>
             <input
