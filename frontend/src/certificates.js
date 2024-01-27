@@ -27,13 +27,11 @@ const Certificates = (props) => {
             props.setLoggedIn(false)
             navigate("/")
         }
-        console.log(loggedIn)
         const fetchData = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/api/employees/certificates/${employeeNumber}`);
                 const resData = await response.json()
                 setCertificates(resData)
-                console.log('resData: ' + resData)
             }
             catch (error) {
                 console.log("error", error);
@@ -47,9 +45,9 @@ const Certificates = (props) => {
         return <h1>Loading...</h1>
     }
 
-    let certificatesFormatted = cd.map((cdd) => {
+    let certificatesFormatted = cd.map((cdd, i) => {
         return (
-            <tr key={cdd.CTSSN}>
+            <tr key={i}>
                 <td>{cdd.CTID}</td>
                 <td>{cdd.CRTDES}</td>
                 <td>{cdd.CTTYPE}</td>

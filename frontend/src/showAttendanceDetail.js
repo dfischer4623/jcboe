@@ -79,10 +79,9 @@ const ShowAttendance = (props) => {
             }
             return (
             <tr key={i}>
-                <td>{adll.TMLPED}</td>
-                <td>{adll.TMLDAT}</td>
                 <td>{adll.TMLLOC}</td>
-                <td>{adll.TMLRSN}</td>
+                <td>{adll.TMLDAT}</td>
+                <td>{adll.TMLABS}</td>
                 <td>{adll.TMLQTY}</td>
             </tr>
 
@@ -109,11 +108,10 @@ const ShowAttendance = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Period End Date</td>
-                        <td>Begin Date</td>
                         <td>Location Code</td>
-                        <td>Reason Code</td>
-                        <td>Time Units</td>
+                        <td>Absence Date</td>
+                        <td>Absence Code</td>
+                        <td>Units</td>
                     </tr>
                     {attendanceDetail}
                 </tbody>

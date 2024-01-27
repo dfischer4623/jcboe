@@ -60,19 +60,21 @@ const ShowAttendance = (props) => {
     }
 
     let attendanceFormatted = ad.map((add, i) => {
-        return (
-            <tr key={i}>
-                <td>
-                    <a href="#" onClick={() => attendanceSelected(add.HANUM, add.HAJOB, add.HAABS)}>View</a>
-                </td>
-                <td>{add.HAJOB}</td>
-                <td>{add.HAABS}</td>
-                <td>{add.HABAL}</td>
-                <td>{add.HACBBL}</td>
-                <td>{add.HACERN}</td>
-            </tr>
-
-        )
+        if (add.HAFBBL !== 0 || add.HAFERN !== 0 || add.HAFUSE !== 0 || add.HABAL !== 0) {
+            return (
+                <tr key={i}>
+                    <td>
+                        <a href="#" onClick={() => attendanceSelected(add.HANUM, add.HAJOB, add.HAABS)}>View</a>
+                    </td>
+                    <td>{add.HAJOB}</td>
+                    <td>{add.HAABS}</td>
+                    <td>{add.HAFBBL}</td>
+                    <td>{add.HAFERN}</td>
+                    <td>{add.HAFUSE}</td>
+                    <td>{add.HABAL}</td>
+                </tr>
+            )
+        }
     })
 
     return <div className={"mainContainer"}>
@@ -84,10 +86,10 @@ const ShowAttendance = (props) => {
             <table>
                 <thead className={"thatt"}>
                     <tr>
-                        <th colSpan="6">Employee Number: {employeeNumber}</th>
+                        <th colSpan="7">Employee Number: {employeeNumber}</th>
                     </tr>
                     <tr>
-                        <th colSpan="6">Employee Name: {empName}</th>
+                        <th colSpan="7">Employee Name: {empName}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,9 +97,10 @@ const ShowAttendance = (props) => {
                         <td></td>
                         <td>Job Code</td>
                         <td>Absence Code</td>
-                        <td>Balance Available</td>
                         <td>Begin Balance</td>
-                        <td>Calendar Earned</td>
+                        <td>Fiscal Earned</td>
+                        <td>Fiscal Used</td>
+                        <td>Balance Available</td>
                     </tr>
                     {attendanceFormatted}
                 </tbody>
