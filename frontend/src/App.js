@@ -8,6 +8,7 @@ import ShowEmployee from './showEmployee';
 import ShowAttendance from './showAttendance';
 import ShowAttendanceDetail from './showAttendanceDetail';
 import MiscData from './miscData';
+import Certificates from './certificates';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -23,6 +24,7 @@ function App() {
   const [adl, setAttendanceDataDetail] = useState(null)
   const [adid, setAttendanceDataID] = useState(null)
   const [md, setMiscData] = useState(null)
+  const [cd, setCertificates] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -60,6 +62,7 @@ function App() {
           <Route path="/showEmployee" element={<ShowEmployee loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ed={ed} setEmployeeData={setEmployeeData} setEmpName={setEmpName} />} />
           <Route path="/showAttendance" element={<ShowAttendance loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} adid={adid} setAttendanceDataID={setAttendanceDataID} />} />
           <Route path="/miscData" element={<MiscData loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} md={md} setMiscData={setMiscData} />} />
+          <Route path="/certificates" element={<Certificates loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} cd={cd} setCertificates={setCertificates} />} />
           <Route path="/showAttendanceDetail" element={<ShowAttendanceDetail loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} adl={adl} setAttendanceDataDetail={setAttendanceDataDetail} adid={adid} />} />      
         </Routes>
       </BrowserRouter>
