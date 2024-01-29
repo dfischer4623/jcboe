@@ -27,13 +27,11 @@ const MiscData = (props) => {
             props.setLoggedIn(false)
             navigate("/")
         }
-        console.log(loggedIn)
         const fetchData = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/api/employees/miscdata/${employeeNumber}`);
                 const resData = await response.json()
                 setMiscData(resData)
-                console.log('resData: ' + resData)
             }
             catch (error) {
                 console.log("error", error);
@@ -47,9 +45,9 @@ const MiscData = (props) => {
         return <h1>Loading...</h1>
     }
 
-    let miscDataFormatted = md.map((mdd) => {
+    let miscDataFormatted = md.map((mdd, i) => {
         return (
-            <tr key={mdd.PC}>
+            <tr key={i}>
                 <td>{mdd.PCTID}</td>
                 <td>{mdd.PCCOL1}</td>
                 <td>{mdd.PCCOL2}</td>
