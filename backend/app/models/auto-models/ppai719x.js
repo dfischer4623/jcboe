@@ -1,116 +1,104 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('ppay802s', {
-    HANUM: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    HAJOB: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    HAABS: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    HARUN: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    HAPDTC: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    HAPDT: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    HACDTC: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    HACDT: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    HAPUSR: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    HABAL: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACBBL: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACERN: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACUSE: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACPD: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACDCK: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACADJ: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACLST: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HACCMP: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFBBL: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFERN: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFUSE: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFPD: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFDCK: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFADJ: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFLST: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAFCMP: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    HAUSG: {
+  return sequelize.define('ppai719x', {
+    USG: {
       type: DataTypes.STRING(1),
       allowNull: true
     },
-    HABUSY: {
+    BUSY: {
       type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLRUN: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    RMLRSQ: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLSSN: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLJOB: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLJSQ: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLPED: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLLIN: {
+      type: DataTypes.FLOAT,
+      allowNull: true
+    },
+    TMLSRL: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLDAT: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLLOC: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLDAY: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLABS: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLRSN: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLQTY: {
+      type: DataTypes.FLOAT,
+      allowNull: true
+    },
+    TMLDRT: {
+      type: DataTypes.FLOAT,
+      allowNull: true
+    },
+    TMLDAC: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLDES: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLXSN: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLXJB: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLXJS: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLXSR: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TMLCUS: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TMLCDT: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     MEMBER: {
@@ -127,7 +115,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'ppay802s',
+    tableName: 'ppai719x',
     schema: 'dbo',
     timestamps: false,
     underscored: true

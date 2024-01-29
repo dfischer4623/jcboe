@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('PEIS135', {
     LVCODE: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
+      type: DataTypes.STRING(5),
+      allowNull: true
     },
     LVDESC: {
       type: DataTypes.STRING(50),

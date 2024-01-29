@@ -2,26 +2,26 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('PPAY340H', {
     USG: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     BUSY: {
-      type: DataTypes.SMALLINT,
-      allowNull: true
-    },
-    ASSAN: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'ASJD#': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'ASSEQ#': {
+    ASSSAN: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'ASCON#': {
+    ASJD: {
+      type: DataTypes.CHAR(10),
+      allowNull: true
+    },
+    ASSEQ: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    ASCON: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
@@ -38,19 +38,19 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASACTV: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASSTAB: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASGRAD: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASSTEP: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASSCAT: {
@@ -62,7 +62,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASPER: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASPAYA: {
@@ -74,15 +74,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASNCHK: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASACHK: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASPCHK: {
-      type: DataTypes.SMALLINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASNDAY: {
@@ -126,15 +126,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASDEDL: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASABSL: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASCPYL: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASCPAM: {
@@ -142,11 +142,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASRPYL: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASPLIN: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASEAMT: {
@@ -154,7 +154,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASTLIN: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASTAMT: {
@@ -162,7 +162,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASDLIN: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASDPCT: {
@@ -226,15 +226,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASJAB6: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAB7: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAB8: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD1: {
@@ -242,51 +242,51 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASJAD2: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD3: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD4: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD5: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD6: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD7: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASJAD8: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASFED: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASST: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASCTY: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASLOC: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASOTH: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASACCT: {
@@ -294,23 +294,23 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASFICA: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASMTCH: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASENC: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASACCR: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASACKW: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     ASACPT: {
@@ -318,11 +318,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASWCMP: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASWCYN: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASWCU1: {
@@ -350,71 +350,71 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASMIS1: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASMIS2: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASMIS3: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASMIS4: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASMIS5: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASCAT1: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASCAT2: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASCAT3: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASCAT4: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASCAT5: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASLRUN: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASCDAT: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASBNK: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASBACT: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     ASFRM: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
-    'ASCHK#': {
-      type: DataTypes.TINYINT,
+    ASCHK: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     MEMBER: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.CHAR(10),
       allowNull: true
     }
   }, {

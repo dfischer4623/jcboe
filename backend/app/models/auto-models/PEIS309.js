@@ -68,6 +68,14 @@ module.exports = function(sequelize, DataTypes) {
     CTBUSY: {
       type: DataTypes.TINYINT,
       allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
     }
   }, {
     sequelize,

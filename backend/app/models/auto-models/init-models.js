@@ -1,5 +1,6 @@
 var DataTypes = require("sequelize").DataTypes;
 var _PACP210 = require("./PACP210");
+var _PAOE301 = require("./PAOE301");
 var _PATT240 = require("./PATT240");
 var _PATT240L = require("./PATT240L");
 var _PATT250 = require("./PATT250");
@@ -34,7 +35,6 @@ var _PEIS309 = require("./PEIS309");
 var _PEIS311 = require("./PEIS311");
 var _PEIS321 = require("./PEIS321");
 var _PEIS322 = require("./PEIS322");
-var _PEIS480D = require("./PEIS480D");
 var _PEIS480H = require("./PEIS480H");
 var _PEIS780 = require("./PEIS780");
 var _PFRS000 = require("./PFRS000");
@@ -61,7 +61,6 @@ var _PPAI716 = require("./PPAI716");
 var _PPAI716U = require("./PPAI716U");
 var _PPAI718 = require("./PPAI718");
 var _PPAI718U = require("./PPAI718U");
-var _PPAI719A = require("./PPAI719A");
 var _PPAI719B = require("./PPAI719B");
 var _PPAI720 = require("./PPAI720");
 var _PPAY100 = require("./PPAY100");
@@ -135,10 +134,14 @@ var _PSTU320D = require("./PSTU320D");
 var _PSTU350D = require("./PSTU350D");
 var _PSTU360D = require("./PSTU360D");
 var _peis301s = require("./peis301s");
+var _peis480ds = require("./peis480ds");
+var _ppai719as = require("./ppai719as");
+var _ppai719x = require("./ppai719x");
 var _ppay802s = require("./ppay802s");
 
 function initModels(sequelize) {
   var PACP210 = _PACP210(sequelize, DataTypes);
+  var PAOE301 = _PAOE301(sequelize, DataTypes);
   var PATT240 = _PATT240(sequelize, DataTypes);
   var PATT240L = _PATT240L(sequelize, DataTypes);
   var PATT250 = _PATT250(sequelize, DataTypes);
@@ -173,7 +176,6 @@ function initModels(sequelize) {
   var PEIS311 = _PEIS311(sequelize, DataTypes);
   var PEIS321 = _PEIS321(sequelize, DataTypes);
   var PEIS322 = _PEIS322(sequelize, DataTypes);
-  var PEIS480D = _PEIS480D(sequelize, DataTypes);
   var PEIS480H = _PEIS480H(sequelize, DataTypes);
   var PEIS780 = _PEIS780(sequelize, DataTypes);
   var PFRS000 = _PFRS000(sequelize, DataTypes);
@@ -200,7 +202,6 @@ function initModels(sequelize) {
   var PPAI716U = _PPAI716U(sequelize, DataTypes);
   var PPAI718 = _PPAI718(sequelize, DataTypes);
   var PPAI718U = _PPAI718U(sequelize, DataTypes);
-  var PPAI719A = _PPAI719A(sequelize, DataTypes);
   var PPAI719B = _PPAI719B(sequelize, DataTypes);
   var PPAI720 = _PPAI720(sequelize, DataTypes);
   var PPAY100 = _PPAY100(sequelize, DataTypes);
@@ -274,11 +275,15 @@ function initModels(sequelize) {
   var PSTU350D = _PSTU350D(sequelize, DataTypes);
   var PSTU360D = _PSTU360D(sequelize, DataTypes);
   var peis301s = _peis301s(sequelize, DataTypes);
+  var peis480ds = _peis480ds(sequelize, DataTypes);
+  var ppai719as = _ppai719as(sequelize, DataTypes);
+  var ppai719x = _ppai719x(sequelize, DataTypes);
   var ppay802s = _ppay802s(sequelize, DataTypes);
 
 
   return {
     PACP210,
+    PAOE301,
     PATT240,
     PATT240L,
     PATT250,
@@ -313,7 +318,6 @@ function initModels(sequelize) {
     PEIS311,
     PEIS321,
     PEIS322,
-    PEIS480D,
     PEIS480H,
     PEIS780,
     PFRS000,
@@ -340,7 +344,6 @@ function initModels(sequelize) {
     PPAI716U,
     PPAI718,
     PPAI718U,
-    PPAI719A,
     PPAI719B,
     PPAI720,
     PPAY100,
@@ -414,6 +417,9 @@ function initModels(sequelize) {
     PSTU350D,
     PSTU360D,
     peis301s,
+    peis480ds,
+    ppai719as,
+    ppai719x,
     ppay802s,
   };
 }

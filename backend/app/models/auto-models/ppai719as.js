@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAI719A', {
+  return sequelize.define('ppai719as', {
     USG: {
       type: DataTypes.STRING(1),
       allowNull: true
@@ -104,10 +104,18 @@ module.exports = function(sequelize, DataTypes) {
     MEMBER: {
       type: DataTypes.STRING(50),
       allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'PPAI719A',
+    tableName: 'ppai719as',
     schema: 'dbo',
     timestamps: false,
     underscored: true

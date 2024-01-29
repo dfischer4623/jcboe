@@ -1,17 +1,17 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PEIS480D', {
-    'PC#': {
+  return sequelize.define('peis480ds', {
+    PC: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     PCTID: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: true
     },
     PCLINE: {
       type: DataTypes.FLOAT,
-      allowNull: false
+      allowNull: true
     },
     PCCOL1: {
       type: DataTypes.STRING(50),
@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     PCCOL5: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     PCCOL6: {
@@ -46,12 +46,24 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     PCBUSY: {
-      type: DataTypes.TINYINT,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    MEMBER: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'PEIS480D',
+    tableName: 'peis480ds',
     schema: 'dbo',
     timestamps: false,
     underscored: true
