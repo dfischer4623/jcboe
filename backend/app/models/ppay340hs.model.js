@@ -1,16 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
   const Ppay340hs = sequelize.define("ppay340hs", {
-    USG: {
-      type: Sequelize.CHAR(10),
-      allowNull: true
-    },
     BUSY: {
       type: Sequelize.INTEGER,
       allowNull: true
     },
     ASSSAN: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     ASJD: {
       type: Sequelize.CHAR(10),
@@ -413,7 +410,23 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     MEMBER: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    STRDTE: {
       type: Sequelize.CHAR(10),
+      allowNull: true
+    },
+    ENDDTE: {
+      type: Sequelize.CHAR(10),
+      allowNull: true
+    },
+    createdAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: Sequelize.DATEONLY,
       allowNull: true
     }
   });
