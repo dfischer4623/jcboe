@@ -7,6 +7,15 @@ const ShowEmployee = (props) => {
 
     const navigate = useNavigate();
 
+    const assignmentsButtonClick = () => {
+        if (ed.EMMNAM == null) {
+            ed.EMMNAM = " "
+        }
+        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+        setEmpName(empNameX)
+        navigate("/assignments")
+    }
+
     const certificatesButtonClick = () => {
         if (ed.EMMNAM == null) {
             ed.EMMNAM = " "
@@ -386,6 +395,13 @@ const ShowEmployee = (props) => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={assignmentsButtonClick}
+                value={"Show Assignments/Contracts"} />
         </div>
         <div className={"inputContainer"}>
             <input
