@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Certificates = (props) => {
+const Salaries = (props) => {
 
-    const { loggedIn, email, employeeNumber, empName, ac, setAssignments } = props
+    const { loggedIn, email, employeeNumber, empName, sd, setSalaries } = props
 
     const navigate = useNavigate();
 
@@ -29,9 +29,9 @@ const Certificates = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/api/employees/assignments/${employeeNumber}`);
+                const response = await fetch(`http://localhost:8080/api/employees/salaries/${employeeNumber}`);
                 const resData = await response.json()
-                setAssignments(resData)
+                setSalaries(resData)
             }
             catch (error) {
                 console.log("error", error);
@@ -41,19 +41,27 @@ const Certificates = (props) => {
         fetchData()
     }, [])
 
-    if (ac === null) {
+    if (sd === null) {
         return <h1>Loading...</h1>
     }
 
-    let assignmentsFormatted = ac.map((acc, i) => {
+    let dollarUS = Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+    
+
+    let salariesFormatted = sd.map((sdd, i) => {
         return (
             <tr key={i}>
-                <td>{acc.ASJD}</td>
-                <td>{acc.ASCON}</td>
-                <td>{acc.STRDTE}</td>
-                <td>{acc.ENDDTE}</td>
-                <td>{acc.ASGRAD}</td>
-                <td>{acc.ASSTEP}</td>
+                <td>{sdd.SCHYEAR}</td>
+                <td>{sdd.EMLOC}</td>
+                <td>{sdd.ASJD}</td>
+                <td>{sdd.ASSTAB}</td>
+                <td>{sdd.ASGRAD}</td>
+                <td>{sdd.ASSTEP}</td>
+                <td>{dollarUS.format(sdd.SALARY)}</td>
+                <td>{sdd.JDTITL}</td>
             </tr>
 
         )
@@ -61,31 +69,33 @@ const Certificates = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show</div>
-            <div>Assignments/Contracts</div>
+            <div>Show Salaries</div>
         </div>
         <br />
         <div>
             <table>
                 <thead>
                     <tr>
-                        <th colSpan="6">Employee Number: {employeeNumber}</th>
+                        <th colSpan="8">Employee Number: {employeeNumber}</th>
                     </tr>
                     <tr>
-                        <th colSpan="6">Employee Name: {empName}</th>
+                        <th colSpan="8">Employee Name: {empName}</th>
                     </tr>
+                    <tr> </tr>
+                    <tr> </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>School Year Ending</td>
+                        <td>Location</td>
                         <td>Job Code</td>
-                        <td>Contract</td>
-                        <td>Start Date</td>
-                        <td>End Date</td>
+                        <td>Pay Table</td>
                         <td>Pay Grade</td>
                         <td>Pay Step</td>
-                        
+                        <td>Salary</td>
+                        <td>Job Title</td>
                     </tr>
-                    {assignmentsFormatted}
+                    {salariesFormatted}
                 </tbody>
             </table>
         </div>
@@ -116,4 +126,4 @@ const Certificates = (props) => {
     </div >
 }
 
-export default Certificates
+export default Salaries

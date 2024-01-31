@@ -9,7 +9,7 @@ import ShowAttendance from './showAttendance';
 import ShowAttendanceDetail from './showAttendanceDetail';
 import MiscData from './miscData';
 import Certificates from './certificates';
-import Assignments from './assignments';
+import Salaries from './salaries';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -26,7 +26,7 @@ function App() {
   const [adid, setAttendanceDataID] = useState(null)
   const [md, setMiscData] = useState(null)
   const [cd, setCertificates] = useState(null)
-  const [ac, setAssignments] = useState(null)
+  const [sd, setSalaries] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -66,8 +66,7 @@ function App() {
           <Route path="/miscData" element={<MiscData loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} md={md} setMiscData={setMiscData} />} />
           <Route path="/certificates" element={<Certificates loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} cd={cd} setCertificates={setCertificates} />} />
           <Route path="/showAttendanceDetail" element={<ShowAttendanceDetail loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} adl={adl} setAttendanceDataDetail={setAttendanceDataDetail} adid={adid} />} />      
-          <Route path="/assignments" element={<Assignments loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} ac={ac} setAssignments={setAssignments} />} />
-          
+          <Route path="/salaries" element={<Salaries loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} sd={sd} setSalaries={setSalaries} />} /> 
         </Routes>
       </BrowserRouter>
     </div>
