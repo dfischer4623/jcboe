@@ -7,7 +7,7 @@ module.exports = app => {
     const ppai719as = require("../controllers/ppai719as.controller.js");
     const peis480ds = require("../controllers/peis480ds.controller.js");
     const certificates = require("../controllers/certificates.controller.js");
-    const ppay340hs = require("../controllers/ppay340hs.controller.js");
+    const salaries = require("../controllers/salaries.controller.js");
 
     var router = require("express").Router();
 
@@ -27,7 +27,7 @@ module.exports = app => {
     router.get("/certificates/:id", certificates.findAll);
 
     // Retrieve "all or search" from assignments/contracts
-    router.get("/assignments/:id", ppay340hs.findAll);
+    router.get("/salaries/:id", salaries.findAll);
 
     // Retrieve an employee from employees using id
     router.get("/:id", employees.findOne);
