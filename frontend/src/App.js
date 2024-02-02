@@ -10,6 +10,7 @@ import ShowAttendanceDetail from './showAttendanceDetail';
 import MiscData from './miscData';
 import Certificates from './certificates';
 import Salaries from './salaries';
+import ShowVolDeductions from './showVolDeductions';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -27,6 +28,7 @@ function App() {
   const [md, setMiscData] = useState(null)
   const [cd, setCertificates] = useState(null)
   const [sd, setSalaries] = useState(null)
+  const [vd, setVolDeductions] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -67,6 +69,7 @@ function App() {
           <Route path="/certificates" element={<Certificates loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} cd={cd} setCertificates={setCertificates} />} />
           <Route path="/showAttendanceDetail" element={<ShowAttendanceDetail loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} adl={adl} setAttendanceDataDetail={setAttendanceDataDetail} adid={adid} />} />      
           <Route path="/salaries" element={<Salaries loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} sd={sd} setSalaries={setSalaries} />} /> 
+          <Route path="/showVolDeductions" element={<ShowVolDeductions loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} vd={vd} setVolDeductions={setVolDeductions} />} /> 
         </Routes>
       </BrowserRouter>
     </div>
