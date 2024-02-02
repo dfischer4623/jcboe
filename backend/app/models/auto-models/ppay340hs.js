@@ -1,16 +1,12 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAY340H', {
-    USG: {
-      type: DataTypes.CHAR(10),
-      allowNull: true
-    },
+  return sequelize.define('ppay340hs', {
     BUSY: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
     ASSSAN: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASJD: {
@@ -22,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASCON: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     ASSUPV: {
@@ -34,11 +30,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASENDT: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASACTV: {
-      type: DataTypes.CHAR(10),
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     ASSTAB: {
@@ -50,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASSTEP: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASSCAT: {
@@ -62,7 +58,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASPER: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASPAYA: {
@@ -82,7 +78,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASPCHK: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     ASNDAY: {
@@ -102,7 +98,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASCTDT: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     ASCTHR: {
@@ -154,7 +150,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASTLIN: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     ASTAMT: {
@@ -170,7 +166,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASDAMT: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     ASJDE1: {
@@ -318,7 +314,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASWCMP: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     ASWCYN: {
@@ -410,16 +406,32 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     ASCHK: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(50),
       allowNull: true
     },
     MEMBER: {
+      type: DataTypes.CHAR(50),
+      allowNull: true
+    },
+    STRDTE: {
       type: DataTypes.CHAR(10),
+      allowNull: true
+    },
+    ENDDTE: {
+      type: DataTypes.CHAR(10),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'PPAY340H',
+    tableName: 'ppay340hs',
     schema: 'dbo',
     timestamps: false,
     underscored: true

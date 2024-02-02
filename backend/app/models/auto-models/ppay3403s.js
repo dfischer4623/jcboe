@@ -1,10 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAY3403', {
-    USG: {
-      type: DataTypes.STRING(1),
-      allowNull: true
-    },
+  return sequelize.define('ppay3403s', {
     ADAT: {
       type: DataTypes.TINYINT,
       allowNull: true
@@ -14,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     SESN: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     CM: {
@@ -26,10 +22,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     DVSSAN: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    'DVDED#': {
+    DVDED: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
@@ -46,27 +42,27 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     SJ1: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SJ2: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SJ3: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SJ4: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SJ5: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SJ6: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVNTCK: {
@@ -78,11 +74,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     DVCKS: {
-      type: DataTypes.SMALLINT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVEMT: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVECT: {
@@ -110,15 +106,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     DVOTCD: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVOTCC: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVDLTF: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVDPRI: {
@@ -126,11 +122,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     DVEMXP: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVEMXY: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     DVEMXL: {
@@ -164,10 +160,22 @@ module.exports = function(sequelize, DataTypes) {
     MEMBER: {
       type: DataTypes.STRING(50),
       allowNull: true
+    },
+    schyear: {
+      type: DataTypes.CHAR(10),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'PPAY3403',
+    tableName: 'ppay3403s',
     schema: 'dbo',
     timestamps: false,
     underscored: true

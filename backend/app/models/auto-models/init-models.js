@@ -90,10 +90,8 @@ var _PPAY302D = require("./PPAY302D");
 var _PPAY305 = require("./PPAY305");
 var _PPAY3401 = require("./PPAY3401");
 var _PPAY3402 = require("./PPAY3402");
-var _PPAY3403 = require("./PPAY3403");
 var _PPAY3405 = require("./PPAY3405");
 var _PPAY3406 = require("./PPAY3406");
-var _PPAY340H = require("./PPAY340H");
 var _PPAY370 = require("./PPAY370");
 var _PPAY375 = require("./PPAY375");
 var _PPAY408 = require("./PPAY408");
@@ -137,7 +135,10 @@ var _peis301s = require("./peis301s");
 var _peis480ds = require("./peis480ds");
 var _ppai719as = require("./ppai719as");
 var _ppai719x = require("./ppai719x");
+var _ppay3403s = require("./ppay3403s");
+var _ppay340hs = require("./ppay340hs");
 var _ppay802s = require("./ppay802s");
+var _salaries = require("./salaries");
 
 function initModels(sequelize) {
   var PACP210 = _PACP210(sequelize, DataTypes);
@@ -231,10 +232,8 @@ function initModels(sequelize) {
   var PPAY305 = _PPAY305(sequelize, DataTypes);
   var PPAY3401 = _PPAY3401(sequelize, DataTypes);
   var PPAY3402 = _PPAY3402(sequelize, DataTypes);
-  var PPAY3403 = _PPAY3403(sequelize, DataTypes);
   var PPAY3405 = _PPAY3405(sequelize, DataTypes);
   var PPAY3406 = _PPAY3406(sequelize, DataTypes);
-  var PPAY340H = _PPAY340H(sequelize, DataTypes);
   var PPAY370 = _PPAY370(sequelize, DataTypes);
   var PPAY375 = _PPAY375(sequelize, DataTypes);
   var PPAY408 = _PPAY408(sequelize, DataTypes);
@@ -278,7 +277,10 @@ function initModels(sequelize) {
   var peis480ds = _peis480ds(sequelize, DataTypes);
   var ppai719as = _ppai719as(sequelize, DataTypes);
   var ppai719x = _ppai719x(sequelize, DataTypes);
+  var ppay3403s = _ppay3403s(sequelize, DataTypes);
+  var ppay340hs = _ppay340hs(sequelize, DataTypes);
   var ppay802s = _ppay802s(sequelize, DataTypes);
+  var salaries = _salaries(sequelize, DataTypes);
 
 
   return {
@@ -373,10 +375,8 @@ function initModels(sequelize) {
     PPAY305,
     PPAY3401,
     PPAY3402,
-    PPAY3403,
     PPAY3405,
     PPAY3406,
-    PPAY340H,
     PPAY370,
     PPAY375,
     PPAY408,
@@ -420,7 +420,10 @@ function initModels(sequelize) {
     peis480ds,
     ppai719as,
     ppai719x,
+    ppay3403s,
+    ppay340hs,
     ppay802s,
+    salaries,
   };
 }
 module.exports = initModels;
