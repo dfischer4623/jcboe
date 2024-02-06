@@ -9,6 +9,7 @@ module.exports = app => {
     const certificates = require("../controllers/certificates.controller.js");
     const salaries = require("../controllers/salaries.controller.js");
     const ppay3403s = require("../controllers/ppay3403s.controller.js");
+    const peis480hs = require("../controllers/peis480hs.controller.js");
 
     var router = require("express").Router();
 
@@ -32,6 +33,9 @@ module.exports = app => {
 
     // Retrieve "all or search" from voluntary deductions
     router.get("/voldeductions/:id", ppay3403s.findAll);
+
+    // Retrieve "all or search" from voluntary deductions
+    router.get("/tags/:id", peis480hs.findAll);
 
     // Retrieve an employee from employees using id
     router.get("/:id", employees.findOne);
