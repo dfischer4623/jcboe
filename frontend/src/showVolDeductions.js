@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 const Salaries = (props) => {
 
     const { loggedIn, email, employeeNumber, empName, vd, setVolDeductions } = props
+    let holdYear = null
+    let first = true
+    let j = 99999
 
     const navigate = useNavigate();
 
@@ -55,7 +58,29 @@ const Salaries = (props) => {
         maximumFractionDigits: 2
     });
 
+    function blankLineFunction(j) {
+        return (
+            <tr key={j}>
+                <td>-----</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        ) 
+    }
+
     let voldeductionsFormatted = vd.map((vdd, i) => {
+        if (vdd.schyear != holdYear) {
+            holdYear=vdd.schyear
+            if (first === true) {
+                first = false
+            } else {
+                j++
+                return(blankLineFunction(j))
+            }
+
+        } 
         return (
             <tr key={i}>
                 <td>{vdd.schyear}</td>
@@ -83,8 +108,6 @@ const Salaries = (props) => {
                     <tr>
                         <th colSpan="5">Employee Name: {empName}</th>
                     </tr>
-                    <tr> </tr>
-                    <tr> </tr>
                 </thead>
                 <tbody>
                     <tr>
