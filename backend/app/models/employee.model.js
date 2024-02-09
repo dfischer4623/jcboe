@@ -513,7 +513,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: true
     },
-    ETMSDS1: {
+    ETMDS1: {
       type: Sequelize.STRING(50),
       allowNull: true
     },

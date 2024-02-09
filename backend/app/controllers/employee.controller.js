@@ -10,8 +10,8 @@ exports.findAll = (req, res) => {
         ['EMLNAM', 'ASC'],
         ['EMFNAM', 'ASC'],
     ]
-    //console.log(condition + ' ' + sortOrder)
-    //console.log(req.query)
+    console.log(condition + ' ' + sortOrder)
+    console.log(req.query)
     Employee.findAll({ where: condition, order: sortOrder })
         .then(data => {
             res.send(data);
@@ -33,6 +33,7 @@ exports.findOne = (req, res) => {
             res.send(data);
         })
         .catch(err => {
+            console.log(err)
             res.status(500).send({
                 message: "Error retrieving dbo.employees with id=" + id
             });
