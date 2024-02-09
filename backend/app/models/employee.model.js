@@ -504,6 +504,46 @@ module.exports = (sequelize, Sequelize) => {
     EMPSSN: {
       type: Sequelize.INTEGER,
       allowNull: true
+    },
+    ETMDAT: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    ETMCDE: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    ETMSDS1: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    ETMDS2: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    ETMDS3: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    ETMDS4: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    ETMDS5: {
+      type: Sequelize.STRING(50),
+      allowNull: true 
+    },
+    ETMDS6: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    ETMSTS: {
+      type: Sequelize.STRING(1),
+      allowNull: true
+    },
+    TRMTTL: {
+      type: Sequelize.STRING(50),
+      allowNull: true
     }
   });
  
