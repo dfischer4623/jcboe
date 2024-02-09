@@ -6,15 +6,6 @@ const ShowEmployee = (props) => {
     const { loggedIn, email, employeeNumber, ed, setEmployeeData, setEmpName } = props
 
     const navigate = useNavigate();
-    
-    const tagsButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/tags")
-    }
 
     const volDeductionsButtonClick = () => {
         if (ed.EMMNAM == null) {
@@ -418,13 +409,6 @@ const ShowEmployee = (props) => {
             <input
                 className={"inputButton"}
                 type="button"
-                onClick={tagsButtonClick}
-                value={"Show Tags"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
                 onClick={volDeductionsButtonClick}
                 value={"Show Voluntary Deductions"} />
         </div>
@@ -447,7 +431,7 @@ const ShowEmployee = (props) => {
                 className={"inputButton"}
                 type="button"
                 onClick={miscDataButtonClick}
-                value={"Show Misc Data"} />
+                value={"Show Additional Tags"} />
         </div>
         <div className={"inputContainer"}>
             <input

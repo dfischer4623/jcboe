@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 const MiscData = (props) => {
 
     const { loggedIn, email, employeeNumber, empName, md, setMiscData } = props
-
+    let holdTag = null
+    let first = true
+    let j = 99999
+    
     const navigate = useNavigate();
 
     const showEmployeeButtonClick = () => {
@@ -45,7 +48,32 @@ const MiscData = (props) => {
         return <h1>Loading...</h1>
     }
 
+    function blankLineFunction(j) {
+        return (
+            <tr key={j}>
+                <td>-----</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        ) 
+    }
+
     let miscDataFormatted = md.map((mdd, i) => {
+        if (mdd.PCTID != holdTag) {
+            holdTag = mdd.PCTID
+            if (first === true) {
+                first = false
+            } else {
+                j++
+                return(blankLineFunction(j))
+            }
+
+        } 
         return (
             <tr key={i}>
                 <td>{mdd.PCTID}</td>
@@ -63,7 +91,7 @@ const MiscData = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Employee Misc Data</div>
+            <div>Show Additional Tags</div>
         </div>
         <br />
         <div>
@@ -78,14 +106,14 @@ const MiscData = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Line#</td>
-                        <td>Column 1</td>
-                        <td>Column 2</td>
-                        <td>Column 3</td>
-                        <td>Column 4</td>
-                        <td>Column 5</td>
-                        <td>Column 6</td>
-                        <td>Column 7</td>
+                        <td>Tag</td>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 6</td>
+                        <td>Data 7</td>
                     </tr>
                     {miscDataFormatted}
                 </tbody>
