@@ -170,6 +170,46 @@ const ShowEmployee = (props) => {
         EMSRDT = ''
     }
 
+    if (ed.ETMDAT !== 0) {
+        dateString = ed.ETMDAT.toString();
+        if (dateString.length === 5) {
+            year = dateString.substring(3, 5) 
+            month = '0' + dateString.substring(0, 1);
+            day = dateString.substring(1, 3); 
+        } else {
+            year = dateString.substring(4, 6)
+            month = dateString.substring(0, 2);
+            day = dateString.substring(2, 4);
+        }
+        if (year > '30') {
+            year = '19' + year
+        } else {
+            year = '20' + year
+        }
+        var ETMDAT = month + '/' + day + '/' + year
+    } else {
+        ETMDAT = ''
+    }
+
+    if (ed.ETMDS1 === null) {
+        ed.ETMDS1 = '-'
+    }
+    if (ed.ETMDS2 === null) {
+        ed.ETMDS2 = '-'
+    }
+    if (ed.ETMDS3 === null) {
+        ed.ETMDS3 = '-'
+    }
+    if (ed.ETMDS4 === null) {
+        ed.ETMDS4 = '-'
+    }
+    if (ed.ETMDS5 === null) {
+        ed.ETMDS5 = '-'
+    }
+    if (ed.ETMDS6 === null) {
+        ed.ETMDS6 = '-'
+    }
+
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>Show Employee</div>
@@ -401,6 +441,38 @@ const ShowEmployee = (props) => {
                     <tr>
                         <td>Out-of-State: </td>
                         <td>{ed.EXOEXP}</td>
+                    </tr>
+                    <tr>
+                        <td>Termination Date: </td>
+                        <td>{ETMDAT}</td>
+                    </tr>
+                    <tr>
+                        <td>Termination Code: </td>
+                        <td>{ed.ETMCDE} {ed.TRMTTL}</td>
+                    </tr>
+                    <tr>
+                        <td>Employee Detail: </td>
+                        <td>{ed.ETMDS1}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>{ed.ETMDS2}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>{ed.ETMDS3}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>{ed.ETMDS4}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>{ed.ETMDS5}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>{ed.ETMDS6}</td>
                     </tr>
                 </tbody>
             </table>
