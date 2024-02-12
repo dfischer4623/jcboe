@@ -46,6 +46,6 @@ const Main = (props) => {
         <br />
         <div>Your email is {email}</div>
     </div>
-}
+} 
 
 export default Main

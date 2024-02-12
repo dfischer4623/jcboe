@@ -37,7 +37,7 @@ const ShowAttendance = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/api/employees/attendancedetail?` + new URLSearchParams({
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/attendancedetail?` + new URLSearchParams({
                    TMLSSN: adid.TMLSSN,
                    TMLJOB: adid.TMLJOB,
                    TMLABS: adid.TMLABS, 

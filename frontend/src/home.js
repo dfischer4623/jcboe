@@ -9,7 +9,7 @@ const Home = (props) => {
         if (loggedIn) {
             localStorage.removeItem("user")
             props.setLoggedIn(false)
-        } else {
+        } else { 
             navigate("/login")
         }
     }

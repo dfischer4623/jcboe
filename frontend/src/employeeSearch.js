@@ -18,7 +18,7 @@ const EmployeeSearch = (props) => {
     const onENButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://localhost:8080/api/employees/${employeeNumber}`);
+            const response = await fetch(`http://10.0.1.142:8080/api/employees/${employeeNumber}`);
             resData = await response.json()
             if (resData.EMSSAN == employeeNumber) {
                 navigate("/showEmployee")
@@ -35,7 +35,7 @@ const EmployeeSearch = (props) => {
     const onENameButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://localhost:8080/api/employees/?name=${employeeName}`);
+            const response = await fetch(`http://10.0.1.142:8080/api/employees/?name=${employeeName}`);
             resData = await response.json()
             setEmployeeNames(resData)
             //console.log(resData)
