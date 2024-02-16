@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 const ShowAttendance = (props) => {
 
     const { loggedIn, email, employeeNumber, ad, setAttendanceData, empName } = props
+    let holdYear = null
+    let first = true
+    let j = 99999
 
     const navigate = useNavigate();
 
@@ -63,8 +66,32 @@ const ShowAttendance = (props) => {
     //     navigate("/showAttendanceDetail")
     // }
 
+    function blankLineFunction(j) {
+        return (
+            <tr key={j}>
+                <td>-----</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        ) 
+    }
+
     let attendanceFormatted = ad.map((add, i) => {
         if (add.HAFBBL !== 0 || add.HAFERN !== 0 || add.HAFUSE !== 0 || add.HABAL !== 0) {
+            if (add.MEMBER != holdYear) {
+                holdYear=add.MEMBER
+                if (first === true) {
+                    first = false
+                } else {
+                    j++
+                    return(blankLineFunction(j))
+                }
+    
+            } 
             return (
                 <tr key={i}>
                     <td>{add.MEMBER}</td>
