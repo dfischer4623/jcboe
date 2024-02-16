@@ -7,6 +7,7 @@ exports.findAll = (req, res) => {
     var empNum = req.params.id
     var condition = { HANUM: Number(empNum) } ;
     var sortOrder = [
+        ['MEMBER', 'ASC'],
         ['HAJOB', 'ASC'],
         ['HAABS', 'ASC'],
     ]

@@ -63,9 +63,7 @@ const ShowAttendance = (props) => {
         if (add.HAFBBL !== 0 || add.HAFERN !== 0 || add.HAFUSE !== 0 || add.HABAL !== 0) {
             return (
                 <tr key={i}>
-                    <td>
-                        <a href="#" onClick={() => attendanceSelected(add.HANUM, add.HAJOB, add.HAABS)}>View</a>
-                    </td>
+                    <td>{add.MEMBER}</td>
                     <td>{add.HAJOB}</td>
                     <td>{add.HAABS}</td>
                     <td>{add.HAFBBL}</td>
@@ -94,7 +92,7 @@ const ShowAttendance = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
+                        <td>School Year</td>
                         <td>Job Code</td>
                         <td>Absence Code</td>
                         <td>Begin Balance</td>
