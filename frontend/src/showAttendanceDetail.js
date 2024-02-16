@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ShowAttendance = (props) => {
 
-    const { loggedIn, email, employeeNumber, adl, setAttendanceDataDetail, empName, adid } = props
+    const { loggedIn, email, employeeNumber, adl, setAttendanceDataDetail, empName } = props
 
     const navigate = useNavigate();
 
@@ -37,11 +37,7 @@ const ShowAttendance = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/attendancedetail?` + new URLSearchParams({
-                   TMLSSN: adid.TMLSSN,
-                   TMLJOB: adid.TMLJOB,
-                   TMLABS: adid.TMLABS, 
-                }));
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/attendancedetail/${employeeNumber}`);
                 const resData = await response.json()
                 setAttendanceDataDetail(resData)
             }
@@ -101,9 +97,6 @@ const ShowAttendance = (props) => {
                     </tr>
                     <tr>
                         <th colSpan="6">Employee Name: {empName}</th>
-                    </tr>
-                    <tr>
-                        <th colSpan="6">Job Code: {adid.TMLJOB} Absence Code: {adid.TMLABS}</th>
                     </tr>
                 </thead>
                 <tbody>

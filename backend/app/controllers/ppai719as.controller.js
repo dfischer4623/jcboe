@@ -4,11 +4,8 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all pp719as from the database.
 exports.findAll = (req, res) => {
-    var TMLSSN = req.query.TMLSSN
-    var TMLJOB = req.query.TMLJOB
-    var TMLABS = req.query.TMLABS
-    console.log(TMLSSN + ' ' + TMLJOB + ' ' + TMLABS)
-    var condition = { TMLSSN: TMLSSN, TMLJOB: TMLJOB, TMLABS: TMLABS } ;
+    var empNum = req.params.id
+    var condition = { TMLSSN: Number(empNum) } ;
     var sortOrder = [
         ['TMLPED', 'ASC'],
         ['TMLDAT', 'ASC'], 

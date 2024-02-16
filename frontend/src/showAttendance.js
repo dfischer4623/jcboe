@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const ShowAttendance = (props) => {
 
-    const { loggedIn, email, employeeNumber, ad, setAttendanceData, empName, adid, setAttendanceDataID } = props
+    const { loggedIn, email, employeeNumber, ad, setAttendanceData, empName } = props
 
     const navigate = useNavigate();
+
+    const showAttendanceDetailButtonClick = () => {
+        navigate("/showAttendanceDetail")
+    }
 
     const showEmployeeButtonClick = () => {
         navigate("/showEmployee")
@@ -49,15 +53,15 @@ const ShowAttendance = (props) => {
         return <h1>Loading...</h1>
     }
 
-    const attendanceSelected = (HANUM, HAJOB, HAABS) => {
-        const adido = {
-            TMLSSN: HANUM,
-            TMLJOB: HAJOB,
-            TMLABS: HAABS
-        }
-        setAttendanceDataID(adido)
-        navigate("/showAttendanceDetail")
-    }
+    // const attendanceSelected = (HANUM, HAJOB, HAABS) => {
+    //     const adido = {
+    //         TMLSSN: HANUM,
+    //         TMLJOB: HAJOB,
+    //         TMLABS: HAABS
+    //     }
+    //     setAttendanceDataID(adido)
+    //     navigate("/showAttendanceDetail")
+    // }
 
     let attendanceFormatted = ad.map((add, i) => {
         if (add.HAFBBL !== 0 || add.HAFERN !== 0 || add.HAFUSE !== 0 || add.HABAL !== 0) {
@@ -103,6 +107,13 @@ const ShowAttendance = (props) => {
                     {attendanceFormatted}
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showAttendanceDetailButtonClick}
+                value={"Show Attendance Detail"} />
         </div>
         <div className={"inputContainer"}>
             <input

@@ -20,7 +20,7 @@ module.exports = app => {
     router.get("/attendance/:id", ppay802s.findAll);
 
     // Retrieve "all or search" from ppay802s
-    router.get("/attendancedetail?", ppai719as.findAll);
+    router.get("/attendancedetail/:id", ppai719as.findAll);
 
     // Retrieve "all or search" from peis480ds
     router.get("/miscdata/:id", peis480ds.findAll);
