@@ -12,6 +12,7 @@ import Certificates from './certificates';
 import Salaries from './salaries';
 import ShowVolDeductions from './showVolDeductions';
 import ShowPayroll from './showPayroll';
+import ShowPayrollCheck from './showPayrollCheck';
 import Tags from './tags';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -32,6 +33,7 @@ function App() {
   const [vd, setVolDeductions] = useState(null)
   const [td, setTags] = useState(null)
   const [pd, setPayrollData] = useState(null)
+  const [cid, setCheckID] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -74,7 +76,8 @@ function App() {
           <Route path="/salaries" element={<Salaries loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} sd={sd} setSalaries={setSalaries} />} /> 
           <Route path="/showVolDeductions" element={<ShowVolDeductions loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} vd={vd} setVolDeductions={setVolDeductions} />} /> 
           <Route path="/tags" element={<Tags loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} td={td} setTags={setTags} />} />
-          <Route path="/showpayroll" element={<ShowPayroll loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pd={pd} setPayrollData={setPayrollData} />} />
+          <Route path="/showpayroll" element={<ShowPayroll loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pd={pd} setPayrollData={setPayrollData} cid={cid} setCheckID={setCheckID} />} />
+          <Route path="/showpayrollcheck" element={<ShowPayrollCheck loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pd={pd} setPayrollData={setPayrollData} cid={cid} setCheckID={setCheckID} />} />
        
         </Routes>
       </BrowserRouter>

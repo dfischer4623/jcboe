@@ -114,7 +114,7 @@ const ShowPayroll = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show Payroll</div>
+            <div>Show Payroll Check</div>
         </div>
         <br />
         <div className={"attTableContainer"}>
