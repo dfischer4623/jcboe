@@ -18,7 +18,8 @@ module.exports = (sequelize, Sequelize) => {
     },
     PCSSN: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     'PCCK#': {
       type: Sequelize.INTEGER,

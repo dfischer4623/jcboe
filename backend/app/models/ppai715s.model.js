@@ -18,7 +18,8 @@ module.exports = (sequelize, Sequelize) => {
     },
     DESSN: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     DEPSEQ: {
       type: Sequelize.INTEGER,

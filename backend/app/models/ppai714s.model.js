@@ -18,7 +18,8 @@ module.exports = (sequelize, Sequelize) => {
     },
     PDSSN: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     PDJOB: {
       type: Sequelize.STRING(50),

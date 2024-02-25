@@ -18,7 +18,8 @@ module.exports = (sequelize, Sequelize) => {
     },
     PASSN: {
       type: Sequelize.STRING(50),
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     PAPSEQ: {
       type: Sequelize.STRING(50),
