@@ -26,5 +26,9 @@ db.certificates = require("./certificates.model.js")(sequelize, Sequelize);
 db.salaries = require("./salaries.model.js")(sequelize, Sequelize);
 db.ppay3403s = require("./ppay3403s.model.js")(sequelize, Sequelize);
 db.peis480hs = require("./peis480hs.model.js")(sequelize, Sequelize);
+db.ppai712s = require("./ppai712s.model.js")(sequelize, Sequelize);
+db.ppai713s = require("./ppai713s.model.js")(sequelize, Sequelize);
+db.ppai714s = require("./ppai714s.model.js")(sequelize, Sequelize);
+db.ppai715s = require("./ppai715s.model.js")(sequelize, Sequelize);
 
 module.exports = db;

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAY802XX', {
+  return sequelize.define('PPAY802ORIG', {
     HANUM: {
       type: DataTypes.INTEGER,
       allowNull: true
@@ -106,7 +106,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     HAUSG: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(1),
       allowNull: true
     },
     HABUSY: {
@@ -127,7 +127,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'PPAY802XX',
+    tableName: 'PPAY802ORIG',
     schema: 'dbo',
     timestamps: false,
     underscored: true
