@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: true
     },
-    'DERUN#': {
+    DERUN: {
       type: Sequelize.STRING(50),
       allowNull: true
     },

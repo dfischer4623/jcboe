@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(50),
       allowNull: true
     },
-    'PARUN#': {
+    PARUN: {
       type: Sequelize.STRING(50),
       allowNull: true
     },

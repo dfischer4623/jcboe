@@ -7,6 +7,15 @@ const ShowEmployee = (props) => {
 
     const navigate = useNavigate();
 
+    const showPayrollButtonClick = () => {
+        if (ed.EMMNAM == null) {
+            ed.EMMNAM = " "
+        }
+        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+        setEmpName(empNameX)
+        navigate("/showPayroll")
+    }
+
     const volDeductionsButtonClick = () => {
         if (ed.EMMNAM == null) {
             ed.EMMNAM = " "
@@ -476,6 +485,13 @@ const ShowEmployee = (props) => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showPayrollButtonClick}
+                value={"Show Payroll"} />
         </div>
         <div className={"inputContainer"}>
             <input

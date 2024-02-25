@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.TINYINT,
       allowNull: true
     },
-    'PCRUN#': {
+    PCRUN: {
       type: Sequelize.SMALLINT,
       allowNull: true
     },
@@ -21,7 +21,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true,
       primaryKey: true
     },
-    'PCCK#': {
+    PCCK: {
       type: Sequelize.INTEGER,
       allowNull: true
     },
@@ -75,6 +75,22 @@ module.exports = (sequelize, Sequelize) => {
     },
     updatedAt: {
       type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    HRCKDT: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    HRBNK2: {
+      type: Sequelize.STRING(50),
+      allowNull: true
+    },
+    HRBAC2: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    HRFRM2: {
+      type: Sequelize.STRING(50),
       allowNull: true
     }
   });

@@ -7,7 +7,7 @@ exports.findAll = (req, res) => {
     var empNum = req.params.id
     var condition = { PCSSN: Number(empNum) } ;
     var sortOrder = [
-        ['PCRUN#', 'ASC'],
+        ['PCRUN', 'DESC'],
     ]
     Ppai712s.findAll({ where: condition, order: sortOrder })
         .then(data => {

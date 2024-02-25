@@ -11,6 +11,7 @@ import MiscData from './miscData';
 import Certificates from './certificates';
 import Salaries from './salaries';
 import ShowVolDeductions from './showVolDeductions';
+import ShowPayroll from './showPayroll';
 import Tags from './tags';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -30,6 +31,7 @@ function App() {
   const [sd, setSalaries] = useState(null)
   const [vd, setVolDeductions] = useState(null)
   const [td, setTags] = useState(null)
+  const [pd, setPayrollData] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -72,6 +74,8 @@ function App() {
           <Route path="/salaries" element={<Salaries loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} sd={sd} setSalaries={setSalaries} />} /> 
           <Route path="/showVolDeductions" element={<ShowVolDeductions loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} vd={vd} setVolDeductions={setVolDeductions} />} /> 
           <Route path="/tags" element={<Tags loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} td={td} setTags={setTags} />} />
+          <Route path="/showpayroll" element={<ShowPayroll loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pd={pd} setPayrollData={setPayrollData} />} />
+       
         </Routes>
       </BrowserRouter>
     </div>
