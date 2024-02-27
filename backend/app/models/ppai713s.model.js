@@ -53,7 +53,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(50),
       allowNull: true
     },
-    'PA#CK': {
+    PACK: {
       type: Sequelize.STRING(50),
       allowNull: true
     },
@@ -71,6 +71,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     updatedAt: {
       type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    JDTITL: {
+      type: Sequelize.STRING(50),
       allowNull: true
     }
   });

@@ -54,11 +54,10 @@ const ShowPayroll = (props) => {
         currency: "USD",
     });
 
-    const checkSelected = (PCSSN, PCRUN, PCCK) => {
+    const checkSelected = (PCSSN, PCRUN) => {
         const ckido = {
             SSN: PCSSN,
             RUN: PCRUN,
-            CHK: PCCK
         }
         setCheckID(ckido)
         navigate("/showPayrollCheck")
@@ -99,15 +98,12 @@ const ShowPayroll = (props) => {
             HRCKDT = ''
         }
         return (
-            <tr key={i}>
+            <tr key={pdd.PCRUN}>
                 <td>{HRCKDT}</td>
-                <td><a href="#" onClick={() => checkSelected(pdd.PCSSN, pdd.PCRUN, pdd.PCCK)}>
+                <td><a href="#" onClick={() => checkSelected(pdd.PCSSN, pdd.PCRUN)}>
                     {pdd.PCCK}</a></td>
-                <td>{pdd.HRBNK2}</td>
-                <td>{pdd.HRBAC2}</td>
                 <td>{pdd.HRFRM2}</td>
                 <td>{dollarUS.format(pdd.PCAMT)}</td>
-                <td>{pdd.PCRUN}</td>
             </tr>
         )
     })
@@ -121,21 +117,18 @@ const ShowPayroll = (props) => {
             <table>
                 <thead className={"thatt"}>
                     <tr>
-                        <th colSpan="7">Employee Number: {employeeNumber}</th>
+                        <th colSpan="4">Employee Number: {employeeNumber}</th>
                     </tr>
                     <tr>
-                        <th colSpan="7">Employee Name: {empName}</th>
+                        <th colSpan="4">Employee Name: {empName}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Check Date</td>
                         <td>Check #</td>
-                        <td>Bank</td>
-                        <td>Account</td>
                         <td>Form</td>
                         <td>Check Amt</td>
-                        <td>Run #</td>
                     </tr>
                     {payrollFormatted}
                 </tbody>

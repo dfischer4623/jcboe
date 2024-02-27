@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const ShowPayroll = (props) => {
 
-    const { loggedIn, email, employeeNumber, pd, setPayrollData, setCheckID, empName } = props
+    const { loggedIn, email, employeeNumber, pcd, setPayrollCheckData, cid, empName } = props
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
+
+    const showPayrollButtonClick = () => {
+        navigate("/showPayroll")
+    }
 
     const showEmployeeButtonClick = () => {
         navigate("/showEmployee")
@@ -33,19 +37,19 @@ const ShowPayroll = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/payroll/${employeeNumber}`);
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/payrollCheck/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
                 const resData = await response.json()
-                setPayrollData(resData)
+                setPayrollCheckData(resData)
             }
             catch (error) {
                 console.log("error", error);
-                navigate("/showEmployee")
+                navigate("/showPayroll")
             }
         }
         fetchData()
     }, [])
 
-    if (pd === null) {
+    if (pcd === null) {
         return <h1>Loading...</h1>
     }
 
@@ -54,60 +58,16 @@ const ShowPayroll = (props) => {
         currency: "USD",
     });
 
-    const checkSelected = (PCSSN, PCRUN, PCCK) => {
-        const ckido = {
-            SSN: PCSSN,
-            RUN: PCRUN,
-            CHK: PCCK
-        }
-        setCheckID(ckido)
-        navigate("/showPayrollCheck")
-    }
+    let payrollCheckFormatted = pcd.map((pcdd, i) => {
 
-    let payrollFormatted = pd.map((pdd, i) => {
-        var HRCKDT = pdd.HRCKDT
-        var dateString = HRCKDT.toString();
-        if (dateString !== '') {
-            if (dateString.length === 3) {
-                var month = '0' + dateString.substring(0, 1);
-                var day = dateString.substring(1, 3);
-                var year = '2000'
-            } else if (dateString.length === 4) {
-                month = dateString.substring(0, 2);
-                day = dateString.substring(2, 4);
-                year = '2000'
-            } else if (dateString.length === 5) {
-                month = dateString.substring(1, 3);
-                day = dateString.substring(3, 5);
-                year = '200' + dateString.substring(0, 1);
-            } else if (dateString.length === 6) {
-                month = dateString.substring(2, 4);
-                day = dateString.substring(4, 6);
-                year = dateString.substring(0, 2);
-                if (year > '30') {
-                    year = '19' + year
-                } else {
-                    year = '20' + year
-                }
-            } else {
-                month = '12'
-                day = '31'
-                year = '9999'
-            }
-            HRCKDT = month + '/' + day + '/' + year
-        } else {
-            HRCKDT = ''
-        }
-        return (
+        return (  
             <tr key={i}>
-                <td>{HRCKDT}</td>
-                <td><a href="#" onClick={() => checkSelected(pdd.PCSSN, pdd.PCRUN, pdd.PCCK)}>
-                    {pdd.PCCK}</a></td>
-                <td>{pdd.HRBNK2}</td>
-                <td>{pdd.HRBAC2}</td>
-                <td>{pdd.HRFRM2}</td>
-                <td>{dollarUS.format(pdd.PCAMT)}</td>
-                <td>{pdd.PCRUN}</td>
+                <td>{pcdd.JDTITL}</td>
+                <td>{pcdd.PAJOB}</td>
+                <td>{pcdd.PAADN}</td>
+                <td>{pcdd.PATYP}</td>
+                <td>{dollarUS.format(pcdd.PACAL)}</td>
+                <td>{dollarUS.format(pcdd.PACUR)}</td>
             </tr>
         )
     })
@@ -121,25 +81,31 @@ const ShowPayroll = (props) => {
             <table>
                 <thead className={"thatt"}>
                     <tr>
-                        <th colSpan="7">Employee Number: {employeeNumber}</th>
+                        <th colSpan="6">Employee Number: {employeeNumber}</th>
                     </tr>
                     <tr>
-                        <th colSpan="7">Employee Name: {empName}</th>
+                        <th colSpan="6">Employee Name: {empName}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Check Date</td>
-                        <td>Check #</td>
-                        <td>Bank</td>
-                        <td>Account</td>
-                        <td>Form</td>
-                        <td>Check Amt</td>
-                        <td>Run #</td>
+                        <td>Description</td>
+                        <td>Ref 1</td>
+                        <td>Ref 2</td>
+                        <td>Type</td>
+                        <td>Cal Amount</td>
+                        <td>Check Amount</td>
                     </tr>
-                    {payrollFormatted}
+                    {payrollCheckFormatted}
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showPayrollButtonClick}
+                value={"Show Payroll"} />
         </div>
         <div className={"inputContainer"}>
             <input
