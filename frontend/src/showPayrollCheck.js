@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+let grossPay = 0
+let deductions = 0
+let netPay = 0
+let checkNumber = 0
+
 const ShowPayroll = (props) => {
 
-    const { loggedIn, email, employeeNumber, pcd, setPayrollCheckData, cid, empName } = props
+    const { loggedIn, email, employeeNumber, pcd, setPayrollCheckData, cid, empName, pcddd, setPayrollDeductionData } = props
 
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const showPayrollButtonClick = () => {
         navigate("/showPayroll")
@@ -36,6 +41,7 @@ const ShowPayroll = (props) => {
             navigate("/")
         }
         const fetchData = async () => {
+
             try {
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/payrollCheck/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
                 const resData = await response.json()
@@ -45,11 +51,22 @@ const ShowPayroll = (props) => {
                 console.log("error", error);
                 navigate("/showPayroll")
             }
+
+            try {
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/payrollCheckDeductions/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
+                const resData = await response.json()
+                setPayrollDeductionData(resData)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/showPayroll")
+            }
+
         }
         fetchData()
     }, [])
 
-    if (pcd === null) {
+    if (pcd === null || pcddd === null) {
         return <h1>Loading...</h1>
     }
 
@@ -58,9 +75,26 @@ const ShowPayroll = (props) => {
         currency: "USD",
     });
 
+    let payrollCheckHeaderFormatted = function() {
+
+        grossPay=0
+        deductions=0
+
+        pcd.forEach(function (item) {
+            grossPay += Number(item.PACUR);
+        });
+
+        pcddd.forEach(function (item) {
+            deductions += Number(item.DEAMT);
+        });
+
+        netPay = grossPay + deductions
+
+    }
+
     let payrollCheckFormatted = pcd.map((pcdd, i) => {
 
-        return (  
+        return (
             <tr key={i}>
                 <td>{pcdd.JDTITL}</td>
                 <td>{pcdd.PAJOB}</td>
@@ -68,6 +102,20 @@ const ShowPayroll = (props) => {
                 <td>{pcdd.PATYP}</td>
                 <td>{dollarUS.format(pcdd.PACAL)}</td>
                 <td>{dollarUS.format(pcdd.PACUR)}</td>
+            </tr>
+        )
+    })
+
+    let payrollDeductionFormatted = pcddd.map((pcdddd, i) => {
+
+        return (
+            <tr key={i}>
+                <td>{pcdddd.DEDESC}</td>
+                <td>{pcdddd.DECODE}</td>
+                <td>{pcdddd.DEJUR}</td>
+                <td>{pcdddd.DETYP}</td>
+                <td>{dollarUS.format(pcdddd.DECAL)}</td>
+                <td>{dollarUS.format(pcdddd.DEAMT)}</td>
             </tr>
         )
     })
@@ -86,6 +134,13 @@ const ShowPayroll = (props) => {
                     <tr>
                         <th colSpan="6">Employee Name: {empName}</th>
                     </tr>
+                    {payrollCheckHeaderFormatted()}
+                    <tr>
+                        <th colSpan="6">Check #: {cid.CHECK} Check Date: {cid.CHKDT}</th>
+                    </tr>
+                    <tr>
+                        <th colSpan="6">Gross Pay: {dollarUS.format(grossPay)} Deductions: {dollarUS.format(deductions)} Net Pay: {dollarUS.format(netPay)} </th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -97,6 +152,7 @@ const ShowPayroll = (props) => {
                         <td>Check Amount</td>
                     </tr>
                     {payrollCheckFormatted}
+                    {payrollDeductionFormatted}
                 </tbody>
             </table>
         </div>

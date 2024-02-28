@@ -54,10 +54,12 @@ const ShowPayroll = (props) => {
         currency: "USD",
     });
 
-    const checkSelected = (PCSSN, PCRUN) => {
+    const checkSelected = (PCSSN, PCRUN, CHECK, CHKDT) => {
         const ckido = {
             SSN: PCSSN,
             RUN: PCRUN,
+            CHECK: CHECK,
+            CHKDT: CHKDT
         }
         setCheckID(ckido)
         navigate("/showPayrollCheck")
@@ -100,7 +102,7 @@ const ShowPayroll = (props) => {
         return (
             <tr key={pdd.PCRUN}>
                 <td>{HRCKDT}</td>
-                <td><a href="#" onClick={() => checkSelected(pdd.PCSSN, pdd.PCRUN)}>
+                <td><a href="#" onClick={() => checkSelected(pdd.PCSSN, pdd.PCRUN, pdd.PCCK, HRCKDT)}>
                     {pdd.PCCK}</a></td>
                 <td>{pdd.HRFRM2}</td>
                 <td>{dollarUS.format(pdd.PCAMT)}</td>
