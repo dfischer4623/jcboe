@@ -75,10 +75,10 @@ const ShowPayroll = (props) => {
         currency: "USD",
     });
 
-    let payrollCheckHeaderFormatted = function() {
+    let payrollCheckHeaderFormatted = function () {
 
-        grossPay=0
-        deductions=0
+        grossPay = 0
+        deductions = 0
 
         pcd.forEach(function (item) {
             grossPay += Number(item.PACUR);
