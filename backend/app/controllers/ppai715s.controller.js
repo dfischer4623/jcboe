@@ -4,10 +4,11 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all ppai715s from the database.
 exports.findAll = (req, res) => {
-    var empNum = req.params.id
-    var condition = { PCSSN: Number(empNum) } ;
+    var empNum = req.query.SSN
+    var run = req.query.RUN
+    var condition = { DESSN: Number(empNum), DERUN: Number(run) };
     var sortOrder = [
-        ['PCRUN', 'DESC'],
+        ['DERUN', 'ASC'],
     ]
     Ppai715s.findAll({ where: condition, order: sortOrder })
         .then(data => {

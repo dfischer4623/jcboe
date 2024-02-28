@@ -72,6 +72,10 @@ module.exports = (sequelize, Sequelize) => {
     updatedAt: {
       type: Sequelize.DATEONLY,
       allowNull: true
+    },
+    DEDESC: {
+      type: Sequelize.STRING(50),
+      allowNull: true
     }
   });
  

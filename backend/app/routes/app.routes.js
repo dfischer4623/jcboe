@@ -12,6 +12,7 @@ module.exports = app => {
     const peis480hs = require("../controllers/peis480hs.controller.js");
     const ppai712s = require("../controllers/ppai712s.controller.js");
     const ppai713s = require("../controllers/ppai713s.controller.js");
+    const ppai715s = require("../controllers/ppai715s.controller.js");
     
     var router = require("express").Router();
 
@@ -44,6 +45,9 @@ module.exports = app => {
 
     // Retrieve "all or search" from voluntary deductions
     router.get("/payrollCheck/", ppai713s.findAll);
+
+    // Retrieve "all or search" from voluntary deductions
+    router.get("/payrollCheckDeductions/", ppai715s.findAll);
 
     // Retrieve an employee from employees using id
     router.get("/:id", employees.findOne);
