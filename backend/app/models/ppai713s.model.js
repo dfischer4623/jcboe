@@ -5,7 +5,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     BUSY: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     PARUN: {
