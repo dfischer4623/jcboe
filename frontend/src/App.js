@@ -15,6 +15,7 @@ import ShowPayroll from './showPayroll';
 import ShowPayrollCheck from './showPayrollCheck';
 import Tags from './tags';
 import PayrollTables from './payrollTables';
+import AbsenceLeaveCodes from './absenceLeaveCodes';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -37,6 +38,7 @@ function App() {
   const [pcd, setPayrollCheckData] = useState(null)
   const [pcddd, setPayrollDeductionData] = useState(null)
   const [cid, setCheckID] = useState(null)
+  const [alc, setAbsenceLeaveCodes] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -81,7 +83,8 @@ function App() {
           <Route path="/tags" element={<Tags loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} td={td} setTags={setTags} />} />
           <Route path="/showpayroll" element={<ShowPayroll loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pd={pd} setPayrollData={setPayrollData} cid={cid} setCheckID={setCheckID} />} />
           <Route path="/showpayrollcheck" element={<ShowPayrollCheck loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pcd={pcd} setPayrollCheckData={setPayrollCheckData} cid={cid} pcddd={pcddd} setPayrollDeductionData={setPayrollDeductionData} />} />
-          <Route path="/payrollTables" element={<PayrollTables loggedIn={loggedIn} email={email} />} />
+          <Route path="/payrollTables" element={<PayrollTables loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} />} />
+          <Route path="/absenceLeaveCodes" element={<AbsenceLeaveCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} alc={alc} setAbsenceLeaveCodes={setAbsenceLeaveCodes} />} />
        
         </Routes>
       </BrowserRouter>
