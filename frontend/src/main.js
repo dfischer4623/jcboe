@@ -45,7 +45,7 @@ const Main = (props) => {
                 className={"inputButton"}
                 type="button"
                 onClick={payrollTablesButtonClick}
-                value={"Payroll Tables"} />
+                value={"Payroll Codes"} />
         </div>
         <div className={"inputContainer"}>
             <input

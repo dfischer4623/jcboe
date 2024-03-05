@@ -15,8 +15,8 @@ const Main = (props) => {
         }
     })
 
-    const payrollTablesButtonClick = () => {
-        navigate("/payrollTables")
+    const absenceLeaveCodesButtonClick = () => {
+        navigate("/absenceLeaveCodes")
     }
     
     const mainButtonClick = () => {
@@ -31,14 +31,14 @@ const Main = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Payroll Tables</div>
+            <div>Payroll Codes</div>
         </div>
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}
                 type="button"
-                onClick={payrollTablesButtonClick}
-                value={"Payroll Tables"} />
+                onClick={absenceLeaveCodesButtonClick}
+                value={"Absence/Leave Codes"} />
         </div>
         <div className={"inputContainer"}>
             <input
