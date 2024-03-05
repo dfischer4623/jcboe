@@ -14,6 +14,7 @@ import ShowVolDeductions from './showVolDeductions';
 import ShowPayroll from './showPayroll';
 import ShowPayrollCheck from './showPayrollCheck';
 import Tags from './tags';
+import PayrollTables from './payrollTables';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -80,6 +81,7 @@ function App() {
           <Route path="/tags" element={<Tags loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} ad={ad} setAttendanceData={setAttendanceData} empName={empName} td={td} setTags={setTags} />} />
           <Route path="/showpayroll" element={<ShowPayroll loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pd={pd} setPayrollData={setPayrollData} cid={cid} setCheckID={setCheckID} />} />
           <Route path="/showpayrollcheck" element={<ShowPayrollCheck loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pcd={pcd} setPayrollCheckData={setPayrollCheckData} cid={cid} pcddd={pcddd} setPayrollDeductionData={setPayrollDeductionData} />} />
+          <Route path="/payrollTables" element={<PayrollTables loggedIn={loggedIn} email={email} />} />
        
         </Routes>
       </BrowserRouter>
