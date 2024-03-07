@@ -26,6 +26,10 @@ const Main = (props) => {
     const payTableCodesButtonClick = () => {
         navigate("/payTableCodes")
     } 
+
+    const jobCodesButtonClick = () => {
+        navigate("/jobCodes")
+    } 
     
     const mainButtonClick = () => {
         navigate("/main")
@@ -61,6 +65,13 @@ const Main = (props) => {
                 type="button"
                 onClick={payTableCodesButtonClick}
                 value={"Pay Table Codes"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={jobCodesButtonClick}
+                value={"Job Codes"} />
         </div>
         <div className={"inputContainer"}>
             <input
