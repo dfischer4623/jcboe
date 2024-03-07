@@ -29,6 +29,8 @@ db.peis480hs = require("./peis480hs.model.js")(sequelize, Sequelize);
 db.ppai712s = require("./ppai712s.model.js")(sequelize, Sequelize);
 db.ppai713s = require("./ppai713s.model.js")(sequelize, Sequelize);
 db.ppai715s = require("./ppai715s.model.js")(sequelize, Sequelize);
-db.ppay121s = require("./ppaY121s.model.js")(sequelize, Sequelize);
+db.ppay121s = require("./ppay121s.model.js")(sequelize, Sequelize);
+db.ppay122s = require("./ppay122s.model.js")(sequelize, Sequelize);
+db.ppay125s = require("./ppay125s.model.js")(sequelize, Sequelize);
 
 module.exports = db;

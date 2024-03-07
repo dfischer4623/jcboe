@@ -16,6 +16,9 @@ import ShowPayrollCheck from './showPayrollCheck';
 import Tags from './tags';
 import PayrollTables from './payrollTables';
 import AbsenceLeaveCodes from './absenceLeaveCodes';
+import DeductionsContritbutionsCodes from './deductionsContributionsCodes';
+import PayTableCodes from './payTableCodes';
+
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -39,6 +42,8 @@ function App() {
   const [pcddd, setPayrollDeductionData] = useState(null)
   const [cid, setCheckID] = useState(null)
   const [alc, setAbsenceLeaveCodes] = useState(null)
+  const [dcc, setDeductionsContributionsCodes] = useState(null)
+  const [ptc, setPayTableCodes] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -85,6 +90,9 @@ function App() {
           <Route path="/showpayrollcheck" element={<ShowPayrollCheck loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} pcd={pcd} setPayrollCheckData={setPayrollCheckData} cid={cid} pcddd={pcddd} setPayrollDeductionData={setPayrollDeductionData} />} />
           <Route path="/payrollTables" element={<PayrollTables loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} />} />
           <Route path="/absenceLeaveCodes" element={<AbsenceLeaveCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} alc={alc} setAbsenceLeaveCodes={setAbsenceLeaveCodes} />} />
+          <Route path="/deductionsContributionsCodes" element={<DeductionsContritbutionsCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} dcc={dcc} setDeductionsContributionsCodes={setDeductionsContributionsCodes} />} />
+          <Route path="/payTableCodes" element={<PayTableCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} ptc={ptc} setPayTableCodes={setPayTableCodes} />} />
+      
         </Routes>
       </BrowserRouter>
     </div>

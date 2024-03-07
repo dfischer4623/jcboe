@@ -1,11 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
-  const Ppay121s = sequelize.define("ppay121s", {
-    ABKEY: {
+  const Ppay122s = sequelize.define("ppay122s", {
+    DDTABL: {
       type: Sequelize.STRING(50),
       allowNull: false,
       primaryKey: true
     },
-    ABDESC: {
+    DDHDES: {
       type: Sequelize.STRING(50),
       allowNull: false,
     },
@@ -17,8 +17,9 @@ module.exports = (sequelize, Sequelize) => {
     updatedAt: {
       type: Sequelize.DATEONLY,
       allowNull: false,
+      primaryKey: true
     }
   });
  
-    return Ppay121s;
+    return Ppay122s;
   };
