@@ -19,6 +19,7 @@ import AbsenceLeaveCodes from './absenceLeaveCodes';
 import DeductionsContritbutionsCodes from './deductionsContributionsCodes';
 import PayTableCodes from './payTableCodes';
 import JobCodes from './jobCodes';
+import AddendaCodes from './addendaCodes';
 
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -46,6 +47,7 @@ function App() {
   const [dcc, setDeductionsContributionsCodes] = useState(null)
   const [ptc, setPayTableCodes] = useState(null)
   const [jcc, setJobCodes] = useState(null)
+  const [acc, setAddendaCodes] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -95,6 +97,7 @@ function App() {
           <Route path="/deductionsContributionsCodes" element={<DeductionsContritbutionsCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} dcc={dcc} setDeductionsContributionsCodes={setDeductionsContributionsCodes} />} />
           <Route path="/payTableCodes" element={<PayTableCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} ptc={ptc} setPayTableCodes={setPayTableCodes} />} />
           <Route path="/jobCodes" element={<JobCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} jcc={jcc} setJobCodes={setJobCodes} />} />
+          <Route path="/addendaCodes" element={<AddendaCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} acc={acc} setAddendaCodes={setAddendaCodes} />} />
       
         </Routes>
       </BrowserRouter>
