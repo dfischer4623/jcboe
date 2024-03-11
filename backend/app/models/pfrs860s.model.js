@@ -361,11 +361,11 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(50),
       allowNull: true
     },
-    createdBy: {
+    createdAt: {
       type: Sequelize.DATEONLY,
       allowNull: true
     },
-    updatedBy: {
+    updatedAt: {
       type: Sequelize.DATEONLY,
       allowNull: true
     }
