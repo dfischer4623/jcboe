@@ -31,10 +31,14 @@ const Main = (props) => {
         navigate("/jobCodes")
     } 
     
-    const addendaCodesButtonClick = () => {
+    const addendaCodesButtonClick = () => { 
         navigate("/addendaCodes")
     }
     
+    const terminationCodesButtonClick = () => {
+        navigate("/terminationCodes")
+    }
+
     const mainButtonClick = () => {
         navigate("/main")
     }
@@ -83,6 +87,13 @@ const Main = (props) => {
                 type="button"
                 onClick={addendaCodesButtonClick}
                 value={"Addenda Codes"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={terminationCodesButtonClick}
+                value={"Termination Codes"} />
         </div>
         <div className={"inputContainer"}>
             <input

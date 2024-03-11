@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const MiscData = (props) => {
+const JobCodes = (props) => {
 
     const { loggedIn, email, jcc, setJobCodes } = props
     
@@ -99,4 +99,4 @@ const MiscData = (props) => {
     </div >
 }
 
-export default MiscData
+export default JobCodes

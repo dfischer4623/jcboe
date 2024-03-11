@@ -86,7 +86,7 @@ const ShowAttendance = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show Absence Details</div>
+            <div>Show Attendance Details</div>
         </div>
         <br />
         <div className={"attTableContainer"}>

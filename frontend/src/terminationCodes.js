@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const DeductionsContributionsCodes = (props) => {
+const TerminationCodes = (props) => {
 
-    const { loggedIn, email, dcc, setDeductionsContributionsCodes } = props
-    
+    const { loggedIn, email } = props
+
     const navigate = useNavigate();
-    
+
     const payrollTablesButtonClick = () => {
         navigate("/payrollTables")
     }
@@ -27,48 +27,44 @@ const DeductionsContributionsCodes = (props) => {
             props.setLoggedIn(false)
             navigate("/")
         }
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppay122s`);
-                const resData = await response.json()
-                setDeductionsContributionsCodes(resData)
-            }
-            catch (error) {
-                console.log("error", error);
-                navigate("/payrollTables")
-            }
-        }
-        fetchData()
     }, [])
-
-    if (dcc === null) {
-        return <h1>Loading...</h1>
-    }
-
-    let deductionsContributionsCodesFormatted = dcc.map((dccd, i) => {
-        
-        return (
-            <tr key={i}>
-                <td>{dccd.DDTABL}</td>
-                <td>{dccd.DDHDES}</td>
-            </tr>
-
-        )
-    })
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Deductions/Contributions Codes</div>
+            <div>Termination Codes</div>
         </div>
         <br />
         <div>
             <table>
                 <tbody>
                     <tr>
-                        <td>Code</td>
+                        <td>Termination Codes</td>
                         <td>Description</td>
                     </tr>
-                    {deductionsContributionsCodesFormatted}
+                    <tr key={1}>
+                        <td>1</td>
+                        <td>DECEASED</td>
+                    </tr>
+                    <tr key={2}>
+                        <td>2</td>
+                        <td>SERVICES TERMINATED</td>
+                    </tr>
+                    <tr key={3}>
+                        <td>3</td>
+                        <td>RESIGNED</td>
+                    </tr>
+                    <tr key={4}>
+                        <td>4</td>
+                        <td>RETIRED</td>
+                    </tr>
+                    <tr key={5}>
+                        <td>5</td>
+                        <td>CONTRACT NOT RENEWED</td>
+                    </tr>
+                    <tr key={6}>
+                        <td>6</td>
+                        <td>LONG TERM LEAVE</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -99,4 +95,4 @@ const DeductionsContributionsCodes = (props) => {
     </div >
 }
 
-export default DeductionsContributionsCodes
+export default TerminationCodes

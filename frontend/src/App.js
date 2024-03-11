@@ -20,6 +20,7 @@ import DeductionsContritbutionsCodes from './deductionsContributionsCodes';
 import PayTableCodes from './payTableCodes';
 import JobCodes from './jobCodes';
 import AddendaCodes from './addendaCodes';
+import TerminationCodes from './terminationCodes';
 
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -98,6 +99,7 @@ function App() {
           <Route path="/payTableCodes" element={<PayTableCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} ptc={ptc} setPayTableCodes={setPayTableCodes} />} />
           <Route path="/jobCodes" element={<JobCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} jcc={jcc} setJobCodes={setJobCodes} />} />
           <Route path="/addendaCodes" element={<AddendaCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} acc={acc} setAddendaCodes={setAddendaCodes} />} />
+          <Route path="/terminationCodes" element={<TerminationCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} />} />
       
         </Routes>
       </BrowserRouter>
