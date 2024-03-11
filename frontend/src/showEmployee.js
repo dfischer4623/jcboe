@@ -3,9 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 const ShowEmployee = (props) => {
 
-    const { loggedIn, email, employeeNumber, ed, setEmployeeData, setEmpName } = props
+    const { loggedIn, email, employeeNumber, ed, setEmployeeData, setEmpName, setSsn } = props
 
     const navigate = useNavigate();
+
+    const showW2sButtonClick = () => {
+        if (ed.EMMNAM == null) {
+            ed.EMMNAM = " "
+        }
+        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+        setEmpName(empNameX)
+        setSsn(ed.EMPSSN)
+        navigate("/showW2s")
+    }
 
     const showPayrollButtonClick = () => {
         if (ed.EMMNAM == null) {
@@ -485,6 +495,13 @@ const ShowEmployee = (props) => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showW2sButtonClick}
+                value={"Show W2s"} />
         </div>
         <div className={"inputContainer"}>
             <input
