@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'DERUN#': {
+    DERUN: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
@@ -63,6 +63,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     MEMBER: {
       type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {

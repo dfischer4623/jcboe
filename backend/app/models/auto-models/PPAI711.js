@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TINYINT,
       allowNull: false
     },
-    'HRRUN#': {
+    HRRUN: {
       type: DataTypes.SMALLINT,
       allowNull: false
     },

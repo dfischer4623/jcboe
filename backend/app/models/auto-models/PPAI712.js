@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TINYINT,
       allowNull: true
     },
-    'PCRUN#': {
+    PCRUN: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'PCCK#': {
+    PCCK: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
@@ -67,6 +67,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     MEMBER: {
       type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {

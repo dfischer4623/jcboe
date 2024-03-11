@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAY124s', {
-    JDKEY: {
+  return sequelize.define('ppay125s', {
+    PHKEY: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false
     },
-    JDTITL: {
+    PHDESC: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'PPAY124s',
+    tableName: 'ppay125s',
     schema: 'dbo',
     timestamps: false,
     underscored: true

@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'PDRUN#': {
+    PDRUN: {
       type: DataTypes.TEXT,
       allowNull: true
     },

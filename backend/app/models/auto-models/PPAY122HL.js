@@ -1,25 +1,17 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PPAY124s', {
-    JDKEY: {
+  return sequelize.define('PPAY122HL', {
+    DEDCODE: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    JDTITL: {
+    DEDESC: {
       type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    createdAt: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    updatedAt: {
-      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'PPAY124s',
+    tableName: 'PPAY122HL',
     schema: 'dbo',
     timestamps: false,
     underscored: true
