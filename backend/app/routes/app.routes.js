@@ -18,6 +18,7 @@ module.exports = app => {
     const ppay125s = require("../controllers/ppay125s.controller.js");
     const ppay124s = require("../controllers/ppay124s.controller.js");
     const ppay127s = require("../controllers/ppay127s.controller.js");
+    const pfrs860s = require("../controllers/pfrs860s.controller.js");
     
     var router = require("express").Router();
 
@@ -44,6 +45,9 @@ module.exports = app => {
 
     // Retrieve "all or search" from ppay802s
     router.get("/attendancedetail/:id", ppai719as.findAll);
+
+     // Retrieve "all or search" from ppay802s
+     router.get("/pfrs860s/:id", pfrs860s.findAll);
 
     // Retrieve "all or search" from peis480ds
     router.get("/miscdata/:id", peis480ds.findAll);
