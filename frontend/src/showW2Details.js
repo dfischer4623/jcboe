@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const ShowPayroll = (props) => {
 
-    const { loggedIn, email, employeeNumber, ssn, w2s, setW2s,  empName, setW2ID } = props
+    const { loggedIn, email, employeeNumber, w2d, setW2Details,  empName, w2ido } = props
 
     const navigate = useNavigate();
+
+    const showW2sButtonClick = () => {
+        navigate("/showW2s")
+    }
 
     const showEmployeeButtonClick = () => {
         navigate("/showEmployee")
@@ -32,20 +36,21 @@ const ShowPayroll = (props) => {
             navigate("/")
         }
         const fetchData = async () => {
+            const ssn=w2ido.SSN
             try {
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/pfrs860s/${ssn}`);
                 const resData = await response.json()
-                setW2s(resData)
+                setW2Details(resData)
             }
             catch (error) {
                 console.log("error", error);
-                navigate("/showEmployee")
+                navigate("/showW2s")
             }
         }
         fetchData()
     }, [])
 
-    if (w2s === null) {
+    if (w2d === null) {
         return <h1>Loading...</h1>
     }
 
@@ -54,40 +59,29 @@ const ShowPayroll = (props) => {
         currency: "USD",
     });
 
-    const w2Selected = (W2CLYR, W2ESTB) => {
-        const w2ido = {
-            SSN:ssn,
-            YEAR: W2CLYR,
-            ESTB: W2ESTB,
-        }
-        setW2ID(w2ido)
-        navigate("/showW2Details")
-    }
-
-    let w2sFormatted = w2s.map((w2sd, i) => {
-        if(w2sd.W2CLYR<10) {
-            var W2CLYR = '200'+w2sd.W2CLYR     
+    let w2dFormatted = w2d.map((w2dd, i) => {
+        if(w2dd.W2CLYR<10) {
+            var W2CLYR = '200'+w2dd.W2CLYR     
         } else {
-            W2CLYR = '20'+w2sd.W2CLYR
+            W2CLYR = '20'+w2dd.W2CLYR
         }
         return (
             <tr key={i}>
              
-                <td><a href="#" onClick={() => w2Selected(w2sd.W2CLYR, w2sd.W2ESTB)}>
-                    {W2CLYR}</a></td>
-                <td>{dollarUS.format(w2sd.W2WAGE)}</td>
-                <td>{dollarUS.format(w2sd.W2FICW)}</td>
-                <td>{dollarUS.format(w2sd.W2FICM)}</td>
-                <td>{dollarUS.format(w2sd.W2FEDT)}</td>
-                <td>{dollarUS.format(w2sd.W2FTWH )}</td>
-                <td>{dollarUS.format(w2sd.W2FMWH )}</td>
+                <td>{W2CLYR}</td>
+                <td>{dollarUS.format(w2dd.W2WAGE)}</td>
+                <td>{dollarUS.format(w2dd.W2FICW)}</td>
+                <td>{dollarUS.format(w2dd.W2FICM)}</td>
+                <td>{dollarUS.format(w2dd.W2FEDT)}</td>
+                <td>{dollarUS.format(w2dd.W2FTWH )}</td>
+                <td>{dollarUS.format(w2dd.W2FMWH )}</td>
             </tr>
         )
     })
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show W2s</div>
+            <div>Show W2 Details</div>
         </div>
         <br />
         <div className={"attTableContainer"}>
@@ -119,9 +113,16 @@ const ShowPayroll = (props) => {
                         <td>Withheld</td>
                         <td>Withheld</td>
                     </tr>
-                    {w2sFormatted}
+                    {w2dFormatted}
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showW2sButtonClick}
+                value={"Show W2s"} />
         </div>
         <div className={"inputContainer"}>
             <input
