@@ -39,9 +39,8 @@ const ShowPayroll = (props) => {
             const ssn=w2ido.SSN
             const estb=w2ido.ESTB
             const year=w2ido.YEAR
-            console.log(ssn+' '+estb+' '+year)
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/pfrs860s/${ssn}`);
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/pfrs860sdetails/data?W2CLYR=${year}&W2SSN=${ssn}&W2ESTB=${estb}`);
                 const resData = await response.json()
                 setW2Details(resData)
             }

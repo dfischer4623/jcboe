@@ -19,6 +19,7 @@ module.exports = app => {
     const ppay124s = require("../controllers/ppay124s.controller.js");
     const ppay127s = require("../controllers/ppay127s.controller.js");
     const pfrs860s = require("../controllers/pfrs860s.controller.js");
+    const pfrs860sdetails = require("../controllers/pfrs860sdetails.controller.js");
     
     var router = require("express").Router();
 
@@ -50,7 +51,7 @@ module.exports = app => {
      router.get("/pfrs860s/:id", pfrs860s.findAll);
 
      // Retrieve an employee from employees using id
-    router.get("/pfrs860s", pfrs860s.findOne);
+    router.get("/pfrs860sdetails/data", pfrs860sdetails.findAll);
 
     // Retrieve "all or search" from peis480ds
     router.get("/miscdata/:id", peis480ds.findAll);
