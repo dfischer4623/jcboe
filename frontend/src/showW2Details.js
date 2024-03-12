@@ -37,6 +37,9 @@ const ShowPayroll = (props) => {
         }
         const fetchData = async () => {
             const ssn=w2ido.SSN
+            const estb=w2ido.ESTB
+            const year=w2ido.YEAR
+            console.log(ssn+' '+estb+' '+year)
             try {
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/pfrs860s/${ssn}`);
                 const resData = await response.json()

@@ -3,7 +3,7 @@ const { db } = require("../models/index.js");
 module.exports = app => {
 
     const employees = require("../controllers/employee.controller.js");
-    const ppay802s = require("../controllers/ppay802.controller.js");
+    const ppay802s = require("../controllers/ppay802s.controller.js");
     const ppai719as = require("../controllers/ppai719as.controller.js");
     const peis480ds = require("../controllers/peis480ds.controller.js");
     const certificates = require("../controllers/certificates.controller.js");
@@ -48,6 +48,9 @@ module.exports = app => {
 
      // Retrieve "all or search" from ppay802s
      router.get("/pfrs860s/:id", pfrs860s.findAll);
+
+     // Retrieve an employee from employees using id
+    router.get("/pfrs860s", pfrs860s.findOne);
 
     // Retrieve "all or search" from peis480ds
     router.get("/miscdata/:id", peis480ds.findAll);
