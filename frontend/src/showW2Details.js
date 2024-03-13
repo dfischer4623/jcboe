@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ShowPayroll = (props) => {
+const ShowW2Details = (props) => {
 
-    const { loggedIn, email, employeeNumber, w2d, setW2Details,  empName, w2ido } = props
+    const { loggedIn, email, employeeNumber, w2d, setW2Details, empName, w2ido } = props
 
     const navigate = useNavigate();
 
@@ -36,9 +36,9 @@ const ShowPayroll = (props) => {
             navigate("/")
         }
         const fetchData = async () => {
-            const ssn=w2ido.SSN
-            const estb=w2ido.ESTB
-            const year=w2ido.YEAR
+            const ssn = w2ido.SSN
+            const estb = w2ido.ESTB
+            const year = w2ido.YEAR
             try {
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/pfrs860sdetails/data?W2CLYR=${year}&W2SSN=${ssn}&W2ESTB=${estb}`);
                 const resData = await response.json()
@@ -56,28 +56,82 @@ const ShowPayroll = (props) => {
         return <h1>Loading...</h1>
     }
 
+    if (w2ido.YEAR < 10) {
+        var W2CLYR = '200' + w2ido.YEAR
+    } else {
+        W2CLYR = '20' + w2ido.YEAR
+    }
+
     let dollarUS = Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
     });
 
-    let w2dFormatted = w2d.map((w2dd, i) => {
-        if(w2dd.W2CLYR<10) {
-            var W2CLYR = '200'+w2dd.W2CLYR     
-        } else {
-            W2CLYR = '20'+w2dd.W2CLYR
-        }
+    let w2dFormatted = w2d.map((w2dd) => {
+
         return (
-            <tr key={i}>
-             
-                <td>{W2CLYR}</td>
-                <td>{dollarUS.format(w2dd.W2WAGE)}</td>
-                <td>{dollarUS.format(w2dd.W2FICW)}</td>
-                <td>{dollarUS.format(w2dd.W2FICM)}</td>
-                <td>{dollarUS.format(w2dd.W2FEDT)}</td>
-                <td>{dollarUS.format(w2dd.W2FTWH )}</td>
-                <td>{dollarUS.format(w2dd.W2FMWH )}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>a Employee's ssn</td>
+                    <td>{w2dd.W2SSN}</td>
+                    <td>b Employer EIN</td>
+                    <td>{w2dd.W2FEIN}</td>
+                </tr>
+                <tr>
+                    <td>1 Wages, tips</td>
+                    <td>{dollarUS.format(w2dd.W2WAGE)}</td>
+                    <td>2 Federal income tax witheld</td>
+                    <td>{dollarUS.format(w2dd.W2FEDT)}</td>
+                </tr>
+                <tr>
+                    <td>3 Social security wages</td>
+                    <td>{dollarUS.format(w2dd.W2FICW)}</td>
+                    <td>4 Social security tax witheld</td>
+                    <td>{dollarUS.format(w2dd.W2FTWH)}</td>
+                </tr>
+                <tr>
+                    <td>5 Medicare wages and tips</td>
+                    <td>{dollarUS.format(w2dd.W2FICM)}</td>
+                    <td>6 Medicare tax witheld</td>
+                    <td>{dollarUS.format(w2dd.W2FMWH)}</td>
+                </tr>
+                <tr>
+                    <td>7 Social security tips</td>
+                    <td>{dollarUS.format(w2dd.W2FICT)}</td>
+                    <td>8 Allocated tips</td>
+                    <td>{dollarUS.format(w2dd.W2ALOT)}</td>
+                </tr>
+                <tr>
+                    <td>10 Dependent care benefits</td>
+                    <td>{dollarUS.format(w2dd.W2DCC)}</td>
+                    <td>11 Nonqualified plans</td>
+                    <td>{dollarUS.format(w2dd.W2N457)}</td>
+                </tr>
+                <tr>
+                    <td>12a {w2dd.W2DCH1}</td>
+                    <td>{dollarUS.format(w2dd.W2DAMT)}</td>
+                    <td>12b {w2dd.W2DCH2}</td>
+                    <td>{dollarUS.format(w2dd.W2DAM2)}</td>
+                </tr>
+                <tr>
+                    <td>12c {w2dd.W2DCH3}</td>
+                    <td>{dollarUS.format(w2dd.W2DAM3)}</td>
+                    <td>12d {w2dd.W2DCH4}</td>
+                    <td>{dollarUS.format(w2dd.W2DAM4)}</td>
+                </tr>
+                <tr>
+                    <td>13 Retirement</td>
+                    <td>{w2dd.W2RET}</td>
+                    <td>14 Other {w2dd.W2MSG1}</td>
+                    <td>{dollarUS.format(w2dd.W2B181)}</td>
+                </tr>
+                <tr>
+                    <td>14 Other {w2dd.W2MSG2}</td>
+                    <td>{dollarUS.format(w2dd.W2B182)}</td>
+                    <td>14 Other {w2dd.W2MSG3}</td>
+                    <td>{dollarUS.format(w2dd.W2B183)}</td>
+                </tr>
+            </tbody>
         )
     })
 
@@ -90,33 +144,16 @@ const ShowPayroll = (props) => {
             <table>
                 <thead className={"thatt"}>
                     <tr>
-                        <th colSpan="7">Employee Number: {employeeNumber}</th>
+                        <th colSpan="4">Employee Number: {employeeNumber}</th>
                     </tr>
                     <tr>
-                        <th colSpan="7">Employee Name: {empName}</th>
+                        <th colSpan="4">Employee Name: {empName}</th>
+                    </tr>
+                    <tr>
+                        <th colSpan="4">Form W2 {W2CLYR}</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Tax</td>
-                        <td>Federal</td>
-                        <td>FICA</td>
-                        <td>Medicare</td>
-                        <td>Federal</td>
-                        <td>FICA</td>
-                        <td>Medicare</td>
-                    </tr>
-                    <tr>
-                        <td>Year</td>
-                        <td>Wages</td>
-                        <td>Wages</td>
-                        <td>Wages</td>
-                        <td>Withheld</td>
-                        <td>Withheld</td>
-                        <td>Withheld</td>
-                    </tr>
-                    {w2dFormatted}
-                </tbody>
+                {w2dFormatted}
             </table>
         </div>
         <div className={"inputContainer"}>
@@ -159,4 +196,4 @@ const ShowPayroll = (props) => {
     </div>
 }
 
-export default ShowPayroll
+export default ShowW2Details

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ShowPayroll = (props) => {
+const ShowW2s = (props) => {
 
     const { loggedIn, email, employeeNumber, ssn, w2s, setW2s,  empName, setW2ID } = props
 
@@ -156,4 +156,4 @@ const ShowPayroll = (props) => {
     </div>
 }
 
-export default ShowPayroll
+export default ShowW2s
