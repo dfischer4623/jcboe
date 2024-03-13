@@ -80,19 +80,19 @@ const ShowW2Details = (props) => {
                 <tr>
                     <td>1 Wages, tips</td>
                     <td>{dollarUS.format(w2dd.W2WAGE)}</td>
-                    <td>2 Federal income tax witheld</td>
+                    <td>2 Federal income tax withheld</td>
                     <td>{dollarUS.format(w2dd.W2FEDT)}</td>
                 </tr>
                 <tr>
                     <td>3 Social security wages</td>
                     <td>{dollarUS.format(w2dd.W2FICW)}</td>
-                    <td>4 Social security tax witheld</td>
+                    <td>4 Social security tax withheld</td>
                     <td>{dollarUS.format(w2dd.W2FTWH)}</td>
                 </tr>
                 <tr>
                     <td>5 Medicare wages and tips</td>
                     <td>{dollarUS.format(w2dd.W2FICM)}</td>
-                    <td>6 Medicare tax witheld</td>
+                    <td>6 Medicare tax withheld</td>
                     <td>{dollarUS.format(w2dd.W2FMWH)}</td>
                 </tr>
                 <tr>
@@ -108,15 +108,15 @@ const ShowW2Details = (props) => {
                     <td>{dollarUS.format(w2dd.W2N457)}</td>
                 </tr>
                 <tr>
-                    <td>12a {w2dd.W2DCH1}</td>
+                    <td>12a {w2dd.W2DMS1}</td>
                     <td>{dollarUS.format(w2dd.W2DAMT)}</td>
-                    <td>12b {w2dd.W2DCH2}</td>
+                    <td>12b {w2dd.W2DMS2}</td>
                     <td>{dollarUS.format(w2dd.W2DAM2)}</td>
                 </tr>
                 <tr>
-                    <td>12c {w2dd.W2DCH3}</td>
+                    <td>12c {w2dd.W2DMS3}</td>
                     <td>{dollarUS.format(w2dd.W2DAM3)}</td>
-                    <td>12d {w2dd.W2DCH4}</td>
+                    <td>12d {w2dd.W2DMS4}</td>
                     <td>{dollarUS.format(w2dd.W2DAM4)}</td>
                 </tr>
                 <tr>
@@ -130,6 +130,28 @@ const ShowW2Details = (props) => {
                     <td>{dollarUS.format(w2dd.W2B182)}</td>
                     <td>14 Other {w2dd.W2MSG3}</td>
                     <td>{dollarUS.format(w2dd.W2B183)}</td>
+                </tr>
+                <tr>
+                    <td>15 State</td>
+                    <td>{w2dd.W2SNAM}</td>
+                    <td>Employer's state Id no.</td>
+                    <td>{w2dd.W2SEIN}</td>
+                </tr>
+                <tr>
+                    <td>16 State wages, tips, etc.</td>
+                    <td>{dollarUS.format(w2dd.W2SWAG)}</td>
+                    <td>17 State income tax</td>
+                    <td>{dollarUS.format(w2dd.W2SITW)}</td>
+                </tr>
+                <tr>
+                    <td>18 Local wages, tips, etc.</td>
+                    <td>{dollarUS.format(w2dd.W2SWAG)}</td>
+                    <td>19 Local income tax</td>
+                    <td>{dollarUS.format(w2dd.W2LITW)}</td>
+                </tr>
+                <tr>
+                    <td>20 Local name</td>
+                    <td>{w2dd.W2LNA2}</td>
                 </tr>
             </tbody>
         )
