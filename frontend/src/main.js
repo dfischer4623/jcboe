@@ -31,8 +31,13 @@ const Main = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Main</div>
+            <div>AS/400 Data</div>
         </div>
+        <br></br>
+        <div className={"titleContainer"}>
+            <div>Home</div>
+        </div>
+        <br></br>
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}

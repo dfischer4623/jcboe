@@ -63,6 +63,10 @@ const EmployeeSearch = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
+            <div>AS/400 Data</div>
+        </div>
+        <br />
+        <div className={"titleContainer"}>
             <div>Employee Search</div>
         </div>
         <br />
@@ -97,7 +101,7 @@ const EmployeeSearch = (props) => {
                 className={"inputButton"}
                 type="button"
                 onClick={mainButtonClick}
-                value={"Main"} />
+                value={"Home"} />
         </div>
         <div className={"inputContainer"}>
             <input

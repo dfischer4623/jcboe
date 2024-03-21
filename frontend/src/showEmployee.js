@@ -277,12 +277,15 @@ const ShowEmployee = (props) => {
                 className={"inputButton"}
                 type="button"
                 onClick={mainButtonClick}
-                value={"Main"} />
+                value={"Home"} />
             <input
                 className={"inputButton"}
                 type="button"
                 onClick={logoutButtonClick}
                 value={"Log out"} />
+        </div>
+        <div className={"titleContainer"}>
+            <div>AS/400 Data</div>
         </div>
         <div className={"titleContainer"}>
             <div>Employee Data</div>

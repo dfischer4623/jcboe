@@ -17,9 +17,9 @@ const Home = (props) => {
 
     return <div className="mainContainer">
         <div className={"titleContainer"}>
-            <div>Welcome!</div>
+            <div>AS/400 Data</div>
         </div>
-        <div>
+        <div className={"titleContainer"}>
             Please {loggedIn ? "Log out" : "Log in"}
         </div>
         <div className={"buttonContainer"}>

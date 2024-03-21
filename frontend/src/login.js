@@ -90,6 +90,10 @@ const Login = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
+            <div>AS/400 Data</div>
+        </div>
+        <br />
+        <div className={"titleContainer"}>
             <div>Login</div>
         </div>
         <br />
