@@ -192,9 +192,9 @@ const ShowEmployee = (props) => {
     if (ed.ETMDAT !== 0) {
         dateString = ed.ETMDAT.toString();
         if (dateString.length === 5) {
-            year = dateString.substring(3, 5)
+            year = dateString.substring(3, 5) 
             month = '0' + dateString.substring(0, 1);
-            day = dateString.substring(1, 3);
+            day = dateString.substring(1, 3); 
         } else {
             year = dateString.substring(4, 6)
             month = dateString.substring(0, 2);
@@ -230,62 +230,8 @@ const ShowEmployee = (props) => {
     }
 
     return <div className={"mainContainer"}>
-        <div>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showW2sButtonClick}
-                value={"W2s"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showPayrollButtonClick}
-                value={"Payroll"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={volDeductionsButtonClick}
-                value={"Voluntary Deductions"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={salariesButtonClick}
-                value={"Salaries"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={certificatesButtonClick}
-                value={"Certificates"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={miscDataButtonClick}
-                value={"Additional Tags"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showAttendanceButtonClick}
-                value={"Attendance"} />
-        </div>
-        <div>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={employeeSearchButtonClick}
-                value={"Employee Search"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={mainButtonClick}
-                value={"Main"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
-        </div>
         <div className={"titleContainer"}>
-            <div>Employee Data</div>
+            <div>Show Employee</div>
         </div>
         <br />
         <div className={"empTableContainer"}>
@@ -549,6 +495,76 @@ const ShowEmployee = (props) => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showW2sButtonClick}
+                value={"Show W2s"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showPayrollButtonClick}
+                value={"Show Payroll"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={volDeductionsButtonClick}
+                value={"Show Voluntary Deductions"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={salariesButtonClick}
+                value={"Show Salaries"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={certificatesButtonClick}
+                value={"Show Certificates"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={miscDataButtonClick}
+                value={"Show Additional Tags"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={showAttendanceButtonClick}
+                value={"Show Attendance"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={employeeSearchButtonClick}
+                value={"Employee Search"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={mainButtonClick}
+                value={"Main"} />
+        </div>
+        <div className={"inputContainer"}>
+            <input
+                className={"inputButton"}
+                type="button"
+                onClick={logoutButtonClick}
+                value={"Log out"} />
         </div>
         <br />
         <div>Your email is {email}</div>
