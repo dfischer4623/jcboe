@@ -88,7 +88,7 @@ const EmployeeSearch = (props) => {
                 className={"inputButton"}
                 type="button"
                 onClick={onENButtonClick}
-                value={"Show Employee"} />
+                value={"Choose Employee"} />
         </div>
         <div className={"inputContainer"}>
             <input
