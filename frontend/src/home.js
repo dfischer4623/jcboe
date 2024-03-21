@@ -20,7 +20,7 @@ const Home = (props) => {
             <div>AS/400 Data</div>
         </div>
         <div className={"titleContainer"}>
-            Please {loggedIn ? "Log out" : "Log in"}
+            Please {loggedIn ? "Log Out" : "Log In"}
         </div>
         <div className={"buttonContainer"}>
             <input
