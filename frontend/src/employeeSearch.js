@@ -78,6 +78,7 @@ const EmployeeSearch = (props) => {
                 onClick={onENameButtonClick}
                 value={"Employee Name Search"} />
         </div>
+        <br></br>
         <div className={"inputButtonContainer"}>
             <input
                 value={employeeNumber}
@@ -90,6 +91,7 @@ const EmployeeSearch = (props) => {
                 onClick={onENButtonClick}
                 value={"Choose Employee"} />
         </div>
+        <br></br>
         <div className={"inputContainer"}>
             <input
                 className={"inputButton"}
