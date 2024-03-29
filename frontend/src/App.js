@@ -108,8 +108,7 @@ function App() {
           <Route path="/addendaCodes" element={<AddendaCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} acc={acc} setAddendaCodes={setAddendaCodes} />} />
           <Route path="/terminationCodes" element={<TerminationCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} />} />
           <Route path="/showW2s" element={<ShowW2s loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} ssn={ssn} w2s={w2s} setW2s={setW2s} w2ido={w2ido} setW2ID={setW2ID}/>} />
-          <Route path="/showW2Details" element={<ShowW2Details loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} w2d={w2d} setW2Details={setW2Details} w2ido={w2ido} />} />
-          
+          <Route path="/showW2Details" element={<ShowW2Details loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} w2d={w2d} setW2Details={setW2Details} w2ido={w2ido} />} />   
         </Routes>
       </BrowserRouter>
     </div>
