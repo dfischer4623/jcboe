@@ -19,6 +19,7 @@ const Home = (props) => {
         <div className={"titleContainer"}>
             <div>AS/400 Data</div>
         </div>
+        <br></br>
         <div className={"titleContainer"}>
             Please {loggedIn ? "Log Out" : "Log In"}
         </div>
@@ -28,9 +29,6 @@ const Home = (props) => {
                 type="button"
                 onClick={onButtonClick}
                 value={loggedIn ? "Log out" : "Log in"} />
-            {(loggedIn ? <div>
-                Your email address is {email}
-            </div> : <div />)}
         </div>
 
 
