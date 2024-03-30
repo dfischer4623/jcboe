@@ -24,6 +24,8 @@ import TerminationCodes from './terminationCodes';
 import ShowW2s from './showW2s';
 import ShowW2Details from './showW2Details';
 
+import Sidebar from './navcomponents/Sidebar';
+
 
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -84,6 +86,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Sidebar />
         <Routes>
           <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
