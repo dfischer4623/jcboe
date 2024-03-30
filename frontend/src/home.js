@@ -14,6 +14,7 @@ const Home = (props) => {
         }
     }
 
+    localStorage.setItem("navMenu", "menu1")
 
     return <div className="mainContainer">
         <div className={"titleContainer"}>
