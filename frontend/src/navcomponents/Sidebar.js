@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { SidebarDataMenu1 } from './SidebarDataMenu1';
+import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
@@ -62,7 +62,7 @@ const Sidebar = () => {
             <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {SidebarDataMenu1.map((item, index) => {
+            {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })}
           </SidebarWrap>
