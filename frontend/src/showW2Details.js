@@ -7,28 +7,6 @@ const ShowW2Details = (props) => {
 
     const navigate = useNavigate();
 
-    const showW2sButtonClick = () => {
-        navigate("/showW2s")
-    }
-
-    const showEmployeeButtonClick = () => {
-        navigate("/showEmployee")
-    }
-
-    const employeeSearchButtonClick = () => {
-        navigate("/employeeSearch")
-    }
-
-    const mainButtonClick = () => {
-        navigate("/main")
-    }
-
-    const logoutButtonClick = () => {
-        localStorage.removeItem("user")
-        props.setLoggedIn(false)
-        navigate("/")
-    }
-
     useEffect(() => {
         if (!loggedIn) {
             localStorage.removeItem("user")
@@ -159,7 +137,7 @@ const ShowW2Details = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show W2 Details</div>
+            <div>W2 Details</div>
         </div>
         <br />
         <div className={"attTableContainer"}>
@@ -177,41 +155,6 @@ const ShowW2Details = (props) => {
                 </thead>
                 {w2dFormatted}
             </table>
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showW2sButtonClick}
-                value={"Show W2s"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showEmployeeButtonClick}
-                value={"Show Employee"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={employeeSearchButtonClick}
-                value={"Employee Search"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={mainButtonClick}
-                value={"Main"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
         </div>
         <br />
         <div>Your email is {email}</div>

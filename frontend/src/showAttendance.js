@@ -108,7 +108,7 @@ const ShowAttendance = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show Attendance</div>
+            <div>Attendance</div>
         </div>
         <br />
         <div className={"attTableContainer"}>
@@ -134,41 +134,6 @@ const ShowAttendance = (props) => {
                     {attendanceFormatted}
                 </tbody>
             </table>
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showAttendanceDetailButtonClick}
-                value={"Show Attendance Detail"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showEmployeeButtonClick}
-                value={"Show Employee"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={employeeSearchButtonClick}
-                value={"Employee Search"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={mainButtonClick}
-                value={"Main"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
         </div>
         <br />
         <div>Your email is {email}</div>

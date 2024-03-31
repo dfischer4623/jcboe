@@ -51,15 +51,15 @@ const EmployeeSearch = (props) => {
         }
     }
 
-    const mainButtonClick = () => {
-        navigate("/main")
-    }
+    // const mainButtonClick = () => {
+    //     navigate("/main")
+    // }
 
-    const logoutButtonClick = () => {
-        localStorage.removeItem("user")
-        props.setLoggedIn(false)
-        navigate("/")
-    }
+    // const logoutButtonClick = () => {
+    //     localStorage.removeItem("user")
+    //     props.setLoggedIn(false)
+    //     navigate("/")
+    // }
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
@@ -94,21 +94,6 @@ const EmployeeSearch = (props) => {
                 type="button"
                 onClick={onENButtonClick}
                 value={"Choose Employee"} />
-        </div>
-        <br></br>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={mainButtonClick}
-                value={"Home"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
         </div>
         <br />
         <div>Your email is {email}</div>

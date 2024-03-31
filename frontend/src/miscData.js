@@ -10,19 +10,19 @@ const MiscData = (props) => {
     
     const navigate = useNavigate();
 
-    const showEmployeeButtonClick = () => {
-        navigate("/showEmployee")
-    }
+    // const showEmployeeButtonClick = () => {
+    //     navigate("/showEmployee")
+    // }
 
-    const employeeSearchButtonClick = () => {
-        navigate("/employeeSearch")
-    }
+    // const employeeSearchButtonClick = () => {
+    //     navigate("/employeeSearch")
+    // }
 
-    const logoutButtonClick = () => {
-        localStorage.removeItem("user")
-        props.setLoggedIn(false)
-        navigate("/")
-    }
+    // const logoutButtonClick = () => {
+    //     localStorage.removeItem("user")
+    //     props.setLoggedIn(false)
+    //     navigate("/")
+    // }
 
     useEffect(() => {
         if (!loggedIn) {
@@ -91,7 +91,7 @@ const MiscData = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Show Additional Tags</div>
+            <div>Additional Tags</div>
         </div>
         <br />
         <div>
@@ -118,28 +118,6 @@ const MiscData = (props) => {
                     {miscDataFormatted}
                 </tbody>
             </table>
-        </div>
-        <br />
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showEmployeeButtonClick}
-                value={"Show Employee"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={employeeSearchButtonClick}
-                value={"Employee Search"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
         </div>
         <br />
         <div>Your email is {email}</div>

@@ -7,83 +7,83 @@ const ShowEmployee = (props) => {
 
     const navigate = useNavigate();
 
-    const showW2sButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        setSsn(ed.EMPSSN)
-        navigate("/showW2s")
-    }
+    // const showW2sButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     setSsn(ed.EMPSSN)
+    //     navigate("/showW2s")
+    // }
 
-    const showPayrollButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/showPayroll")
-    }
+    // const showPayrollButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     navigate("/showPayroll")
+    // }
 
-    const volDeductionsButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/showVolDeductions")
-    }
+    // const volDeductionsButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     navigate("/showVolDeductions")
+    // }
 
-    const salariesButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/salaries")
-    }
+    // const salariesButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     navigate("/salaries")
+    // }
 
-    const certificatesButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/certificates")
-    }
+    // const certificatesButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     navigate("/certificates")
+    // }
 
-    const miscDataButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/miscData")
-    }
+    // const miscDataButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     navigate("/miscData")
+    // }
 
-    const showAttendanceButtonClick = () => {
-        if (ed.EMMNAM == null) {
-            ed.EMMNAM = " "
-        }
-        var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-        setEmpName(empNameX)
-        navigate("/showAttendance")
-    }
+    // const showAttendanceButtonClick = () => {
+    //     if (ed.EMMNAM == null) {
+    //         ed.EMMNAM = " "
+    //     }
+    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    //     setEmpName(empNameX)
+    //     navigate("/showAttendance")
+    // }
 
-    const employeeSearchButtonClick = () => {
-        navigate("/employeeSearch")
-    }
+    // const employeeSearchButtonClick = () => {
+    //     navigate("/employeeSearch")
+    // }
 
-    const mainButtonClick = () => {
-        navigate("/main")
-    }
+    // const mainButtonClick = () => {
+    //     navigate("/main")
+    // }
 
-    const logoutButtonClick = () => {
-        localStorage.removeItem("user")
-        props.setLoggedIn(false)
-        navigate("/")
-    }
+    // const logoutButtonClick = () => {
+    //     localStorage.removeItem("user")
+    //     props.setLoggedIn(false)
+    //     navigate("/")
+    // }
 
     useEffect(() => {
         if (!loggedIn) {
@@ -230,60 +230,7 @@ const ShowEmployee = (props) => {
     }
 
     return <div className={"mainContainer"}>
-        <div>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showW2sButtonClick}
-                value={"W2s"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showPayrollButtonClick}
-                value={"Payroll"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={volDeductionsButtonClick}
-                value={"Voluntary Deductions"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={salariesButtonClick}
-                value={"Salaries"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={certificatesButtonClick}
-                value={"Certificates"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={miscDataButtonClick}
-                value={"Additional Tags"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={showAttendanceButtonClick}
-                value={"Attendance"} />
-        </div>
-        <div>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={employeeSearchButtonClick}
-                value={"Employee Search"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={mainButtonClick}
-                value={"Home"} />
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
-        </div>
+        
         <div className={"titleContainer"}>
             <div>AS/400 Data</div>
         </div>

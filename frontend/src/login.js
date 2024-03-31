@@ -7,6 +7,9 @@ const Login = (props) => {
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
     
+    localStorage.removeItem("user")
+    props.setLoggedIn(false)
+
     const navigate = useNavigate();
         
     const onButtonClick = () => {

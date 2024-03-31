@@ -7,19 +7,19 @@ const AbsenceLeaveCodes = (props) => {
     
     const navigate = useNavigate();
     
-    const payrollTablesButtonClick = () => {
-        navigate("/payrollTables")
-    }
+    // const payrollTablesButtonClick = () => {
+    //     navigate("/payrollTables")
+    // }
 
-    const mainButtonClick = () => {
-        navigate("/main")
-    }
+    // const mainButtonClick = () => {
+    //     navigate("/main")
+    // }
 
-    const logoutButtonClick = () => {
-        localStorage.removeItem("user")
-        props.setLoggedIn(false)
-        navigate("/")
-    }
+    // const logoutButtonClick = () => {
+    //     localStorage.removeItem("user")
+    //     props.setLoggedIn(false)
+    //     navigate("/")
+    // }
 
     useEffect(() => {
         if (!loggedIn) {
@@ -58,7 +58,7 @@ const AbsenceLeaveCodes = (props) => {
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
-            <div>Absence/Leave Codes</div>
+            <div>Absence/Leave</div>
         </div>
         <br />
         <div>
@@ -73,27 +73,6 @@ const AbsenceLeaveCodes = (props) => {
             </table>
         </div>
         <br />
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={payrollTablesButtonClick}
-                value={"Payroll Codes"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={mainButtonClick}
-                value={"Main"} />
-        </div>
-        <div className={"inputContainer"}>
-            <input
-                className={"inputButton"}
-                type="button"
-                onClick={logoutButtonClick}
-                value={"Log out"} />
-        </div>
         <br />
         <div>Your email is {email}</div>
     </div >

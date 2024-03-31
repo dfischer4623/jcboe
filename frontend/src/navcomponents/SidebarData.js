@@ -30,6 +30,11 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
+        title: 'Attendance Details',
+        path: '/showAttendanceDetail',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
         title: 'Additional Tags',
         path: '/miscData',
         icon: <IoIcons.IoIosPaper />,
