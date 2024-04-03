@@ -68,7 +68,7 @@ export const SidebarData = [
   },
   {
     title: 'Payroll Codes',
-    path: '/payrollTables',
+    path: '/absenceLeaveCodes',
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpen: <RiIcons.RiArrowUpSFill />,

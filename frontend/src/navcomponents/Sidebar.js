@@ -7,9 +7,6 @@ import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
-const menu = localStorage.getItem("navMenu")
-console.log(menu)
-
 const Nav = styled.div`
   background: #15171c;
   height: 80px;

@@ -7,90 +7,17 @@ const ShowEmployee = (props) => {
 
     const navigate = useNavigate();
 
-    // const showW2sButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     setSsn(ed.EMPSSN)
-    //     navigate("/showW2s")
-    // }
-
-    // const showPayrollButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     navigate("/showPayroll")
-    // }
-
-    // const volDeductionsButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     navigate("/showVolDeductions")
-    // }
-
-    // const salariesButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     navigate("/salaries")
-    // }
-
-    // const certificatesButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     navigate("/certificates")
-    // }
-
-    // const miscDataButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     navigate("/miscData")
-    // }
-
-    // const showAttendanceButtonClick = () => {
-    //     if (ed.EMMNAM == null) {
-    //         ed.EMMNAM = " "
-    //     }
-    //     var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
-    //     setEmpName(empNameX)
-    //     navigate("/showAttendance")
-    // }
-
-    // const employeeSearchButtonClick = () => {
-    //     navigate("/employeeSearch")
-    // }
-
-    // const mainButtonClick = () => {
-    //     navigate("/main")
-    // }
-
-    // const logoutButtonClick = () => {
-    //     localStorage.removeItem("user")
-    //     props.setLoggedIn(false)
-    //     navigate("/")
-    // }
-
     useEffect(() => {
         if (!loggedIn) {
             localStorage.removeItem("user")
             props.setLoggedIn(false)
             navigate("/")
         }
+
+        if (employeeNumber == "") {
+            navigate("/employeeSearch")
+        }
+
         const fetchData = async () => {
             try {
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/${employeeNumber}`);
@@ -108,6 +35,13 @@ const ShowEmployee = (props) => {
     if (ed === null) {
         return <h1>Loading...</h1>
     }
+
+    if (ed.EMMNAM == null) {
+        ed.EMMNAM = " "
+    }
+    var empNameX = ed.EMLNAM + ', ' + ed.EMFNAM + ' ' + ed.EMMNAM
+    setEmpName(empNameX)
+    setSsn(ed.EMPSSN)
 
     function normalize(phone) {
         //normalize string and remove all unnecessary characters
@@ -230,7 +164,7 @@ const ShowEmployee = (props) => {
     }
 
     return <div className={"mainContainer"}>
-        
+
         <div className={"titleContainer"}>
             <div>AS/400 Data</div>
         </div>
