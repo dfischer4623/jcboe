@@ -111,7 +111,7 @@ const ShowAttendance = (props) => {
             <div>Attendance</div>
         </div>
         <br />
-        <div className={"attTableContainer"}>
+        <div>
             <table>
                 <thead className={"thatt"}>
                     <tr>

@@ -115,9 +115,9 @@ const ShowPayroll = (props) => {
             <div>Payroll</div>
         </div>
         <br />
-        <div className={"attTableContainer"}>
+        <div>
             <table>
-                <thead className={"thatt"}>
+                <thead>
                     <tr>
                         <th colSpan="4">Employee Number: {employeeNumber}</th>
                     </tr>

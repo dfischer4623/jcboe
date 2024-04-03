@@ -172,11 +172,10 @@ const ShowEmployee = (props) => {
             <div>Employee Data</div>
         </div>
         <br />
-        <div className={"empTableContainer"}>
+        <div>
             <table>
                 <thead>
                     <tr>
-                        <th> </th>
                         <th> </th>
                     </tr>
                 </thead>

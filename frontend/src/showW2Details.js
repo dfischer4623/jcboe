@@ -140,9 +140,9 @@ const ShowW2Details = (props) => {
             <div>W2 Details</div>
         </div>
         <br />
-        <div className={"attTableContainer"}>
+        <div>
             <table>
-                <thead className={"thatt"}>
+                <thead>
                     <tr>
                         <th colSpan="4">Employee Number: {employeeNumber}</th>
                     </tr>
