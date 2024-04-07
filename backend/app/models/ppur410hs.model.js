@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Ppur401hs = sequelize.define("ppur401hs", {
+  const Ppur410hs = sequelize.define("ppur410hs", {
     USG: {
       type: Sequelize.STRING(50),
       allowNull: true
