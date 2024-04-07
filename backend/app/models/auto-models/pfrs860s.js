@@ -360,6 +360,14 @@ module.exports = function(sequelize, DataTypes) {
     W2FNAM: {
       type: DataTypes.STRING(50),
       allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
     }
   }, {
     sequelize,

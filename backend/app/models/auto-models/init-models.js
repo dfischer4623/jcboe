@@ -149,6 +149,9 @@ var _ppay127s = require("./ppay127s");
 var _ppay3403s = require("./ppay3403s");
 var _ppay340hs = require("./ppay340hs");
 var _ppay802s = require("./ppay802s");
+var _ppur201s = require("./ppur201s");
+var _ppur301s = require("./ppur301s");
+var _ppur410hs = require("./ppur410hs");
 var _salaries = require("./salaries");
 
 function initModels(sequelize) {
@@ -302,6 +305,9 @@ function initModels(sequelize) {
   var ppay3403s = _ppay3403s(sequelize, DataTypes);
   var ppay340hs = _ppay340hs(sequelize, DataTypes);
   var ppay802s = _ppay802s(sequelize, DataTypes);
+  var ppur201s = _ppur201s(sequelize, DataTypes);
+  var ppur301s = _ppur301s(sequelize, DataTypes);
+  var ppur410hs = _ppur410hs(sequelize, DataTypes);
   var salaries = _salaries(sequelize, DataTypes);
 
 
@@ -456,6 +462,9 @@ function initModels(sequelize) {
     ppay3403s,
     ppay340hs,
     ppay802s,
+    ppur201s,
+    ppur301s,
+    ppur410hs,
     salaries,
   };
 }
