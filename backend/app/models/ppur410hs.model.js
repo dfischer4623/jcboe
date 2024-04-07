@@ -14,7 +14,8 @@ module.exports = (sequelize, Sequelize) => {
     },
     PO: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     POVEND: {
       type: Sequelize.INTEGER,
@@ -189,6 +190,14 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     PORVDATE: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    createdAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
       type: Sequelize.DATEONLY,
       allowNull: true
     }

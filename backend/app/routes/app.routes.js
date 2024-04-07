@@ -20,7 +20,10 @@ module.exports = app => {
     const ppay127s = require("../controllers/ppay127s.controller.js");
     const pfrs860s = require("../controllers/pfrs860s.controller.js");
     const pfrs860sdetails = require("../controllers/pfrs860sdetails.controller.js");
-    
+    const ppur201s = require("../controllers/ppur201s.controller.js");
+    const ppur301s = require("../controllers/ppur301s.controller.js");
+    const ppur410hs = require("../controllers/ppur410hs.controller.js");
+
     var router = require("express").Router();
 
     // Retrieve "all or search" from employees
@@ -47,10 +50,10 @@ module.exports = app => {
     // Retrieve "all or search" from ppay802s
     router.get("/attendancedetail/:id", ppai719as.findAll);
 
-     // Retrieve "all or search" from ppay802s
-     router.get("/pfrs860s/:id", pfrs860s.findAll);
+    // Retrieve "all or search" from ppay802s
+    router.get("/pfrs860s/:id", pfrs860s.findAll);
 
-     // Retrieve an employee from employees using id
+    // Retrieve an employee from employees using id
     router.get("/pfrs860sdetails/data", pfrs860sdetails.findAll);
 
     // Retrieve "all or search" from peis480ds
@@ -79,6 +82,15 @@ module.exports = app => {
 
     // Retrieve an employee from employees using id
     router.get("/:id", employees.findOne);
+
+    // Retrieve a purchase order from ppur410hs using id
+    router.get("/ppur410hs/:id", ppur410hs.findAll);
+
+    // Retrieve a ship to address from ppur201s using id
+    router.get("/ppur201s/:shCode", ppur201s.findOne);
+
+    // Retrieve a vendor from ppur301s using id
+    router.get("/ppur301s/:id", ppur301s.findAll);
 
     app.use('/api/employees', router);
 };

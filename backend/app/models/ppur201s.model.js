@@ -1,79 +1,88 @@
 module.exports = (sequelize, Sequelize) => {
   const Ppur201s = sequelize.define("ppur201s", {
     ADAT: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     RETN: {
-      type: Sequilize.STRING(1),
+      type: Sequelize.STRING(1),
       allowNull: true
     },
     BA: {
-      type: Sequilize.STRING(1),
+      type: Sequelize.STRING(1),
       allowNull: true
     },
     SESN: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     CM: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     BUSY: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     SHCODE: {
-      type: Sequilize.STRING(50),
-      allowNull: true
+      type: Sequelize.STRING(50),
+      allowNull: true,
+      primaryKey: true
     },
     SHNAME: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHATTN: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHADR1: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHADR2: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHCITY: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHST: {
-      type: Sequilize.STRING(50),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHZIP1: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     SHZIP2: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     SHPROV: {
-      type: Sequilize.STRING(1),
+      type: Sequelize.STRING(1),
       allowNull: true
     },
     SHPC: {
-      type: Sequilize.STRING(1),
+      type: Sequelize.STRING(1),
       allowNull: true
     },
     SHAREA: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
     SHPHON: {
-      type: Sequilize.INTEGER,
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    createdAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: Sequelize.DATEONLY,
       allowNull: true
     }
   });

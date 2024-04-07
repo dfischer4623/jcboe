@@ -10,7 +10,8 @@ module.exports = (sequelize, Sequelize) => {
     },
     VNNO: {
       type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     VNNAME: {
       type: Sequelize.STRING(50),
@@ -182,6 +183,14 @@ module.exports = (sequelize, Sequelize) => {
     },
     VNPY10: {
       type: Sequelize.FLOAT,
+      allowNull: true
+    },
+    createdAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: Sequelize.DATEONLY,
       allowNull: true
     }
   });
