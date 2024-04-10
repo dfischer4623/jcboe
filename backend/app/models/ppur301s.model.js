@@ -45,7 +45,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: true
     },
-    'VN\IP2': {
+    VNIP2: {
       type: Sequelize.SMALLINT,
       allowNull: true
     },

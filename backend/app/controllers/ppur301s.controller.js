@@ -5,13 +5,9 @@ const Op = db.Sequelize.Op;
 // Retrieve all ppur301s from the database.
 exports.findAll = (req, res) => {
     var venNum = req.params.id
-    var condition = { VNNO: Number(venNum) } ;
-    var sortOrder = [
-        ['VNNO', 'ASC'],
-    ]
-    console.log(sortOrder)
+    var condition = { VNNO: Number(venNum) };
 
-    Ppur301s.findAll({ where: condition, order: sortOrder })
+    Ppur301s.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })

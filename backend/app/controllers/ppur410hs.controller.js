@@ -4,14 +4,10 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all ppur410hs from the database.
 exports.findAll = (req, res) => {
-    var poNum = req.params.poNum
-    var condition = { PO: Number(poNum) } ;
-    var sortOrder = [
-        ['PO', 'ASC'],
-    ]
-    console.log(sortOrder)
+    var poNum = req.params.id
+    var condition = { PO: Number(poNum) };
 
-    Ppur410hs.findAll({ where: condition, order: sortOrder })
+    Ppur410hs.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })

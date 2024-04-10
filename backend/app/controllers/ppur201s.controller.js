@@ -6,12 +6,8 @@ const Op = db.Sequelize.Op;
 exports.findOne = (req, res) => {
     var shCode = req.params.shCode
     var condition = { SHCODE: shCode } ;
-    var sortOrder = [
-        ['SHCODE', 'ASC'],
-    ]
-    console.log(condition + '|' + sortOrder)
 
-    Ppur201s.findAll({ where: condition, order: sortOrder })
+    Ppur201s.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })
