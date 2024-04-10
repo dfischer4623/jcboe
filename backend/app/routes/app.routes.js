@@ -80,17 +80,17 @@ module.exports = app => {
     // Retrieve "all or search" from voluntary deductions
     router.get("/payrollCheckDeductions/", ppai715s.findAll);
 
-    // Retrieve an employee from employees using id
-    router.get("/:id", employees.findOne);
-
-    // Retrieve a purchase order from ppur410hs using id
-    router.get("/ppur410hs/:id", ppur410hs.findAll);
+    // Retrieve a purchase order from ppur410hs using ?poDoc=POC11&poNum=91401
+    router.get("/ppur410hs/", ppur410hs.findOne);
 
     // Retrieve a ship to address from ppur201s using id
     router.get("/ppur201s/:shCode", ppur201s.findOne);
 
     // Retrieve a vendor from ppur301s using id
-    router.get("/ppur301s/:id", ppur301s.findAll);
+    router.get("/ppur301s/:id", ppur301s.findOne);
+
+    // Retrieve an employee from employees using id
+    router.get("/:id", employees.findOne);
 
     app.use('/api/employees', router);
 };

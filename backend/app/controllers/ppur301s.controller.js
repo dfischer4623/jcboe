@@ -3,7 +3,7 @@ const Ppur301s = db.ppur301s;
 const Op = db.Sequelize.Op;
 
 // Retrieve all ppur301s from the database.
-exports.findAll = (req, res) => {
+exports.findOne = (req, res) => {
     var venNum = req.params.id
     var condition = { VNNO: Number(venNum) };
 

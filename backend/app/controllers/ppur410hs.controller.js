@@ -3,9 +3,14 @@ const Ppur410hs = db.ppur410hs;
 const Op = db.Sequelize.Op;
 
 // Retrieve all ppur410hs from the database.
-exports.findAll = (req, res) => {
-    var poNum = req.params.id
-    var condition = { PO: Number(poNum) };
+exports.findOne = (req, res) => {
+    console.log(req.query)
+    var  poDoc = req.query.poDoc
+    var poNum = req.query.poNum
+    var condition = { 
+        PODOC: poDoc,
+        PO: Number(poNum) 
+    };
 
     Ppur410hs.findAll({ where: condition })
         .then(data => {
