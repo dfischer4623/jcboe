@@ -24,6 +24,7 @@ import TerminationCodes from './terminationCodes';
 import ShowW2s from './showW2s';
 import ShowW2Details from './showW2Details';
 import PurchaseOrderSearch from './purchaseOrderSearch';
+import ShowPurchaseOrder from './showPurchaseOrder';
 
 import Sidebar from './navcomponents/Sidebar';
 
@@ -61,7 +62,7 @@ function App() {
   const [w2d, setW2Details] = useState(null)
   const [PODOC, setPODOC] = useState(null)
   const [PONUM, setPONUM] = useState(null)
-  const [pod, setPODetails] = useState(null)
+  const [pod, setShowPurchaseOrder] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -116,8 +117,9 @@ function App() {
           <Route path="/terminationCodes" element={<TerminationCodes loggedIn={loggedIn} setLoggedIn={setLoggedIn} email={email} />} />
           <Route path="/showW2s" element={<ShowW2s loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} ssn={ssn} w2s={w2s} setW2s={setW2s} w2ido={w2ido} setW2ID={setW2ID}/>} />
           <Route path="/showW2Details" element={<ShowW2Details loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} w2d={w2d} setW2Details={setW2Details} w2ido={w2ido} />} />   
-          <Route path="/purchaseOrderSearch" element={<PurchaseOrderSearch loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setPODOC={setPODOC} setPONUM={setPONUM} setPODetails={setPODetails} />} />   
-       
+          <Route path="/purchaseOrderSearch" element={<PurchaseOrderSearch loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setPODOC={setPODOC} setPONUM={setPONUM} setShowPurchaseOrder={setShowPurchaseOrder} />} />   
+          <Route path="/showPurchaseOrder" element={<ShowPurchaseOrder loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setPODOC={setPODOC} setPONUM={setPONUM} setShowPurchaseOrder={setShowPurchaseOrder} />} />   
+         
         </Routes>
       </BrowserRouter>
     </div>

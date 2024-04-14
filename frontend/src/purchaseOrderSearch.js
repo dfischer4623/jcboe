@@ -21,7 +21,7 @@ const PurchaseOrderSearch = (props) => {
             const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur410hs/?poDoc=${PODOC}&poNum=${PONUM}`);
             resData = await response.json()
             if (resData[0].PO == PONUM) {
-                // navigate("/showPurchaseOrder")
+                navigate("/showPurchaseOrder")
             } else {
                 window.alert(`Wrong Puchase Order Number ` + PODOC + ' ' + PONUM)
             }
