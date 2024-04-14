@@ -67,6 +67,13 @@ export const SidebarData = [
     ]
   },
   {
+    title: 'PO Search',
+    path: '/purchaseOrderSearch',
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpen: <RiIcons.RiArrowUpSFill />
+  },
+  {
     title: 'Payroll Codes',
     path: '/absenceLeaveCodes',
     icon: <AiIcons.AiFillHome />,
