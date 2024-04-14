@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 let grossPay = 0
 let deductions = 0
 let netPay = 0
-let checkNumber = 0
 
 const ShowPayroll = (props) => {
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ShowPurchaseOrder = (props) => {
 
-    const { loggedIn, email, PODOC, PONUM, pod, setShowPurchaseOrder } = props
+    const { loggedIn, email, PODOC, PONUM, pod, ven, shp, setShowPurchaseOrder, setVendorPurchaseOrder, setShiptoPurchaseOrder } = props
 
     const navigate = useNavigate();
 
@@ -14,16 +14,40 @@ const ShowPurchaseOrder = (props) => {
             navigate("/")
         }
         const fetchData = async () => {
+
             try {
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur410hs/?poDoc=${PODOC}&poNum=${PONUM}`);
                 const resData = await response.json()
-                let podd = resData[0]
-                setShowPurchaseOrder(podd)
+                setShowPurchaseOrder(resData)
+                console.log(pod)
             }
             catch (error) {
                 console.log("error", error);
                 navigate("/purchaseOrderSearch")
             }
+
+            try {
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/${pod.POVEND}`);
+                const resData = await response.json()
+                setVendorPurchaseOrder(resData)
+                console.log(ven)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/purchaseOrderSearch")
+            }
+
+            try {
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur201s/${pod.POSHIP}`);
+                const resData = await response.json()
+                setShiptoPurchaseOrder(resData)
+                console.log(shp)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/purchaseOrderSearch")
+            }
+
         }
         fetchData()
     }, [])
@@ -31,6 +55,16 @@ const ShowPurchaseOrder = (props) => {
     if (pod === null) {
         return <h1>Loading...</h1>
     }
+
+    let purchaseOrderFormatted = pod.map((podd, i) => {
+
+        return (
+            <tr>
+                <td>{podd.POVEND}</td>
+                <td>{podd.POSHIP}</td>
+            </tr>
+        )
+    })
 
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
@@ -52,10 +86,7 @@ const ShowPurchaseOrder = (props) => {
                         <td>PO DOC</td>
                         <td>PO NUMBER</td>
                     </tr>
-                    <tr>
-                        <td>{pod.PODOC}</td>
-                        <td>{pod.PO}</td>
-                    </tr>
+                    {purchaseOrderFormatted}
                 </tbody>
             </table>
         </div>

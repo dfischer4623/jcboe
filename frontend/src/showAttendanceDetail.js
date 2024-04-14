@@ -7,28 +7,6 @@ const ShowAttendance = (props) => {
 
     const navigate = useNavigate();
 
-    // const showAttendanceButtonClick = () => {
-    //     navigate("/showAttendance")
-    // }
-
-    // const showEmployeeButtonClick = () => {
-    //     navigate("/showEmployee")
-    // }
-
-    // const employeeSearchButtonClick = () => {
-    //     navigate("/employeeSearch")
-    // }
-
-    // const mainButtonClick = () => {
-    //     navigate("/main")
-    // }
-
-    // const logoutButtonClick = () => {
-    //     localStorage.removeItem("user")
-    //     props.setLoggedIn(false)
-    //     navigate("/")
-    // }
-
     useEffect(() => {
         if (!loggedIn) {
             localStorage.removeItem("user")
