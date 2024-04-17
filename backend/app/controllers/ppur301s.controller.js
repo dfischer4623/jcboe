@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 // Retrieve all ppur301s from the database.
 exports.findOne = (req, res) => {
     var venNum = req.params.id
-    var condition = { VNNO: Number(venNum) };
+    var condition = { VNNO: venNum };
 
     Ppur301s.findAll({ where: condition })
         .then(data => {

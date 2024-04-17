@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const ShowPurchaseOrder = (props) => {
 
     const { loggedIn, email, PODOC, PONUM, pod, ven, shp, setShowPurchaseOrder, setVendorPurchaseOrder, setShiptoPurchaseOrder } = props
-
+    console.log(PODOC + '|' + PONUM)
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -16,10 +16,10 @@ const ShowPurchaseOrder = (props) => {
         const fetchData = async () => {
 
             try {
+                console.log(PODOC + '|' + PONUM)
                 const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur410hs/?poDoc=${PODOC}&poNum=${PONUM}`);
                 const resData = await response.json()
                 setShowPurchaseOrder(resData)
-                console.log(pod)
             }
             catch (error) {
                 console.log("error", error);
@@ -27,9 +27,9 @@ const ShowPurchaseOrder = (props) => {
             }
 
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/${pod.POVEND}`);
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/${pod[0].POVEND}`);
                 const resData = await response.json()
-                setVendorPurchaseOrder(resData)
+                setVendorPurchaseOrder(resData[0])
                 console.log(ven)
             }
             catch (error) {
@@ -38,9 +38,9 @@ const ShowPurchaseOrder = (props) => {
             }
 
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur201s/${pod.POSHIP}`);
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur201s/${pod[0].POSHIP}`);
                 const resData = await response.json()
-                setShiptoPurchaseOrder(resData)
+                setShiptoPurchaseOrder(resData[0])
                 console.log(shp)
             }
             catch (error) {
@@ -59,7 +59,7 @@ const ShowPurchaseOrder = (props) => {
     let purchaseOrderFormatted = pod.map((podd, i) => {
 
         return (
-            <tr>
+            <tr key={i}>
                 <td>{podd.POVEND}</td>
                 <td>{podd.POSHIP}</td>
             </tr>

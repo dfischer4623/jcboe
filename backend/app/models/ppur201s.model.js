@@ -1,19 +1,19 @@
 module.exports = (sequelize, Sequelize) => {
   const Ppur201s = sequelize.define("ppur201s", {
     ADAT: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     RETN: {
-      type: Sequelize.STRING(1),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     BA: {
-      type: Sequelize.STRING(1),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SESN: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     CM: {
@@ -21,7 +21,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     BUSY: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHCODE: {
@@ -54,27 +54,27 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true
     },
     SHZIP1: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHZIP2: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHPROV: {
-      type: Sequelize.STRING(1),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHPC: {
-      type: Sequelize.STRING(1),
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHAREA: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     SHPHON: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(50),
       allowNull: true
     },
     createdAt: {
