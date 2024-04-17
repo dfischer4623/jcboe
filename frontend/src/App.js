@@ -63,8 +63,6 @@ function App() {
   const [PODOC, setPODOC] = useState('')
   const [PONUM, setPONUM] = useState('')
   const [pod, setShowPurchaseOrder] = useState(null)
-  const [ven, setVendorPurchaseOrder] = useState(null)
-  const [shp, setShiptoPurchaseOrder] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -120,7 +118,7 @@ function App() {
           <Route path="/showW2s" element={<ShowW2s loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} ssn={ssn} w2s={w2s} setW2s={setW2s} w2ido={w2ido} setW2ID={setW2ID}/>} />
           <Route path="/showW2Details" element={<ShowW2Details loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} w2d={w2d} setW2Details={setW2Details} w2ido={w2ido} />} />   
           <Route path="/purchaseOrderSearch" element={<PurchaseOrderSearch loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setPODOC={setPODOC} setPONUM={setPONUM} setShowPurchaseOrder={setShowPurchaseOrder} />} />   
-          <Route path="/showPurchaseOrder" element={<ShowPurchaseOrder loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} ven={ven} shp={shp} setShowPurchaseOrder={setShowPurchaseOrder} setVendorPurchaseOrder={setVendorPurchaseOrder} setShiptoPurchaseOrder={setShiptoPurchaseOrder} />} />   
+          <Route path="/showPurchaseOrder" element={<ShowPurchaseOrder loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setShowPurchaseOrder={setShowPurchaseOrder} />} />   
          
         </Routes>
       </BrowserRouter>

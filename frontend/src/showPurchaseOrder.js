@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+var shp = '';
+var ven = '';
+
 const ShowPurchaseOrder = (props) => {
 
-    const { loggedIn, email, PODOC, PONUM, pod, ven, shp, setShowPurchaseOrder, setVendorPurchaseOrder, setShiptoPurchaseOrder } = props
-    console.log(PODOC + '|' + PONUM)
+    const { loggedIn, email, PODOC, PONUM, pod, setShowPurchaseOrder } = props
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,29 +28,6 @@ const ShowPurchaseOrder = (props) => {
                 console.log("error", error);
                 navigate("/purchaseOrderSearch")
             }
-
-            try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/${pod[0].POVEND}`);
-                const resData = await response.json()
-                setVendorPurchaseOrder(resData[0])
-                console.log(ven)
-            }
-            catch (error) {
-                console.log("error", error);
-                navigate("/purchaseOrderSearch")
-            }
-
-            try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur201s/${pod[0].POSHIP}`);
-                const resData = await response.json()
-                setShiptoPurchaseOrder(resData[0])
-                console.log(shp)
-            }
-            catch (error) {
-                console.log("error", error);
-                navigate("/purchaseOrderSearch")
-            }
-
         }
         fetchData()
     }, [])
@@ -58,12 +38,41 @@ const ShowPurchaseOrder = (props) => {
 
     let purchaseOrderFormatted = pod.map((podd, i) => {
 
+        const fetchData1 = async () => {
+
+            try {
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/${podd.POVEND}`);
+                const resData = await response.json()
+                ven = resData[0]
+                console.log(ven)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/purchaseOrderSearch")
+            }
+
+            try {
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur201s/${podd.POSHIP}`);
+                const resData = await response.json()
+                shp = resData[0]
+                console.log(shp)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/purchaseOrderSearch")
+            }
+        }
+        fetchData1()
+
         return (
             <tr key={i}>
-                <td>{podd.POVEND}</td>
-                <td>{podd.POSHIP}</td>
+                <td>Vendor: {podd.POVEND}</td>
+                <td>{ven.VNNAME}</td>
+                <td>Ship to: {podd.POSHIP}</td>
+                <td>{shp.SHNAME}</td>
             </tr>
         )
+
     })
 
     return <div className={"mainContainer"}>
@@ -75,17 +84,10 @@ const ShowPurchaseOrder = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th colSpan="2">Document: {PODOC}</th>
-                    </tr>
-                    <tr>
-                        <th colSpan="2">Number: {PONUM}</th>
+                        <th colSpan="4">Document: {PODOC}  Number: {PONUM}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>PO DOC</td>
-                        <td>PO NUMBER</td>
-                    </tr>
                     {purchaseOrderFormatted}
                 </tbody>
             </table>
