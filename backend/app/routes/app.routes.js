@@ -20,10 +20,8 @@ module.exports = app => {
     const ppay127s = require("../controllers/ppay127s.controller.js");
     const pfrs860s = require("../controllers/pfrs860s.controller.js");
     const pfrs860sdetails = require("../controllers/pfrs860sdetails.controller.js");
-    const ppur201s = require("../controllers/ppur201s.controller.js");
-    const ppur301s = require("../controllers/ppur301s.controller.js");
-    const ppur410hs = require("../controllers/ppur410hs.controller.js");
-
+    const purchaseOrders = require("../controllers/purchaseOrders.controller.js");
+    
     var router = require("express").Router();
 
     // Retrieve "all or search" from employees
@@ -80,14 +78,8 @@ module.exports = app => {
     // Retrieve "all or search" from voluntary deductions
     router.get("/payrollCheckDeductions/", ppai715s.findAll);
 
-    // Retrieve a purchase order from ppur410hs using ?poDoc=POC11&poNum=91401
-    router.get("/ppur410hs/", ppur410hs.findOne);
-
-    // Retrieve a ship to address from ppur201s using id
-    router.get("/ppur201s/:shCode", ppur201s.findOne);
-
-    // Retrieve a vendor from ppur301s using id
-    router.get("/ppur301s/:id", ppur301s.findOne);
+    // Retrieve a purchase order from purchaseOrders using ?poDoc=POC11&poNum=91401
+    router.get("/purchaseOrders/", purchaseOrders.findOne);
 
     // Retrieve an employee from employees using id
     router.get("/:id", employees.findOne);

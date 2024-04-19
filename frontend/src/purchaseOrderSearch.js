@@ -18,7 +18,7 @@ const PurchaseOrderSearch = (props) => {
     const onPOButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur410hs/?poDoc=${PODOC}&poNum=${PONUM}`);
+            const response = await fetch(`http://10.0.1.142:8080/api/employees/purchaseOrders/?poDoc=${PODOC}&poNum=${PONUM}`);
             resData = await response.json()
             if (resData[0].PO == PONUM) {
                 console.log('go to showPurchaseOrder')
