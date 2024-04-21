@@ -53,7 +53,31 @@ const ShowPurchaseOrder = (props) => {
 
             let total = podd.POTOT + podd.POFRT + podd.POTTAX
 
-            if (podd.PODREQ==='00000') {var PODREQ=''}
+            if (podd.PODREQ === '00000') { var PODREQ = '' }
+
+            if (podd.PODAT.length === 1) {
+                var PODAT = '0000' + podd.PODAT
+            } else if (podd.PODAT.length === 2) {
+                PODAT = '000' + podd.PODAT
+            } else if (podd.PODAT.length === 3) {
+                PODAT = '00' + podd.PODAT
+            } else if (podd.PODAT.length === 4) {
+                PODAT = '0' + podd.PODAT
+            } else {
+                PODAT = podd.PODAT
+            }
+
+            var ddd = PODAT.substring(2,5)
+            var m = Math.floor(Number(ddd)/30)+1
+            var d = Number(ddd)-(30 * (m-1))
+            var y = Number(PODAT.substring(0,2))
+            if (y <= 50) {
+                y = 2000 + y
+            } else {
+                y = 1900 + y
+            }
+
+            PODAT = String(m) + '/' + String(d) + '/' + String(y)
 
             return (
                 <div>
@@ -83,14 +107,14 @@ const ShowPurchaseOrder = (props) => {
                     </tr >
                     <tr>
                         <td>P/O Date</td>
-                        <td>{podd.PODAT}</td>
-                    </tr >
+                        <td>{PODAT}</td>
+                    </tr>
                     <tr>
-                        <td>Date Requested</td>
+                        <td>Date Required</td>
                         <td>{PODREQ}</td>
                     </tr >
                     <tr>
-                        <td>Requesition</td>
+                        <td>Requisition</td>
                         <td>{podd.POREQ}</td>
                     </tr >
                     <tr>
@@ -133,6 +157,14 @@ const ShowPurchaseOrder = (props) => {
                         <td>Purchase Order Total</td>
                         <td>{dollarUS.format(total)}</td>
                     </tr >
+                    <tr>
+                        <td>Total Accrued to Date</td>
+                        <td>{dollarUS.format(podd.POTPAY)}</td>
+                    </tr >
+                    <tr>
+                        <td>Total Paid to Date</td>
+                        <td>{dollarUS.format(0)}</td>
+                    </tr >
                 </div>
             )
         }
@@ -147,7 +179,10 @@ const ShowPurchaseOrder = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th colSpan="4">Document: {PODOC}  Number: {PONUM}</th>
+                        <th colSpan="4">Document: {PODOC}</th>
+                    </tr>
+                    <tr>
+                        <th colSpan="4">Number: {PONUM}</th>
                     </tr>
                 </thead>
                 <tbody>
