@@ -36,5 +36,6 @@ db.ppay124s = require("./ppay124s.model.js")(sequelize, Sequelize);
 db.ppay127s = require("./ppay127s.model.js")(sequelize, Sequelize);
 db.pfrs860s = require("./pfrs860s.model.js")(sequelize, Sequelize);
 db.purchaseOrders = require("./purchaseOrders.model.js")(sequelize, Sequelize);
+db.ppur301s = require("./ppur301s.model.js")(sequelize, Sequelize);
 
 module.exports = db;

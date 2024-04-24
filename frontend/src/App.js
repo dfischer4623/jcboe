@@ -25,6 +25,9 @@ import ShowW2s from './showW2s';
 import ShowW2Details from './showW2Details';
 import PurchaseOrderSearch from './purchaseOrderSearch';
 import ShowPurchaseOrder from './showPurchaseOrder';
+import VendorSearch from './vendorSearch';
+import VendorName from './vendorName';
+import ShowVendor from './showVendor';
 
 import Sidebar from './navcomponents/Sidebar';
 
@@ -63,6 +66,10 @@ function App() {
   const [PODOC, setPODOC] = useState('')
   const [PONUM, setPONUM] = useState('')
   const [pod, setShowPurchaseOrder] = useState(null)
+  const [vend, setVendorData] = useState(null)
+  const [vendorNumber, setVendorNumber] = useState("")
+  const [vendorName, setVendorName] = useState("")
+  const [vens, setVendorNames] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -119,7 +126,10 @@ function App() {
           <Route path="/showW2Details" element={<ShowW2Details loggedIn={loggedIn} email={email} employeeNumber={employeeNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setEmployeeNumber={setEmployeeNumber} empName={empName} w2d={w2d} setW2Details={setW2Details} w2ido={w2ido} />} />   
           <Route path="/purchaseOrderSearch" element={<PurchaseOrderSearch loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setPODOC={setPODOC} setPONUM={setPONUM} setShowPurchaseOrder={setShowPurchaseOrder} />} />   
           <Route path="/showPurchaseOrder" element={<ShowPurchaseOrder loggedIn={loggedIn} email={email} PODOC={PODOC} PONUM={PONUM} pod={pod} setShowPurchaseOrder={setShowPurchaseOrder} />} />   
-         
+          <Route path="/vendorSearch" element={<VendorSearch loggedIn={loggedIn} email={email} vendorName={vendorName} vendorNumber={vendorNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} vend={vend} setVendorNumber={setVendorNumber} setVendorName={setVendorName} setVendorNames={setVendorNames} />} />
+          <Route path="/vendorName" element={<VendorName loggedIn={loggedIn} email={email} vendorNumber={vendorNumber} vendorName={vendorName} setLoggedIn={setLoggedIn} setEmail={setEmail} vens={vens} setVendorNames={setVendorNames} setVendorNumber={setVendorNumber} />} />
+          <Route path="/showVendor" element={<ShowVendor loggedIn={loggedIn} email={email} vendorNumber={vendorNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setVendorNumber={setVendorNumber} vend={vend} setVendorData={setVendorData} />} />
+          
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,79 @@
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const VendorName = (props) => {
+
+    const { loggedIn, email, setVendorNumber, vendorName, vens, setVendorNames } = props
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!loggedIn) {
+            localStorage.removeItem("user")
+            props.setLoggedIn(false)
+            navigate("/")
+        }
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/?name=${vendorName}`);
+                const resData = await response.json()
+                setVendorNames(resData)
+            }
+            catch (error) {
+                console.log("error", error);
+                navigate("/vendorSearch")
+            }
+        }
+        fetchData()
+    }, [])
+
+    const vendorSelected = (key) => {
+        setVendorNumber(key)
+        navigate("/showVendor")
+    }
+
+    let vendorsFormatted = vens.map((venss) => {
+        return (
+            <tr key={venss.VNNO}>
+                <td><a href="#" onClick={() => vendorSelected(venss.VNNO)}>
+                    {venss.VNNO}
+                </a></td>
+                <td>{venss.VNNAME}</td>
+                <td>{venss.VNADDR}</td>
+                <td>{venss.VNCITY}, {venss.VNST} {venss.VNZIP}</td>
+                <td>({venss.VNAREA})</td>
+            </tr>
+
+        )
+    })
+
+    return <div className={"mainContainer"}>
+        <div className={"titleContainer"}>
+            <div>Vendor Name Search</div>
+        </div>
+        <br />
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th colSpan="5">Search Name: {vendorName}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Emp #</td>
+                        <td>Last Name</td>
+                        <td>First Name</td>
+                        <td>Location</td>
+                        <td>Active</td>
+                    </tr>
+                    {vendorsFormatted}
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div>Your email is {email}</div>
+    </div >
+}
+
+export default VendorName

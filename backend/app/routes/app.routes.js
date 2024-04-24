@@ -21,7 +21,8 @@ module.exports = app => {
     const pfrs860s = require("../controllers/pfrs860s.controller.js");
     const pfrs860sdetails = require("../controllers/pfrs860sdetails.controller.js");
     const purchaseOrders = require("../controllers/purchaseOrders.controller.js");
-    
+    const ppur301s = require("../controllers/ppur301s.controller.js");
+
     var router = require("express").Router();
 
     // Retrieve "all or search" from employees
@@ -80,6 +81,12 @@ module.exports = app => {
 
     // Retrieve a purchase order from purchaseOrders using ?poDoc=POC11&poNum=91401
     router.get("/purchaseOrders/", purchaseOrders.findOne);
+
+    // Retrieve "all or search" from ppur301s
+    router.get("/ppur301s/", ppur301s.findAll);
+
+    // Retrieve a vendor from ppur301s using id
+    router.get("/ppur301s/:id", ppur301s.findOne);
 
     // Retrieve an employee from employees using id
     router.get("/:id", employees.findOne);

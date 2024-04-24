@@ -74,6 +74,13 @@ export const SidebarData = [
     iconOpen: <RiIcons.RiArrowUpSFill />
   },
   {
+    title: 'Vendor Search',
+    path: '/vendorSearch',
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpen: <RiIcons.RiArrowUpSFill />
+  },
+  {
     title: 'Payroll Codes',
     path: '/absenceLeaveCodes',
     icon: <AiIcons.AiFillHome />,
