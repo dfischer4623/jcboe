@@ -41,7 +41,6 @@ const VendorName = (props) => {
                 <td>{venss.VNNAME}</td>
                 <td>{venss.VNADDR}</td>
                 <td>{venss.VNCITY}, {venss.VNST} {venss.VNZIP}</td>
-                <td>({venss.VNAREA})</td>
             </tr>
 
         )
@@ -56,16 +55,15 @@ const VendorName = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th colSpan="5">Search Name: {vendorName}</th>
+                        <th colSpan="4">Search Name: {vendorName}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Emp #</td>
-                        <td>Last Name</td>
-                        <td>First Name</td>
-                        <td>Location</td>
-                        <td>Active</td>
+                        <td>Vendor #</td>
+                        <td>Vendor Name</td>
+                        <td>Address</td>
+                        <td>City, State Zip</td>
                     </tr>
                     {vendorsFormatted}
                 </tbody>
