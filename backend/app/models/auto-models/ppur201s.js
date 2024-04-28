@@ -2,19 +2,19 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('ppur201s', {
     ADAT: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     RETN: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     BA: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SESN: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     CM: {
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     BUSY: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SHCODE: {
@@ -54,27 +54,35 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     SHZIP1: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SHZIP2: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SHPROV: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SHPC: {
-      type: DataTypes.STRING(1),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SHAREA: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     SHPHON: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {

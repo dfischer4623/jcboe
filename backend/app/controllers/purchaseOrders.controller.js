@@ -12,7 +12,7 @@ exports.findOne = (req, res) => {
         PO: Number(poNum) 
     };
 
-    PurchaseOrders.findAll({ where: condition })
+    PurchaseOrders.findOne({ where: condition })
         .then(data => {
             res.send(data);
         })

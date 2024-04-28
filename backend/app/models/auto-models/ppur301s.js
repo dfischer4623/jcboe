@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'VN\IP2': {
+    VNIP2: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
@@ -183,6 +183,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     VNPY10: {
       type: DataTypes.FLOAT,
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {

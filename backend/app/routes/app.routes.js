@@ -1,4 +1,4 @@
-const { db } = require("../models/index.js");
+const { db, lacp441s } = require("../models/index.js");
 
 module.exports = app => {
 
@@ -81,6 +81,9 @@ module.exports = app => {
 
     // Retrieve a purchase order from purchaseOrders using ?poDoc=POC11&poNum=91401
     router.get("/purchaseOrders/", purchaseOrders.findOne);
+
+    // Retrieve "all or search" from lacp441s
+    router.get("/lacp441s/", lacp441s.findOne);
 
     // Retrieve "all or search" from ppur301s
     router.get("/ppur301s/", ppur301s.findAll);

@@ -1,209 +1,149 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('ppur410hs', {
+  return sequelize.define('lacp441s', {
     USG: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
     BUSY: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    PODOC: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PO: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    POVEND: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    POATTN: {
+    APHVEN: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POREQ: {
+    APHINV: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POREF: {
+    APHPOD: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POTYPE: {
+    APHPON: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PODAT: {
-      type: DataTypes.STRING(5),
-      allowNull: true
-    },
-    PODREQ: {
+    APHPOV: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POSHIP: {
+    APHREQ: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POMSG: {
+    APHVCH: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POSTRM: {
+    APHIDT: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POPTRM: {
+    APHDDT: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PONOTE: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    PORREC: {
+    APHIAC: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POHOLD: {
+    APHVAC: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POAPCL: {
+    APHDES: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POACCT: {
+    APHEBY: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POEACT: {
+    APHECL: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POBLNK: {
+    APHABY: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POSUB: {
+    APHACL: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POTAX1: {
+    APHPDT: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POTCAT: {
+    APHBCH: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POTAX2: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    PODISC: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POTFRE: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POFRT: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POTOT: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POTTAX: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POTDIS: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POTPAY: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POTFP: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    POPRNT: {
+    APH109: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POREV: {
+    APHOAM: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PODRAF: {
+    APHPAM: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POCONF: {
+    APHDAM: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POREC: {
+    APHCDY: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POIUSR: {
+    APHCOP: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POAUSR: {
+    APHCTN: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    POUNAP: {
+    APHBNK: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PORSN: {
+    APHBAC: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PORVDT: {
+    APHFRM: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    MEMBER: {
+    APHCHK: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    PODATE: {
-      type: DataTypes.DATEONLY,
+    APHCDT: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
-    POREDATE: {
-      type: DataTypes.DATEONLY,
+    APHCAM: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
-    PORVDATE: {
-      type: DataTypes.DATEONLY,
+    APHNAM: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
-    createdAt: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    updatedAt: {
-      type: DataTypes.DATEONLY,
+    member: {
+      type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'ppur410hs',
+    tableName: 'lacp441s',
     schema: 'dbo',
     timestamps: false,
     underscored: true

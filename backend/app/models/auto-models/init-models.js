@@ -135,6 +135,8 @@ var _PSTU350D = require("./PSTU350D");
 var _PSTU360D = require("./PSTU360D");
 var _SALACTXX = require("./SALACTXX");
 var _SALARYXX = require("./SALARYXX");
+var _lacp441s = require("./lacp441s");
+var _pcds801s = require("./pcds801s");
 var _peis301s = require("./peis301s");
 var _peis480ds = require("./peis480ds");
 var _peis480hs = require("./peis480hs");
@@ -291,6 +293,8 @@ function initModels(sequelize) {
   var PSTU360D = _PSTU360D(sequelize, DataTypes);
   var SALACTXX = _SALACTXX(sequelize, DataTypes);
   var SALARYXX = _SALARYXX(sequelize, DataTypes);
+  var lacp441s = _lacp441s(sequelize, DataTypes);
+  var pcds801s = _pcds801s(sequelize, DataTypes);
   var peis301s = _peis301s(sequelize, DataTypes);
   var peis480ds = _peis480ds(sequelize, DataTypes);
   var peis480hs = _peis480hs(sequelize, DataTypes);
@@ -448,6 +452,8 @@ function initModels(sequelize) {
     PSTU360D,
     SALACTXX,
     SALARYXX,
+    lacp441s,
+    pcds801s,
     peis301s,
     peis480ds,
     peis480hs,
