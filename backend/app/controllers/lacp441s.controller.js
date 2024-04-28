@@ -18,7 +18,7 @@ exports.findOne = (req, res) => {
         ['APHPOV', 'ASC'],
     ]
     
-    Lacp441s.findOne({ where: condition, order: sortOrder })
+    Lacp441s.findOne({ where: condition, order: sortOrder })    
         .then(data => {
             res.send(data);
         })

@@ -1,4 +1,4 @@
-const { db, lacp441s } = require("../models/index.js");
+//const { db } = require("../models/index.js");
 
 module.exports = app => {
 
@@ -22,6 +22,7 @@ module.exports = app => {
     const pfrs860sdetails = require("../controllers/pfrs860sdetails.controller.js");
     const purchaseOrders = require("../controllers/purchaseOrders.controller.js");
     const ppur301s = require("../controllers/ppur301s.controller.js");
+    const lacp441s = require("../controllers/lacp441s.controller.js");
 
     var router = require("express").Router();
 

@@ -140,6 +140,14 @@ module.exports = (sequelize, Sequelize) => {
     member: {
       type: Sequelize.STRING(50),
       allowNull: true
+    },
+    createdAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
+    },
+    updatedAt: {
+      type: Sequelize.DATEONLY,
+      allowNull: true
     }
   });
  
