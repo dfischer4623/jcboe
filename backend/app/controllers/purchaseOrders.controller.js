@@ -3,7 +3,7 @@ const PurchaseOrders = db.purchaseOrders;
 const Op = db.Sequelize.Op;
 
 // Retrieve all purchaseOrders from the database.
-exports.findOne = (req, res) => {
+exports.findAll = (req, res) => {
     console.log(req.query)
     var  poDoc = req.query.poDoc
     var poNum = req.query.poNum
@@ -12,7 +12,7 @@ exports.findOne = (req, res) => {
         PO: Number(poNum) 
     };
 
-    PurchaseOrders.findOne({ where: condition })
+    PurchaseOrders.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })

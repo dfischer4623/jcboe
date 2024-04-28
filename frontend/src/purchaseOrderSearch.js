@@ -20,6 +20,8 @@ const PurchaseOrderSearch = (props) => {
         try {
             const response = await fetch(`http://10.0.1.142:8080/api/employees/purchaseOrders/?poDoc=${PODOC}&poNum=${PONUM}`);
             resData = await response.json()
+            console.log(resData)
+            console.log(PONUM)
             if (resData[0].PO == PONUM) {
                 navigate("/showPurchaseOrder")
             } else {

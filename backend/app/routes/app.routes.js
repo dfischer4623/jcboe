@@ -81,7 +81,7 @@ module.exports = app => {
     router.get("/payrollCheckDeductions/", ppai715s.findAll);
 
     // Retrieve a purchase order from purchaseOrders using ?poDoc=POC11&poNum=91401
-    router.get("/purchaseOrders/", purchaseOrders.findOne);
+    router.get("/purchaseOrders/", purchaseOrders.findAll);
 
     // Retrieve "all or search" from lacp441s
     router.get("/lacp441s/", lacp441s.findOne);

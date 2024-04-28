@@ -67,10 +67,10 @@ const ShowPurchaseOrder = (props) => {
                 PODAT = podd.PODAT
             }
 
-            var ddd = PODAT.substring(2,5)
-            var m = Math.floor(Number(ddd)/30)+1
-            var d = Number(ddd)-(30 * (m-1))
-            var y = Number(PODAT.substring(0,2))
+            var ddd = PODAT.substring(2, 5)
+            var m = Math.floor(Number(ddd) / 30) + 1
+            var d = Number(ddd) - (30 * (m - 1))
+            var y = Number(PODAT.substring(0, 2))
             if (y <= 50) {
                 y = 2000 + y
             } else {
