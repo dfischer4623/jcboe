@@ -84,7 +84,7 @@ module.exports = app => {
     router.get("/purchaseOrders/", purchaseOrders.findAll);
 
     // Retrieve "all or search" from lacp441s
-    router.get("/lacp441s/", lacp441s.findOne);
+    router.get("/lacp441s/", lacp441s.findAll);
 
     // Retrieve "all or search" from ppur301s
     router.get("/ppur301s/", ppur301s.findAll);

@@ -4,7 +4,7 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all lacp441s from the database.
 
-exports.findOne = (req, res) => {
+exports.findAll = (req, res) => {
     console.log(req.query)
     var aphbnk = req.query.aphbnk
     var aphbac = req.query.aphbac
@@ -25,7 +25,7 @@ exports.findOne = (req, res) => {
         ['APHNAM', 'ASC'],
     ]
     
-    Lacp441s.findOne({ where: condition, order: sortOrder })    
+    Lacp441s.findAll({ where: condition, order: sortOrder })    
         .then(data => {
             res.send(data);
         })

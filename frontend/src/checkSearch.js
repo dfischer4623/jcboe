@@ -20,9 +20,9 @@ const VendorSearch = (props) => {
         try {
             const response = await fetch(`http://10.0.1.142:8080/api/employees/lacp441s/?aphbnk=${aphbnk}&aphbac=${aphbac}&aphfrm=${aphfrm}&aphchk=${aphchk}&aphven=${aphven}`);
             resData = await response.json()
-            console.log(resData)
+            console.log(resData[0])
             console.log(aphchk)
-            if (resData.APHCHK == aphchk) {
+            if (resData[0].APHCHK == aphchk) {
                 navigate("/showCheck")
             } else {
                 window.alert(`Wrong Check Number ` + aphchk)
