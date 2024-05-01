@@ -28,6 +28,8 @@ import ShowPurchaseOrder from './showPurchaseOrder';
 import VendorSearch from './vendorSearch';
 import VendorName from './vendorName';
 import ShowVendor from './showVendor';
+import CheckSearch from './checkSearch';
+import ShowCheck from './showCheck';
 
 import Sidebar from './navcomponents/Sidebar';
 
@@ -70,6 +72,12 @@ function App() {
   const [vendorNumber, setVendorNumber] = useState("")
   const [vendorName, setVendorName] = useState("")
   const [vens, setVendorNames] = useState(null)
+  const [aphbnk, setAphbnk] = useState("")
+  const [aphbac, setAphbac] = useState("")
+  const [aphfrm, setAphfrm] = useState("")
+  const [aphchk, setAphchk] = useState("")
+  const [aphven, setAphven] = useState("")
+  const [scd, setCheckData] = useState(null)
 
   useEffect(() => {
     // Fetch the user email and token from local storage
@@ -129,6 +137,8 @@ function App() {
           <Route path="/vendorSearch" element={<VendorSearch loggedIn={loggedIn} email={email} vendorName={vendorName} vendorNumber={vendorNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} vend={vend} setVendorNumber={setVendorNumber} setVendorName={setVendorName} setVendorNames={setVendorNames} />} />
           <Route path="/vendorName" element={<VendorName loggedIn={loggedIn} email={email} vendorNumber={vendorNumber} vendorName={vendorName} setLoggedIn={setLoggedIn} setEmail={setEmail} vens={vens} setVendorNames={setVendorNames} setVendorNumber={setVendorNumber} />} />
           <Route path="/showVendor" element={<ShowVendor loggedIn={loggedIn} email={email} vendorNumber={vendorNumber} setLoggedIn={setLoggedIn} setEmail={setEmail} setVendorNumber={setVendorNumber} vend={vend} setVendorData={setVendorData} />} />
+          <Route path="/checkSearch" element={<CheckSearch loggedIn={loggedIn} email={email} setLoggedIn={setLoggedIn} setEmail={setEmail} setAphbnk={setAphbnk} setAphbac={setAphbac} setAphfrm={setAphfrm} setAphchk={setAphchk} setAphven={setAphven} aphbnk={aphbnk} aphbac={aphbac} aphfrm={aphfrm} aphchk={aphchk} aphven={aphven} />} />
+          <Route path="/showCheck" element={<ShowCheck loggedIn={loggedIn} email={email} setLoggedIn={setLoggedIn} setEmail={setEmail} scd={scd} setCheckData={setCheckData} aphbnk={aphbnk} aphbac={aphbac} aphfrm={aphfrm} aphchk={aphchk} aphven={aphven} />} />
           
         </Routes>
       </BrowserRouter>

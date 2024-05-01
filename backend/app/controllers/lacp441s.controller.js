@@ -8,14 +8,21 @@ exports.findOne = (req, res) => {
     console.log(req.query)
     var aphbnk = req.query.aphbnk
     var aphbac = req.query.aphbac
+    var aphfrm = req.query.aphfrm
+    var aphchk = req.query.aphchk
+    var aphven = req.query.aphven
+
     var condition =  { 
         APHBNK: aphbnk,
-        APHBAC: aphbac
+        APHBAC: aphbac,
+        APHFRM: aphfrm,
+        APHCHK: aphchk,
+        APHVEN: aphven
     } 
     
     console.log(condition)
     var sortOrder = [
-        ['APHPOV', 'ASC'],
+        ['APHNAM', 'ASC'],
     ]
     
     Lacp441s.findOne({ where: condition, order: sortOrder })    
