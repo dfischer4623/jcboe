@@ -19,16 +19,6 @@ const Main = (props) => {
     //     navigate("/employeeSearch")
     // }
 
-    // const payrollTablesButtonClick = () => {
-    //     navigate("/payrollTables")
-    // }
-
-    // const logoutButtonClick = () => {
-    //     localStorage.removeItem("user")
-    //     props.setLoggedIn(false)
-    //     navigate("/")
-    // }
-
     return <div className={"mainContainer"}>
         <div className={"titleContainer"}>
             <div>AS/400 Data</div>

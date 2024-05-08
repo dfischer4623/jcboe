@@ -7,7 +7,7 @@ const Main = (props) => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useEffect(() => { 
         if (!loggedIn) {
             localStorage.removeItem("user")
             props.setLoggedIn(false)

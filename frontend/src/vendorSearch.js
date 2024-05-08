@@ -18,7 +18,7 @@ const VendorSearch = (props) => {
     const onENButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/${vendorNumber}`);
+            const response = await fetch(`http://10.0.0.42:8080/api/employees/ppur301s/${vendorNumber}`);
             resData = await response.json()
             console.log(resData)
             console.log(vendorNumber)
@@ -37,7 +37,7 @@ const VendorSearch = (props) => {
     const onENameButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://10.0.1.142:8080/api/employees/ppur301s/?name=${vendorName}`);
+            const response = await fetch(`http://10.0.0.42:8080/api/employees/ppur301s/?name=${vendorName}`);
             resData = await response.json()
             setVendorNames(resData)
             if (resData.length > 0 && vendorName !== '') {

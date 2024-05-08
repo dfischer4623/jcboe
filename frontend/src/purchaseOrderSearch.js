@@ -18,7 +18,7 @@ const PurchaseOrderSearch = (props) => {
     const onPOButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://10.0.1.142:8080/api/employees/purchaseOrders/?poDoc=${PODOC}&poNum=${PONUM}`);
+            const response = await fetch(`http://10.0.0.42:8080/api/employees/purchaseOrders/?poDoc=${PODOC}&poNum=${PONUM}`);
             resData = await response.json()
             console.log(resData)
             console.log(PONUM)

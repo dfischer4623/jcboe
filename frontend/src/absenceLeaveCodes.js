@@ -29,7 +29,7 @@ const AbsenceLeaveCodes = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/ppay121s`);
+                const response = await fetch(`http://10.0.0.42:8080/api/employees/ppay121s`);
                 const resData = await response.json()
                 setAbsenceLeaveCodes(resData)
             }

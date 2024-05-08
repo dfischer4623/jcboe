@@ -42,7 +42,7 @@ const ShowPayroll = (props) => {
         const fetchData = async () => {
 
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/payrollCheck/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
+                const response = await fetch(`http://10.0.0.42:8080/api/employees/payrollCheck/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
                 const resData = await response.json()
                 setPayrollCheckData(resData)
             }
@@ -52,7 +52,7 @@ const ShowPayroll = (props) => {
             }
 
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/payrollCheckDeductions/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
+                const response = await fetch(`http://10.0.0.42:8080/api/employees/payrollCheckDeductions/?SSN=${cid.SSN}&RUN=${cid.RUN}`);
                 const resData = await response.json()
                 setPayrollDeductionData(resData)
             }

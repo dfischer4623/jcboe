@@ -29,7 +29,7 @@ const MiscData = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/tags/${employeeNumber}`);
+                const response = await fetch(`http://10.0.0.42:8080/api/employees/tags/${employeeNumber}`);
                 const resData = await response.json()
                 setTags(resData)
             }

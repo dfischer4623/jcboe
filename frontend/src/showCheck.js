@@ -16,7 +16,7 @@ const ShowVendor = (props) => {
 
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.1.142:8080/api/employees/lacp441s/?aphbnk=${aphbnk}&aphbac=${aphbac}&aphfrm=${aphfrm}&aphchk=${aphchk}&aphven=${aphven}`);
+                const response = await fetch(`http://10.0.0.42:8080/api/employees/lacp441s/?aphbnk=${aphbnk}&aphbac=${aphbac}&aphfrm=${aphfrm}&aphchk=${aphchk}&aphven=${aphven}`);
                 const resData = await response.json()
                 setCheckData(resData)
                 console.log(resData)

@@ -31,8 +31,6 @@ const Home = (props) => {
                 onClick={onButtonClick}
                 value={loggedIn ? "Log out" : "Log in"} />
         </div>
-
-
     </div>
 }
 

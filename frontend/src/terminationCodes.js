@@ -7,14 +7,6 @@ const TerminationCodes = (props) => {
 
     const navigate = useNavigate();
 
-    // const payrollTablesButtonClick = () => {
-    //     navigate("/payrollTables")
-    // }
-
-    // const mainButtonClick = () => {
-    //     navigate("/main")
-    // }
-
     // const logoutButtonClick = () => {
     //     localStorage.removeItem("user")
     //     props.setLoggedIn(false)
