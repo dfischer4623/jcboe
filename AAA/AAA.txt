@@ -5,7 +5,7 @@
 
       **  Please Do Not Close This App  **
 
-**  It is running the as400.jcboe.org website  **
+**  It is running the https://as400.jcboe.org website  **
 
 **  Please contact Dave Fischer with any questions  **
 
