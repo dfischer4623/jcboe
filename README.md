@@ -11,9 +11,9 @@
     Server is running on "IP Address":8080
 
 (3) cd frontend
-    npm start
+    HTTPS=true npm start
 
-    website URL:   http://"IP Address":3000
+    website URL:   https://"IP Address":443
 
 SQL Server
 
