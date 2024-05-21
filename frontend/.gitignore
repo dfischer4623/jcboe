@@ -11,6 +11,12 @@
 # production
 /build
 
+# certificates
+
+\original_certs
+*.crt 
+*.key
+
 # misc
 .DS_Store
 .env
