@@ -11,7 +11,7 @@
     Server is running on "IP Address":8080
 
 (3) cd frontend
-    HTTPS=true npm start
+    HTTPS=true SSL_CRT_FILE=\wildcard_jcboe_org.crt SSL_KEY_FILE=\wildcard_jcboe_org.key npm start
 
     website URL:   https://"IP Address":443
 
