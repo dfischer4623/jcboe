@@ -56,7 +56,7 @@ const Login = (props) => {
 
     // Call the server API to check if the given email ID already exists
     const checkAccountExists = (callback) => {
-        fetch("http://10.0.0.42:3080/check-account", {
+        fetch("https://as400.jcboe.org:3080/check-account", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ const Login = (props) => {
 
     // Log in a user using email and password
     const logIn = () => {
-        fetch("http://10.0.0.42:3080/auth", {
+        fetch("https://as400.jcboe.org:3080/auth", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

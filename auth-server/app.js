@@ -1,4 +1,8 @@
-const express = require("express")
+var fs = require('fs');
+var https = require('https');
+var privateKey  = fs.readFileSync('./wildcard_jcboe_org.key', 'utf8');
+var certificate = fs.readFileSync('./wildcard_jcboe_org.crt', 'utf8');
+
 const bcrypt = require("bcrypt")
 var cors = require('cors')
 const jwt = require("jsonwebtoken")
@@ -9,6 +13,8 @@ var db = low(adapter);
 require('dotenv').config()
 
 // Initialize Express app
+var credentials = {key: privateKey, cert: certificate};
+var express = require('express');
 const app = express()
 
 // Define a JWT secret key. This should be isolated by using env variables for security
@@ -103,6 +109,7 @@ app.post('/check-account', (req, res) => {
     })
 })
 
-app.listen(3080)
+var httpsServer = https.createServer(credentials, app);
+httpsServer.listen(3080)
 
 console.log(`Server is running on port 3080.`);
