@@ -29,7 +29,7 @@ const PayTableCodes = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.0.42:8080/api/employees/ppay125s`);
+                const response = await fetch(`https://as400.jcboe.org:8080/api/employees/ppay125s`);
                 const resData = await response.json()
                 setPayTableCodes(resData)
             }

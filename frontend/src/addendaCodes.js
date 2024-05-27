@@ -29,7 +29,7 @@ const AddendaCodes = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.0.42:8080/api/employees/ppay127s`);
+                const response = await fetch(`https://as400.jcboe.org:8080/api/employees/ppay127s`);
                 const resData = await response.json()
                 setAddendaCodes(resData)
             }

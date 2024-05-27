@@ -1,8 +1,14 @@
-const express = require("express");
+var fs = require('fs');
+var https = require('https');
+var privateKey  = fs.readFileSync('./wildcard_jcboe_org.key', 'utf8');
+var certificate = fs.readFileSync('./wildcard_jcboe_org.crt', 'utf8');
+
+// Initialize Express app
+var credentials = {key: privateKey, cert: certificate};
+var express = require('express');
+const app = express()
+
 const cors = require("cors");
-
-const app = express();
-
 var corsOptions = {
     origin: "http://localhost:3000"
 };
@@ -26,7 +32,8 @@ app.get("/", (req, res) => {
 require("./app/routes/app.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-});
+
+var httpsServer = https.createServer(credentials, app);
+httpsServer.listen(8080)
+
+console.log(`Server is running on port 8080.`);

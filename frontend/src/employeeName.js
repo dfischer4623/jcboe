@@ -25,7 +25,7 @@ const EmployeeName = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.0.42:8080/api/employees/?name=${employeeName}`);
+                const response = await fetch(`https://as400.jcboe.org:8080/api/employees/?name=${employeeName}`);
                 const resData = await response.json()
                 setEmployeeNames(resData)
                 //console.log(resData)

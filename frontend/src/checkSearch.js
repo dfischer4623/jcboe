@@ -18,7 +18,7 @@ const VendorSearch = (props) => {
     const onButtonClick = async () => {
         let resData = null
         try {
-            const response = await fetch(`http://10.0.0.42:8080/api/employees/lacp441s/?aphbnk=${aphbnk}&aphbac=${aphbac}&aphfrm=${aphfrm}&aphchk=${aphchk}&aphven=${aphven}`);
+            const response = await fetch(`https://as400.jcboe.org:8080/api/employees/lacp441s/?aphbnk=${aphbnk}&aphbac=${aphbac}&aphfrm=${aphfrm}&aphchk=${aphchk}&aphven=${aphven}`);
             resData = await response.json()
             console.log(resData[0])
             console.log(aphchk)

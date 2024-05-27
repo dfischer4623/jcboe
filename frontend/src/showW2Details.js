@@ -18,7 +18,7 @@ const ShowW2Details = (props) => {
             const estb = w2ido.ESTB
             const year = w2ido.YEAR
             try {
-                const response = await fetch(`http://10.0.0.42:8080/api/employees/pfrs860sdetails/data?W2CLYR=${year}&W2SSN=${ssn}&W2ESTB=${estb}`);
+                const response = await fetch(`https://as400.jcboe.org:8080/api/employees/pfrs860sdetails/data?W2CLYR=${year}&W2SSN=${ssn}&W2ESTB=${estb}`);
                 const resData = await response.json()
                 setW2Details(resData)
             }

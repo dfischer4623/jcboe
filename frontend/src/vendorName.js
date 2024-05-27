@@ -15,7 +15,7 @@ const VendorName = (props) => {
         }
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://10.0.0.42:8080/api/employees/ppur301s/?name=${vendorName}`);
+                const response = await fetch(`https://as400.jcboe.org:8080/api/employees/ppur301s/?name=${vendorName}`);
                 const resData = await response.json()
                 setVendorNames(resData)
             }

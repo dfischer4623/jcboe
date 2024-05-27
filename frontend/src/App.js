@@ -90,7 +90,7 @@ function App() {
     }
 
     // If the token exists, verify it with the auth server to see if it is valid
-    fetch("http://10.0.0.42:3080/verify", {
+    fetch("https://as400.jcboe.org:3080/verify", {
       method: "POST",
       headers: {
         'jwt-token': user.token
