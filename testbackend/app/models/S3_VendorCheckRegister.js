@@ -1,0 +1,95 @@
+const Sequelize = require('sequelize');
+
+module.exports = function (sequelize, DataTypes) {
+  const S3_VendorCheckRegister = sequelize.define(
+    'S3_VendorCheckRegister',
+    {
+       horder: { type: DataTypes.STRING(50), allowNull: true, field: 'HORDER' },
+    transCode: { type: DataTypes.STRING(50), allowNull: true, field: 'Trans Code' },
+    crGlAcct: { type: DataTypes.STRING(50), allowNull: true, field: 'CR GL Acct#' },
+    dbGlAcct: { type: DataTypes.STRING(50), allowNull: true, field: 'DB GL Acct#' },
+    cycle: { type: DataTypes.STRING(50), allowNull: true, field: 'Cycle#' },
+    account: { type: DataTypes.STRING(50), allowNull: true, field: 'Account#' },
+    anumConnect: { type: DataTypes.STRING(50), allowNull: true, field: 'ANUMCONNECT' },
+    acct: { type: DataTypes.STRING(50), allowNull: true, field: 'Acct#' },
+    receipt: { type: DataTypes.STRING(50), allowNull: true, field: 'Receipt#' },
+    vendorNumber: { type: DataTypes.STRING(50), allowNull: true, field: 'Vendor#' },
+    vendor: { type: DataTypes.STRING(50), allowNull: true, field: 'Vendor' },
+    transAmt: { type: DataTypes.STRING(50), allowNull: true, field: 'Trans Amt' },
+    chkDate: { type: DataTypes.STRING(50), allowNull: true, field: 'Chk Date' },
+    hDesc: { type: DataTypes.STRING(50), allowNull: true, field: 'H_DESC' },
+    checkDesc: { type: DataTypes.STRING(50), allowNull: true, field: 'Check Desc' },
+    crGlAcctOnly: { type: DataTypes.STRING(50), allowNull: true, field: 'CR GL Acct' },
+    checkNumber: { type: DataTypes.STRING(50), allowNull: true, field: 'Check#', primaryKey: true },
+    handCheck: { type: DataTypes.STRING(50), allowNull: true, field: 'Hand Chk?' },
+    batch: { type: DataTypes.STRING(50), allowNull: true, field: 'Batch#' },
+    voidDate: { type: DataTypes.STRING(50), allowNull: true, field: 'Void Date' },
+    isVoid: { type: DataTypes.STRING(50), allowNull: true, field: 'Void?' },
+    invoice: { type: DataTypes.STRING(50), allowNull: true, field: 'Invoice#' },
+    checkSeries: { type: DataTypes.STRING(50), allowNull: true, field: 'Check Series' },
+    district: { type: DataTypes.STRING(50), allowNull: true, field: 'DISTRICT' },
+    postOrder: { type: DataTypes.STRING(50), allowNull: true, field: 'POST_ORDER' },
+    hPayee: { type: DataTypes.STRING(50), allowNull: true, field: 'H_PAYEE' },
+    acctAlt: { type: DataTypes.STRING(50), allowNull: true, field: 'Acct #' },
+    acctDesc: { type: DataTypes.STRING(50), allowNull: true, field: 'Acct Desc' },
+    origAppr: { type: DataTypes.STRING(50), allowNull: true, field: 'Orig Appr' },
+    wAppr: { type: DataTypes.STRING(50), allowNull: true, field: 'W Appr' },
+    currAppr: { type: DataTypes.STRING(50), allowNull: true, field: 'Curr Appr' },
+    ytdDisbursed: { type: DataTypes.STRING(50), allowNull: true, field: 'YTD Disbursed' },
+    currOutstanding: { type: DataTypes.STRING(50), allowNull: true, field: 'Curr Outstanding' },
+    pendingCharges: { type: DataTypes.STRING(50), allowNull: true, field: 'Pending Charges' },
+    expenditureFlag: { type: DataTypes.STRING(50), allowNull: true, field: 'Expenditure % flag' },
+    refunds: { type: DataTypes.STRING(50), allowNull: true, field: 'Refunds' },
+    extn: { type: DataTypes.STRING(50), allowNull: true, field: 'Extn' },
+    userExtn: { type: DataTypes.STRING(50), allowNull: true, field: 'User Extn' },
+    fAsset: { type: DataTypes.STRING(50), allowNull: true, field: 'F Asset?' },
+    payrollAcct: { type: DataTypes.STRING(50), allowNull: true, field: 'Payroll Acct?' },
+    clearingAccount: { type: DataTypes.STRING(50), allowNull: true, field: 'Clearing Account?' },
+    expirationDate: { type: DataTypes.STRING(50), allowNull: true, field: 'Expiration Date' },
+    ytdTransfers: { type: DataTypes.STRING(50), allowNull: true, field: 'YTD Transfers' },
+    authorizedLocations: { type: DataTypes.STRING(50), allowNull: true, field: 'Authorized Locations' },
+    rLocExceedExpFlag: { type: DataTypes.STRING(50), allowNull: true, field: 'R Loc exceed Exp flag?' },
+    currentYearInvoices: { type: DataTypes.STRING(50), allowNull: true, field: 'Current Year Invoices' },
+    paymentVar: { type: DataTypes.STRING(50), allowNull: true, field: 'Payment Var' },
+    aFlag1: { type: DataTypes.STRING(50), allowNull: true, field: 'A_FLAG1' },
+    aFlag2: { type: DataTypes.STRING(50), allowNull: true, field: 'A_FLAG2' },
+    aFlag3: { type: DataTypes.STRING(50), allowNull: true, field: 'A_FLAG3' },
+    fundCategory: { type: DataTypes.STRING(50), allowNull: true, field: 'Fund Category' },
+    origFundCategory: { type: DataTypes.STRING(50), allowNull: true, field: 'Orig Fund Category' },
+    aTrxTime: { type: DataTypes.STRING(50), allowNull: true, field: 'A_TRXTIME' },
+    aTrxType: { type: DataTypes.STRING(50), allowNull: true, field: 'A_TRXTYPE' },
+    aUser: { type: DataTypes.STRING(50), allowNull: true, field: 'A_USER' },
+    aNoImport: { type: DataTypes.STRING(50), allowNull: true, field: 'A_NOIMPORT' },
+    aStline: { type: DataTypes.STRING(50), allowNull: true, field: 'A_STLINE' },
+    aCdsreq: { type: DataTypes.STRING(50), allowNull: true, field: 'A_CDSREQ' },
+    remitToName: { type: DataTypes.STRING(100), allowNull: true, field: 'Remit to name' },
+    various: { type: DataTypes.STRING(50), allowNull: true, field: 'Various?' },
+    multipleRemitLocations: { type: DataTypes.STRING(50), allowNull: true, field: 'Multiple Remit to Locations?' },
+    address1: { type: DataTypes.STRING(50), allowNull: true, field: 'ADDRESS1' },
+    address2: { type: DataTypes.STRING(50), allowNull: true, field: 'ADDRESS2' },
+    city: { type: DataTypes.STRING(50), allowNull: true, field: 'CITY' },
+    state: { type: DataTypes.STRING(50), allowNull: true, field: 'STATE' },
+    zipcode: { type: DataTypes.STRING(50), allowNull: true, field: 'ZIPCODE' },
+    remitToName2: { type: DataTypes.STRING(50), allowNull: true, field: 'Remit to Name 2' },
+    year: { type: DataTypes.STRING(50), allowNull: true, field: 'Year' }
+    },
+    {
+      sequelize,
+      tableName: 'S3_VendorCheckRegister',
+      schema: 'dbo',
+      timestamps: false,
+      underscored: true,
+      freezeTableName: true,
+      createdAt: false,
+      updatedAt: false,
+      defaultScope: {
+        order: [] 
+      }
+    }
+  );
+
+  
+  S3_VendorCheckRegister.removeAttribute('id');
+
+  return S3_VendorCheckRegister;
+};

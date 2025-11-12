@@ -1,0 +1,10 @@
+*.xlsx
+node_modules
+
+# certificates
+
+\original_certs
+*.crt 
+*.key
+
+/.claude

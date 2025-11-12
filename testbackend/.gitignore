@@ -1,0 +1,12 @@
+db.config.js
+db.config.s3data.js
+
+node_modules/
+
+.env
+
+# certificates
+
+\original_certs
+*.crt 
+*.key

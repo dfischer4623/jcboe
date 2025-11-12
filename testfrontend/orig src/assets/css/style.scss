@@ -1,0 +1,4838 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+$main-font: "Inter", sans-serif;
+$whitecolor: #ffffff;
+$bluecolor: #263EAC;
+$blackcolor: #000000;
+$orangecolor: #EC6800;
+$bgcolor: #F3F3F3;
+$textcolor: #5c5c5c;
+$inputcolorgrey: #707070;
+$blackheadcolor: #2a2a2a;
+$bordersidecolor: #BEBEBE;
+$greencolor: #058227;
+$accbordercolor: #C1C1C1;
+$greyshade: #d2d2d2;
+$redcolor: #d32f2f;
+$wagescolr: #058813;
+$wihlecolr: #E36705;
+$editcolor: #058813;
+$deletcolor: #cf0000;
+
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $main-font;
+  background-color: $bgcolor;
+
+}
+
+@mixin pos-block {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+@mixin pos-inlineblock {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.main-sec {
+  @include pos-block;
+  padding: 20px;
+}
+
+.main-sec-logo {
+  .login-sec {
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 20%);
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    margin-top: 5% !important;
+    background-color: $whitecolor;
+    padding-bottom: 40px;
+
+    .login-logo-sec {
+      background-color: $bluecolor;
+      padding: 10px 0px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3019607843);
+
+      h1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: $whitecolor;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      img {
+        height: 69px;
+      }
+
+      .login-logo-sec {
+        background-color: $bluecolor;
+      }
+    }
+
+  }
+}
+
+.login-btn-sec {
+  margin: 70px 0px;
+}
+
+.btn-nologin {
+  width: 100%;
+  max-width: 250px;
+  border: 2px solid $orangecolor;
+  border-radius: 0px;
+  background-color: $whitecolor;
+  color: $orangecolor;
+  padding: 10px 0px;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 1px 1px 15px #ec68001a;
+
+  &:hover {
+    background-color: $orangecolor;
+    color: $whitecolor;
+  }
+
+  &:active {
+    background-color: $whitecolor !important;
+    color: $orangecolor !important;
+  }
+}
+
+.header-sec {
+  background-color: $bluecolor;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.form-sec {
+  .MuiBox-root {
+    .MuiFormControl-root {
+      .MuiFormLabel-root {
+        font-family: $main-font !important;
+        font-weight: 500;
+        font-size: 17px;
+        top: -2px;
+      }
+
+      .MuiOutlinedInput-root {
+        .MuiInputBase-input {
+          color: $textcolor !important;
+          font-weight: 400 !important;
+          font-family: $main-font !important;
+          box-shadow: 1px 1px 8px rgb(134 129 129 / 12%);
+          text-align: left !important;
+          padding: 14.5px 14px !important;
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border-radius: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+.login-details {
+  padding: 50px 55px;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: $bluecolor !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: $bluecolor !important;
+}
+
+.form-no-sec {
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.form-sec .MuiBox-root .MuiFormControl-root .MuiInputLabel-shrink {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.MuiSelect-nativeInput {
+  font-family: $main-font !important;
+}
+
+.margin-login {
+  margin-bottom: 34px;
+}
+
+.login-icon {
+  position: relative;
+  display: block;
+
+  svg {
+    color: $inputcolorgrey;
+    position: absolute;
+    left: 10px;
+    bottom: 17px;
+    font-size: 22px;
+  }
+}
+
+.margin-login .MuiBox-root .MuiFormControl-root .MuiFormLabel-root {
+  left: 24px;
+}
+
+.margin-login .MuiBox-root .MuiFormControl-root .MuiInputLabel-shrink {
+  left: 0px;
+}
+
+.margin-login .MuiBox-root .MuiFormControl-root .MuiOutlinedInput-root .MuiInputBase-input {
+  padding: 16.5px 14px 16.5px 36px !important;
+}
+
+.btn-login {
+  max-width: 100%;
+}
+
+.logn-new {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.login-eye-off {
+  float: right;
+  position: relative;
+  display: block;
+
+  svg {
+    color: $inputcolorgrey;
+    position: absolute;
+
+  }
+}
+
+.visi-sec {
+  float: right;
+  position: relative;
+  display: block;
+
+  svg {
+    color: $inputcolorgrey;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+}
+
+.log-name {
+  .MuiBox-root {
+    .MuiInputBase-root {
+      fieldset {
+        legend {
+          span {
+            padding-left: 15px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.log-email {
+  .MuiBox-root {
+    .MuiInputBase-root {
+      fieldset {
+        legend {
+          span {
+            padding-left: 15px;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.log-emp {
+  .MuiBox-root {
+    .MuiInputBase-root {
+      fieldset {
+        legend {
+          span {
+            padding-left: 5px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//   sidebar code start here
+.aside-fixed+.content {
+  margin-left: 220px !important;
+}
+
+.admin-fixed {
+  background-color: $bluecolor;
+  border-right: 0 solid #05050b;
+  bottom: 0;
+  box-shadow: 0 1.6rem 3rem #0000001a;
+  color: $whitecolor;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 0px 0px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transition: all .2sease-in-out;
+  width: 14.1rem;
+  z-index: 1035;
+}
+
+@media (min-width: 992px) {
+  .aside {
+    transform: translateX(0);
+  }
+}
+
+//    
+@media (min-width: 992px) {
+  .aside-header {
+    height: 92px;
+    padding: 0 20px;
+    transform: none;
+  }
+}
+
+.aside-header {
+  align-items: center;
+  background-color: $bluecolor !important;
+  border-right: 1px solid #485e9029;
+  display: block;
+  justify-content: space-between;
+  padding: 0 11px;
+}
+
+.aside-logo,
+.aside-logo:focus,
+.aside-logo:hover {
+  color: $blackcolor;
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .aside-logo {
+    font-size: 23px;
+  }
+}
+
+.aside-logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-left: -4px;
+  margin-top: -3px;
+  position: relative;
+  top: -22px;
+  text-decoration: none;
+}
+
+.aside-logo,
+.aside-logo:focus,
+.aside-logo:hover {
+  color: $blackcolor;
+  font-weight: 400;
+}
+
+.aside {
+  overflow-y: scroll;
+
+}
+
+.aside-body {
+  background-color: $bluecolor;
+  border-right: 1px solid #485e9029;
+  border-top: 1px solid #485e9029;
+  height: calc(100% - 59px);
+  padding: 23px 0px 9px 0px;
+  position: relative;
+
+  ul {
+    display: block;
+    float: left;
+    width: 101%;
+
+    li {
+      text-align: left;
+      cursor: pointer;
+
+      //margin-bottom: 1px;
+      a {
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        color: $whitecolor;
+        text-decoration: none;
+        padding: 16px 5px;
+        border-left: 3px solid $bluecolor;
+        border-bottom: 1px solid $bordersidecolor;
+        display: block;
+
+        svg {
+          margin-right: 10px;
+          font-size: 23px;
+          top: 0px;
+          position: relative;
+        }
+
+        span {
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 27px;
+          top: 3px;
+          position: relative;
+        }
+
+        img {
+          height: 22px;
+          margin-right: 9px;
+          position: relative;
+          left: 3px;
+        }
+
+      }
+
+      .activeapprove {
+        background-color: #213594;
+
+      }
+    }
+  }
+}
+
+// .nav-aside {
+//   flex-direction: column;
+//   font-size: 13px;
+//   line-height: 1.6;
+//   margin-bottom: 25px;
+//   white-space: nowrap;
+// }
+
+.nav-aside .nav-item {
+  padding: 2px 3px 0;
+  position: relative;
+}
+
+.user-details {
+  @include pos-block;
+  padding: 20px 0px 20px 0px;
+
+  svg {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+}
+
+.aside-fixed+.content-header {
+  margin-left: 225px !important;
+}
+
+.content-header {
+  .header-approve {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px 30px 20px;
+    background-color: $whitecolor;
+
+  }
+}
+
+.heading-top {
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: $blackheadcolor;
+}
+
+.aside-fixed+.content-main {
+  margin-left: 220px !important;
+}
+
+.ver-sec {
+  text-decoration: none;
+  color: $whitecolor;
+  font-size: 12px;
+  position: relative;
+  top: -12px;
+  font-weight: 400;
+}
+
+.vendor-img {
+  height: 18px !important;
+  margin-right: 9px !important;
+}
+
+.arrow-right {
+  float: right;
+
+  svg {
+    margin-right: 0px !important;
+    font-size: 29px !important;
+    top: -4px !important;
+    float: right;
+  }
+}
+
+// sidebar code end here
+
+// header code start here
+.aside-fixed+.content-header {
+  margin-left: 225px !important;
+}
+
+.content-header {
+  .header-approve {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px 30px 20px;
+    background-color: $whitecolor;
+
+  }
+}
+
+.heading-top {
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: $blackheadcolor;
+}
+
+.aside-fixed+.content-header {
+  margin-left: 225px !important;
+}
+
+.content-header {
+  margin-left: 225px !important;
+}
+
+// header code end here
+
+
+.content-main {
+  margin-left: 230px !important;
+}
+
+.main-inner-heading {
+  @include pos-block;
+
+
+  .emp-serach {
+    @include pos-block();
+    padding: 34px 0px 22px 0px;
+    font-family: $main-font !important;
+
+    h2 {
+      font-size: 20px;
+      color: $blackheadcolor;
+      font-weight: 600;
+      font-family: $main-font;
+    }
+  }
+}
+
+.tab-sec-emp {
+  margin: 0px 30px
+}
+
+.tab-sec-main {
+  .MuiBox-root {
+    .MuiBox-root {
+      border-bottom: none !important;
+
+      .MuiTabs-root {
+        .MuiTabs-scroller {
+          .MuiTabs-list {
+            font-family: $main-font !important;
+
+            .MuiButtonBase-root {
+              text-transform: initial !important;
+              font-size: 18px !important;
+              font-weight: 500;
+              width: 155px;
+              padding: 16px 10px !important;
+              font-family: $main-font !important;
+            }
+
+            .MuiButtonBase-root.Mui-selected {
+              background-color: $bluecolor !important;
+              color: $whitecolor !important;
+              width: 155px;
+              padding: 16px 10px !important;
+              font-family: $main-font !important;
+            }
+          }
+
+          .MuiTabs-indicator {
+            height: 0px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab-sec-main-inner {
+  background-color: $whitecolor !important;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 12%) !important;
+  padding: 90px 80px 110px 80px !important;
+
+  .MuiBox-root {
+    padding: 0px !important;
+  }
+
+
+}
+
+.or-sec {
+  margin-bottom: 0px;
+  font-size: 18px;
+  color: $inputcolorgrey;
+  position: relative;
+  top: 14px;
+  font-weight: 500;
+}
+
+
+.btn-search {
+  width: 100%;
+  max-width: 120px;
+  border: 2px solid $orangecolor;
+  border-radius: 0px;
+  background-color: $orangecolor;
+  color: $whitecolor;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 1px 1px 15px #ec68001a;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;
+
+  &:hover {
+    background-color: $whitecolor;
+    color: $orangecolor;
+    border: 2px solid $orangecolor;
+  }
+
+  &:active {
+    background-color: $whitecolor !important;
+    color: $orangecolor !important;
+  }
+}
+
+.search-btn-sec {
+  text-align: left;
+}
+
+
+.emp-name-span {
+  .MuiBox-root {
+    .MuiInputBase-root {
+      fieldset {
+        legend {
+          span {
+            padding-left: 15px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.oir-sec {
+  width: 5%;
+  /* float: left; */
+  justify-content: space-around;
+  display: flex;
+  padding: 0px 15px !important;
+}
+
+.tab-sec-main-inner-show {
+  .row {
+    justify-content: center !important;
+  }
+}
+
+.emp-data-head {
+  h3 {
+    font-size: 19px;
+    color: $blackheadcolor !important;
+    font-weight: 600;
+    font-family: $main-font !important;
+    margin-top: 6px;
+  }
+}
+
+.form-autocomple-sec .MuiAutocomplete-root {
+  width: 100%;
+}
+
+.form-autocomple-sec .MuiAutocomplete-root {
+  font-family: $main-font !important;
+  box-shadow: 1px 1px 8px rgba(134, 129, 129, 0.12);
+}
+
+.form-autocomple-sec {
+  .MuiAutocomplete-root {
+    .MuiFormControl-root {
+      label {
+        font-family: $main-font !important;
+        font-weight: 500;
+        font-size: 17px;
+        top: 0px;
+      }
+
+      .MuiInputBase-root {
+        .MuiAutocomplete-endAdornment {}
+
+        .MuiInputBase-input {
+          font-weight: 400 !important;
+          font-family: "Inter", sans-serif !important;
+          text-align: left !important;
+          font-size: 16px;
+          color: $textcolor !important;
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border-radius: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+.emp-name-span {
+  .MuiAutocomplete-root {
+    .MuiFormControl-root {
+      .MuiInputBase-root {
+        .MuiOutlinedInput-notchedOutline {
+          legend {
+            span {
+              padding-left: 8px;
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.MuiAutocomplete-option {
+  font-family: $main-font !important;
+}
+
+.print-sec-inner {
+  position: relative;
+  display: block;
+  // float: right;
+  // margin-right: 120px;
+  // bottom: 30px;
+  width: 100%;
+
+  .print-icon {
+    float: right;
+    position: absolute;
+    right: 90px;
+
+    svg {
+      color: $greencolor;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.emp-print .print-icon {
+  right: 90px;
+  bottom: 10px;
+}
+
+.margin-all-sec {
+  margin: 0px 25px !important;
+}
+
+.accordion-margin {
+  margin: 0px 100px !important;
+}
+
+.lastnav-link {
+  border-bottom: none !important;
+}
+
+.form-accor-sec {
+  .MuiPaper-root {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid $accbordercolor !important;
+    border-radius: 0px !important;
+    margin-bottom: 20px !important;
+
+    .MuiAccordion-heading {
+      .MuiButtonBase-root {
+
+        // border-bottom: 2px solid $accbordercolor !important;
+        .MuiAccordionSummary-content {
+          color: $inputcolorgrey !important;
+          font-family: $main-font !important;
+          margin: 18px 0px !important;
+
+          .MuiTypography-root {
+            font-size: 19px !important;
+            font-family: $main-font !important;
+            font-weight: 600 !important;
+          }
+
+        }
+
+        .MuiAccordionSummary-expandIconWrapper {
+          svg {
+            color: $orangecolor !important;
+            font-size: 30px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .MuiCollapse-root {
+    .MuiCollapse-wrapper {
+      .MuiCollapse-wrapperInner {
+        .MuiAccordion-region {
+          border-top: 2px solid $accbordercolor !important;
+        }
+      }
+    }
+  }
+}
+
+
+.form-detail-main {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  background-color: $whitecolor;
+  padding: 40px 40px;
+
+  .form-detail-left {
+    width: 47%;
+    float: left;
+
+    .form-detail-left-inner {
+      width: 55%;
+      float: left;
+
+      .form-details-label {
+        width: 100%;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 17px;
+        vertical-align: middle;
+
+        h3 {
+          font-size: 17px;
+          color: $inputcolorgrey;
+          float: left;
+          text-align: left;
+          font-weight: 600;
+          width: 71%;
+          float: left;
+          font-family: $main-font !important;
+          line-height: 26px !important;
+        }
+
+        p {
+          margin-bottom: 0px;
+          color: $inputcolorgrey;
+          font-size: 21px;
+          top: -6px;
+          position: relative;
+          font-family: $main-font !important;
+        }
+      }
+    }
+  }
+
+  .form-detail-midle {
+    width: 4%;
+    float: left;
+    padding-left: 0px !important;
+  }
+
+  .form-detail-right {
+    width: 47%;
+    float: left;
+  }
+}
+
+.form-detail-sec .form-detail-inner .form-details-value p {
+  color: $inputcolorgrey !important;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.form-detail-inner .form-detail-left .form-detail-right-inner {
+  width: 45%;
+  float: left;
+
+  .form-details-value {
+    p {
+      text-align: left;
+      font-family: $main-font !important;
+      color: $inputcolorgrey !important;
+      font-size: 17px;
+    }
+  }
+}
+
+.form-detail-midle {
+  width: 4%;
+  float: left;
+}
+
+.border-after {
+  position: relative;
+  display: inline;
+  background: $whitecolor;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.border-after::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(112, 112, 112, 0.368627451);
+}
+
+.form-detail-right .form-detail-left-innerss {
+  width: 55%;
+  float: left;
+}
+
+.form-detail-inner .form-detail-left-innerss .form-details-label {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 17px;
+  vertical-align: middle;
+
+  h3 {
+    font-size: 17px;
+    color: $inputcolorgrey;
+    float: left;
+    text-align: left;
+    font-weight: 600;
+    width: 73%;
+    float: left;
+    font-family: $main-font !important;
+    line-height: 21px;
+  }
+
+  p {
+    margin-bottom: 0px;
+    color: $inputcolorgrey;
+    font-size: 21px;
+    top: -6px;
+    position: relative;
+    font-family: $main-font !important;
+  }
+}
+
+.form-detail-right .form-detail-right-innerss {
+  width: 45%;
+  float: left;
+}
+
+.form-accor-sec {
+  .MuiPaper-root {
+    .MuiCollapse-root {
+      .MuiCollapse-wrapper {
+        .MuiCollapse-wrapperInner {
+          .MuiAccordion-region {
+            .MuiAccordionDetails-root {
+              .MuiTypography-root {
+                box-shadow: none !important;
+                padding: 20px 10px !important;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.last-right-data {
+  .form-details-label {
+    margin-bottom: 0px !important;
+  }
+}
+
+.form-detail-right-innerss {
+  .form-details-value {
+    p {
+      text-align: left;
+      color: $inputcolorgrey !important;
+      font-weight: 400;
+      font-family: $main-font !important;
+      font-size: 17px;
+    }
+  }
+}
+
+.form-large-data-sec {
+  width: 74%;
+  margin-top: 20px;
+
+  .form-detail-left-inner {
+    width: 55%;
+    float: left;
+
+    .form-details-label {
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 17px;
+      vertical-align: middle;
+
+      h3 {
+        width: 100%;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 17px;
+        vertical-align: middle;
+        font-size: 17px;
+        color: $inputcolorgrey;
+        text-align: left;
+        font-weight: 600;
+        width: 71%;
+        float: left;
+        font-family: $main-font !important;
+        line-height: 26px !important;
+      }
+    }
+  }
+
+  .form-detail-right-inner {
+    width: 45%;
+    float: left;
+
+    .form-details-value {
+      p {
+        text-align: left;
+        font-family: $main-font !important;
+        color: $inputcolorgrey !important;
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+.form-detail-terminate {
+  .form-detail-left {
+    width: 100%;
+
+    .form-detail-left-inner {
+      width: 26%;
+      float: left;
+    }
+
+    .form-detail-right-inner {
+      width: 70%;
+      float: left;
+    }
+  }
+}
+
+.submenudisblock {
+  display: block !important;
+}
+
+.submenudisnone {
+  display: none !important;
+}
+
+.sub-menu-employee {
+  padding-left: 0px;
+  list-style-type: none;
+  background-color: $whitecolor;
+  color: $bluecolor !important;
+
+  li {
+    padding: 16px 10px 16px 20px !important;
+    border-bottom: 1px solid $bluecolor !important;
+  }
+}
+
+.emp-main-heading-emp {
+  max-width: 100%;
+  margin: 0 15px;
+
+  .head-inner {
+    width: 100%;
+    position: relative;
+    display: block;
+
+    h2 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 0px !important;
+      font-weight: 600;
+      color: $blackheadcolor !important;
+    }
+
+    .head-right {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      position: absolute;
+      right: 0px;
+      top: -10px;
+      align-items: center;
+    }
+  }
+}
+
+.btn-clear {
+  width: 100%;
+  max-width: 120px;
+  border: 2px solid $orangecolor;
+  border-radius: 0px;
+  background-color: $orangecolor;
+  color: $whitecolor;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 1px 1px 15px rgb(236 104 0 / 32%);
+  margin-right: 10px;
+  padding: 10px 15px;
+  max-width: 140px;
+
+  &:hover {
+    background-color: $whitecolor;
+    color: $orangecolor;
+    border: 2px solid $orangecolor;
+  }
+}
+
+.print-icon {
+  svg {
+    color: $greencolor;
+    font-size: 27px;
+    margin-right: 18px;
+    cursor: pointer;
+  }
+}
+
+.emp-another-sec {
+  padding-bottom: 15px;
+}
+
+.emp-table-sec {
+  padding: 0px 25px !important;
+
+  .form-table-sec {
+    margin: 40px 0px 20px 0px !important;
+    max-width: 100%;
+    padding: 0px 13px 50px 13px !important;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    padding: 23px 25px;
+    margin-top: 30px;
+    background-color: $whitecolor;
+  }
+
+}
+
+.search-sec {
+  position: relative;
+  display: flex;
+  /* border: none !important; */
+  /* float: right; */
+  justify-content: right;
+  font-family: $main-font !important;
+  gap: 20px;
+
+  .input-srch {
+    width: 232px;
+    float: left;
+    border: none;
+    border-bottom: 1px solid $textcolor;
+    outline: none;
+    color: $inputcolorgrey;
+    font-size: 16px;
+    font-family: $main-font !important;
+  }
+}
+
+.emp-serch-main {
+  float: right;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 20px 30px;
+
+}
+
+.go-sec {
+  width: 100%;
+  max-width: 120px;
+  border: 2px solid $orangecolor;
+  border-radius: 0px;
+  background-color: $whitecolor;
+  color: $orangecolor;
+  /* padding: 10px 16px !important; */
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 1px 1px 15px rgba(236, 104, 0, 0.32);
+  margin-right: 0px;
+  padding: 8px 11px;
+  max-width: 60px;
+  margin-left: -10px;
+}
+
+.pagination-sec {
+  width: 100%;
+  position: relative;
+  display: block;
+
+  .page-left {
+    width: 100%;
+    max-width: 216px;
+    background-color: $whitecolor;
+    color: $orangecolor;
+    display: inline-block;
+    position: relative;
+    float: left;
+    border: none !important;
+    padding: 10px 0px;
+    border: 2px solid $orangecolor !important;
+    box-shadow: 1px 1px 5px rgba(236, 104, 0, 0.2588235294);
+    margin-top: 10px;
+
+    p {
+      float: left;
+      margin-bottom: 0px;
+      font-size: 17px;
+      padding: 0px 2px;
+      color: $textcolor;
+
+      span {
+        float: left;
+
+        svg {
+          font-size: 30px;
+          color: $textcolor;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.page-name {
+  margin-right: 8px;
+  position: relative;
+  top: 2px;
+}
+
+.pagination-sec .page-left p input {
+  width: 46px;
+  outline: none;
+  border: none !important;
+  height: 30px;
+  text-align: center;
+  margin-right: 3px;
+  background-color: $orangecolor;
+  color: $whitecolor;
+}
+
+/** Scrollbar section code start **/
+::-webkit-scrollbar {
+  width: 4px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #cccccc;
+  -webkit-border-radius: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 10px;
+  background: #cccccc;
+}
+
+/** Scroll section code end **/
+
+.table-main-sec {
+  .table-sec {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+
+    thead {
+      border-top: 3px solid $bluecolor;
+
+      tr {
+        th {
+          border: 2px solid $accbordercolor;
+          color: $bluecolor !important;
+          font-size: 17px !important;
+          vertical-align: middle !important;
+          font-weight: 600 !important;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          border: 2px solid $accbordercolor !important;
+          vertical-align: middle !important;
+          font-size: 17px;
+          font-weight: 500;
+
+          p {
+            margin-bottom: 0px;
+            color: $inputcolorgrey;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.filt-icon {
+  img {
+    height: 14px;
+    position: relative;
+    left: 4px;
+  }
+}
+
+.check-width {
+  .MuiFormGroup-root {
+    justify-content: center;
+
+    label {
+      justify-content: center;
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+
+      .MuiCheckbox-root.Mui-checked {
+        color: $bluecolor !important;
+      }
+    }
+  }
+}
+
+.unit-width {
+  width: 180px;
+}
+
+.no-data {
+  margin-top: 60px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.certi-width {
+  width: 180px;
+}
+
+.cert-desc-width {
+  width: 270px;
+}
+
+.type-width {
+  width: 170px
+}
+
+.type-desc-width {
+  width: 250px;
+}
+
+.level-width {
+  width: 140px;
+}
+
+.level-desc-width {
+  width: 160px;
+}
+
+.check-width {
+  width: 70px;
+  ;
+}
+
+.schol-yaer-widh {
+  width: 209px;
+}
+
+.deductn-width {
+  width: 200px;
+}
+
+.juris-width {
+  width: 300px;
+}
+
+
+.menu-sec {
+  a {
+    img {
+      margin-right: 17px !important;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  table thead .ac-no-details-widh {
+    width: 660px !important;
+  }
+
+  table .price-detail-widh {
+    width: 190px !important;
+  }
+
+  table .unit-details-widh {
+    width: 190px !important;
+  }
+
+  table .ex-peice-width {
+    width: 230px !important;
+  }
+
+  table .qtn-details-widh {
+    width: 100px;
+  }
+
+  .table-user-sec {
+    .tbody-light {
+      tr {
+        .value-table {
+          p {
+            font-size: 16px !important;
+          }
+        }
+      }
+    }
+  }
+
+  #model-20 .toggle label:after {
+    top: -11px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .access-sec .access-right-assign h2 {
+    font-size: 18px !important;
+  }
+
+  .tab-sec-main-inner .tab-superadm-sec .access-right-cate-sec .check-cate-sec {
+    width: 28% !important;
+  }
+
+  .backg-shaw-botm {
+    padding: 90px 50px 60px 50px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    width: 257px !important;
+  }
+
+  .payroll-check-amt {
+    width: 15% !important;
+  }
+
+  .emp-data-inner .emp-data-sec .emp-data-value-sec .form-newsss-pure {
+    width: 47% !important;
+  }
+
+  .emp-data-inner .emp-data-sec .emp-data-value-sec .form-newss-right-pure {
+    width: 51% !important;
+  }
+
+  .level-desc-width {
+    width: 210px !important;
+  }
+
+  .tab-sec-main-inner {
+    padding: 90px 20px 110px 20px !important;
+  }
+
+  .heading-top {
+    font-size: 21px;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    width: 253px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .bank-accont-widh {
+    width: 390px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-form-widh {
+    width: 100px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-ven-widh {
+    width: 235px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-no-widh {
+    width: 450px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-date-widh {
+    width: 160px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-recon-widh {
+    width: 100px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-recon-date-widh {
+    width: 100px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chek-amt-widh {
+    width: 100px !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  #model-20 .toggle input[type=checkbox]:checked+label:after {
+    left: 26px !important;
+  }
+
+  #model-20 .toggle label:before {
+    width: 44px !important;
+  }
+
+  #model-20 .toggle label:after {
+    left: -7px !important;
+  }
+
+  .schol-yaer-widh {
+    width: 248px;
+  }
+
+  .deductn-width {
+    width: 120px;
+  }
+
+  .duct-width {
+    width: 200px;
+  }
+
+  .perctnt-width {
+    width: 180px;
+  }
+
+  .heading-top {
+    font-size: 20px;
+  }
+
+  .tab-sec-main .MuiBox-root .MuiBox-root .MuiTabs-root .MuiTabs-scroller .MuiTabs-list .MuiButtonBase-root.Mui-selected {}
+
+  .po-details-sec .po-details-head h2 {
+    font-size: 18px;
+  }
+
+  .po-details-sec .diff-po-table .table .tbody-left-po tr th {
+    width: 210px !important;
+  }
+
+  .diff-po-table .table .tbody-po-light tr th {
+    width: 237px !important;
+  }
+
+  body .margin-top-po-table .diff-po-table .table .left-tbody-hight tr th {
+    width: 208px !important;
+  }
+}
+
+@media (max-width: 1450px) {
+  .adm-user-psd {
+    width: 160px !important;
+  }
+
+  .adm-user-access {
+    width: 330px !important;
+  }
+
+  .adm-user-stus {
+    width: 150px !important;
+  }
+
+  .adm-user-actn {
+    width: 90px !important;
+  }
+
+  .diff-po-table .tabl-ws-details .tbody-po-light tr th {
+    width: 280px !important;
+  }
+
+  .form-show-ws-main .search-sec-pay .ws-details {
+    width: 25% !important;
+  }
+
+  .diff-po-table .tabl-ws-details .tbody-po-light tr th {
+    width: 300px !important;
+  }
+
+  .diff-po-table .show-right-po .tbody-po-light tr th {
+    width: 300px !important;
+  }
+
+  .table-main-sec .table .tax-yaer-widh {
+    width: 130px !important;
+  }
+
+  .table-main-sec .table .actin-ws-widh {
+    width: 120px !important
+  }
+
+  body .main-inner-sec .accordian-margin-new {
+    margin: 1px 35px 0px 35px !important;
+    padding-top: 20px;
+  }
+
+  .diff-po-table .table .tbody-po-light tr th {
+    width: 254px !important;
+  }
+
+  .diff-po-table .table .tbody-left-po tr th {
+    width: 254px !important;
+  }
+
+  .ven-all-pdf .btn-all-sec {
+    max-width: 109px !important;
+    padding: 10px 0px !important;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 21px;
+  }
+
+  .ven-all-pdf .print-icon svg {
+    top: -4px;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1250px) {
+  body table thead .ac-no-details-widh {
+    width: 810px !important;
+  }
+
+  .level-desc-width {
+    width: 216px !important;
+  }
+
+  .tab-sec-main-inner {
+    padding: 90px 20px 110px 20px !important;
+  }
+
+  .heading-top {
+    font-size: 19px;
+  }
+
+  body .tab-sec-main .backg-shaw-botm {
+    padding: 90px 25px 110px 25px !important;
+  }
+
+  .form-detail-main .form-detail-left .vebdor-details-left .form-details-label h3 {
+    line-height: 30px !important;
+  }
+
+  .form-detail-inner .vedor-detail-right .vebdor-details-left .form-details-label h3 {
+    line-height: 30px !important;
+  }
+
+  .po-show-print svg {
+    font-size: 26px;
+  }
+
+  .print-check-icon svg {
+    font-size: 25px;
+  }
+}
+
+.form-neww-details-se {
+  width: 49% !important;
+
+  .form-details-label {
+    h3 {
+      width: 78% !important;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+
+  table .ac-no-details-widh {
+    width: 480px !important;
+  }
+
+  .price-detail-widh {
+    width: 220px !important;
+  }
+
+  .unit-details-widh {
+    width: 190px !important;
+  }
+
+  .ex-peice-width {
+    width: 220px !important;
+  }
+
+  body .diff-po-table .table .left-tbody-hight tr th {
+    width: 210px !important;
+  }
+
+  .access-right-cate-sec .check-cate-sec {
+    width: 24% !important;
+  }
+
+  .access-right-cate-sec .check-cate-sec p {
+    font-size: 17px !important;
+    top: 7px !important;
+  }
+
+  .head-inner-main .ven-all-pdf .btn-all-bank {
+    max-width: 124px !important;
+  }
+
+  .heading-top {
+    font-size: 21px;
+  }
+
+  .print-sec-inner .print-icon svg {
+    font-size: 28px !important;
+  }
+
+  .accordion-margin {
+    margin: 0px 80px !important;
+  }
+
+  .emp-print .print-icon {
+    right: 70px;
+  }
+
+  .form-detail-main .form-detail-left .form-detail-left-inner .form-details-label h3 {
+    width: 91%;
+  }
+
+  .form-detail-inner .form-detail-left-innerss .form-details-label h3 {
+    width: 91%;
+  }
+
+  .level-desc-width {
+    width: 170px;
+  }
+
+  .table-main-sec .table .check-bank-widh {
+    width: 202px !important;
+  }
+
+  .table-main-sec .table .bank-accont-widh {
+    width: 259px !important;
+  }
+
+  .table-main-sec .table .chk-ven-widh {
+    width: 189px !important;
+  }
+
+  .table-main-sec .table .chk-no-widh {
+    width: 284px !important;
+  }
+
+  .table-main-sec .table .chk-date-widh {
+    width: 168px !important;
+  }
+}
+
+@media (max-width: 1500px) {
+
+  table .ac-no-details-widh {
+    width: 570px !important;
+  }
+
+  table .price-detail-widh {
+    width: 190px !important;
+  }
+
+  table .unit-details-widh {
+    width: 190px !important;
+  }
+
+  table .ex-peice-width {
+    width: 230px !important;
+  }
+
+  body .diff-po-table .table .left-tbody-hight tr th {
+    width: 210px !important;
+  }
+
+  .tab-superadm-sec .access-right-cate-sec .check-cate-sec {
+    width: 27% !important;
+  }
+
+  .diff-po-table .tabl-ws-details .tbody-po-light tr th {
+    width: 300px !important;
+  }
+
+  .diff-po-table .show-right-po .tbody-po-light tr th {
+    width: 307px !important;
+  }
+
+  .table .tax-yaer-widh {
+    width: 140px !important;
+  }
+
+  .table .actin-ws-widh {
+    width: 140px !important
+  }
+
+  .emp-data-sec .emp-data-value-sec .form-newsss-pure {
+    width: 44% !important;
+  }
+
+  .emp-data-sec .emp-data-value-sec .form-newss-right-pure {
+    width: 54% !important;
+  }
+
+  .accordion-margin {
+    margin: 0px 50px !important;
+  }
+
+  .emp-print .print-icon {
+    right: 40px;
+  }
+
+  .heading-top {
+    font-size: 20px;
+  }
+
+  .level-desc-width {
+    width: 180px;
+  }
+
+  .emp-main-heading-emp .head-inner h2 {
+    font-size: 19px;
+  }
+
+  .head-inner-main h3 {
+    font-size: 19px;
+  }
+
+  .table-main-sec .table-sech-list thead tr th {
+    padding: 5px 5px !important;
+    line-height: 23px;
+  }
+
+  .table-main-sec .table-sech-list .chek-amt-widh {
+    width: 100px !important;
+  }
+
+  .table-main-sec .table-sech-list .chk-recon-date-widh {
+    width: 130px !important;
+  }
+
+  .table-main-sec .table-sech-list .chk-no-widh {
+    width: 369px !important;
+  }
+
+  .table-main-sec .table-sech-list .chk-ven-widh {
+    width: 220px !important;
+  }
+
+  .table-main-sec .table-sech-list .bank-accont-widh {
+    width: 360px !important;
+  }
+
+  .table-main-sec .table-sech-list .check-bank-widh {
+    width: 150px !important;
+  }
+
+  .table-sech-list .filt-icon img {
+    height: 11px;
+    position: relative;
+    left: 1px;
+  }
+
+  .ven-all-pdf .btn-all-sec {
+    max-width: 112px !important;
+    padding: 9px 0px !important;
+  }
+
+  .btn-all-bank {
+    max-width: 124px !important;
+  }
+}
+
+
+@media (max-width: 1350px) {
+  body .margin-top-po-table .diff-po-table .table .left-tbody-hight tr th {
+    width: 195px !important;
+  }
+
+  .diff-po-table .tabl-ws-details .tbody-po-light tr th {
+    width: 280px !important;
+  }
+
+  .vebdor-details-left {
+    margin-bottom: 1px;
+  }
+
+  .main-inner-sec .tab-sec-emp .backg-shaw-botm {
+    padding: 90px 40px 60px 40px !important;
+  }
+
+  .form-detail-inner .form-detail-left .form-detail-right-inner .form-details-value p {
+    font-size: 16px;
+  }
+
+  .form-detail-right-innerss .form-details-value p {
+    font-size: 16px;
+  }
+
+  .accordion-margin {
+    margin: 0px 35px !important;
+  }
+
+  .emp-print .print-icon {
+    right: 20px;
+  }
+
+  .form-accor-sec .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root .MuiTypography-root {
+    box-shadow: none !important;
+    padding: 20px 5px !important;
+  }
+
+  .form-detail-main .form-detail-left .form-detail-left-inner .form-details-label h3 {
+    width: 94%;
+  }
+
+  .form-detail-inner .form-detail-left-innerss .form-details-label h3 {
+    width: 94%;
+  }
+
+  .form-detail-main .form-detail-left .form-detail-left-inner .form-details-label h3 {
+    font-size: 16px;
+  }
+
+  .form-detail-inner .form-detail-left-innerss .form-details-label h3 {
+    font-size: 16px;
+  }
+
+  .form-accor-sec .MuiPaper-root .MuiAccordion-heading .MuiButtonBase-root .MuiAccordionSummary-content .MuiTypography-root {
+    font-size: 18px !important;
+  }
+
+  .form-large-data-sec .form-newsss-pure .form-details-label h3 {
+    font-size: 16px;
+  }
+
+  .form-large-data-sec .form-newss-right-pure .form-details-value p {
+    font-size: 16px;
+  }
+
+  .tab-sec-main .backg-shaw-main {
+    padding: 90px 40px 90px 40px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    font-size: 17px !important;
+    padding: 17px 13px 17px 13px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr td {
+    padding: 17px 13px 17px 13px !important;
+    font-size: 17px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    width: 215px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .bank-accont-widh {
+    width: 390px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-form-widh {
+    width: 100px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-ven-widh {
+    width: 235px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-no-widh {
+    width: 240px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-date-widh {
+    width: 160px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-recon-widh {
+    width: 100px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-recon-date-widh {
+    width: 100px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chek-amt-widh {
+    width: 90px !important;
+  }
+
+  .table-main-sec .table-sech-list thead tr th {
+    padding: 5px 1px !important;
+  }
+
+  .form-detail-main .form-detail-left .vebdor-details-left .form-details-label {
+    margin-bottom: 10px;
+  }
+
+  .vedor-detail-right .form-detail-left-innerss .form-details-label {
+    margin-bottom: 10px !important;
+  }
+
+  .emp-table-sec .backg-detaisl {
+    padding: 50px 30px 50px 40px !important;
+  }
+
+  .ssn-text {
+    width: 115px !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  table thead .ac-no-details-widh {
+    width: 660px !important;
+  }
+
+  .dele-user-modle .MuiDialog-scrollPaper .MuiPaper-elevation .MuiTypography-root {
+    font-size: 18px !important;
+  }
+
+  .submit-sec {
+    margin-top: 40px !important;
+  }
+
+  .access-sec .access-right-assign h2 {
+    margin: 40px 0px 15px 0px !important;
+  }
+
+  .tab-sec-emp .tab-sec-main-add {
+    padding: 60px 45px 75px 45px !important;
+  }
+
+  .access-sec .access-right-assign h2 {
+    font-size: 17px !important;
+  }
+
+  .square-sec {
+    width: 19px !important;
+    height: 19px !important;
+  }
+
+  body .diff-po-table .tabl-ws-details .tbody-po-light tr th {
+    width: 285px !important;
+  }
+
+  body .diff-po-table .show-right-po .tbody-po-light tr th {
+    width: 280px !important;
+  }
+
+  .table-main-sec .table .tax-yaer-widh {
+    width: 115px !important;
+  }
+
+  .num-valu {
+    margin-left: 24px !important;
+  }
+
+  .table-main-sec .table .actin-ws-widh {
+    width: 110px !important
+  }
+
+  body .main-inner-sec .accordian-margin-new {
+    margin: 1px 25px 0px 25px !important;
+    padding-top: 20px;
+  }
+
+  .back-sec .back-btn-sec {
+    font-size: 18px !important;
+    top: -23px;
+  }
+
+  .ven-all-pdf .print-icon svg {
+    top: -4px;
+    font-size: 25px;
+  }
+
+  .view-sec img {
+    height: 13px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-date-widh {
+    width: 120px !important;
+  }
+
+  .po-details-sec .diff-po-table .table .tbody-left-po tr th {
+    width: 200px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .bank-accont-widh {
+    width: 410px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr td {
+    padding: 17px 11px 17px 10px !important;
+    font-size: 17px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    font-size: 17px !important;
+    padding: 17px 10px 17px 10px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-no-widh {
+    width: 230px !important;
+  }
+
+  .table-main-sec .table-sec thead tr th {
+    font-size: 16px !important;
+  }
+
+  .table-main-sec .table-sec tbody tr td {
+    font-size: 16px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-ven-widh {
+    width: 245px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr td {
+    font-size: 16px !important;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    width: 230px !important;
+  }
+
+  .emp-main-heading-emp .head-inner h2 {
+    font-size: 19px;
+  }
+
+  .emp-data-inner .emp-data-sec .emp-data-value-sec .form-newsss-pure {
+    width: 51% !important;
+  }
+
+  .emp-data-inner .emp-data-sec .emp-data-value-sec .form-newss-right-pure {
+    width: 48% !important;
+  }
+
+  .perctnt-width {
+    width: 190px;
+  }
+
+  .level-desc-width {
+    width: 246px !important;
+  }
+
+  .main-inner-heading .emp-serach h2 {
+    font-size: 19px;
+  }
+
+  .emp-data-head h3 {
+    font-size: 18px;
+  }
+
+  .print-sec-inner .print-icon svg {
+    font-size: 27px !important;
+  }
+
+  .pagination-sec .page-left p {
+    font-size: 16px;
+  }
+
+  .pagination-sec .page-left p {
+    padding: 0px 0px;
+  }
+
+  .pagination-sec .page-left {
+    max-width: 203px !important;
+  }
+}
+
+@media(max-width:1850px) {
+  .emp-data-value-sec .form-newsss-pure {
+    width: 35% !important;
+
+    .form-details-label {
+      h3 {
+        width: 90% !important;
+      }
+    }
+  }
+
+  .emp-data-value-sec .form-newss-right-pure {
+    width: 62% !important;
+  }
+
+  .form-large-fill {
+    width: 100%;
+    ;
+  }
+
+  .po-details-sec .po-details-head h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1250px) {
+
+  .ssn-text {
+    width: 109px !important;
+  }
+
+  .po-details-sec .diff-po-table .table .tbody-left-po tr th {
+    width: 180px !important;
+  }
+
+  .po-details-sec .po-details-head h2 {
+    font-size: 18px !important;
+  }
+
+  .diff-po-table .table .tbody-po-light tr th {
+    width: 234px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-no-widh {
+    width: 260px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .chk-ven-widh {
+    width: 295px !important;
+  }
+
+  .no-data {
+    font-size: 16px !important;
+  }
+
+  .form-detail-inner .form-detail-left .form-detail-right-inner .form-details-value p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .form-detail-right-innerss .form-details-value p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .form-accor-sec .MuiPaper-root .MuiAccordion-heading .MuiButtonBase-root .MuiAccordionSummary-content .MuiTypography-root {
+    font-size: 17px !important;
+  }
+
+  .emp-data-sec {
+    .MuiPaper-root {
+      .MuiAccordion-heading {
+        .MuiButtonBase-root {
+          min-height: 55px !important;
+        }
+      }
+    }
+  }
+
+  .accordion-margin {
+    margin: 0px 25px !important;
+  }
+
+  .emp-print .print-icon {
+    right: 10px;
+  }
+
+  .heading-top {
+    font-size: 19px;
+  }
+
+  .content-header .header-approve {
+    padding: 25px 20px 25px 20px;
+  }
+
+  .table-main-sec .table-sec thead tr th {
+    font-size: 16px !important;
+  }
+
+  .table-main-sec .table-sec tbody tr td {
+    font-size: 16px;
+  }
+
+  .filt-icon img {
+    height: 12px;
+  }
+
+  .tab-sec-main .backg-shaw-main {
+    padding: 90px 0px 90px 0px !important;
+  }
+
+  .emp-table-sec .backg-detaisl {
+    padding: 40px 30px 40px 30px !important;
+  }
+
+  .emp-table-inner .table-main-sec .table-sech-list .bank-accont-widh {
+    width: 230px !important;
+  }
+
+}
+
+
+@media(max-width:1800px) {
+  .main-inner-sec .accordian-margin-new {
+    margin: 1px 50px 0px 50px !important;
+    padding-top: 20px;
+  }
+
+  .form-detail-right .form-detail-right-innerss-ws {
+    width: 42%;
+  }
+
+  .form-detail-right .form-detail-left-innerss-ws {
+    width: 58%;
+  }
+
+  .emp-data-value-sec .form-newsss-pure {
+    width: 38% !important;
+  }
+
+  .emp-data-value-sec .form-newss-right-pure {
+    width: 62% !important;
+  }
+
+  .form-detail-main .vendor-detail-left {
+    width: 48%;
+  }
+
+  .form-detail-main .vedor-detail-right {
+    width: 48%;
+  }
+
+  .form-detail-main .vendor-detail-left .vebdor-details-left {
+    width: 56%;
+  }
+
+  .form-detail-inner .vendor-detail-left .form-detail-right-inner {
+    width: 44%;
+  }
+
+  .form-detail-right .vebdor-details-left {
+    width: 56%;
+  }
+
+  .vedor-detail-right .form-detail-right-innerss {
+    width: 44%;
+  }
+
+  .access-right-cate-sec .check-cate-sec {
+    width: 22% !important;
+  }
+
+  .diff-po-table .table .tbody-maintain-high tr th {
+    width: 250px !important;
+  }
+}
+
+@media(max-width:1700px) {
+  .ac-no-details-widh {
+    width: 440px !important;
+  }
+
+  .price-detail-widh {
+    width: 230px !important;
+  }
+
+  .unit-details-widh {
+    width: 190px !important;
+  }
+
+  .ex-peice-width {
+    width: 230px !important;
+  }
+
+  .diff-po-table .table .tbody-maintain-high tr th {
+    width: 218px !important;
+  }
+
+  .diff-po-table .table .left-tbody-hight tr th {
+    width: 209px !important;
+  }
+
+  .access-right-cate-sec .check-cate-sec {
+    width: 24% !important;
+  }
+
+  .emp-data-value-sec .form-newsss-pure {
+    width: 40% !important;
+  }
+
+  .emp-data-value-sec .form-newss-right-pure {
+    width: 58% !important;
+  }
+
+  .diff-po-table .table .tbody-po-light tr th {
+    width: 300px;
+  }
+
+  .table .chk-no-widh {
+    width: 224px !important;
+  }
+
+  .table .chk-recon-date-widh {
+    width: 180px !important;
+  }
+
+  .table .chek-amt-widh {
+    width: 170px !important;
+  }
+}
+
+@media(max-width:1850px) {
+  .chk-no-widh {
+    width: 190px !important;
+  }
+
+  .chk-date-widh {
+    width: 150px !important;
+  }
+
+  .chk-recon-date-widh {
+    width: 170px !important;
+  }
+
+  .chek-amt-widh {
+    width: 152px !important;
+  }
+
+  .chk-form-widh {
+    width: 150px !important;
+  }
+}
+
+.form-newsss-pure {
+  width: 34% !important;
+
+  .form-details-label {
+    h3 {
+      width: 90% !important;
+    }
+  }
+}
+
+.form-newss-right-pure {
+  width: 65% !important;
+}
+
+.form-large-fill {
+  width: 100%;
+  ;
+}
+
+
+
+
+
+// pdf react code start
+.id-span {
+  font-weight: 500;
+}
+
+/** pdf page code start**/
+.reqid-sec {
+  color: $blackcolor;
+  padding: 18px 8px 17px !important;
+  font-weight: bold;
+  margin-bottom: 6px;
+  border: 0px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: $greyshade
+}
+
+.conatiner-pdf {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.conatiner-pdfss {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-pdf-sec {
+  width: 100%;
+  margin: 16px 0 3px 3px;
+  font-size: 15px;
+}
+
+.general-sec-pdf {
+  width: 100%;
+  font-size: 15px;
+}
+
+.main-gen-inner {
+  padding: 3px 0;
+  border: none;
+  text-align: left;
+  width: 40%;
+  vertical-align: top;
+}
+
+.main-gen-width {
+  width: 200px;
+  text-align: left;
+  vertical-align: baseline;
+  padding-bottom: 8px !important;
+  font-size: 15px;
+}
+
+.main-full-width-col {
+  padding: 3px 0;
+  border: none;
+  text-align: left
+}
+
+.padding-pdf-bom {
+  margin-bottom: 3px;
+}
+
+.pdf-data {
+  font-size: 14px;
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.mid-pdf-content {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.table-status th {
+  background-color: #e3e1e1;
+}
+
+.table-status {
+  text-align: center;
+  border: 1px solid $greyshade;
+}
+
+.table-status th {
+  padding: 5px 1px;
+  font-size: 14px;
+  border: 1px solid $greyshade;
+  border-top: 2px solid $blackheadcolor;
+}
+
+.table-status td {
+  padding: 5px 5px;
+  font-size: 14px;
+  border: 1px solid $greyshade;
+}
+
+.pdf-half-sec {
+  width: 50%;
+  padding: 2px 4px 2px 0px;
+  font-size: 14px;
+}
+
+.pdf-half-sec-head {
+  width: 172px;
+  font-size: 15px;
+  color: $blackcolor;
+  font-weight: bold;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+.pdf-half-sec-head-data {
+  font-size: 14px;
+  color: $blackcolor;
+  text-align: left !important;
+  vertical-align: middle !important;
+}
+
+.travel-sec {
+  margin-bottom: 0px;
+  font-weight: 700;
+  background-color: $greyshade;
+  padding: 3px 0px;
+}
+
+.pdf-half-sec-heads {
+  width: 100px;
+  font-size: 13px;
+  font-size: 14px;
+  color: $blackheadcolor;
+  font-weight: bold;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+.pdf-half-sec-headss {
+  width: 110px;
+  font-size: 13px;
+  font-size: 14px;
+  color: $blackheadcolor;
+  font-weight: bold;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+.pdf-half-secs {
+  width: 25%;
+  padding: 10px 4px 0px 0px;
+  font-size: 14px;
+}
+
+.pdf-halfs-top {
+  margin-bottom: 5px;
+}
+
+.travel-sec {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.margin-top-travel {
+  border-top: 1px solid $greyshade;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  padding-top: 23px;
+  display: block;
+}
+
+.pdf-half-sec-four {
+  width: 50%;
+  padding: 5px 4px 0px 0px;
+  font-size: 14px;
+}
+
+.travel-hgead {
+  font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2px 0px;
+  text-align: left;
+}
+
+.table-statuss {
+  text-align: center;
+  border: 1px solid $greyshade;
+}
+
+.purchase-sec {
+  padding-left: 10px;
+}
+
+.main-margin {
+  padding: 10px 0px;
+}
+
+.padf-sec-top {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// .pf-sl{
+//   width:53px
+// }
+// .pf-wl{
+//   width:180px;
+// }
+// .pf-date{
+//   width:83px;
+// }
+// .pf-time{
+//   width:201px;
+// }
+// .pf-wo{
+//   width:124px;
+// }
+// .pf-wt{
+//   width:88px;
+// }
+// .pf-resn{
+//   width:180px;
+// }
+.pf-sl {
+  width: 6%;
+}
+
+.pf-time {
+  width: 23%;
+}
+
+.pf-wt {
+  width: 12%
+}
+
+.pf-wo {
+  width: 13%;
+}
+
+.pf-wl {
+  width: 16%;
+}
+
+.pf-date {
+  width: 13%;
+}
+
+.pf-resn {
+  width: 18%;
+}
+
+.reqid-sec-pdf {
+  padding: 5px 0px !important;
+}
+
+.pdf-header {
+  img {
+    height: 70px;
+  }
+}
+
+.padding-top-pdf {
+  padding-top: 15px !important;
+  border-top: 2px solid $blackcolor;
+}
+
+.padding-bottom-pdf {
+  padding-bottom: 15px !important;
+}
+
+.pdf-main-heads {
+  font-size: 17px;
+  background-color: $greyshade;
+  text-align: left;
+  padding: 13px 20px;
+  border-left: 2px solid $blackcolor;
+  margin-bottom: 20px;
+
+}
+
+.meaintot-diff-insure {
+  width: 51%;
+}
+
+.section-pdf {
+  margin-top: 50px;
+}
+
+@media print {
+  .pagebreak {
+
+    page-break-before: always;
+
+  }
+
+  @page {
+    margin: 0;
+    margin: 25px 0px 0px 0px;
+
+  }
+
+
+
+  body {
+
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Optional: Hide anything not needed */
+  header,
+  footer,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  table {
+    width: 100%;
+
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+
+
+    page-break-inside: avoid;
+  }
+
+  .diff-po-table-pdf table tbody tr th {
+    width: 380px !important;
+  }
+
+
+
+
+
+}
+
+
+@media print {
+  .pagebreakdd {
+
+    page-break-before: always;
+    margin-top: 20px;
+  }
+
+  .page-breaknewsw {
+    page-break-before: always;
+    //margin-top: 50px; /* Adds 50px space on each new page */
+    display: block;
+  }
+
+  .marginws-border-grey-pdf {
+    border-top: 2px solid $greyshade !important;
+  }
+}
+
+.pdf-job-cde {
+  width: 10%;
+}
+
+.pdf-begn-bal {
+  width: 17%;
+}
+
+.pdf-earn {
+  width: 10%;
+}
+
+.pdf-used {
+  width: 8%;
+}
+
+.pdf-end-bal {
+  width: 15%;
+}
+
+.pad-wrk-tpe {
+  width: 12%;
+}
+
+.termin-width {
+  width: 29%;
+  padding-bottom: 3px !important;
+}
+
+/** pdf page code end**/
+
+// pdf react code end
+
+.login-details {
+  .form-logn {
+    .MuiBox-root {
+      .MuiFormControl-root {
+        .MuiFormHelperText-root.Mui-error {
+          font-size: 13px !important;
+          position: absolute;
+          top: 55px;
+          font-family: $main-font !important;
+          margin: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+.form-logn .MuiBox-root .MuiFormControl-root .MuiFormLabel-root {
+  top: 1px;
+}
+
+.success-msg {
+  @include pos-block;
+
+  .success-login {
+    color: $greencolor;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 18px;
+    position: absolute;
+    margin: 0px !important
+  }
+}
+
+.login-main-details {
+  padding: 50px 55px 10px 55px;
+}
+
+.error-msg {
+  @include pos-block;
+
+  .error-login {
+    color: $redcolor;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 18px;
+    position: absolute;
+    margin: 0px !important
+  }
+
+  .emp-data-error {
+    left: 44%;
+    transform: translate(-50%, 90%);
+  }
+}
+
+.log-new-emp .MuiBox-root .MuiInputBase-root fieldset legend span {
+  padding-left: 8px;
+  padding-right: 5px;
+}
+
+.modal-check-box {
+  .MuiDialog-container {
+    .MuiPaper-root {
+      margin: 0px !important;
+      max-width: 420px !important;
+      width: 100% !important;
+      border-radius: 0px !important;
+      overflow-y: initial;
+      border-top: 4px solid $bluecolor !important;
+
+      .MuiButtonBase-root {
+        position: absolute;
+        background-color: $whitecolor !important;
+        border-radius: 0px !important;
+        color: $whitecolor !important;
+
+        svg {
+          color: $whitecolor !important;
+          position: absolute;
+          right: -30px;
+          bottom: 19px;
+        }
+      }
+
+      .MuiDialogContent-root {
+        border-top: 0px !important;
+        border-bottom: 0px !important;
+
+        .MuiTypography-root {
+          .form-details-inner {
+            p {
+              font-family: $main-font !important;
+              font-size: 19px;
+              color: $blackheadcolor !important;
+              font-weight: 500;
+              text-align: center;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.nav-disply {
+  display: flex !important;
+}
+
+.action-width-payroll {
+  width: 140px;
+
+}
+
+.pay-visi-sec {
+  svg {
+    color: $greencolor !important;
+    cursor: pointer;
+  }
+}
+
+.search-sec-pay {
+  @include pos-inlineblock();
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+  .payroll-details-data {
+    width: 20%;
+    float: left;
+
+    h3 {
+      color: $bluecolor !important;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 17px;
+      color: $inputcolorgrey !important;
+      margin-top: 7px;
+      font-weight: 500;
+    }
+  }
+}
+
+.payroll-desc {
+  width: 32%;
+}
+
+.payroll-ref {
+  width: 15%;
+}
+
+.payroll-ref-sec {
+  width: 15%;
+}
+
+.payroll-type {
+  width: 11%;
+}
+
+.payroll-cal-amt {
+  width: 12%;
+}
+
+.payroll-check-amt {
+  width: 13%;
+}
+
+.pdf-payroll-desc {
+  width: 19% !important;
+}
+
+.pdf-payroll-ref {
+  width: 8%;
+}
+
+.pdf-payroll-ref-sec {
+  width: 8%;
+}
+
+.pdf-payroll-type {
+  width: 7%;
+}
+
+.pdf-payroll-cal-amt {
+  width: 7%;
+}
+
+.pdf-payroll-chk-amt {
+  width: 9%;
+}
+
+.main-gen-width-new {
+  width: 150px;
+}
+
+.form-newsss-pure {
+  .form-details-label {
+    .semicolon {
+      margin-bottom: 0px;
+      color: $inputcolorgrey;
+      font-size: 21px;
+      top: -6px;
+      position: relative;
+      font-family: "Inter", sans-serif !important;
+    }
+  }
+}
+
+.back-sec {
+  @include pos-block();
+
+  .back-btn-sec {
+    position: absolute;
+    left: 0px;
+    top: -22px;
+    text-decoration: none;
+    color: $orangecolor;
+    font-size: 19px;
+    font-weight: 500;
+
+    svg {
+      position: relative;
+      top: -1px;
+      font-size: 28px;
+    }
+  }
+}
+
+.backg-shaw-main {
+  background-color: $whitecolor !important;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12) !important;
+  padding: 100px 80px 100px 80px !important;
+}
+
+.main-all-marg {
+  margin-top: 5px;
+}
+
+.head-inner-main {
+  h2 {
+    font-size: 19px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 0px !important;
+    font-weight: 600;
+    color: $blackheadcolor !important;
+    margin-top: 8px;
+  }
+
+}
+
+.print-diff {
+  top: 14px !important;
+}
+
+.po-details-sec {
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  .po-details-head {
+    background-color: $whitecolor !important;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12) !important;
+    padding: 20px 20px 20px 20px !important;
+    border-left: 3px solid $bluecolor !important;
+
+    h2 {
+
+      font-size: 19px;
+      text-align: left;
+      margin-bottom: 0px;
+      line-height: 25px;
+      font-weight: 600;
+    }
+  }
+}
+
+.margin-top-po-table {
+  margin-top: 30px;
+}
+
+.tbody-po-light {
+  tr {
+    th {
+      border-bottom: 2px solid $accbordercolor;
+    }
+  }
+}
+
+.diff-po-table {
+  .tbody-po-light {
+    border-top: 4px solid $bluecolor !important;
+
+    tr {
+      th {
+        text-align: left;
+        color: $bluecolor !important;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 20px 15px 20px 15px;
+        width: 350px;
+      }
+
+      td {
+        color: $blackheadcolor !important;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 20px 15px 20px 15px;
+        border-right: none !important;
+        text-align: left;
+
+        p {
+          color: $blackheadcolor !important;
+        }
+      }
+    }
+  }
+}
+
+.po-data-td {
+  color: $blackheadcolor !important;
+}
+
+.all-simple-table-margin {
+  margin-top: 50px;
+}
+
+.view-sec {
+  p {
+    svg {
+      color: $greencolor !important;
+    }
+  }
+
+  img {
+    height: 16px;
+    cursor: pointer;
+  }
+}
+
+.print-right {
+  top: 0px !important;
+}
+
+.backg-detaisl {
+  padding: 50px 40px 50px 40px !important;
+}
+
+.border-top-sec {
+  border-top: 4px solid $bluecolor !important;
+}
+
+.vebdor-details-left {
+  margin-bottom: 4px;
+}
+
+.margin-btm-vendtal {
+  margin-bottom: 30px;
+}
+
+.tab-sec-main-inner-show .row-left {
+  justify-content: left !important;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.search-btn-left {
+  text-align: center !important;
+}
+
+.check-bank-widh {
+  width: 220px;
+}
+
+.bank-accont-widh {
+  width: 250px;
+}
+
+.chk-form-widh {
+  width: 190px;
+}
+
+.chk-ven-widh {
+  width: 180px;
+}
+
+.chk-no-widh {
+  width: 162px;
+}
+
+.chk-date-widh {
+  width: 134px;
+}
+
+.chk-recon-widh {
+  width: 120px;
+}
+
+.chk-recon-date-widh {
+  width: 150px;
+}
+
+.chek-amt-widh {
+  width: 138px;
+}
+
+.aside-body ul li .nav-disply svg {
+  top: 4px;
+}
+
+.diff-check-widh {
+  width: 150px;
+}
+
+.table .code-widh {
+  width: 400px !important;
+}
+
+.table .desc-widh {
+  width: 750px !important;
+}
+
+.vali-secs {
+  .MuiBox-root {
+    .MuiFormControl-root {
+      position: relative;
+
+      .MuiFormHelperText-root {
+        font-family: $main-font !important;
+        position: absolute;
+        bottom: -25px;
+        color: $redcolor !important;
+        margin: 0px !important;
+      }
+    }
+  }
+}
+
+.bodycloor {
+  background-color: $whitecolor !important;
+}
+
+.main-heading-sec .pdf-po {
+  .po-doc-pdf {
+    font-size: 17px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .po-num-pdf {
+    margin-bottom: 10px !important;
+    font-size: 17px !important;
+  }
+}
+
+.po-img {
+  padding-bottom: 5px !important;
+}
+
+.pdf-po-details {
+  margin-top: 20px !important;
+}
+
+.emp-table-pdf {
+  margin: 0 15px !important;
+}
+
+.margin-top-po-pdf {
+  margin-top: 20px !important;
+
+  .diff-po-table .tbody-po-light {
+    border-top: 3px solid $blackcolor !important;
+  }
+
+  .diff-po-table .tbody-po-light tr th {
+    color: $blackcolor !important;
+  }
+}
+
+.btn-show-po {
+  position: relative;
+  display: block;
+  top: -5px
+}
+
+// .pdf-vendor-left{
+//   width:100% !important;
+// }
+// .vendor-detail-middle{
+//   width:100% !important;
+// }
+// .vedor-detail-right{
+//   width:100% !important;
+// }
+
+.pdf-vend-deta {
+  padding-bottom: 15px !important;
+}
+
+.po-pdf-margin {
+  margin-top: 17px !important;
+}
+
+.emp-table-pdf .pdf-details-headss {
+  border-left: 3px solid $blackcolor !important;
+}
+
+.emp-name-span-bank {}
+
+.backg-shaw-botm {
+  padding: 90px 80px 60px 80px !important;
+}
+
+.po-print-sec {
+  top: 29px !important;
+}
+
+.vendor-widh {
+  width: 225px !important;
+}
+
+.vendo-name-width {
+  width: 400px !important;
+}
+
+.addrss-widh {
+  width: 400px;
+}
+
+.city-widh {
+  width: 400px;
+}
+
+.view-widh {
+  width: 140px;
+}
+
+.pdf-ven-hash {
+  width: 5%;
+}
+
+.pdf-ven-name {
+  width: 10%;
+}
+
+.pdf-ven-addrss {
+  width: 12%;
+}
+
+.pdf-ven-city {
+  width: 15%;
+}
+
+.vedor-detail-right .form-detail-left-innerss .form-details-label {
+  margin-bottom: 19px !important;
+}
+
+.vendor-print {
+  .print-icon {
+    svg {
+      top: -6px;
+      position: relative;
+    }
+  }
+}
+
+.po-print-right {
+  top: 1px;
+}
+
+.bank-accont-widhss {
+  width: 320px;
+}
+
+.check-bank-widh {
+  width: 160px;
+}
+
+.bank-accont-widhss {
+  width: 190px;
+}
+
+.chk-form-widh {
+  width: 150px;
+}
+
+.chk-ven-widh {
+  width: 190px;
+}
+
+.chk-no-widh {
+  width: 170px;
+}
+
+.chk-date-widh {
+  width: 160px;
+}
+
+.chk-recon-widh {
+  width: 100px;
+}
+
+.error-msg .check-error {
+  left: 50%;
+  transform: translate(-50%, 10px);
+}
+
+.mandtor-login {
+  transform: translate(-50%, 270%) !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mandt-sec-new {
+  .mandtor-login-sec {
+    color: $redcolor !important;
+    margin-bottom: 0px;
+    position: relative;
+    top: 45px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.emp-main-heading-emp .head-inner .new-vend-all {
+  width: 100%;
+  max-width: 340px;
+}
+
+.btn-all-po {
+  margin-right: 0px !important;
+}
+
+.btn-all-sec {
+  max-width: 119px !important;
+}
+
+.btn-all-bank {
+  background-color: $whitecolor !important;
+  color: $orangecolor !important;
+  max-width: 141px !important;
+
+  &:hover {
+    background-color: $orangecolor !important;
+    color: $whitecolor !important;
+  }
+}
+
+.ven-all-pdf .print-icon svg {
+  top: -3px;
+}
+
+.ven-all-pdf {
+  top: -6px !important;
+}
+
+.ven-all-pdf {
+  .print-icon {
+    svg {
+      margin-right: 13px;
+    }
+  }
+}
+
+.po-show-print {
+  svg {
+    position: relative;
+    top: 9px;
+  }
+}
+
+.pdf-ven-no {
+  width: 17%;
+}
+
+.emp-main-heading-emp .head-inner .ven-all-pdf {
+  gap: 12px;
+}
+
+.btn-all-bank {
+  max-width: 128px !important;
+  padding: 10px 0px !important;
+}
+
+.action-ws-widh {
+  width: 100px;
+}
+
+.back-ws-below {
+  margin-bottom: 50px !important;
+  margin-top: 30px !important;
+}
+
+.accordian-margin-new {
+  margin: 1px 70px 0px 70px !important;
+  padding-top: 20px;
+}
+
+.form-detail-inner .form-detail-left-innerss-ws .form-details-label {
+  margin-bottom: 19px !important;
+}
+
+.form-table-sec .table-sec .new-ws-theade {
+  tr {
+    .thead-main {
+      background-color: $bluecolor;
+      color: $whitecolor !important;
+    }
+  }
+}
+
+.thead-left {
+  border-left: 2px solid $bluecolor !important;
+  border-bottom: 2px solid $bluecolor !important;
+  padding: 0px .5rem !important;
+}
+
+.theade-right {
+  border-right: 2px solid $bluecolor !important;
+  border-bottom: 2px solid $bluecolor !important;
+  padding: 0px .5rem !important;
+}
+
+.table-main-sec .tbody-light .tbody-left {
+  border-left: 2px solid $whitecolor !important;
+}
+
+.table-main-sec .tbody-light .tbody-right {
+  border-right: 2px solid $whitecolor !important;
+}
+
+.tbody-light-ws tr {
+  border-bottom: 2px solid $accbordercolor !important;
+}
+
+.table-main-sec .table-sec .tbody-light-ws tr td {
+  border: none !important;
+  border-right: 2px solid $accbordercolor !important;
+  color: $inputcolorgrey !important;
+  font-weight: 500;
+}
+
+.table .new-ws-theade tr .wages-color {
+  color: $wagescolr !important;
+}
+
+.table .new-ws-theade tr .wiheld-color {
+  color: $wihlecolr !important;
+}
+
+.table-main-sec .table-sec .tbody-light-ws tr .eye-new-ws {
+  border-right: 2px solid $whitecolor !important;
+}
+
+.table-ws-new tr:last-child {
+  border-bottom: none !important;
+}
+
+.table-main-sec .table-ws-new .table-sec thead tr th {
+  font-weight: 500;
+}
+
+.cursorjob {
+  cursor: pointer;
+}
+
+.tax-yaer-widh {
+  width: 150px !important;
+}
+
+.actin-ws-widh {
+  width: 150px !important
+}
+
+.emp-main-heading-emp .head-inner .ws-head-right {
+  top: -3px;
+}
+
+.table-sts-ws td {
+  padding: 8px 5px !important;
+}
+
+.table-sts-ws .thead-subhead th {
+  border-top: none !important;
+}
+
+.thead-main-pdf {
+  background-color: #474747 !important;
+  color: $whitecolor;
+}
+
+.table-sts-ws th {
+  border-top: 2px solid #474747 !important;
+}
+
+
+
+
+.show-entreies-sec {
+  float: left;
+
+  .show-entries {
+    float: left;
+    width: 190px;
+    position: relative;
+    top: 5px;
+
+    p {
+      float: left;
+    }
+
+    .select-sec {
+      float: left;
+    }
+  }
+
+}
+
+.show-content {
+  margin-right: 8px;
+  font-size: 15px;
+  margin-bottom: 0px;
+  position: relative;
+  top: 7px;
+  font-weight: 500;
+}
+
+.select-sec {
+  color: $bluecolor;
+  background-color: $whitecolor;
+  padding: 4px 7px;
+  margin-right: 6px;
+  /* border-bottom: 2px solid #263EAC !important; */
+  border: none;
+  border-bottom: 2px solid $bluecolor !important;
+  outline: none;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.show-entris {
+  margin-bottom: 0px;
+  position: relative;
+  top: 7px;
+  left: 5px;
+  font-weight: 500;
+}
+
+.show-margn-more {
+  margin-top: 50px;
+}
+
+.show-prnt {
+  svg {
+    position: relative;
+    top: 7px;
+  }
+}
+
+.back-sec .back-news {
+  top: -25px !important;
+}
+
+.form-show-ws-main {
+  border-left: 4px solid $bluecolor !important;
+}
+
+.margin-ws {
+  margin-bottom: 20px;
+}
+
+.emp-table-sec .form-show-ws-main {
+  padding-bottom: 0px !important;
+}
+
+.show-ws-details {
+  padding-bottom: 0px !important;
+}
+
+.search-sec-pay .ws-details {
+  width: 20% !important;
+}
+
+.year-show-data {
+  p {
+    color: $orangecolor;
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 40px;
+  }
+}
+
+.num-sec {
+  float: left;
+  margin-bottom: 0px;
+}
+
+.num-valu {
+  margin-left: 35px;
+  margin-bottom: 0px;
+}
+
+.diff-po-table .tabl-ws-details .tbody-po-light tr th {
+  width: 380px;
+}
+
+.square-sec {
+  width: 22px;
+  height: 22px;
+  background-color: $bluecolor;
+  position: relative;
+  top: 3px;
+}
+
+.diff-po-table .show-right-po .tbody-po-light tr th {
+  width: 380px;
+}
+
+.margin-top-ws-main {
+  margin-bottom: 40px;
+}
+
+
+.search-sec-pay .ws-all-details {
+  width: 25% !important;
+  float: left;
+}
+
+.search-sec-pay .ws-all-first-details {
+  width: 100%;
+}
+
+.show-main-se {
+  text-align: center;
+  margin: 0 auto;
+}
+
+// .mid-ws-details{
+//   padding-top:0px !important;
+// }
+
+.diff-po-table-pdf .value-table {
+  width: 150px !important;
+}
+
+.diff-po-table-pdf .tbody-po-light tr th {
+
+  padding: 2px 15px 2px 15px;
+  font-size: 16px;
+}
+
+.diff-po-table-pdf .tbody-po-light tr td {
+  padding: 2px 15px 2px 15px;
+
+  p {
+    font-size: 15px;
+  }
+
+}
+
+.diff-po-table-pdf .tbody-po-light tr th {
+  border-left: 2px solid #c1c1c1 !important;
+}
+
+.table-sec-po-light {
+  box-shadow: none !important;
+}
+
+
+.empoyee-detmd .empoyee-detpdfti {
+  padding: 15px 15px 13px 10px !important;
+}
+
+.empoyee-detmd .empoyee-detpdfti h2 {
+  font-size: 16px !important;
+}
+
+
+.empoyee-detmd {
+
+  padding-left: 0px;
+  padding-right: 0px;
+
+}
+
+.new-marg-ws {
+  padding-top: 35px !important;
+}
+
+.margin-ws-more {
+  margin-bottom: 10px !important;
+}
+
+.ws-main-pdf-sec {
+  margin: 0px 0 3px 0px !important;
+}
+
+.pdf-ws-emp-table-pdf {
+  margin: 0 12px !important
+}
+
+.new-ws-pdf-po {
+  margin: 15px 0px !important;
+}
+
+.main-w2s-det {
+  padding-bottom: 4px !important;
+}
+
+.main-gen-inner-ws {
+  padding: 1px 0;
+
+}
+
+.new-ws-pdf-po {
+  margin: 15px 0px !important;
+}
+
+.new-tablews {
+  margin-bottom: 0px !important;
+}
+
+.tbody-po-light-ws {
+  border-top: 0px !important;
+}
+
+.margin-top-po-pdf .diff-po-table .tbody-po-light-ws {
+  border-top: 0px !important;
+
+}
+
+.pageBreakwsd {
+  margin: 20px !important;
+}
+
+.tab-superadm-sec {
+  .row {
+    justify-content: left !important;
+  }
+}
+
+.access-sec {
+  width: 100%;
+  position: relative;
+  display: block;
+
+  .access-right-assign {
+    width: 100%;
+    position: relative;
+    display: block;
+
+    h2 {
+      color: #263EAC;
+      font-size: 19px;
+      text-align: left;
+      margin: 50px 0px 25px 0px;
+      font-weight: 600;
+    }
+  }
+}
+
+.access-right-cate-sec {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.access-right-cate-sec {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+
+  .check-cate-sec {
+    width: 19%;
+    background-color: $whitecolor !important;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 20%) !important;
+    padding: 16px 11px;
+    border-left: 3px solid $bluecolor !important;
+    float: left;
+
+    .MuiFormGroup-root {
+      float: left;
+
+      .MuiFormControlLabel-root {
+        .MuiCheckbox-root {
+          padding: 8px 0px;
+          margin-right: 8px;
+          color: $orangecolor !important;
+        }
+      }
+    }
+
+    p {
+      text-align: left;
+      position: relative;
+      top: 6px;
+      color: rgba(0, 0, 0, 0.6);
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.check-mid-marg {
+  margin: 0px 40px;
+}
+
+.submit-sec {
+  margin-top: 50px;
+}
+
+.btn-reset {
+  background-color: $whitecolor !important;
+  color: $orangecolor !important;
+  border: 2px solid $orangecolor !important;
+
+  &:hover {
+    background-color: $orangecolor !important;
+    color: $whitecolor !important;
+  }
+}
+
+.tab-sec-main-inner-user {
+  padding: 90px 50px 110px 50px !important;
+}
+
+.btn-sub {
+  max-width: 110px !important;
+}
+
+.btn-reset {
+  max-width: 110px !important;
+  margin-left: 8px !important;
+}
+
+.tab-sec-manage {
+  padding: 10px 10px 10px 10px !important;
+
+  .main-inner-sec {
+    .emp-table-sec {
+      padding: 0px 10px !important;
+      ;
+    }
+  }
+}
+
+.tab-sec-main-add {
+  padding: 80px 80px 80px 80px !important;
+}
+
+.head-user-filt {
+  top: -105px !important;
+  right: -10px;
+
+  .btn-clear {
+    margin-right: 0px !important;
+  }
+}
+
+.edit-sec {
+  cursor: pointer;
+
+  .edit-icon {
+    color: $editcolor !important;
+  }
+
+  .delt-icon {
+    color: $deletcolor !important;
+  }
+}
+
+#model-20 {
+  .toggle {
+    position: relative;
+
+    input[type="checkbox"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      opacity: 0;
+
+      &:hover {
+        + {
+          label {
+            &:after {
+              box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
+            }
+          }
+        }
+      }
+
+      &:checked {
+        + {
+          label {
+            &:before {
+              background: #0588138a;
+            }
+
+            &:after {
+              background: $editcolor;
+              left: 31px;
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: '';
+        background: #bbb;
+        height: 10px;
+        width: 60px;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.2s ease-in;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        background: $whitecolor;
+        top: -12px;
+        width: 31px;
+        height: 31px;
+        left: 0;
+        border-radius: 50%;
+        z-index: 2;
+        box-shadow: 0 0 5px #0002;
+        transition: 0.2s ease-in;
+      }
+    }
+  }
+}
+
+.modal-check-new {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+
+.table-user-sec {}
+
+.table-main-sec .table-user-sec tbody tr td {
+  padding: 15px 0px !important;
+}
+
+.adm-user-widh {
+  width: 310px;
+}
+
+.adm-user-email {
+  width: 350px;
+}
+
+.adm-user-psd {
+  width: 200px;
+}
+
+.adm-user-access {
+  width: 260px;
+}
+
+.adm-user-stus {
+  width: 170px;
+}
+
+.adm-user-actn {
+  width: 120px;
+}
+
+.form-user {
+  form {
+    .MuiTextField-root {
+      .MuiFormHelperText-root {
+        font-family: $main-font !important;
+        position: absolute;
+        top: 53px;
+        color: #d32f2f;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.access-errro {
+  width: 100%;
+  position: relative;
+
+  .uplod-error-sec {
+    text-align: left;
+    font-family: $main-font !important;
+    position: absolute;
+    color: #d32f2f;
+    font-size: 13px;
+    font-weight: 500;
+    top: 7px;
+  }
+}
+
+.error-user-not {
+  top: 10px;
+}
+
+.success-user-sec {
+  top: 10px;
+}
+
+.dele-user-modle {
+  .MuiDialog-scrollPaper {
+    .MuiPaper-elevation {
+      .MuiTypography-root {
+        font-family: $main-font !important;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.btn-user-yes {
+  max-width: 80px !important;
+  padding: 8px 0px;
+}
+
+.btn-user-no {
+  max-width: 80px !important;
+  padding: 8px 0px;
+}
+
+.btn-user-noo {
+  max-width: 80px !important;
+  padding: 8px 0px;
+  background-color: $whitecolor !important;
+  color: $orangecolor !important;
+  border: 2px solid $orangecolor !important;
+
+  &:hover {
+    background-color: $orangecolor !important;
+    color: $whitecolor !important;
+  }
+}
+
+.dele-user-modle {
+  .MuiDialog-container {
+    .MuiPaper-root {
+      padding: 20px 20px !important;
+      max-width: 450px !important;
+    }
+  }
+}
+
+.dele-user-modle .MuiDialog-scrollPaper .MuiPaper-elevation .MuiTypography-root {
+  font-size: 19px !important;
+}
+
+
+// new code added
+
+.diff-po-table .tbody-maintain-high tr th {
+  width: 280px;
+}
+
+// pdf code start from here
+
+.pdf-logos img {
+  height: 95px;
+  float: left;
+}
+
+.pdf-header-right {
+  float: right;
+  margin-bottom: 5px;
+}
+
+.pdf-header-right {
+  p {
+    margin-bottom: 0px !important;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: $main-font !important;
+    line-height: 32px;
+    text-align: right;
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.padding-new-ss {
+  padding-top: 5px !important;
+  background-color: #2a2a2a;
+  color: $whitecolor;
+}
+
+.pdf-check-name {
+  width: 17% !important;
+}
+
+.pdf-check-emp {
+  width: 16% !important;
+}
+
+.pdf-check-date {
+  width: 16% !important;
+}
+
+.pdf-check {
+  width: 10% !important;
+}
+
+.pdf-check-num {
+  width: 16% !important;
+}
+
+.check-heading {
+  font-weight: 700;
+}
+
+.head-check {
+  font-size: 16px !important;
+}
+
+.num-pdf-count {
+  margin-bottom: 12px !important;
+}
+
+.cod-systm-desc {
+  width: 900px;
+}
+
+.code-systm-curr {
+  width: 500px;
+}
+
+.code-systm-ytd {
+  width: 400px;
+}
+
+.checktbnew .padding-top-pdf {
+  padding-top: 11px !important;
+  border-top: 2px solid #000000;
+}
+
+.checktbnew .reqid-sec-pdf {
+  padding: 11px 0px 11px 0px !important;
+}
+
+// .visi-icon{
+//    position: relative;
+//     display: block;
+// }
+// .visi-secs{
+//        cursor: pointer;
+//       width: 24px;
+//       height: 24px;
+//       display: inline-flex;
+//       align-items: center;
+//       justify-content: center;
+//     svg{
+//         color: #6e6d6d !important;
+//     position: relative;
+//     font-size: 23px;
+//     margin-left: 8px;
+//     }
+// }
+
+// .secured-wrapper {
+//   display: inline-flex;
+//   align-items: center;
+//   font-size: 16px;
+//   font-family: Arial, sans-serif;
+//   line-height: 1.5;
+//   gap: 8px;
+// }
+
+// .visi-secs {
+//   width: 24px;
+//   height: 24px;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+// }
+.secured-wrapper {
+
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.ssn-text {
+  display: inline-block;
+  width: 120px;
+  /* make sure this is wide enough for both versions */
+  white-space: nowrap;
+}
+
+.visi-secs {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+
+  svg {
+    color: #70707091;
+  }
+}
+
+.visibledark {
+  svg {
+    color: $inputcolorgrey;
+  }
+}
+
+
+// code for new po pdf
+.po-new-heading {
+  h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 2px !important;
+  }
+}
+
+.pdf-header-left {
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 19px;
+
+  p {
+    margin-bottom: 0px;
+    position: absolute;
+  }
+
+  .short-head-pdf {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 0px !important;
+  }
+}
+
+.pdf-tr {
+  border-top: 2px solid #000000;
+
+}
+
+.pdf-td-top {
+  padding-top: 12px !important;
+}
+
+.pdf-td-bottm {
+  padding-bottom: 12px !important;
+}
+
+.pdf-head-botm {
+  p {
+    margin-bottom: 0px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+.conatiner-pdf-new {
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto;
+  margin-bottom: 10px
+}
+
+.pdf-vendor-num {
+  float: left;
+  font-style: italic;
+
+  span {
+    font-style: normal;
+  }
+}
+
+.pdf-vendor-num {
+  margin-bottom: 0px !important;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif !important;
+  line-height: 32px;
+  text-align: right;
+
+  span {
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+}
+
+.conatiner-pdf-new .new-pdf-head {
+  padding: 11px 0px 0px 0px !important;
+}
+
+.psd-addr-left {
+  width: 50%;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 50px;
+
+  p {
+    margin-bottom: 1px;
+    font-size: 15px;
+    line-height: 28px;
+  }
+}
+
+.head-talic {
+  font-style: italic;
+}
+
+.psd-addr-right {
+  width: 50%;
+  padding-left: 70px;
+
+  .head-talic {
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  p {
+
+    text-align: left;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 27px;
+  }
+}
+
+.pdf-table-data {
+  width: 100%;
+  position: relative;
+
+  .pdf-req-sec {
+    //  width: 25%;
+  }
+
+  .pdf-po-type {
+    width: 60%;
+
+  }
+
+  .pdf-req-sec-head {
+    float: left;
+
+    text-align: left;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0px;
+  }
+
+  .pdf-req-sec-data {
+    float: left;
+    margin-bottom: 0px;
+  }
+
+  .pdf-req-sec-datass {
+    font-weight: 700;
+  }
+
+  .pdf-req-sec-headss {
+    font-style: normal;
+    width: 90px;
+    font-weight: 600;
+  }
+}
+
+.pdf-header-rightss {
+  p {
+    font-style: italic;
+
+    span {
+      font-style: normal;
+      margin-left: 6px;
+    }
+  }
+}
+
+.table-new-pdf-tab {
+  //border-top: 2px solid #000000 !important;
+  border: none;
+
+  thead {
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  th {
+    background-color: #ffffff !important;
+    border: none !important;
+    font-weight: 700;
+    font-size: 15px;
+    font-style: italic;
+    text-align: left;
+    line-height: 27px;
+  }
+
+  td {
+    border: none;
+    font-weight: 700;
+    text-align: left;
+    line-height: 28px;
+    font-size: 15px;
+    vertical-align: baseline;
+  }
+
+  .border-sec {
+    padding-top: 15px;
+
+    td {
+      padding-top: 15px !important;
+    }
+  }
+}
+
+.pdf-qty {
+  width: 9% !important;
+}
+
+.pdf-units {
+  width: 11% !important;
+}
+
+.pdf-descs {
+  width: 33% !important;
+}
+
+.pdf-prices {
+  width: 12% !important;
+}
+
+.pdf-extend-prcs {
+  width: 15% !important;
+}
+
+.price-right {
+  text-align: right !important;
+}
+
+.price-right-data {
+  text-align: right !important;
+}
+
+.border-price-line {
+  position: relative;
+  padding-top: 0 !important;
+  padding-right: 0px !important;
+
+  .top-border {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 100px;
+    border-top: 2px solid #000000;
+  }
+}
+
+.data-total-val {
+  font-weight: 400;
+  text-align: center;
+  font-size: 14px;
+}
+
+.po-desc-sec {
+  font-style: italic !important;
+  width: 118px !important
+}
+
+.pdf-req-sec {
+  .pdf-req-sec-data {
+    padding-left: 5px;
+  }
+}
+
+.pdf-req-sec-headaa {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  //  position: relative;
+  // top: -12px;
+}
+
+.pdf-req-sec-dataaa {
+  position: relative;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #000000;
+}
+
+.pdf-req-sec-date-sec {
+  float: left;
+  margin-top: 20px;
+
+  .pdf-input {
+    width: 40px;
+    border: none !important;
+    border-bottom: 1px solid #000000 !important;
+    text-align: center;
+  }
+}
+
+.po-date-secss {
+
+  // float:none !important;
+  .pdf-input {
+    text-decoration: none;
+    text-align: center;
+
+    &:focus {
+      outline: none !important;
+      border: none !important;
+    }
+  }
+}
+
+@media print {
+  .print-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 12px;
+    display: block;
+  }
+}
+
+.pdf-input:focus {
+  outline: none !important;
+
+}
+
+.pdf-sign-sec {
+  position: relative;
+}
+
+.pdf-admins-sec {
+  width: 60%;
+  text-align: left;
+}
+
+.pdf-date-sec-tab {
+  width: 35%;
+  text-align: left;
+}
+
+.pdf-date-sec-tab-mid {
+  width: 5%;
+}
+
+.qtn-details-widh {
+  width: 120px;
+}
+
+.unit-details-widh {
+  width: 170px;
+}
+
+.desc-details-widh {
+  width: 550px;
+}
+
+.ac-no-details-widh {
+  width: 380px;
+}
+
+.price-detail-widh {
+  width: 240px;
+}
+
+.ex-peice-width {
+  width: 240px;
+}
+
+.pdf-po-quntity-new {
+  width: 1% !important;
+}
+
+.pdf-po-account-new {
+  width: 60% !important;
+}
+
+.pdf-po-account-newss {
+  width: 46% !important;
+}
+
+.pdf-desc-newss {
+  width: 27% !important;
+}
+
+.pdf-po-qty-newssa {
+  width: 5% !important
+}
+
+.pdf-unit-unitssa {
+  width: 7% !important;
+}
+
+.pdf-descssa {
+  width: 24% !important;
+}
+
+.pdf-accont-numbssa {
+  width: 35% !important;
+}
+
+.pdf-pricessa {
+  width: 13% !important;
+  text-align: center !important;
+}
+
+.pdf-extenssa {
+  width: 55% !important;
+}
