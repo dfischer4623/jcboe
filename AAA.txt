@@ -1,6 +1,4 @@
-
-
-      **  Please Do Not Close This App  **
+**  Please Do Not Close This App  **
 
 **  It is running the https://as400.jcboe.org website  **
 
