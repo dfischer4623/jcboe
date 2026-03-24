@@ -117,18 +117,18 @@ function Pdf() {
     } else {
       APHCDT = APHCDT
     }
+    if (APHCDT !== undefined && APHCDT != null && APHCDT != '') {
+      var m = Number(APHCDT.substring(0, 2))
+      var d = Number(APHCDT.substring(2, 4))
+      var y = Number(APHCDT.substring(4, 6))
+      if (y <= 50) {
+        y = 2000 + y
+      } else {
+        y = 1900 + y
+      }
 
-    var m = Number(APHCDT.substring(0, 2))
-    var d = Number(APHCDT.substring(2, 4))
-    var y = Number(APHCDT.substring(4, 6))
-    if (y <= 50) {
-      y = 2000 + y
-    } else {
-      y = 1900 + y
+      APHCDT = String(m) + '/' + String(d) + '/' + String(y)
     }
-
-    APHCDT = String(m) + '/' + String(d) + '/' + String(y)
-
     return APHCDT;
   }
   const chcekam = (APHCAM, index) => {
@@ -171,41 +171,41 @@ function Pdf() {
 
                 </table>
                 <div class=" ">
-        <div class="main-heading-sec ">
-          <div class="col-md-12">
-            <div class="head-inner head-inner-main reqid-sec reqid-sec-pdf padding-top-pdf pdf-po">
-              {viewData.length > 0 &&
-                <>
-                  {/* <h2>Purchase Order Search</h2> */}
-                  <h2 className='po-doc-pdf'>Check Search</h2>
-                  <h3 className='po-num-pdf'>Vendor Number: {viewData[0].APHVEN}</h3>
-                 
-                </>
-              }
+                  <div class="main-heading-sec ">
+                    <div class="col-md-12">
+                      <div class="head-inner head-inner-main reqid-sec reqid-sec-pdf padding-top-pdf pdf-po">
+                        {viewData.length > 0 &&
+                          <>
+                            {/* <h2>Purchase Order Search</h2> */}
+                            <h2 className='po-doc-pdf'>Check Search</h2>
+                            <h3 className='po-num-pdf'>Vendor Number: {viewData[0].APHVEN}</h3>
+
+                          </>
+                        }
 
 
-            </div>
+                      </div>
 
-          </div>
-        </div>
-      </div>
+                    </div>
+                  </div>
+                </div>
                 {/* general section start pdf code */}
 
                 <div className="pdf-section padf-sec-top">
                   <table className="table-status" style={{ width: '100%' }}>
                     {viewData.length > 0 ?
-                     <><thead>
-                      <tr>
-                        <th className='pf-sl pdf-job-cde'>Bank</th>
-                        <th className='pf-wl pdf-absne'>Bank Account</th>
-                        <th className='pf-date pdf-begn-bal'>Form </th>
-                        <th className='pf-time pdf-earn pdf-ven-no'>Vendor No  </th>
-                        <th className='pf-time pdf-earn'>Check Number </th>
-                        <th className='pf-time pdf-earn'>Check Date </th>
-                        <th className='pf-time pdf-earn'>Reconciled?</th>
-                        <th className='pf-time pdf-earn'>Reconciled Date</th>
-                        <th className='pf-time pdf-earn'>Check Amount</th>
-                      </tr>
+                      <><thead>
+                        <tr>
+                          <th className='pf-sl pdf-job-cde'>Bank</th>
+                          <th className='pf-wl pdf-absne'>Bank Account</th>
+                          <th className='pf-date pdf-begn-bal'>Form </th>
+                          <th className='pf-time pdf-earn pdf-ven-no'>Vendor No  </th>
+                          <th className='pf-time pdf-earn'>Check Number </th>
+                          <th className='pf-time pdf-earn'>Check Date </th>
+                          <th className='pf-time pdf-earn'>Reconciled?</th>
+                          <th className='pf-time pdf-earn'>Reconciled Date</th>
+                          <th className='pf-time pdf-earn'>Check Amount</th>
+                        </tr>
                       </thead>
                       </>
                       :
@@ -217,14 +217,14 @@ function Pdf() {
                           <td class="border-right">  {item?.APHBNK} </td>
                           <td class="border-right">  {item?.APHBAC}</td>
                           <td class="border-right">  {item?.APHFRM}</td>
-                      
+
                           <td class="border-right">  {item?.APHVEN}  {item?.APHNAM}</td>
                           <td class="border-right">  {item?.APHCHK}</td>
                           <td class="border-right">  {chcekdate(item.APHCDT)}</td>
                           <td class="border-right">  Y</td>
                           <td class="border-right">  {chcekdate(item.APHCDT)}</td>
                           <td class="border-right">  {dollarUS.format(chcekam(item.APHCAM, index))} </td>
-                      
+
                         </tr>
                       ) : ""}
 

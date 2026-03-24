@@ -90,13 +90,21 @@ const Login = () => {
                     const access = res.data.data.access; // "as,sys"
                     const accessArray = access.split(','); // ['as', 'sys']
 
-                    if (accessArray.includes('as')) {
+                    if (accessArray.includes('as') || accessArray.includes('sys') ) {
+                        if(accessArray.includes('as') ){
+                            console.log("User has access to AS400");
+                           secureLocalStorage.setItem("navtoken", "as400");
+                        }else  if(accessArray.includes('sys')  ){
+                              console.log("User has access to System3000");
+                           secureLocalStorage.setItem("navtoken", "system30");
+                        }
+
                        setTimeout(function () {
                         if (res.data.data.access)
                             navigate('/employee-search');
                     }, 1000);
                     }else{
-                        setErrorMsg("User does not have access to the legacy 400 system");
+                        setErrorMsg("User does not have access to the legacy system");
                     }
                     
                 }

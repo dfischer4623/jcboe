@@ -11,31 +11,31 @@ import {
 } from "react-router-dom";
 import { showpodeat } from '../actions/admin.actions';
 function formatDate(date, format = null) {
-    if (date != null && date != undefined && date != '') {
-        const myArray = date.split("-");
-        var d = new Date(date);
-        var month = myArray[1];
-        var day = myArray[2];
-        var year = myArray[0];
-        var daten = month + '/' + day + '/' + year;
-        return daten;
-    } else {
-        var daten = '';
-        return daten;
-    }
-
+     if(date!=null && date!=undefined && date!=''){
+ const myArray = date.split("-");
+    var d = new Date(date);
+    var month = myArray[1];
+    var day = myArray[2];
+    var year = myArray[0];
+    var daten = month + '/' + day + '/' + year;
+     return daten;
+     }else{
+       var daten = '';
+         return daten;
+     }
+   
     // if (month.length < 2) month = '0' + month;
     // if (day.length < 2) day = '0' + day;
 
     // if (format && format == 'Y-m-d') return [month, day, year].join('-');
     // else return [month, day, year].join('-');
-
+   
 }
 function formatValue(input) {
-    if (input != null && input != undefined && input != '') {
-        const str = input.toString();
-        return `${str.slice(0, 2)}-${str.slice(2, 5)}-${str.slice(5, 8)}-${str.slice(8, 11)}-${str.slice(11, 14)}-${str.slice(14, 16)}-${str.slice(16)}`;
-    } else {
+    if(input!=null && input!=undefined && input!=''){
+    const str = input.toString();
+    return `${str.slice(0, 2)}-${str.slice(2, 5)}-${str.slice(5, 8)}-${str.slice(8, 11)}-${str.slice(11, 14)}-${str.slice(14, 16)}-${str.slice(16)}`;
+    }else{
         return '';
     }
 }
@@ -56,7 +56,7 @@ const Podetails = () => {
         if ((userid) == null || (userid) == undefined) {
 
 
-            navigate(`/vendorsearch`);
+             navigate(`/vendorsearch`);
 
         } else {
             setvendorData(vendordata[0]);

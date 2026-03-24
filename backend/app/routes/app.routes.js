@@ -31,6 +31,11 @@ const controllers = {
   s3PurchaseOrders: require("../controllers/S3_PurchaseOrders.controller.js"),
   s3VendorCheckRegister: require("../controllers/S3_VendorCheckRegister.controller.js"),
   s3POShipToLocation: require("../controllers/S3_PO_ShipToLocation.controller.js"),
+  ProfileReport: require("../controllers/ProfileReport.controller.js"),
+  W2data: require("../controllers/W2data.controller.js"),
+  CheckRegister: require("../controllers/CheckRegister.controller.js"),
+  EmpPayoutputHistory: require("../controllers/EmpPayoutputHistory.controller.js"),
+  LogReport: require("../controllers/LogReport.controller.js"),
   };
 
 // 🚀 Log missing controllers for debugging
@@ -118,6 +123,26 @@ safeRoute("get", "/", controllers.employees.findAll, "employees.findAll");
 safeRoute("get", "/:id", controllers.employees.findOne, "employees.findOne");
 
 
+
+// ✅ Employee W2 Routes
+safeRoute("get", "/w2data/:id", controllers.W2data.findAll, "W2data.findAll");
+safeRoute("get", "/w2datayr/details", controllers.W2data.findDetails, "W2data.findDetails");
+
+
+// ✅ Employee Check Register Routes
+safeRoute("get", "/checkregister/:id", controllers.CheckRegister.findAll, "CheckRegister.findAll");
+safeRoute("get", "/checkregisterch/details", controllers.CheckRegister.findDetails, "CheckRegister.findDetails");
+
+
+// ✅ Employee  salaries routes
+safeRoute("get", "/salariessystem/:id", controllers.EmpPayoutputHistory.findAll, "EmpPayoutputHistory.findAll");
+
+
+// ✅ Employee Routes
+safeRoute("get", "/empsys/s3data", controllers.ProfileReport.findAll, "ProfileReport.findAll");
+safeRoute("get", "/empsys/:id", controllers.ProfileReport.findOne, "ProfileReport.findOne");
+
+safeRoute("get", "/allsystem/logs", controllers.LogReport.findAll, "LogReport.findAll");
 // ✅ Attach router to the app
 module.exports = (app) => {
   app.use("/api/employees", router);

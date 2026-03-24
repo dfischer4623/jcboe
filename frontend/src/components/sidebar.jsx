@@ -249,6 +249,7 @@ else if (window.location.pathname == '/vendorsearch' || window.location.pathname
     secureLocalStorage.removeItem('bankDetailsData');
     secureLocalStorage.removeItem('bankbasicData');
     secureLocalStorage.removeItem('token');
+     secureLocalStorage.removeItem('navtoken');
     dispatch(holdUser({}));
 
     navigate(`/`);

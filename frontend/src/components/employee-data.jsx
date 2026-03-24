@@ -41,7 +41,7 @@ const EmployeeData = () => {
         if (Object.keys(userid).length === 0) {
 
 
-            navigate(`/employeedata`);
+            navigate(`/employee-search`);
 
         } else {
             console.log(userid);

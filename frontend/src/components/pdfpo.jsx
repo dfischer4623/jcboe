@@ -12,26 +12,26 @@ import {
 import axios from 'axios';
 import { AppContext } from '../context';
 function formatDate(date, format = null) {
-  if (date != null && date != undefined && date != '') {
-    const myArray = date.split("-");
+    if(date!=null && date!=undefined && date!=''){
+ const myArray = date.split("-");
     var d = new Date(date);
     var month = myArray[1];
     var day = myArray[2];
     var year = myArray[0];
     var daten = month + '/' + day + '/' + year;
-    return daten;
-  } else {
-    var daten = '';
-    return daten;
-  }
+     return daten;
+     }else{
+       var daten = '';
+         return daten;
+     }
 }
 function formatValue(input) {
-  if (input != null && input != undefined && input != '') {
+    if(input!=null && input!=undefined && input!=''){
     const str = input.toString();
     return `${str.slice(0, 2)}-${str.slice(2, 5)}-${str.slice(5, 8)}-${str.slice(8, 11)}-${str.slice(11, 14)}-${str.slice(14, 16)}-${str.slice(16)}`;
-  } else {
-    return '';
-  }
+    }else{
+        return '';
+    }
 }
 
 function Pdf() {
@@ -77,32 +77,32 @@ function Pdf() {
   const checkWinzip = (pVNZIP) => {
 
 
-    if (pVNZIP !== null && pVNZIP != undefined && pVNZIP != '') {
-      var VNZIP = pVNZIP.toString();
-      if (VNZIP.length === 4) {
-        VNZIP = "0" + VNZIP;
-      }
-      return VNZIP;
-    } else {
-      VNZIP = '';
-      return VNZIP;
-    }
+      if (pVNZIP !== null && pVNZIP != undefined && pVNZIP != '') {
+            var VNZIP = pVNZIP.toString();
+            if (VNZIP.length === 4) {
+                VNZIP = "0" + VNZIP;
+            }
+            return VNZIP;
+        } else {
+            VNZIP = '';
+            return VNZIP;
+        }
   };
 
   const checkshizip = (pVNZIP) => {
 
-    if (pVNZIP !== null && pVNZIP != undefined && pVNZIP != '') {
+ if (pVNZIP !== null && pVNZIP != undefined && pVNZIP != '') {
 
-      if (pVNZIP.length === 4) {
-        var SHZIP1 = "0" + pVNZIP;
-      } else {
-        SHZIP1 = pVNZIP;
-      }
-      return SHZIP1;
-    } else {
-      SHZIP1 = '';
-      return SHZIP1;
-    }
+            if (pVNZIP.length === 4) {
+                var SHZIP1 = "0" + pVNZIP;
+            } else {
+                SHZIP1 = pVNZIP;
+            }
+            return SHZIP1;
+        } else {
+            SHZIP1 = '';
+            return SHZIP1;
+        }
   };
 
 

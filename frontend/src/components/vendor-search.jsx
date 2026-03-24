@@ -3,8 +3,9 @@ import Sidebar from './sidebar';
 import Header from './header';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-
-
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import CircularProgress from '@mui/material/CircularProgress';
 import {
     Link, useNavigate
@@ -12,8 +13,43 @@ import {
 import { useSelector } from 'react-redux';
 import { updateNullOfObjectValues } from '../helpers/helper';
 import { vendorNumberSearch, vendorNameSearch } from '../actions/admin.actions';
+
+import { systemvendornumber, systemvendornamesearch } from '../actions/systemadmin.actions';
+
 import secureLocalStorage from "react-secure-storage";
 import { AppContext } from '../context';
+
+
+
+function CustomTabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+        </div>
+    );
+}
+
+
+CustomTabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
 
 const Vendorsearch = () => {
     const [value, setValue] = React.useState(0);
@@ -23,25 +59,53 @@ const Vendorsearch = () => {
     const [EmpnumsearErrors, setEmpnumsearerrrors] = useState(updateNullOfObjectValues({ vendorNumber: '', vendorName: '' }));
     const [formerror, setFormerror] = useState("");
     const [empiderror, setEmpiderror] = useState("");
+    const [access, setAccess] = useState(null);
     const [loader, setLoader] = useState(false);
+
+    const [empnumsearsystem, setEmpnumsearsystem] = React.useState({ vendorNumber: '', vendorName: '' });
+    const [EmpnumsearErrorssystem, setEmpnumsearerrrorssystem] = useState(updateNullOfObjectValues({ vendorNumber: '', vendorName: '' }));
     let navigate = useNavigate();
     const handleChange = (event, newValue) => {
+          if(newValue==0){
+            secureLocalStorage.setItem("navtoken", "as400");
+        }else if(newValue==1){
+            secureLocalStorage.setItem("navtoken", "system30");
+        }
         setValue(newValue);
+        setFormerror("");
+        setLoader(false);
+
     };
 
     const employeename = [
         { label: 'John test' },
         { label: 'John Smith' },
     ];
-  useEffect(() => {
-    secureLocalStorage.removeItem('vendorNameData');
-    secureLocalStorage.removeItem('vendorNumberData');
-    secureLocalStorage.removeItem('showPOData');
-    secureLocalStorage.removeItem('checkforsh');
-    secureLocalStorage.removeItem('bankDetailsData');
+    useEffect(() => {
+        secureLocalStorage.removeItem('vendorNameData');
+        secureLocalStorage.removeItem('vendorNumberData');
+        secureLocalStorage.removeItem('vendorSystemNumberData');
+        secureLocalStorage.removeItem('vendorSystemNameData');
+        secureLocalStorage.removeItem('showPOData');
+        secureLocalStorage.removeItem('checkforsh');
+        secureLocalStorage.removeItem('bankDetailsData');
 
+        var userf = secureLocalStorage.getItem("user");
+        setAccess(userf.access);
 
-  }, []);
+          var navic = secureLocalStorage.getItem("navtoken");
+        
+        if (navic != null && navic != "" && navic != undefined) {
+            console.log(navic);
+            if(navic=='as400'){
+                console.log("User has access to AS400");
+                setValue(0);
+            }else  if(navic=='system30'){
+                console.log("User has access to System3000");
+                setValue(1);
+            }
+        }
+    }, []);
 
     const handleInputChange = (e) => {
         setFormerror("");
@@ -57,6 +121,24 @@ const Vendorsearch = () => {
 
 
     };
+
+        
+    const handleInputChangesystem= (e) => {
+        setFormerror("");
+        setEmpnumsearerrrorssystem(updateNullOfObjectValues({ vendorNumber: '', vendorName: '' }));
+        var custInfo = { ...empnumsearsystem };
+        const { name, value } = e.target;
+
+        setEmpnumsearsystem((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+
+
+
+    }
+
+
     const handleSubmit = (e) => {
         setFormerror("");
         setLoader(false);
@@ -110,7 +192,7 @@ const Vendorsearch = () => {
                 });
 
             }
-        }else if(empnumsear.vendorName != "" && empnumsear.vendorNumber != ""){
+        } else if (empnumsear.vendorName != "" && empnumsear.vendorNumber != "") {
             setEmpnumsear({ vendorNumber: '', vendorName: '' });
             setFormerror("Please Enter Vendor Name or Vendor Number  ");
             setLoader(false);
@@ -121,15 +203,15 @@ const Vendorsearch = () => {
     const validateForm = () => {
         let errors = {};
         let formIsValid = true;
-        if (empnumsear.vendorName=='' && empnumsear.vendorNumber == "") {
+        if (empnumsear.vendorName == '' && empnumsear.vendorNumber == "") {
             setFormerror("Please Enter Vendor Name or Vendor Number  ");
             formIsValid = false;
-            }else if(empnumsear.vendorName != "" && empnumsear.vendorNumber != ""){
-                setEmpnumsear({ vendorNumber: '', vendorName: '' });
-                setFormerror("Please Enter Vendor Name or Vendor Number  ");
-                formIsValid = false;
-            }
-            
+        } else if (empnumsear.vendorName != "" && empnumsear.vendorNumber != "") {
+            setEmpnumsear({ vendorNumber: '', vendorName: '' });
+            setFormerror("Please Enter Vendor Name or Vendor Number  ");
+            formIsValid = false;
+        }
+
         // if (!empnumsear.vendorName && empnumsear.vendorNumber == "") {
         //     formIsValid = false;
         //     errors['vendorName'] = 'Vendor Namer is required';
@@ -148,6 +230,102 @@ const Vendorsearch = () => {
             e.preventDefault();
         }
     };
+
+
+        const handleSubmitsystem = (e) => {
+        setFormerror("");
+        setLoader(false);
+        // console.log(empnumsearsystem.vendorName);
+        //  console.log(empnumsearsystem.vendorNumber);
+        // return false;
+        if (validateFormsystem()) {
+            setLoader(true);
+
+            if (empnumsearsystem.vendorNumber == "" && empnumsearsystem.vendorName != "") {
+                systemvendornamesearch(empnumsearsystem.vendorName).then((res) => {
+                    console.log('add-user res=====>>>>', res.data);
+                    if (res.data == '' || res.data == null) {
+                        setLoader(false);
+                        setFormerror("No Vendor found");
+                        return;
+                    } else {
+                        setLoader(false);
+                        secureLocalStorage.setItem("vendorSystemNameData", res.data);
+
+                        setEmpnumsearsystem({ vendorNumber: '', vendorName: '' });
+
+                        setFormerror("");
+                        navigate("/vendorsearchsystemlist");
+                    }
+
+                }).catch((error) => {
+                    setLoader(false);
+                    console.log('error occurs while registring the user', error);
+                });
+
+            }
+
+            else if (empnumsearsystem.vendorName == "" && empnumsearsystem.vendorNumber != "") {
+                systemvendornumber(empnumsearsystem.vendorNumber).then((res) => {
+                    console.log('add-user res=====>>>>', res.data);
+                    if (res.data == '' || res.data == null) {
+                        setLoader(false);
+                        setFormerror("No Vendor found");
+                        return;
+                    } else {
+                        setLoader(false);
+                        secureLocalStorage.setItem("vendorSystemNumberData", res.data);
+
+                        setEmpnumsearsystem({ vendorNumber: '', vendorName: '' });
+
+                        setFormerror("");
+                        navigate("/vendorsystemdetails");
+                    }
+
+                }).catch((error) => {
+                    setLoader(false);
+                    console.log('error occurs while registring the user', error);
+                });
+
+            }
+        } else if (empnumsearsystem.vendorName != "" && empnumsearsystem.vendorNumber != "") {
+            setEmpnumsearsystem({ vendorNumber: '', vendorName: '' });
+            setFormerror("Please Enter Vendor Name or Vendor Number  ");
+            setLoader(false);
+        }
+    };
+
+
+    const validateFormsystem = () => {
+        let errors = {};
+        let formIsValid = true;
+        if (empnumsearsystem.vendorName == '' && empnumsearsystem.vendorNumber == "") {
+            setFormerror("Please Enter Vendor Name or Vendor Number  ");
+            formIsValid = false;
+        } else if (empnumsearsystem.vendorName != "" && empnumsearsystem.vendorNumber != "") {
+            setEmpnumsear({ vendorNumber: '', vendorName: '' });
+            setFormerror("Please Enter Vendor Name or Vendor Number  ");
+            formIsValid = false;
+        }
+
+        // if (!empnumsear.vendorName && empnumsear.vendorNumber == "") {
+        //     formIsValid = false;
+        //     errors['vendorName'] = 'Vendor Namer is required';
+        // } if (!empnumsear.vendorNumber && empnumsear.vendorName == "") {
+        //     formIsValid = false;
+        //     errors['vendorNumber'] = 'Vendor Number is required';
+        // }
+
+        console.log(errors);
+        setEmpnumsearerrrorssystem(errors);
+        return formIsValid;
+    }
+    const handleKeypresssystem = (e) => {
+        if (e.which === 13) {
+            handleSubmitsystem();
+            e.preventDefault();
+        }
+    };
     return (
         <>
             <Header />
@@ -161,76 +339,164 @@ const Vendorsearch = () => {
                     </div>
                 </div>
                 <div className='tab-sec-main tab-sec-emp margin-all-sec'>
+                    <Box sx={{ width: '100%' }}>
+                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
 
-                    <div className='tab-sec-main-inner-show backg-shaw-main'>
-                        <div className='row'>
-                            <div className='col-md-4'>
-                                <div className='form-sec emp-name-span form-autocomple-sec'>
-                                    <Box
-                                        component="form"
-                                        sx={{ '& > :not(style)': { width: '100%' } }}
-                                        noValidate
-                                        autoComplete="off"
-                                    >
-                                        <TextField id="outlined-basic" label="Vendor Name" variant="outlined"
+                                {access && access.includes('as') && <Tab label="AS400" {...a11yProps(0)} />}
+                                {access && access.includes('sys') && <Tab label="System 3000" {...a11yProps(1)} />}
 
-                                            onChange={handleInputChange}
-                                            name="vendorName"
-                                            value={empnumsear.vendorName}
-                                            error={EmpnumsearErrors.vendorName ? true : false}
-                                            helperText={EmpnumsearErrors.vendorName}
-                                            onKeyPress={handleKeypress} />
-                                    </Box>
-                                </div>
-                            </div>
-                            <div className='oir-sec'><p className='or-sec'>OR</p></div>
-                            <div className='col-md-4'>
-                                <div className='form-sec log-email'>
-                                    <Box
-                                        component="form"
-                                        sx={{ '& > :not(style)': { width: '100%' } }}
-                                        noValidate
-                                        autoComplete="off"
-                                    >
-                                        <TextField id="outlined-basic" label="Vendor Number" variant="outlined"
-                                            onChange={handleInputChange}
-                                            name="vendorNumber"
-                                            value={empnumsear.vendorNumber}
-                                            error={EmpnumsearErrors.vendorNumber ? true : false}
-                                            helperText={EmpnumsearErrors.vendorNumber}
-                                            onKeyPress={handleKeypress}
-                                        />
-                                    </Box>
-                                </div>
-                            </div>
-                            <div className='col-md-2'>
-                                <div className='search-btn-sec'>
-                                    <Link to="#" onClick={handleSubmit} className='btn btn-search'>Search
-                                        {
-                                            loader != '' ?
-                                                <CircularProgress style={{ width: "15px", height: "15px", marginLeft: "5px", color: "white" }} />
-                                                : ''
-                                        }
-                                    </Link>
-                                    {/* <div className='form-sec-vali'>
+                            </Tabs>
+                        </Box>
+                        <CustomTabPanel value={value} index={0} className='tab-sec-main-inner'>
+
+                            <div className='tab-sec-main-inner-show'>
+                                <div className='row'>
+                                    <div className='col-md-4'>
+                                        <div className='form-sec emp-name-span form-autocomple-sec'>
+                                            <Box
+                                                component="form"
+                                                sx={{ '& > :not(style)': { width: '100%' } }}
+                                                noValidate
+                                                autoComplete="off"
+                                            >
+                                                <TextField id="outlined-basic" label="Vendor Name" variant="outlined"
+
+                                                    onChange={handleInputChange}
+                                                    name="vendorName"
+                                                    value={empnumsear.vendorName}
+                                                    error={EmpnumsearErrors.vendorName ? true : false}
+                                                    helperText={EmpnumsearErrors.vendorName}
+                                                    onKeyPress={handleKeypress} />
+                                            </Box>
+                                        </div>
+                                    </div>
+                                    <div className='oir-sec'><p className='or-sec'>OR</p></div>
+                                    <div className='col-md-4'>
+                                        <div className='form-sec log-email'>
+                                            <Box
+                                                component="form"
+                                                sx={{ '& > :not(style)': { width: '100%' } }}
+                                                noValidate
+                                                autoComplete="off"
+                                            >
+                                                <TextField id="outlined-basic" label="Vendor Number" variant="outlined"
+                                                    onChange={handleInputChange}
+                                                    name="vendorNumber"
+                                                    value={empnumsear.vendorNumber}
+                                                    error={EmpnumsearErrors.vendorNumber ? true : false}
+                                                    helperText={EmpnumsearErrors.vendorNumber}
+                                                    onKeyPress={handleKeypress}
+                                                />
+                                            </Box>
+                                        </div>
+                                    </div>
+                                    <div className='col-md-2'>
+                                        <div className='search-btn-sec'>
+                                            <Link to="#" onClick={handleSubmit} className='btn btn-search'>Search
+                                                {
+                                                    loader != '' ?
+                                                        <CircularProgress style={{ width: "15px", height: "15px", marginLeft: "5px", color: "white" }} />
+                                                        : ''
+                                                }
+                                            </Link>
+                                            {/* <div className='form-sec-vali'>
                                         <p className='erro-vali-sec'>{formerror}</p>
                                     </div> */}
-                                   
 
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className='row'>
+                                <div className='row'>
                                     <div className='col-md-12'>
-                                    <div className='form-sec-vali error-msg '>
-                                                <p className='erro-vali-sec error-login emp-data-error'>{formerror}</p>
-                                            </div>
+                                        <div className='form-sec-vali error-msg '>
+                                            <p className='erro-vali-sec error-login emp-data-error'>{formerror}</p>
+                                        </div>
                                     </div>
                                 </div>
 
 
-                    </div>
+                            </div>
+
+                        </CustomTabPanel>
+
+                        <CustomTabPanel value={value} index={1} className='tab-sec-main-inner'>
+
+                            <div className='tab-sec-main-inner-show '>
+                                <div className='row'>
+                                    <div className='col-md-4'>
+                                        <div className='form-sec emp-name-span form-autocomple-sec '>
+                                            <Box
+                                                component="form"
+                                                sx={{ '& > :not(style)': { width: '100%' } }}
+                                                noValidate
+                                                autoComplete="off"
+                                            >
+                                                <TextField id="outlined-basic" label="Vendor Name" variant="outlined"
+
+                                                    onChange={handleInputChangesystem}
+                                                    name="vendorName"
+                                                    value={empnumsearsystem.vendorName}
+                                                    error={EmpnumsearErrorssystem.vendorName ? true : false}
+                                                    helperText={EmpnumsearErrorssystem.vendorName}
+                                                    onKeyPress={handleKeypresssystem} />
+                                            </Box>
+                                        </div>
+                                    </div>
+                                    <div className='oir-sec'><p className='or-sec'>OR</p></div>
+                                    <div className='col-md-4'>
+                                        <div className='form-sec log-email'>
+                                            <Box
+                                                component="form"
+                                                sx={{ '& > :not(style)': { width: '100%' } }}
+                                                noValidate
+                                                autoComplete="off"
+                                            >
+                                                <TextField id="outlined-basic" label="Vendor Number" variant="outlined"
+                                                    onChange={handleInputChangesystem}
+                                                    name="vendorNumber"
+                                                    value={empnumsearsystem.vendorNumber}
+                                                    error={EmpnumsearErrorssystem.vendorNumber ? true : false}
+                                                    helperText={EmpnumsearErrorssystem.vendorNumber}
+                                                    onKeyPress={handleKeypresssystem}
+                                                />
+                                            </Box>
+                                        </div>
+                                    </div>
+                                    <div className='col-md-2'>
+                                        <div className='search-btn-sec'>
+                                            <Link to="#" onClick={handleSubmitsystem} className='btn btn-search'>Search
+                                                {
+                                                    loader != '' ?
+                                                        <CircularProgress style={{ width: "15px", height: "15px", marginLeft: "5px", color: "white" }} />
+                                                        : ''
+                                                }
+                                            </Link>
+                                            {/* <div className='form-sec-vali'>
+                                        <p className='erro-vali-sec'>{formerror}</p>
+                                    </div> */}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='row'>
+                                    <div className='col-md-12'>
+                                        <div className='form-sec-vali error-msg '>
+                                            <p className='erro-vali-sec error-login emp-data-error'>{formerror}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </CustomTabPanel>
+                    </Box>
+
                 </div>
             </div>
         </>

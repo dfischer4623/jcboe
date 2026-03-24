@@ -1,288 +1,96 @@
 const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('S3_PurchaseOrders', {
-    ACCNO_D: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'PO#': {
-      type: DataTypes.STRING(50),
-      allowNull: true,
-      primaryKey: true
-    },
-    OPENPO: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Vendor #': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Remit to name': {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    V_YTD_EXP: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    V_ENCUMB: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    FYEAR: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    OPENAMT: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    ORIGAMT: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    PAYMENTS: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    PAYLIQUID: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    CANCELLED: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    CREDITED: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    UNDERPAY: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    INVOICED: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    VOIDED: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    COMMIT: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    POADJ: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    COMMDATE: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    UNCOMMDEL: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    MULTIVENDOR: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    INPOMSTR: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    Date: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    Type: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Vendor#': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    PO_CLASS: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    Status: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Batch#': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Committed Date': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Control#': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Print Date': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Recurring PO?': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Originally Entered By': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Marked for Re-Printing?': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Approved by': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Time Created': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Time Approved': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'PO# Overridden?': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Original PO#': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Receiving Status': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    PO_ITEMS: {
-      type: DataTypes.STRING(1000),
-      allowNull: true
-    },
-    'PO Aggregation': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Acct #': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Acct Desc': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Curr Outstanding': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Pending Charges': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'YTD Disbursed': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Current Year Invoices': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Orig Appr': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Curr Appr': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'W Appr': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    Refunds: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Payment Var': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    BALANCE: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    DISADJ: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Index name': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Minority Code': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    V_CLASS: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    DISTRICT: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'User Defined Data 1': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'User Defined Data 2': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'User Defined Data 3': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'User Defined Data 4': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'User Defined Data 5': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Vendor Classification': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    'Vendor Code': {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    PO_CONTNO: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    Year: {
-      type: DataTypes.STRING(50),
-      allowNull: true
+
+module.exports = function (sequelize, DataTypes) {
+  const S3_PurchaseOrders = sequelize.define(
+    'S3_PurchaseOrders',
+    {
+       accnoD: { type: DataTypes.STRING(50), allowNull: true, field: 'ACCNO_D' },
+    poNumber: { type: DataTypes.STRING(50), allowNull: true, primaryKey: true, field: 'PO#' },
+    openpo: { type: DataTypes.STRING(50), allowNull: true, field: 'OPENPO' },
+    vendorNumber: { type: DataTypes.STRING(50), allowNull: true, field: 'Vendor #' },
+    remitToName: { type: DataTypes.STRING(100), allowNull: true, field: 'Remit to name' },
+    vYtdExp: { type: DataTypes.STRING(50), allowNull: true, field: 'V_YTD_EXP' },
+    vEncumb: { type: DataTypes.STRING(50), allowNull: true, field: 'V_ENCUMB' },
+    fyear: { type: DataTypes.STRING(50), allowNull: true, field: 'FYEAR' },
+    openAmt: { type: DataTypes.STRING(50), allowNull: true, field: 'OPENAMT' },
+    origAmt: { type: DataTypes.STRING(50), allowNull: true, field: 'ORIGAMT' },
+    payments: { type: DataTypes.STRING(50), allowNull: true, field: 'PAYMENTS' },
+    payLiquid: { type: DataTypes.STRING(50), allowNull: true, field: 'PAYLIQUID' },
+    cancelled: { type: DataTypes.STRING(50), allowNull: true, field: 'CANCELLED' },
+    credited: { type: DataTypes.STRING(50), allowNull: true, field: 'CREDITED' },
+    underpay: { type: DataTypes.STRING(50), allowNull: true, field: 'UNDERPAY' },
+    invoiced: { type: DataTypes.STRING(50), allowNull: true, field: 'INVOICED' },
+    voided: { type: DataTypes.STRING(50), allowNull: true, field: 'VOIDED' },
+    commit: { type: DataTypes.STRING(50), allowNull: true, field: 'COMMIT' },
+    poAdj: { type: DataTypes.STRING(50), allowNull: true, field: 'POADJ' },
+    commDate: { type: DataTypes.STRING(50), allowNull: true, field: 'COMMDATE' },
+    uncommDel: { type: DataTypes.STRING(50), allowNull: true, field: 'UNCOMMDEL' },
+    multivendor: { type: DataTypes.STRING(50), allowNull: true, field: 'MULTIVENDOR' },
+    inpoMstr: { type: DataTypes.STRING(50), allowNull: true, field: 'INPOMSTR' },
+    date: { type: DataTypes.STRING(50), allowNull: true, field: 'Date' },
+    type: { type: DataTypes.STRING(50), allowNull: true, field: 'Type' },
+    vendorNumberAlt: { type: DataTypes.STRING(50), allowNull: true, field: 'Vendor#' },
+    poClass: { type: DataTypes.STRING(50), allowNull: true, field: 'PO_CLASS' },
+    status: { type: DataTypes.STRING(50), allowNull: true, field: 'Status' },
+    batchNo: { type: DataTypes.STRING(50), allowNull: true, field: 'Batch#' },
+    committedDate: { type: DataTypes.STRING(50), allowNull: true, field: 'Committed Date' },
+    controlNo: { type: DataTypes.STRING(50), allowNull: true, field: 'Control#' },
+    printDate: { type: DataTypes.STRING(50), allowNull: true, field: 'Print Date' },
+    recurringPo: { type: DataTypes.STRING(50), allowNull: true, field: 'Recurring PO?' },
+    originallyEnteredBy: { type: DataTypes.STRING(50), allowNull: true, field: 'Originally Entered By' },
+    markedForReprinting: { type: DataTypes.STRING(50), allowNull: true, field: 'Marked for Re-Printing?' },
+    approvedBy: { type: DataTypes.STRING(50), allowNull: true, field: 'Approved by' },
+    timeCreated: { type: DataTypes.STRING(50), allowNull: true, field: 'Time Created' },
+    timeApproved: { type: DataTypes.STRING(50), allowNull: true, field: 'Time Approved' },
+    poOverridden: { type: DataTypes.STRING(50), allowNull: true, field: 'PO# Overridden?' },
+    originalPoNumber: { type: DataTypes.STRING(50), allowNull: true, field: 'Original PO#' },
+    receivingStatus: { type: DataTypes.STRING(50), allowNull: true, field: 'Receiving Status' },
+    poItems: { type: DataTypes.STRING(1000), allowNull: true, field: 'PO_ITEMS' },
+    poAggregation: { type: DataTypes.STRING(50), allowNull: true, field: 'PO Aggregation' },
+    acctNo: { type: DataTypes.STRING(50), allowNull: true, field: 'Acct #' },
+    acctDesc: { type: DataTypes.STRING(50), allowNull: true, field: 'Acct Desc' },
+    currOutstanding: { type: DataTypes.STRING(50), allowNull: true, field: 'Curr Outstanding' },
+    pendingCharges: { type: DataTypes.STRING(50), allowNull: true, field: 'Pending Charges' },
+    ytdDisbursed: { type: DataTypes.STRING(50), allowNull: true, field: 'YTD Disbursed' },
+    currentYearInvoices: { type: DataTypes.STRING(50), allowNull: true, field: 'Current Year Invoices' },
+    origAppr: { type: DataTypes.STRING(50), allowNull: true, field: 'Orig Appr' },
+    currAppr: { type: DataTypes.STRING(50), allowNull: true, field: 'Curr Appr' },
+    wAppr: { type: DataTypes.STRING(50), allowNull: true, field: 'W Appr' },
+    refunds: { type: DataTypes.STRING(50), allowNull: true, field: 'Refunds' },
+    paymentVar: { type: DataTypes.STRING(50), allowNull: true, field: 'Payment Var' },
+    balance: { type: DataTypes.STRING(50), allowNull: true, field: 'BALANCE' },
+    disadj: { type: DataTypes.STRING(50), allowNull: true, field: 'DISADJ' },
+    indexName: { type: DataTypes.STRING(50), allowNull: true, field: 'Index name' },
+    minorityCode: { type: DataTypes.STRING(50), allowNull: true, field: 'Minority Code' },
+    vClass: { type: DataTypes.STRING(50), allowNull: true, field: 'V_CLASS' },
+    district: { type: DataTypes.STRING(50), allowNull: true, field: 'DISTRICT' },
+    userDefinedData1: { type: DataTypes.STRING(50), allowNull: true, field: 'User Defined Data 1' },
+    userDefinedData2: { type: DataTypes.STRING(50), allowNull: true, field: 'User Defined Data 2' },
+    userDefinedData3: { type: DataTypes.STRING(50), allowNull: true, field: 'User Defined Data 3' },
+    userDefinedData4: { type: DataTypes.STRING(50), allowNull: true, field: 'User Defined Data 4' },
+    userDefinedData5: { type: DataTypes.STRING(50), allowNull: true, field: 'User Defined Data 5' },
+    vendorClassification: { type: DataTypes.STRING(50), allowNull: true, field: 'Vendor Classification' },
+    vendorCode: { type: DataTypes.STRING(50), allowNull: true, field: 'Vendor Code' },
+    poContNo: { type: DataTypes.STRING(50), allowNull: true, field: 'PO_CONTNO' },
+    year: { type: DataTypes.STRING(50), allowNull: true, field: 'Year' }
+    },
+    {
+      sequelize,
+      tableName: 'S3_PurchaseOrders',
+      schema: 'dbo',
+     timestamps: false,
+      underscored: true,
+      freezeTableName: true,
+      createdAt: false,
+      updatedAt: false,
+      defaultScope: {
+        order: [] 
+      }
     }
-  }, {
-    sequelize,
-    tableName: 'S3_PurchaseOrders',
-    schema: 'dbo',
-    timestamps: false,
-    indexes: []
-  });
+  );
+
+  
+  S3_PurchaseOrders.removeAttribute('id');
+
+  return S3_PurchaseOrders;
 };

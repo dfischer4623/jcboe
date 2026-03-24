@@ -70,4 +70,12 @@ db.S3_PurchaseOrders = require("./S3_PurchaseOrders.js")(s3sequelize, Sequelize)
 db.S3_VendorCheckRegister = require("./S3_VendorCheckRegister.js")(s3sequelize, Sequelize);
 db.S3_VendorMaster = require("./S3_VendorMaster.js")(s3sequelize, Sequelize); 
 
+
+
+db.S3_ProfileReport = require("./S3_ProfileReport.js")(s3sequelize, Sequelize);
+db.S3_W2 = require("./S3_W2.js")(s3sequelize, Sequelize);
+db.S3_CheckRegister = require("./S3_CheckRegister.js")(s3sequelize, Sequelize);
+db.S3_EmpPayOutput = require("./S3_EmpPayOutput.js")(s3sequelize, Sequelize);
+db.S3_EmpPayoutputHistory = require("./S3_EmpPayoutputHistory.js")(s3sequelize, Sequelize);
+
 module.exports = db;

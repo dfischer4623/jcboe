@@ -1,252 +1,328 @@
 const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('S3_VendorMaster', {
-    'Vendor #': {
+
+module.exports = function (sequelize, DataTypes) {
+  const S3_VendorMaster = sequelize.define(
+    'S3_VendorMaster',
+    {
+   vendorNumber: {
       type: DataTypes.STRING(50),
       allowNull: true,
-      primaryKey: true
+     
+      field: 'Vendor #'
     },
-    'Remit to name': {
+    remitToName: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'Remit to name'
     },
-    'Index name': {
+    indexName: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'Index name'
     },
-    'Remit to address line 1': {
+    remitToAddressLine1: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'Remit to address line 1'
     },
-    'Remit to address line 2': {
+    remitToAddressLine2: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'Remit to address line 2'
     },
-    'Remit to city': {
+    remitToCity: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Remit to city'
     },
-    'Remit to state': {
+    remitToState: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Remit to state'
     },
-    'Remit to zip': {
+    remitToZip: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Remit to zip'
     },
-    'PO mailing name': {
+    poMailingName: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'PO mailing name'
     },
-    'PO mailing address line 1': {
+    poMailingAddressLine1: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'PO mailing address line 1'
     },
-    'PO mailing address line 2': {
+    poMailingAddressLine2: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'PO mailing address line 2'
     },
-    'PO mailing city': {
+    poMailingCity: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'PO mailing city'
     },
-    'PO mailing state': {
+    poMailingState: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'PO mailing state'
     },
-    'PO mailing zip': {
+    poMailingZip: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'PO mailing zip'
     },
-    'Phone #': {
+    phoneNumber: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Phone #'
     },
-    'Fax #': {
+    faxNumber: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Fax #'
     },
-    'Minority?': {
+    minority: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Minority?'
     },
-    'Federal ID #': {
+    federalId: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Federal ID #'
     },
-    'Deleted info': {
+    deletedInfo: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Deleted info'
     },
-    'State contract #': {
+    stateContractNumber: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'State contract #'
     },
-    'State contract expiry': {
+    stateContractExpiry: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'State contract expiry'
     },
-    'Auto del June 30th?': {
+    autoDeleteJune30th: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Auto del June 30th?'
     },
-    'Various?': {
+    various: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Various?'
     },
-    '1099?': {
+    is1099: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: '1099?'
     },
-    'Disable Vendor?': {
+    disableVendor: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Disable Vendor?'
     },
-    'Pr Yr Encumbrances': {
+    previousYearEncumbrances: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Pr Yr Encumbrances'
     },
-    'Trx Time': {
+    trxTime: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Trx Time'
     },
-    'Trx Type': {
+    trxType: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Trx Type'
     },
-    User: {
+    user: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'User'
     },
-    'Minority Code': {
+    minorityCode: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Minority Code'
     },
-    'Multiple Remit to Locations?': {
+    multipleRemitLocations: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Multiple Remit to Locations?'
     },
-    'Soc Sec#': {
+    socialSecurityNumber: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Soc Sec#'
     },
-    'User Defined Data 1': {
+    userDefinedData1: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'User Defined Data 1'
     },
-    'User Defined Data 2': {
+    userDefinedData2: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'User Defined Data 2'
     },
-    'User Defined Data 3': {
+    userDefinedData3: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'User Defined Data 3'
     },
-    'User Defined Data 4': {
+    userDefinedData4: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'User Defined Data 4'
     },
-    'User Defined Data 5': {
+    userDefinedData5: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'User Defined Data 5'
     },
-    V_CERTREC: {
+    vCertRec: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_CERTREC'
     },
-    V_CERTEXP: {
+    vCertExp: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_CERTEXP'
     },
-    'Vendor Classification': {
+    vendorClassification: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Vendor Classification'
     },
-    'Vendor Code': {
+    vendorCode: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Vendor Code'
     },
-    V_CONTACT: {
+    vContact: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_CONTACT'
     },
-    V_EMAIL: {
+    vEmail: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
+      field: 'V_EMAIL'
     },
-    V_CERTNO: {
+    vCertNo: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_CERTNO'
     },
-    V_CERTISSUE: {
+    vCertIssue: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_CERTISSUE'
     },
-    V_AFFACERT: {
+    vAffaCert: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_AFFACERT'
     },
-    V_W9: {
+    vW9: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_W9'
     },
-    V_PAYPLAY: {
+    vPayPlay: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_PAYPLAY'
     },
-    V_BRCEXEMPT: {
+    vBrcExempt: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_BRCEXEMPT'
     },
-    V_ACH: {
+    vAch: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_ACH'
     },
-    V_ANUM: {
+    vANum: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_ANUM'
     },
-    V_RNUM: {
+    vRNum: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_RNUM'
     },
-    V_ATYPE: {
+    vAType: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_ATYPE'
     },
-    V_PRENOTE: {
+    vPrenote: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'V_PRENOTE'
     },
-    '1099 Type': {
+    type1099: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: '1099 Type'
     },
-    '1099 Box #': {
+    box1099: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: '1099 Box #'
     },
-    'Russia-Belarus Cert': {
+    russiaBelarusCert: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'Russia-Belarus Cert'
     },
-    'YTD Encumbrances': {
+    ytdEncumbrances: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'YTD Encumbrances'
     },
-    'YTD Exp (July - June)': {
+    ytdExpJulyJune: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'YTD Exp (July - June)'
     },
-    'FYTD Exp (Jan - Dec)': {
+    fytdExpJanDec: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      field: 'FYTD Exp (Jan - Dec)'
     }
-  }, {
-    sequelize,
-    tableName: 'S3_VendorMaster',
-    schema: 'dbo',
-    timestamps: false,
-    indexes: []
-  });
+    },
+    {
+      sequelize,
+      tableName: 'S3_VendorMaster',
+      schema: 'dbo',
+       timestamps: false,
+      underscored: true,
+      freezeTableName: true,
+      createdAt: false,
+      updatedAt: false,
+      defaultScope: {
+        order: [] 
+      }
+    }
+  );
+
+  
+  S3_VendorMaster.removeAttribute('id');
+
+  return S3_VendorMaster;
 };

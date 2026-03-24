@@ -168,7 +168,9 @@ const formatDateemdtapplication = (dateStringji) => {
 
 }
 const padValue = (value) => {
-  return value.toString().padStart(4, '0');
+    if(value!== null && value !== undefined && value !== 0 && value !== '') {
+        return value.toString().padStart(4, '0');
+        }
 };
 
 const formatDateemdtsenior = (dateStringji) => {

@@ -26,6 +26,7 @@ import Pdfall from "./components/pdfall";
 import Pdfattnedetails from "./components/pdfattnedetails";
 import Payrollcheck from "./components/payrollcheck";
 import Payrollcheckprint from "./components/printpayroll";
+import Systemcheckprint from "./components/systemcheckprint";
 import Posearch from "./components/posearch";
 import Podetails from "./components/po-details";
 import Vendorsearch from "./components/vendor-search";
@@ -61,16 +62,42 @@ import Adminlogin from "./components/adminlogin";
 import Sidebaradmin from "./components/sidebaradmin";
 import SuperadminLayout from "./ui-components/SuperadminLayout";
 import Usermanagement from "./components/usermanagement";
+import SystemAdminLayout from "./ui-components/SystemAdminLayout";
 
+import EmployeeSystemData from "./components/employee-datasystem";
+import W2sSYTEM from "./components/w2ssystem";
+import Printw2ssytem from "./components/printw2ssytem";
+import ShowW2Detailssystem from "./components/showW2Detailssystem";
+import Printw2sdetailssystem from "./components/printw2sdetailssystem";
+import Checkre from "./components/checkre";
+import Printcheckreg from "./components/printcheckreg";
+import ShowCheckResterDetails from "./components/showCheckResterDetails";
+import Printemployeesystem from "./components/printemployeesystem";
+
+import Printslarysystem from "./components/printslarysystem";
+import Salariessystem from "./components/salariessystem";
+
+import Printponew from "./components/printponew";
+import Vendorsystemsearchlist from "./components/vendor-system-search-list";
+import Vendorsystemdetails from "./components/vendorsystemdetails";
+import Pdfsystemvendordata from "./components/pdfsystemvendordata";
+import SystemshowPO from "./components/systemshowPO";
+
+import PrintsystemshowPO from "./components/pdfprintsystemshowPO";
+import Posystemdetails from "./components/posystemdetails";
+import Pdfsystempo from "./components/Pdfsystempo";
+
+import Checkregistersystemlist from "./components/checkregistersystemlist";
+
+import Printsystemvendorregister from "./components/printsystemvendorregister";
 function App() {
 
   var baseName = '/';
   var data = [];
   data.tabName = 'Learnbyrole';
-  // data.imageUrl = process.env.REACT_APP_IMAGE_URL;
+ 
   data.backEndUrl = process.env.REACT_APP_BACKEND_URL + 'api/';
-  data.imageEndUrl = process.env.REACT_APP_IMAGE_URL;
-  data.nodeEndUrl = process.env.REACT_APP_BACKEND_SEC_URL + '/';
+ 
 
   const [storage, setStorage] = React.useState([
     data
@@ -125,6 +152,8 @@ function App() {
                 <Route path="/printpayrollall" element={<Printpayrollall />} />
                 <Route path="/printcertificates" element={<Printcertificates />} />
 
+                <Route path="/printsystemcheck" element={<Systemcheckprint />} />
+                <Route path="/printponew" element={<Printponew />} />
 
                 <Route element={<AdminLayout />}>
                   <Route path="/checksearchlist" element={<Checksearchlist />} />
@@ -155,6 +184,28 @@ function App() {
 
 
 
+                </Route>
+                <Route path="/employeesystemdata" element={<EmployeeSystemData />} />
+                <Route path="/printw2ssytem" element={<Printw2ssytem />} />
+                <Route path="/printw2sdetailssystem" element={<Printw2sdetailssystem />} />
+                <Route path="/printcheckreg" element={<Printcheckreg />} />
+                <Route path="/printslarystem" element={<Printslarysystem />} />
+                <Route path="/printsystemshowPO" element={<PrintsystemshowPO />} />
+                <Route path="/printemployeesystem" element={<Printemployeesystem />} />
+                <Route path="/Pdfsystemvendordata" element={<Pdfsystemvendordata />} />
+                <Route path="/vendorsearchsystemlist" element={<Vendorsystemsearchlist />} />
+                <Route path="/vendorsystemdetails" element={<Vendorsystemdetails />} />
+                <Route path="/posystemdetails" element={<Posystemdetails />} />
+                <Route path="/Pdfsystempo" element={<Pdfsystempo />} />
+               <Route path="/printsystemvendorregister" element={<Printsystemvendorregister />} />
+                <Route element={<SystemAdminLayout />}>
+                  <Route path="/w2ssystem" element={<W2sSYTEM />} />
+                  <Route path="/showW2Detailssystem" element={<ShowW2Detailssystem />} />
+                  <Route path="/checkreister" element={<Checkre />} />
+                  <Route path="/salariessystem" element={<Salariessystem />} />
+                  <Route path="/showCheckResterDetails" element={<ShowCheckResterDetails />} />
+                  <Route path="/systemshowPO" element={<SystemshowPO />} />
+                   <Route path="/checkregistersystemlist" element={<Checkregistersystemlist />} />
                 </Route>
 
               </Route>

@@ -296,8 +296,9 @@ const Checksearchlist = () => {
     } else {
       APHCDT = APHCDT
     }
-
-    var m = Number(APHCDT.substring(0, 2))
+    
+    if(APHCDT!== null && APHCDT !== undefined && APHCDT !== 0 && APHCDT !== ''){
+ var m = Number(APHCDT.substring(0, 2))
     var d = Number(APHCDT.substring(2, 4))
     var y = Number(APHCDT.substring(4, 6))
     if (y <= 50) {
@@ -308,6 +309,8 @@ const Checksearchlist = () => {
 
     APHCDT = String(m) + '/' + String(d) + '/' + String(y)
 
+    }
+   
     return APHCDT;
   }
   const chcekam = (APHCAM, index) => {

@@ -1259,7 +1259,7 @@ body {
     p {
       float: left;
       margin-bottom: 0px;
-      font-size: 17px;
+      font-size: 16px;
       padding: 0px 2px;
       color: $textcolor;
 
@@ -1435,6 +1435,12 @@ body {
 }
 
 @media (max-width: 1400px) {
+      .table-main-sec .table .sys-trans-amt-widh {
+        width: 200px !important;
+    }
+  .sys-orida-widh-po {
+    width: 160px !important;
+}
   table thead .ac-no-details-widh {
     width: 660px !important;
   }
@@ -1603,6 +1609,12 @@ body {
 }
 
 @media (max-width: 1450px) {
+  .form-table-sec .table-main-sec .table .new-prnt-sys-tax{
+  width:120px !important;
+  }
+  .form-table-sec .table-main-sec .table .new-prnt-sys-actn{
+    width:100px !important;
+}
   .adm-user-psd {
     width: 160px !important;
   }
@@ -1719,6 +1731,12 @@ body {
 }
 
 @media (max-width: 1600px) {
+  .table .sys-trans-amt-widh {
+    width: 180px !important;
+}
+  .margin-top-po-table .sys-backg-detaisl {
+    padding: 50px 22px 40px 22px !important;
+}
 
   table .ac-no-details-widh {
     width: 480px !important;
@@ -1803,6 +1821,12 @@ body {
 }
 
 @media (max-width: 1500px) {
+   .form-table-sec .table-main-sec .table .new-prnt-sys-tax{
+  width:120px !important;
+  }
+  .form-table-sec .table-main-sec .table .new-prnt-sys-actn{
+    width:100px !important;
+}
 
   table .ac-no-details-widh {
     width: 570px !important;
@@ -2045,6 +2069,12 @@ body {
   .form-detail-main .form-detail-left .vebdor-details-left .form-details-label {
     margin-bottom: 10px;
   }
+  .form-detail-main .sys-vebdor-left-sec .vebdor-details-left .form-details-label {
+        margin-bottom: 17px !important;
+    }
+       .main-inner-sec .emp-table-sec .sys-backg-detaisl {
+        padding: 35px 25px 25px 25px !important;
+    }
 
   .vedor-detail-right .form-detail-left-innerss .form-details-label {
     margin-bottom: 10px !important;
@@ -2057,6 +2087,19 @@ body {
   .ssn-text {
     width: 115px !important;
   }
+  .sys-vebdor-right-sec .vebdor-details-left {
+    width: 44% !important;
+}
+.sys-vebdor-right-sec .form-detail-right-innerss {
+    width: 54% !important;
+    padding-right: 0px;
+}
+.form-detail-main .sys-vebdor-left-sec .vebdor-details-left {
+    width: 44% !important;
+}
+.form-detail-inner .sys-vebdor-left-sec .form-detail-right-inner {
+    width: 54% !important;
+}
 }
 
 @media (max-width: 1300px) {
@@ -2245,6 +2288,47 @@ body {
 }
 
 @media (max-width: 1250px) {
+
+      .sys-vebdor-right-sec .form-detail-right-innerss {
+        width: 51% !important;
+    }
+        .sys-vebdor-right-sec .vebdor-details-left {
+        width: 49% !important;
+    }
+    .form-detail-main .syst-venfor-border {
+    width: 1%;
+    }
+        .form-detail-inner .sys-vebdor-left-sec .form-detail-right-inner {
+        width: 51% !important;
+    }
+        .form-detail-main .sys-vebdor-left-sec .vebdor-details-left {
+        width: 49% !important;
+    }
+    .form-detail-main .sys-vebdor-left-sec .form-detail-left-inner .form-details-label p{
+      top:-2px;
+    }
+        .form-detail-inner .sys-vebdor-left-sec .form-detail-right-inner .form-details-value p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 5px;
+    }
+     .form-detail-main .sys-vebdor-right-sec .form-detail-left-inner .form-details-label p{
+      top:-2px;
+    }
+        .sys-vebdor-right-sec .form-detail-right-innerss .form-details-value p{
+        font-size: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 6px;
+       
+    }
+    .form-detail-inner .sys-vebdor-right-sec .form-detail-left-innerss .form-details-label p{
+      top:-1px;
+    }
+    body .sys-vebdor-right-sec .form-detail-left-innerss .form-details-label {
+    margin-bottom: 17px !important;
+}
 
   .ssn-text {
     width: 109px !important;
@@ -4835,4 +4919,268 @@ body {
 
 .pdf-extenssa {
   width: 55% !important;
+}
+
+.form-detail-main .syst-venfor-border{
+  width:2%;
+  padding-right: 0px !important;
+}
+
+    .form-detail-main .sys-vebdor-right-sec {
+        width: 50%;
+    }
+
+        .sys-vebdor-right-sec .form-detail-right-innerss {
+        width: 54%;
+        padding-right: 0px;
+    }
+        .sys-vebdor-right-sec .vebdor-details-left {
+        width: 46%;
+    }
+    .sys-backg-detaisl{
+      padding: 50px 30px 40px 30px !important;
+    }
+    .form-detail-main .sys-vebdor-left-sec{
+      width:48%;
+    }
+    .form-detail-main .sys-vebdor-left-sec .vebdor-details-left{
+              width: 46%;
+    }
+        .form-detail-inner .sys-vebdor-left-sec .form-detail-right-inner {
+        width: 54%;
+    }
+
+    .email-long-sec{
+      word-break: break-all;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+
+    .main-gen-width-new-sys{
+      width: 140px;
+    }
+    .pdf-contact-data-email{
+      word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    }
+
+    .sys-width-po{
+      width: 300px !important;
+    }
+    .sys-pay-width{
+      width:300px !important;
+    }
+    .sys-width-date{
+      width:250px !important;
+    }
+    .sys-width-year{
+      width:250px !important;
+    }
+    .sys-width-view{
+      width:100px !important
+    }
+
+    .pdf-po-sys{
+          width: 15%;
+    }
+    .pdf-pay-sys{
+      width:15%;
+    }
+    .pdf-sys-date{
+      width:10%;
+    }
+    .pdf-sys-year{
+      width:13%;
+    }
+
+    .sys-print-icon{
+      svg{
+        position: relative;
+        top: -25px;
+      }
+    }
+
+    .sys-orida-widh-po{
+      width: 160px;
+    }
+    .sys-pay-widh-po{
+      width:160px;
+    }
+    .sys-cancel-widh-po{
+      width:160px;
+    }
+
+    .margin-top-po-tabless{
+      margin-top: 20px;
+    }
+
+    .sys-check-widhss{
+      width:170px !important;
+    }
+    .sys-ven-widhss{
+      width:250px !important;
+    }
+    .sys-check-widhss{
+      width:150px !important;
+    }
+    .sys-check-date-widhss{
+      width:150px !important;
+    }
+    .sys-trans-amt-widh{
+      width:150px !important;
+    }
+    .sys-invoice-widhss{
+      width:140px !important;
+    }
+
+
+    .sys-pdf-recep{
+    width: 15%;
+    }
+    .sys-pdf-ven-no{
+      width:20%;
+    }
+    .sys-pdf-check{
+      width:10%;
+    }
+    .sys-pdf-check-date{
+      width:14%;
+    }
+
+    .sys-pdf-trans-amt {
+    width: 21%;
+}
+    .sys-pdf-invoice{
+      width:30%;
+    }
+    .data-word-rap{
+          word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    }
+
+    .pdf-can-system {
+  width: 49% !important;
+}
+
+.sys-po-descc-new {
+  width: 35% !important;
+}
+
+.sys-po-orgmt-pdf {
+  text-align: right !important;
+  width: 16% !important;
+}
+
+.sys-po-cancelledss-new{
+      width: 17% !important;
+}
+
+.sys-po-pay-new{
+      width: 17% !important;
+}
+
+.pdf-creat-neww{
+  width:90px !important;
+}
+.pdf-po-no-datass{
+  width:171px !important;
+}
+.pdf-new-yaers{
+  width:92px !important;
+}
+// .pdf-acc-new-widhss{
+//   width:31% !important;
+// }
+// .pdf-acc-new-widhss-val{
+//   width:60% !important;
+// }
+
+.neww-pdf-way-code{
+  width:40% !important;
+}
+.newss-code-create{
+  width:31% !important;
+  float: left;
+}
+.newss-code-create-value{
+  width:60%;
+}
+.pdf-new-sys-po-type{
+  table{
+ width:100%;
+ vertical-align: baseline;
+  }
+ 
+}
+.newss-code-po{
+    width: 36% !important;
+    float: left;
+}
+.newss-code-po-value{
+  width: 60% !important;
+  text-align: left;
+}
+.new-code-css{
+  width:50% !important;
+}
+.pdf-new-sys-po-type{
+  vertical-align: baseline;
+}
+
+.new-prnt-schol{
+  width:15%;
+}
+.new-prnt-loc{
+  width:13%;
+}
+.new-prnt-tit{
+  width:23%;
+}
+.new-prnt-saly{
+  width:15%;
+}
+.new-prnt-tot-saly{
+  width:15%;
+}
+.check-regis-view{
+  width:100px;
+}
+.check-regis-yera{
+  width:140px;
+}
+.check-regis-number{
+  width:300px;
+}
+.check-regis-date{
+  width:210px;
+}
+.check-regis-gros-pay{
+  width:300px;
+}
+.check-regis-net-pay{
+  width:270px;
+}
+
+.new-prnt-chek-num{
+      width: 20%;
+}
+.new-prnt-chek-date{
+  width:16%;
+}
+.new-prnt-gross-pay{
+  width:20%;
+}
+.new-prnt-net-curr-pay{
+  width:20%;
+}
+.new-prnt-curr-yera{
+  width:12%;
+}
+.new-prnt-sys-tax{
+  width:120px !important;
+}
+.new-prnt-sys-actn{
+  width:100px !important;
 }
