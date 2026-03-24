@@ -116,7 +116,10 @@ else if (window.location.pathname == '/vendorsearch' || window.location.pathname
       setActiveMenus('payroll');
       setActiveSubMenus('termination');
     }
-
+    else if (window.location.pathname == '/student-search' || window.location.pathname == '/studentdata') {
+      setActiveMenus('student');
+      setActiveSubMenus('studentsearch');
+    }
    
     else {
       setActiveMenus('home');
@@ -272,6 +275,11 @@ else if (window.location.pathname == '/vendorsearch' || window.location.pathname
       setActiveSubMenus('checksearch');
       navigate(`/checksearch`);
     }
+    if (e == 'studentsearch') {
+      setActiveMenus('student');
+      setActiveSubMenus('studentsearch');
+      navigate(`/student-search`);
+    }
    
       
   
@@ -330,8 +338,11 @@ else if (window.location.pathname == '/vendorsearch' || window.location.pathname
                 <li className={`menu-sec ${activeSubMenus == 'termination' ? 'submenu-active' : ''}`} onClick={(e) => handleclicksubmenus('termination')}>Termination {activeSubMenus == 'termination' && <span className='arrow-right'><NavigateNextIcon /></span>}</li>
               </ul>
             </li>
+
+            <li><a href="#"  onClick={(e) => handleclickmenus('studentsearch')} className={`nav-link-menu ${(activeMenus == 'student' || activeSubMenus == 'studentsearch') ? 'activeapprove' : ''}`}><DescriptionIcon /><span>Student Data</span></a></li>
            
             <li onClick={(e) => { logout(e) }}><NavLink to="/" className={({ isActive }) => `nav-link-menu lastnav-link nav-disply${isActive ? 'activeapprove' : ''}`} ><LogoutIcon /><span>Logout</span></NavLink></li>
+
           </ul>
         </div>
       </aside>

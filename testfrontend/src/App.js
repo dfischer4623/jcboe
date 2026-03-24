@@ -90,6 +90,9 @@ import Pdfsystempo from "./components/Pdfsystempo";
 import Checkregistersystemlist from "./components/checkregistersystemlist";
 
 import Printsystemvendorregister from "./components/printsystemvendorregister";
+
+import StudentSearch from "./components/student-search";
+import StudentData from "./components/student-data";
 function App() {
 
   var baseName = '/';
@@ -134,6 +137,9 @@ function App() {
                 <Route path="/vendorsearchlist" element={<Vendorsearchlist />} />
                 <Route path="/vendordetails" element={<Vendordetails />} />
                 <Route path="/checksearch" element={<Checksearch />} />
+
+                <Route path="/student-search" element={<StudentSearch />} />
+                <Route path="/studentdata" element={<StudentData />} />
 
                 <Route path="/printshowPO" element={<PdfprintshowPO />} />
                 <Route path="/Pdfpo" element={<Pdfpo />} />

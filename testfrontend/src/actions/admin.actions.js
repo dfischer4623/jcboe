@@ -156,3 +156,18 @@ export const showpodeat = (poDoc,poNum) => {
     return axios.get(`/employees/ppur410lxs?poDoc=${poDoc}&poNum=${poNum}`);
 
 }
+
+export const studentSearch = (name, studentId) => {
+    let url = `/employees/students?`;
+    if (name) url += `name=${name}&`;
+    if (studentId) url += `studentId=${studentId}`;
+    return axios.get(url);
+}
+
+export const allStudents = () => {
+    return axios.get('/employees/students');
+}
+
+export const studentDetails = (id) => {
+    return axios.get(`/employees/students/${id}`);
+}

@@ -36,6 +36,7 @@ const controllers = {
   CheckRegister: require("../controllers/CheckRegister.controller.js"),
   EmpPayoutputHistory: require("../controllers/EmpPayoutputHistory.controller.js"),
   LogReport: require("../controllers/LogReport.controller.js"),
+  students: require("../controllers/student.controller.js"),
   };
 
 // 🚀 Log missing controllers for debugging
@@ -143,6 +144,11 @@ safeRoute("get", "/empsys/s3data", controllers.ProfileReport.findAll, "ProfileRe
 safeRoute("get", "/empsys/:id", controllers.ProfileReport.findOne, "ProfileReport.findOne");
 
 safeRoute("get", "/allsystem/logs", controllers.LogReport.findAll, "LogReport.findAll");
+
+// ✅ Student Routes
+safeRoute("get", "/students", controllers.students.findAll, "students.findAll");
+safeRoute("get", "/students/:id", controllers.students.findOne, "students.findOne");
+
 // ✅ Attach router to the app
 module.exports = (app) => {
   app.use("/api/employees", router);

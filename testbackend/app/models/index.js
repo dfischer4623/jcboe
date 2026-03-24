@@ -63,6 +63,10 @@ db.ppur301s = require("./ppur301s.model.js")(as400sequelize, Sequelize);
 db.lacp441s = require("./lacp441s.model.js")(as400sequelize, Sequelize);
 db.users = require("./users.model.js")(as400sequelize, Sequelize); 
 db.ppur410lxs = require("./ppur410lxs.model.js")(as400sequelize, Sequelize);
+db.PSTU301D = require("./PSTU301D.model.js")(as400sequelize, Sequelize);
+db.PSTU320D = require("./PSTU320D.model.js")(as400sequelize, Sequelize);
+db.PSTU350D = require("./PSTU350D.model.js")(as400sequelize, Sequelize);
+db.PSTU360D = require("./PSTU360D.model.js")(as400sequelize, Sequelize);
 
 // S3DATA MODELS (models that use s3data database)
 db.S3_PO_ShipToLocation = require("./S3_PO_ShipToLocation.js")(s3sequelize, Sequelize);

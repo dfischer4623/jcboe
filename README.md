@@ -18,7 +18,8 @@ Test
     Server is running on port 10.0.0.43:8081
 
 (2) cd testfrontend
-    HOST=10.0.0.43 PORT=3001 HTTPS=true SSL_CRT_FILE=wildcard_jcboe_org.crt SSL_KEY_FILE=wildcard_jcboe_org.key npm start
+
+    HOST=testas400.jcboe.org PORT=3001 HTTPS=true SSL_CRT_FILE=wildcard_jcboe_org.crt SSL_KEY_FILE=wildcard_jcboe_org.key npm start
 
 ______________________________________________________________________________
 - Production: https://as400.jcboe.org/ (10.0.0.42:443 frontend, :8080 backend)

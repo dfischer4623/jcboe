@@ -34,8 +34,8 @@ require("./app/routes/app.routes")(app);
 // set port, listen for requests
 
 var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(8081, '10.0.0.43', () => {
-    console.log('Server is running on https://10.0.0.43:8081');
+httpsServer.listen(8081, '0.0.0.0', () => {
+    console.log('Server is running on https://testas400.jcboe.org:8081');
 });
 
 // app.listen(8080, () => {
