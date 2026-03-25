@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     STUID: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     STUPHA: {
       type: DataTypes.INTEGER,

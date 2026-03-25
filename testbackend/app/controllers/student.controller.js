@@ -3,6 +3,8 @@ const PSTU301D = db.PSTU301D;
 const PSTU320D = db.PSTU320D;
 const PSTU350D = db.PSTU350D;
 const PSTU360D = db.PSTU360D;
+const PATT420 = db.PATT420;
+const PGRD450 = db.PGRD450;
 const Op = db.Sequelize.Op;
 
 // Retrieve all students from the database.
@@ -26,13 +28,14 @@ exports.findAll = (req, res) => {
             res.send(data);
         })
         .catch(err => {
+            console.error("Error in findAll students:", err);
             res.status(500).send({
                 message: err.message || "Some error occurred while retrieving students."
             });
         });
 };
 
-// Find a single student with details from all 4 tables
+// Find a single student with details from all tables
 exports.findOne = async (req, res) => {
     const id = req.params.id;
 
@@ -56,15 +59,24 @@ exports.findOne = async (req, res) => {
         // School data - linked by school id
         const school = await PSTU320D.findOne({ where: { SCHID: student.STUSCH } });
 
+        // Attendance data - PATT420 (ABSSTU is the ID)
+        const attendance = await PATT420.findAll({ where: { ABSSTU: id }, order: [['ABSCDT', 'DESC']] });
+
+        // Grades/Transcript data - PGRD450 (TRNSTU is the ID)
+        const grades = await PGRD450.findAll({ where: { TRNSTU: id }, order: [['TRNYR', 'DESC'], ['TRNTRM', 'DESC']] });
+
         res.send({
             student,
             registration,
             family,
-            school
+            school,
+            attendance,
+            grades
         });
     } catch (err) {
+        console.error("Error in findOne student details:", err);
         res.status(500).send({
-            message: "Error retrieving student details with id=" + id
+            message: "Error retrieving student details with id=" + id + ": " + err.message
         });
     }
 };

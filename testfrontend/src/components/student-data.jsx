@@ -26,6 +26,8 @@ const StudentData = () => {
         panel2: true,
         panel3: true,
         panel4: true,
+        panel5: false,
+        panel6: false,
     });
     const [studentData, setStudentData] = useState(null);
     let navigate = useNavigate();
@@ -48,7 +50,7 @@ const StudentData = () => {
 
     if (!studentData) return null;
 
-    const { student, registration, family, school } = studentData;
+    const { student, registration, family, school, attendance, grades } = studentData;
 
     return (
         <>
@@ -112,7 +114,7 @@ const StudentData = () => {
                                                     </TableRow>
                                                 </TableHead>
                                                 <TableBody>
-                                                    {registration.map((reg, index) => (
+                                                    {registration && registration.map((reg, index) => (
                                                         <TableRow key={index}>
                                                             <TableCell>{reg.RGNSCH}</TableCell>
                                                             <TableCell>{reg.RGNYR}</TableCell>
@@ -152,10 +154,82 @@ const StudentData = () => {
                                     </AccordionDetails>
                                 </Accordion>
 
+                                {/* Attendance Info */}
+                                <Accordion expanded={expandedPanels.panel5} onChange={handleChange('panel5')}>
+                                    <AccordionSummary expandIcon={expandedPanels.panel5 ? <RemoveIcon /> : <AddIcon />}>
+                                        <Typography component="span">Attendance History</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <TableContainer component={Paper}>
+                                            <Table size="small">
+                                                <TableHead>
+                                                    <TableRow>
+                                                        <TableCell>Date</TableCell>
+                                                        <TableCell>Reason</TableCell>
+                                                        <TableCell>School</TableCell>
+                                                        <TableCell>Period Data</TableCell>
+                                                    </TableRow>
+                                                </TableHead>
+                                                <TableBody>
+                                                    {attendance && attendance.length > 0 ? attendance.map((att, index) => (
+                                                        <TableRow key={index}>
+                                                            <TableCell>{att.ABSCDT}</TableCell>
+                                                            <TableCell>{att.ABSREA}</TableCell>
+                                                            <TableCell>{att.ABSSCH}</TableCell>
+                                                            <TableCell>{att.ABSPER}</TableCell>
+                                                        </TableRow>
+                                                    )) : (
+                                                        <TableRow>
+                                                            <TableCell colSpan={4} align="center">No attendance records found</TableCell>
+                                                        </TableRow>
+                                                    )}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+                                    </AccordionDetails>
+                                </Accordion>
+
+                                {/* Grades Info */}
+                                <Accordion expanded={expandedPanels.panel6} onChange={handleChange('panel6')}>
+                                    <AccordionSummary expandIcon={expandedPanels.panel6 ? <RemoveIcon /> : <AddIcon />}>
+                                        <Typography component="span">Grades / Transcript</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <TableContainer component={Paper}>
+                                            <Table size="small">
+                                                <TableHead>
+                                                    <TableRow>
+                                                        <TableCell>Year</TableCell>
+                                                        <TableCell>Term</TableCell>
+                                                        <TableCell>Subject</TableCell>
+                                                        <TableCell>Grade</TableCell>
+                                                        <TableCell>School</TableCell>
+                                                    </TableRow>
+                                                </TableHead>
+                                                <TableBody>
+                                                    {grades && grades.length > 0 ? grades.map((grd, index) => (
+                                                        <TableRow key={index}>
+                                                            <TableCell>{grd.TRNYR}</TableCell>
+                                                            <TableCell>{grd.TRNTRM}</TableCell>
+                                                            <TableCell>{grd.TRNSUB}</TableCell>
+                                                            <TableCell>{grd.TRNGRD}</TableCell>
+                                                            <TableCell>{grd.TRNSCH}</TableCell>
+                                                        </TableRow>
+                                                    )) : (
+                                                        <TableRow>
+                                                            <TableCell colSpan={5} align="center">No grade records found</TableCell>
+                                                        </TableRow>
+                                                    )}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+                                    </AccordionDetails>
+                                </Accordion>
+
                                 {/* School Info */}
                                 <Accordion expanded={expandedPanels.panel4} onChange={handleChange('panel4')}>
                                     <AccordionSummary expandIcon={expandedPanels.panel4 ? <RemoveIcon /> : <AddIcon />}>
-                                        <Typography component="span">School Information</Typography>
+                                        <Typography component="span">School Contact Information</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         {school ? (

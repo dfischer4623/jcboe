@@ -67,6 +67,8 @@ db.PSTU301D = require("./PSTU301D.model.js")(as400sequelize, Sequelize);
 db.PSTU320D = require("./PSTU320D.model.js")(as400sequelize, Sequelize);
 db.PSTU350D = require("./PSTU350D.model.js")(as400sequelize, Sequelize);
 db.PSTU360D = require("./PSTU360D.model.js")(as400sequelize, Sequelize);
+db.PATT420 = require("./PATT420.model.js")(as400sequelize, Sequelize);
+db.PGRD450 = require("./PGRD450.model.js")(as400sequelize, Sequelize);
 
 // S3DATA MODELS (models that use s3data database)
 db.S3_PO_ShipToLocation = require("./S3_PO_ShipToLocation.js")(s3sequelize, Sequelize);

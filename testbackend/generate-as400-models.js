@@ -8,7 +8,7 @@ const options = {
   username: 'sa',
   password: 'JCBOE456',
   directory: path.resolve(__dirname, './app/models/'),
-  tables: ['PSTU301D', 'PSTU320D', 'PSTU350D', 'PSTU360D'],
+  tables: ['PSTU301D', 'PSTU320D', 'PSTU350D', 'PSTU360D', 'PATT420', 'PGRD450'],
   additional: {
     timestamps: false,
     underscored: false // AS400 tables often use uppercase/weird names

@@ -7,11 +7,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     FAMARA: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     FAMPHN: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     FAMGS1: {
       type: DataTypes.STRING(50),

@@ -1,68 +1,52 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PSTU360D', {
-    RGNDIS: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    RGNSCH: {
-      type: DataTypes.STRING(50),
-      allowNull: true,
-      primaryKey: true
-    },
-    RGNSTU: {
+  return sequelize.define('PATT420', {
+    ABSSTU: {
       type: DataTypes.INTEGER,
       allowNull: true,
       primaryKey: true
     },
-    RGNNAM: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    RGNYR: {
+    ABSJDT: {
       type: DataTypes.INTEGER,
       allowNull: true,
       primaryKey: true
     },
-    RGNLOC: {
+    ABSCDT: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    ABSDIS: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    RGNCNC: {
+    ABSSCH: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    RGNROM: {
+    ABSREA: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    RGNTCH: {
+    ABSPER: {
       type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    RGNAMB: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    RGNPMB: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    RGNPAY: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    RGNTUI: {
-      type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
     MEMBER: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    ABSNAM: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    ABFNAM: {
       type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'PSTU360D',
+    tableName: 'PATT420',
     schema: 'dbo',
     timestamps: false,
     underscored: false

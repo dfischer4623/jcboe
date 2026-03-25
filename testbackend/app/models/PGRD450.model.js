@@ -1,89 +1,96 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('PSTU320D', {
-    SCHDIS: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHID: {
-      type: DataTypes.STRING(50),
+  return sequelize.define('PGRD450', {
+    TRNSTU: {
+      type: DataTypes.INTEGER,
       allowNull: true,
       primaryKey: true
     },
-    SCHTTL: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHNAM: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHAD1: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHAD2: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHCTY: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHST: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHPRV: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHZIP: {
+    TRNYR: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
-    SCHZP2: {
+    TRNTRM: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
-    SCHCPC: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHPRI: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    SCHARA: {
+    TRNSEQ: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      primaryKey: true
     },
-    SCHPHN: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    SCHSTR: {
+    TRNDIS: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    SCHGTR: {
+    TRNSCH: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    SCHPAM: {
+    TRNCLS: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNREQ: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNTCE: {
       type: DataTypes.FLOAT,
       allowNull: true
     },
-    SCHPAA: {
+    TRNTCA: {
       type: DataTypes.FLOAT,
       allowNull: true
     },
-    SCHCAM: {
+    TRNTGP: {
       type: DataTypes.FLOAT,
       allowNull: true
     },
-    SCHLRA: {
-      type: DataTypes.FLOAT,
+    TRNGRD: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNSUB: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNGPA: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNPDT: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TRNPDTC: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNSTS: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNCOR: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNGLV: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNGTL: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    TRNEXA: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TRNUNA: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     MEMBER: {
@@ -92,7 +99,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'PSTU320D',
+    tableName: 'PGRD450',
     schema: 'dbo',
     timestamps: false,
     underscored: false

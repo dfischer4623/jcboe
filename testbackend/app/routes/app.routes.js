@@ -60,6 +60,10 @@ const safeRoute = (method, path, controllerFunction, routeName) => {
 safeRoute("get", "/auth", controllers.users.authenticate, "users.authenticate");
 // safeRoute("post", "/auth", controllers.users.authenticate, "users.authenticate");
 
+// ✅ Student Routes
+safeRoute("get", "/students", controllers.students.findAll, "students.findAll");
+safeRoute("get", "/students/:id", controllers.students.findOne, "students.findOne");
+
 // ✅ User Management Routes
 safeRoute("get", "/users", controllers.users.findAll, "users.findAll");
 safeRoute("post", "/users", controllers.users.create, "users.create");
