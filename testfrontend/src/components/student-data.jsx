@@ -61,7 +61,7 @@ const StudentData = () => {
                     <div className='col-md-12'>
                         <div className='emp-main-serach'>
                             <div className='emp-serach emp-data-head'>
-                                <h2>{student.STUFNM} {student.STUMNM} {student.STUSNM}</h2>
+                                <h2>{student.STUSNM}, {student.STUFNM} {student.STUMNM}</h2>
                                 <h3>Student Id:- <span> {student.STUID}</span></h3>
                             </div>
                         </div>

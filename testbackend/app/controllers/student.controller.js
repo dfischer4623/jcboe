@@ -23,7 +23,7 @@ exports.findAll = (req, res) => {
         condition.STUID = studentId;
     }
 
-    PSTU301D.findAll({ where: condition, limit: 100 })
+    PSTU301D.findAll({ where: condition })
         .then(data => {
             res.send(data);
         })

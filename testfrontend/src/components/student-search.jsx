@@ -92,7 +92,7 @@ const StudentSearch = () => {
                                         <Autocomplete
                                             options={allStudentsData || []}
                                             sx={{ width: 300 }}
-                                            getOptionLabel={(option) => `${option.STUFNM || ''} ${option.STUSNM || ''} ( ${option.STUID || ''} )`.trim()}
+                                            getOptionLabel={(option) => `${option.STUSNM || ''}, ${option.STUFNM || ''} ( ${option.STUID || ''} )`.trim()}
                                             value={studentNameSear.event}
                                             renderInput={(params) => <TextField {...params} label="Student Full Name" />}
                                             onChange={(e, newValue) => { handleChangeStudent(e, newValue) }}
